@@ -1,0 +1,12 @@
+{
+  "active_plan": "/Users/lucaditizio/github/Scribe/.sisyphus/plans/scribe-rebuild.md",
+  "started_at": "2026-04-08T14:51:22.190Z",
+  "session_ids": [
+    "ses_2926c698dffeoz2jdnKyg6Pv4U"
+  ],
+  "session_origins": {
+    "ses_2926c698dffeoz2jdnKyg6Pv4U": "direct"
+  },
+  "plan_name": "scribe-rebuild",
+  "agent": "atlas"
+}
