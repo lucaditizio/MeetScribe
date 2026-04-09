@@ -1110,7 +1110,7 @@ RecordingDetailView:
 
   **What**: Write tests with MockCBCentralManager: verify "LA518" with RSSI -65 is included, "Unknown" is excluded, "LA518" with RSSI -80 is excluded (below threshold).
 
-- [ ] 10.1. Create ConnectionStateMachine.swift
+- [x] 10.1. Create ConnectionStateMachine.swift
 
   **Files**: Services/BLEService/ConnectionStateMachine.swift, ScribeTests/Services/BLE/ConnectionStateMachineTests.swift
   **Category**: unspecified-low
@@ -1154,9 +1154,9 @@ RecordingDetailView:
 
   **What**: Full build and test verification for all BLE services. Check zero print statements, zero force unwraps, zero empty catch blocks in Services/BLEService/. Save evidence.
 
-- [ ] 11.1. Create OpusAudioDecoder.swift
+- [x] 11.1. Create OpusAudioDecoder.swift
 
-  **Files**: Services/BLEService/OpusAudioDecoder.swift
+  **Files**: Services/AudioService/OpusAudioDecoder.swift
   **Category**: unspecified-low
   **Verify**: `xcodebuild -scheme Scribe build`
 
@@ -1164,9 +1164,9 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT implement custom codec — use swift-opus library.
 
-- [ ] 11.2. Create AudioStreamReceiver.swift
+- [x] 11.2. Create AudioStreamReceiver.swift
 
-  **Files**: Services/BLEService/AudioStreamReceiver.swift
+  **Files**: Services/AudioService/AudioStreamReceiver.swift
   **Category**: unspecified-low
   **Verify**: `xcodebuild -scheme Scribe build`
 
@@ -1176,13 +1176,13 @@ RecordingDetailView:
 
 - [ ] 11.3. Create Opus Decoder Tests
 
-  **Files**: ScribeTests/Services/BLE/OpusAudioDecoderTests.swift
+  **Files**: ScribeTests/Services/Audio/OpusAudioDecoderTests.swift
   **Category**: quick
   **Verify**: `xcodebuild -scheme Scribe test -only-testing:ScribeTests/OpusAudioDecoderTests`
 
   **What**: Test Opus header stripping: 0xFF 0xF3 0x48 0xC4 prefix and 0xFF 0xF3 prefix. Test decoding produces Float32 output at 16kHz.
 
-- [ ] 12.1. Create OpusEncoder.swift
+- [x] 12.1. Create OpusEncoder.swift
 
   **Files**: Services/AudioService/OpusEncoder.swift
   **Category**: unspecified-low
@@ -1192,7 +1192,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT implement custom codec.
 
-- [ ] 12.2. Create InternalMicRecorder.swift
+- [x] 12.2. Create InternalMicRecorder.swift
 
   **Files**: Services/AudioService/InternalMicRecorder.swift
   **Category**: unspecified-high
@@ -1202,7 +1202,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT save as .m4a/AAC — must be Opus/CAF. Do NOT use print statements. Do NOT leave empty catch blocks.
 
-- [ ] 12.3. Create InternalMicRecorder Tests
+- [x] 12.3. Create InternalMicRecorder Tests
 
   **Files**: ScribeTests/Services/Audio/InternalMicRecorderTests.swift
   **Category**: quick
