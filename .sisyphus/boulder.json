@@ -1,12 +1,23 @@
 {
-  "active_plan": "/Users/lucaditizio/github/Scribe/.sisyphus/plans/scribe-rebuild.md",
-  "started_at": "2026-04-08T14:51:22.190Z",
+  "active_plan": "/Users/lucaditizio/github/MeetScribe/.sisyphus/plans/scribe-rebuild.md",
+  "started_at": "2026-04-09T04:19:34.161Z",
   "session_ids": [
-    "ses_2926c698dffeoz2jdnKyg6Pv4U"
+    "ses_28f887c4fffeizMjlaS8THga5F"
   ],
   "session_origins": {
-    "ses_2926c698dffeoz2jdnKyg6Pv4U": "direct"
+    "ses_28f887c4fffeizMjlaS8THga5F": "direct"
   },
   "plan_name": "scribe-rebuild",
-  "agent": "atlas"
+  "agent": "atlas",
+  "task_sessions": {
+    "final-wave:f1": {
+      "task_key": "final-wave:f1",
+      "task_label": "F1",
+      "task_title": "**Plan Compliance Audit** — `oracle`",
+      "session_id": "ses_28f80670bffe5jB0Q1WVLnqJR2",
+      "agent": "Sisyphus-Junior",
+      "category": "unspecified-high",
+      "updated_at": "2026-04-09T04:44:01.051Z"
+    }
+  }
 }

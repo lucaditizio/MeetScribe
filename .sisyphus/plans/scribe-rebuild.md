@@ -666,7 +666,7 @@ RecordingDetailView:
 
 ### Phase 1 — Foundation
 
-- [ ] 1.1. Create Xcode Project + VIPER Directory Structure
+- [x] 1.1. Create Xcode Project + VIPER Directory Structure
 
   **Files**: Scribe.xcodeproj/project.pbxproj, Scribe/ScribeApp.swift, Scribe/Info.plist, ScribeTests/Info.plist, .gitkeep files in all directories
   **Category**: unspecified-high
@@ -748,7 +748,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT create multiple targets or SPM packages. Do NOT implement any features — scaffolding only. Do NOT create the old triple-nested Scribe/Scribe/Scribe structure.
 
-- [ ] 1.2. Add SPM Dependencies
+- [x] 1.2. Add SPM Dependencies
 
   **Files**: Scribe.xcodeproj/project.pbxproj (update package references)
   **Category**: unspecified-high
