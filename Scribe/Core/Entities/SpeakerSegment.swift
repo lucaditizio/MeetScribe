@@ -5,20 +5,20 @@ import SwiftData
 @Model
 public final class SpeakerSegment {
     public var id: UUID
-    public var speakerId: Int
+    public var speakerId: String
     public var speakerName: String
-    public var startTime: TimeInterval
-    public var endTime: TimeInterval
+    public var start: TimeInterval
+    public var end: TimeInterval
     public var text: String
     public var confidence: Double
     public var createdAt: Date
     
     public init(
         id: UUID = UUID(),
-        speakerId: Int,
+        speakerId: String,
         speakerName: String,
-        startTime: TimeInterval,
-        endTime: TimeInterval,
+        start: TimeInterval,
+        end: TimeInterval,
         text: String,
         confidence: Double = 1.0,
         createdAt: Date = Date()
@@ -26,8 +26,8 @@ public final class SpeakerSegment {
         self.id = id
         self.speakerId = speakerId
         self.speakerName = speakerName
-        self.startTime = startTime
-        self.endTime = endTime
+        self.start = start
+        self.end = end
         self.text = text
         self.confidence = confidence
         self.createdAt = createdAt

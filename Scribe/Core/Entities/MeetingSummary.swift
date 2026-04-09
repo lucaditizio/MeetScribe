@@ -9,6 +9,7 @@ public final class MeetingSummary {
     public var overview: String
     public var keyPoints: [String]
     public var actionItems: [String]
+    public var mindMapNodes: [MindMapNode]?
     public var createdAt: Date
     public var updatedAt: Date
     
@@ -20,6 +21,7 @@ public final class MeetingSummary {
         overview: String = "",
         keyPoints: [String] = [],
         actionItems: [String] = [],
+        mindMapNodes: [MindMapNode]? = nil,
         createdAt: Date = Date(),
         updatedAt: Date = Date()
     ) {
@@ -28,6 +30,7 @@ public final class MeetingSummary {
         self.overview = overview
         self.keyPoints = keyPoints
         self.actionItems = actionItems
+        self.mindMapNodes = mindMapNodes
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }

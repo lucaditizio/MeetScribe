@@ -3,11 +3,11 @@ import Foundation
 /// Represents a decoded audio sample for waveform visualization
 /// This is NOT a SwiftData model - just a value type for processing
 public struct AudioSample: Sendable {
-    public let amplitude: Float
+    public let value: Float
     public let timestamp: TimeInterval
     
-    public init(amplitude: Float, timestamp: TimeInterval) {
-        self.amplitude = amplitude
+    public init(value: Float, timestamp: TimeInterval) {
+        self.value = value
         self.timestamp = timestamp
     }
 }
@@ -24,7 +24,7 @@ public struct AudioSampleBuffer: Sendable {
     
     /// Returns the maximum amplitude in the buffer
     public var maxAmplitude: Float {
-        samples.map { $0.amplitude }.max() ?? 0.0
+        samples.map { $0.value }.max() ?? 0.0
     }
     
     /// Returns samples downsampled to target count for visualization

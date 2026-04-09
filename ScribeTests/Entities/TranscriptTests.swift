@@ -4,15 +4,15 @@ import XCTest
 final class TranscriptTests: XCTestCase {
     func testSpeakerSegmentInitialization() {
         let segment = SpeakerSegment(
-            speakerId: 1,
+            speakerId: "1",
             speakerName: "Speaker 1",
-            startTime: 0.0,
-            endTime: 5.5,
+            start: 0.0,
+            end: 5.5,
             text: "Hello world",
             confidence: 0.95
         )
         
-        XCTAssertEqual(segment.speakerId, 1)
+        XCTAssertEqual(segment.speakerId, "1")
         XCTAssertEqual(segment.speakerName, "Speaker 1")
         XCTAssertEqual(segment.text, "Hello world")
         XCTAssertEqual(segment.confidence, 0.95)

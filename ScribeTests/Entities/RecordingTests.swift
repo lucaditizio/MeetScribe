@@ -8,19 +8,19 @@ final class RecordingTests: XCTestCase {
             date: Date(),
             fileName: "test.caf",
             filePath: "/tmp/test.caf",
-            source: .internalMic
+            source: .rawInternal
         )
         
         XCTAssertEqual(recording.title, "Test Meeting")
         XCTAssertEqual(recording.fileName, "test.caf")
-        XCTAssertEqual(recording.source, .internalMic)
+        XCTAssertEqual(recording.source, .rawInternal)
         XCTAssertEqual(recording.duration, 0)
         XCTAssertNotNil(recording.id)
         XCTAssertNotNil(recording.createdAt)
     }
     
     func testRecordingSourceEnum() {
-        XCTAssertEqual(RecordingSource.internalMic.rawValue, "internal_mic")
-        XCTAssertEqual(RecordingSource.bleMicrophone.rawValue, "ble_microphone")
+        XCTAssertEqual(RecordingSource.rawInternal.rawValue, "internal")
+        XCTAssertEqual(RecordingSource.rawBle.rawValue, "ble")
     }
 }

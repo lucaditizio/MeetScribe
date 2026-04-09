@@ -23,7 +23,7 @@ public final class Recording {
         duration: TimeInterval = 0,
         fileName: String,
         filePath: String,
-        source: RecordingSource = .internalMic,
+        source: RecordingSource = .rawInternal,
         createdAt: Date = Date(),
         updatedAt: Date = Date()
     ) {

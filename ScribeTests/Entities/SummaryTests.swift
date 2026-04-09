@@ -4,12 +4,13 @@ import XCTest
 final class SummaryTests: XCTestCase {
     func testTopicSectionInitialization() {
         let topic = TopicSection(
-            title: "Key Discussion Points",
-            content: "We discussed the project timeline and deliverables.",
+            topic: "Key Discussion Points",
+            bullets: ["We discussed the project timeline", "Deliverables confirmed"],
             order: 1
         )
         
-        XCTAssertEqual(topic.title, "Key Discussion Points")
+        XCTAssertEqual(topic.topic, "Key Discussion Points")
+        XCTAssertEqual(topic.bullets.count, 2)
         XCTAssertEqual(topic.order, 1)
         XCTAssertNotNil(topic.id)
     }

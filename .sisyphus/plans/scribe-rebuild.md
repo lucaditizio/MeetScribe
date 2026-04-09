@@ -975,7 +975,7 @@ RecordingDetailView:
 
   **What**: Create MindMapNode (recursive Codable: id, text, children: [MindMapNode]). Reference: LLMService.swift MindMapNode struct. Create AudioSample (value: Float, timestamp: TimeInterval). Create RecordingSource enum (case internal, ble). All Codable. Write encoding/decoding tests for MindMapNode recursive structure.
 
-- [ ] 5.1. Create ServiceProtocols.swift
+- [x] 5.1. Create ServiceProtocols.swift
 
   **Files**: Core/Protocols/ServiceProtocols.swift, ScribeTests/Protocols/ServiceProtocolMocks.swift
   **Category**: quick
@@ -985,7 +985,7 @@ RecordingDetailView:
 
   **Key Code**: See original plan task 5.1 for full protocol signatures.
 
-- [ ] 5.2. Create VIPERProtocols.swift
+- [x] 5.2. Create VIPERProtocols.swift
 
   **Files**: Core/Protocols/VIPERProtocols.swift, ScribeTests/Protocols/VIPERProtocolTests.swift
   **Category**: quick

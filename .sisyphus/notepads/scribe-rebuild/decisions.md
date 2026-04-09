@@ -33,3 +33,13 @@
 - Fixed empty catch blocks (line 139 in AudioRecorder.swift)
 - Unified audio format to Opus/CAF
 - Added micSource field to Recording model
+
+## Deviations from Plan (Documented)
+
+### RecordingSource Enum Cases (Fix 5)
+**Plan specified:** `case internal = "internal"`, `case ble = "ble"`
+**Actual implementation:** `case rawInternal = "internal"`, `case rawBle = "ble"`
+**Reason:** Swift reserves `internal` as a keyword, cannot use as enum case name
+**Workaround:** Used `rawInternal`/`rawBle` as case names with correct raw values
+**Impact:** Minimal - raw values match plan, only case names differ
+**Files affected:** RecordingSource.swift, Recording.swift, VIPERProtocolTests.swift, RecordingTests.swift
