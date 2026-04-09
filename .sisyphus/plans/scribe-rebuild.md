@@ -788,7 +788,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT write production feature tests — just verify the skeleton compiles and test target runs.
 
-- [ ] 2.1. Create PipelineConfig.swift
+- [x] 2.1. Create PipelineConfig.swift
 
   **Files**: Core/Config/PipelineConfig.swift, ScribeTests/Config/ConfigTests.swift
   **Category**: quick
@@ -815,7 +815,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT implement business logic. Do NOT use UserDefaults or dynamic loading.
 
-- [ ] 2.2. Create AudioConfig.swift
+- [x] 2.2. Create AudioConfig.swift
 
   **Files**: Core/Config/AudioConfig.swift, ScribeTests/Config/ConfigTests.swift (append)
   **Category**: quick
@@ -835,7 +835,7 @@ RecordingDetailView:
   }
   ```
 
-- [ ] 2.3. Create BluetoothConfig.swift
+- [x] 2.3. Create BluetoothConfig.swift
 
   **Files**: Core/Config/BluetoothConfig.swift, ScribeTests/Config/ConfigTests.swift (append)
   **Category**: quick
@@ -865,7 +865,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT change BLE characteristic UUIDs. Do NOT modify SLink protocol logic.
 
-- [ ] 2.4. Create FeatureFlags.swift
+- [x] 2.4. Create FeatureFlags.swift
 
   **Files**: Core/Config/FeatureFlags.swift, ScribeTests/Config/ConfigTests.swift (append)
   **Category**: quick
