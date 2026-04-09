@@ -873,7 +873,7 @@ RecordingDetailView:
 
   **What**: Create FeatureFlags struct with feature toggles: enableVAD (true), enableLanguageDetection (true), enableSwissGermanASR (true), enableDiarization (true), enableSummarization (true), enableBLE (true), enableDebugLogging (false). All `let` properties.
 
-- [ ] 3.1. Create ScribeLogger.swift
+- [x] 3.1. Create ScribeLogger.swift
 
   **Files**: Core/Infrastructure/Logging/ScribeLogger.swift, ScribeTests/Infrastructure/LoggerTests.swift
   **Category**: quick

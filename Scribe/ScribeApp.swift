@@ -8,5 +8,6 @@ struct ScribeApp: App {
             Text("Scribe — Loading...")
                 .preferredColorScheme(.dark)
         }
+        .modelContainer(SwiftDataModelContainer.shared)
     }
 }
