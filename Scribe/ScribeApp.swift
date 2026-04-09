@@ -5,8 +5,7 @@ import SwiftData
 struct ScribeApp: App {
     var body: some Scene {
         WindowGroup {
-            Text("Scribe — Loading...")
-                .preferredColorScheme(.dark)
+            AppAssembly.shared.makeRecordingListModule(output: nil)
         }
         .modelContainer(SwiftDataModelContainer.shared)
     }
