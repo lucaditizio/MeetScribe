@@ -1,0 +1,826 @@
+-------------------------------------
+Translated Report (Full Report Below)
+-------------------------------------
+Process:             Scribe [20046]
+Path:                /Users/USER/Library/Developer/XCTestDevices/DA18C050-0BBA-425F-89CC-E65C006880BD/data/Containers/Bundle/Application/C79387DC-B49A-4394-BA83-3418D953C7BD/Scribe.app/Scribe
+Identifier:          com.scribe.app
+Version:             1.0 (1)
+Code Type:           ARM-64 (Native)
+Role:                Foreground
+Parent Process:      launchd_sim [19825]
+Coalition:           com.apple.CoreSimulator.SimDevice.DA18C050-0BBA-425F-89CC-E65C006880BD [36880]
+Responsible Process: SimulatorTrampoline [3732]
+User ID:             501
+
+Date/Time:           2026-04-09 17:45:28.8205 +0300
+Launch Time:         2026-04-09 17:45:26.8122 +0300
+Hardware Model:      Mac15,9
+OS Version:          macOS 26.4 (25E246)
+Release Type:        User
+
+Crash Reporter Key:  D3C81108-D128-D827-6EFC-D48DDA84E24C
+Incident Identifier: 93DA8878-F135-4B11-B765-64CAC9E1DC1C
+
+Sleep/Wake UUID:       09392138-C775-4C61-9F2E-6E480C474A4C
+
+Time Awake Since Boot: 220000 seconds
+Time Since Wake:       15879 seconds
+
+System Integrity Protection: enabled
+
+Triggered by Thread: 0, Dispatch Queue: com.apple.main-thread
+
+Exception Type:    EXC_BREAKPOINT (SIGTRAP)
+Exception Codes:   0x0000000000000001, 0x00000001981ca94c
+
+Termination Reason:  Namespace SIGNAL, Code 5, Trace/BPT trap: 5
+Terminating Process: exc handler [20046]
+
+
+Thread 0 Crashed::  Dispatch queue: com.apple.main-thread
+0   libswiftCore.dylib            	       0x1981ca94c closure #1 in closure #1 in _assertionFailure(_:_:file:line:flags:) + 460
+1   libswiftCore.dylib            	       0x1981ca4bc _assertionFailure(_:_:file:line:flags:) + 236
+2   Scribe.debug.dylib            	       0x10351ff00 SLinkPacketParser.findHeader() + 292 (SLinkPacketParser.swift:65)
+3   Scribe.debug.dylib            	       0x10351f36c SLinkPacketParser.tryParsePacket() + 136 (SLinkPacketParser.swift:24)
+4   Scribe.debug.dylib            	       0x10351f0cc SLinkPacketParser.feed(_:) + 240 (SLinkPacketParser.swift:14)
+5   ScribeTests                   	       0x1022e70a0 SLinkPacketParserTests.testParserFindsHeader() + 296 (SLinkPacketParserTests.swift:12)
+6   ScribeTests                   	       0x1022e7680 @objc SLinkPacketParserTests.testParserFindsHeader() + 44
+7   CoreFoundation                	       0x1804c80c0 __invoking___ + 144
+8   CoreFoundation                	       0x1804c5320 -[NSInvocation invoke] + 276
+9   XCTestCore                    	       0x1018d9984 +[XCTFailableInvocation invokeStandardConventionInvocation:completion:] + 60
+10  XCTestCore                    	       0x1018d9940 __90+[XCTFailableInvocation invokeInvocation:withTestMethodConvention:lastObservedErrorIssue:]_block_invoke_3 + 24
+11  XCTestCore                    	       0x1018d913c __81+[XCTFailableInvocation invokeWithAsynchronousWait:lastObservedErrorIssue:block:]_block_invoke + 304
+12  XCTestCore                    	       0x1018ca5e0 __49+[XCTSwiftErrorObservation observeErrorsInBlock:]_block_invoke + 28
+13  XCTestCore                    	       0x101944a40 static XCTSwiftErrorObservation._observeErrors(in:) + 312
+14  XCTestCore                    	       0x101944ac0 @objc static XCTSwiftErrorObservation._observeErrors(in:) + 44
+15  XCTestCore                    	       0x1018ca4f4 +[XCTSwiftErrorObservation observeErrorsInBlock:] + 164
+16  XCTestCore                    	       0x1018d8f1c +[XCTFailableInvocation invokeWithAsynchronousWait:lastObservedErrorIssue:block:] + 180
+17  XCTestCore                    	       0x1018d9680 +[XCTFailableInvocation invokeInvocation:withTestMethodConvention:lastObservedErrorIssue:] + 424
+18  XCTestCore                    	       0x1018d9a10 +[XCTFailableInvocation invokeInvocation:lastObservedErrorIssue:] + 68
+19  XCTestCore                    	       0x1018fe6c8 -[XCTestCase invokeTestMethod:] + 60
+20  XCTestCore                    	       0x1018fed1c __24-[XCTestCase invokeTest]_block_invoke.90 + 64
+21  XCTestCore                    	       0x101904080 -[XCTestCase(XCTIssueHandling) _caughtUnhandledDeveloperExceptionPermittingControlFlowInterruptions:caughtInterruptionException:whileExecutingBlock:] + 160
+22  XCTestCore                    	       0x1018fe910 -[XCTestCase invokeTest] + 524
+23  XCTestCore                    	       0x1019002bc __26-[XCTestCase performTest:]_block_invoke.127 + 32
+24  XCTestCore                    	       0x101904080 -[XCTestCase(XCTIssueHandling) _caughtUnhandledDeveloperExceptionPermittingControlFlowInterruptions:caughtInterruptionException:whileExecutingBlock:] + 160
+25  XCTestCore                    	       0x1018ffcb8 __26-[XCTestCase performTest:]_block_invoke.117 + 492
+26  XCTestCore                    	       0x1018c7538 +[XCTContext _runInChildOfContext:forTestCase:markAsReportingBase:block:] + 164
+27  XCTestCore                    	       0x1018c7440 +[XCTContext runInContextForTestCase:markAsReportingBase:block:] + 96
+28  XCTestCore                    	       0x1018ff788 -[XCTestCase performTest:] + 248
+29  XCTestCore                    	       0x1018fb6f8 -[XCTest runTest] + 44
+30  XCTestCore                    	       0x10190a740 -[XCTestSuite runTestBasedOnRepetitionPolicy:testRun:] + 60
+31  XCTestCore                    	       0x10190a570 __27-[XCTestSuite performTest:]_block_invoke + 176
+32  XCTestCore                    	       0x101909b6c __59-[XCTestSuite _performProtectedSectionForTest:testSection:]_block_invoke + 40
+33  XCTestCore                    	       0x1018c7538 +[XCTContext _runInChildOfContext:forTestCase:markAsReportingBase:block:] + 164
+34  XCTestCore                    	       0x1018c7440 +[XCTContext runInContextForTestCase:markAsReportingBase:block:] + 96
+35  XCTestCore                    	       0x101909ae8 -[XCTestSuite _performProtectedSectionForTest:testSection:] + 140
+36  XCTestCore                    	       0x10190a020 -[XCTestSuite performTest:] + 208
+37  XCTestCore                    	       0x1018fb6f8 -[XCTest runTest] + 44
+38  XCTestCore                    	       0x101926b04 __89-[XCTTestRunSession executeTestsWithIdentifiers:skippingTestsWithIdentifiers:completion:]_block_invoke + 532
+39  XCTestCore                    	       0x1018c7538 +[XCTContext _runInChildOfContext:forTestCase:markAsReportingBase:block:] + 164
+40  XCTestCore                    	       0x1018c7440 +[XCTContext runInContextForTestCase:markAsReportingBase:block:] + 96
+41  XCTestCore                    	       0x101926800 -[XCTTestRunSession executeTestsWithIdentifiers:skippingTestsWithIdentifiers:completion:] + 296
+42  XCTestCore                    	       0x10191d7e4 __103-[XCTExecutionWorker executeTestIdentifiers:skippingTestIdentifiers:completionHandler:completionQueue:]_block_invoke_2 + 128
+43  XCTestCore                    	       0x10191da0c __XCTAsyncEnumerateWithWaiter_block_invoke + 212
+44  XCTestCore                    	       0x10191dba0 __XCTAsyncEnumerate_block_invoke.100 + 52
+45  XCTestCore                    	       0x10191c9c4 XCTAsyncEnumerateWithWaiter + 480
+46  XCTestCore                    	       0x10191d6b0 __103-[XCTExecutionWorker executeTestIdentifiers:skippingTestIdentifiers:completionHandler:completionQueue:]_block_invoke + 124
+47  XCTestCore                    	       0x10191cc80 -[XCTExecutionWorker runWithError:] + 76
+48  XCTestCore                    	       0x10191ab84 __25-[XCTestDriver _runTests]_block_invoke.289 + 52
+49  XCTestCore                    	       0x10192bd60 -[XCTestObservationCenter _observeTestExecutionForTestBundle:inBlock:] + 96
+50  XCTestCore                    	       0x10191a564 -[XCTestDriver _runTests] + 1124
+51  XCTestCore                    	       0x10191c454 _XCTestMain + 116
+52  libXCTestBundleInject.dylib   	       0x10088548c RunTestsFromRunLoop + 108
+53  CoreFoundation                	       0x1803e467c __CFMachPortPerform + 164
+54  CoreFoundation                	       0x180421054 __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE1_PERFORM_FUNCTION__ + 56
+55  CoreFoundation                	       0x1804206a4 __CFRunLoopDoSource1 + 476
+56  CoreFoundation                	       0x18041f770 __CFRunLoopRun + 2100
+57  CoreFoundation                	       0x18041a330 _CFRunLoopRunSpecificWithOptions + 496
+58  GraphicsServices              	       0x1932cb9c0 GSEventRunModal + 116
+59  UIKitCore                     	       0x18647a474 -[UIApplication _run] + 776
+60  UIKitCore                     	       0x186b747fc UIApplicationMain + 120
+61  SwiftUI                       	       0x1d2d62bd4 closure #1 in KitRendererCommon(_:) + 164
+62  SwiftUI                       	       0x1d2d62948 runApp<A>(_:) + 180
+63  SwiftUI                       	       0x1d2af3d34 static App.main() + 148
+64  Scribe.debug.dylib            	       0x1035242f8 static ScribeApp.$main() + 40
+65  Scribe.debug.dylib            	       0x1035243a4 __debug_main_executable_dylib_entry_point + 12
+66  dyld_sim                      	       0x1009030b4 start_sim + 20
+67  dyld                          	       0x100a0bda4 start + 6992
+
+Thread 1::  Dispatch queue: com.apple.libtrace.state.block-list
+0   libsystem_kernel.dylib        	       0x100b76788 __ulock_wait + 8
+1   libdispatch.dylib             	       0x180186f0c _dispatch_thread_main_event_wait_slow + 72
+2   libdispatch.dylib             	       0x180195da0 __DISPATCH_WAIT_FOR_QUEUE__ + 484
+3   libdispatch.dylib             	       0x180195824 _dispatch_sync_f_slow + 156
+4   libsystem_trace.dylib         	       0x1800b908c ___os_state_request_for_self_block_invoke + 340
+5   libdispatch.dylib             	       0x1801856a0 _dispatch_call_block_and_release + 24
+6   libdispatch.dylib             	       0x18019fe98 _dispatch_client_callout + 12
+7   libdispatch.dylib             	       0x18018e724 _dispatch_lane_serial_drain + 984
+8   libdispatch.dylib             	       0x18018f1e8 _dispatch_lane_invoke + 396
+9   libdispatch.dylib             	       0x180199ec0 _dispatch_root_queue_drain_deferred_wlh + 288
+10  libdispatch.dylib             	       0x180199608 _dispatch_workloop_worker_thread + 692
+11  libsystem_pthread.dylib       	       0x10146ec28 _pthread_wqthread + 288
+12  libsystem_pthread.dylib       	       0x10146da28 start_wqthread + 8
+
+Thread 2:
+
+Thread 3:
+
+Thread 4:
+
+Thread 5:: com.apple.uikit.eventfetch-thread
+0   libsystem_kernel.dylib        	       0x100b74b70 mach_msg2_trap + 8
+1   libsystem_kernel.dylib        	       0x100b85e5c mach_msg2_internal + 72
+2   libsystem_kernel.dylib        	       0x100b7cc44 mach_msg_overwrite + 484
+3   libsystem_kernel.dylib        	       0x100b74ef0 mach_msg + 20
+4   CoreFoundation                	       0x1804201ec __CFRunLoopServiceMachPort + 156
+5   CoreFoundation                	       0x18041f3a4 __CFRunLoopRun + 1128
+6   CoreFoundation                	       0x18041a330 _CFRunLoopRunSpecificWithOptions + 496
+7   Foundation                    	       0x181107abc -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 208
+8   Foundation                    	       0x181107cd8 -[NSRunLoop(NSRunLoop) runUntilDate:] + 60
+9   UIKitCore                     	       0x1861ad408 -[UIEventFetcher threadMain] + 404
+10  Foundation                    	       0x18112cf4c __NSThread__start__ + 716
+11  libsystem_pthread.dylib       	       0x10147263c _pthread_start + 104
+12  libsystem_pthread.dylib       	       0x10146da34 thread_start + 8
+
+Thread 6:
+
+Thread 7:
+
+Thread 8:
+
+
+Thread 0 crashed with ARM Thread State (64-bit):
+    x0: 0x0000000102e0c000   x1: 0x0000000000000000   x2: 0xffffffffffffffc0   x3: 0x0000000106078a00
+    x4: 0x0000000106078a80   x5: 0x000000016f5b0dc0   x6: 0x0000000000000064   x7: 0x0000000000000000
+    x8: 0x0000000000000000   x9: 0x00000000ffb93f5f  x10: 0x001eb0f50046c0a0  x11: 0x001ea0000046bc00
+   x12: 0x000000f500000000  x13: 0x000000000000000d  x14: 0x0000000000000000  x15: 0x0000000102dd0000
+   x16: 0xfffff0007fc00000  x17: 0xffffffffb00007ff  x18: 0x0000000000000000  x19: 0x000000016f5b0e90
+   x20: 0x00000001089a7cc0  x21: 0x000000018003ac00  x22: 0x0000000108a94000  x23: 0x0000000108a94140
+   x24: 0x000000010254d0f0  x25: 0x000000010254d0f0  x26: 0x0000000000000001  x27: 0x000000010191db6c
+   x28: 0x00000001019c4dc8   fp: 0x000000016f5b0e70   lr: 0x00000001981ca94c
+    sp: 0x000000016f5b0e50   pc: 0x00000001981ca94c cpsr: 0x00001000
+   far: 0x0000000000000000  esr: 0xf2000001 (Breakpoint) brk 1
+
+Binary Images:
+       0x100848000 -        0x10084bfff com.scribe.app (1.0) <db7efadd-befa-3b6e-8d4b-919bf0a06ed1> /Users/USER/Library/Developer/XCTestDevices/DA18C050-0BBA-425F-89CC-E65C006880BD/data/Containers/Bundle/Application/C79387DC-B49A-4394-BA83-3418D953C7BD/Scribe.app/Scribe
+       0x1008f8000 -        0x100947fff dyld_sim (*) <dfd921ff-b983-310e-ba90-bc98fcd29fff> /Volumes/VOLUME/*/dyld_sim
+       0x100be4000 -        0x100c7ffff libRPAC.dylib (*) <57de808b-491b-32e4-80e3-8ed52750d307> /Volumes/VOLUME/*/libRPAC.dylib
+       0x100884000 -        0x100887fff libXCTestBundleInject.dylib (*) <0579d6f4-b211-3ec8-a147-c26c7291ed6f> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestBundleInject.dylib
+       0x10129c000 -        0x1012dffff libMainThreadChecker.dylib (*) <39c9f585-5d4f-3aff-80d2-ae5862bd2d3d> /Volumes/VOLUME/*/libMainThreadChecker.dylib
+       0x1034ec000 -        0x1041effff Scribe.debug.dylib (*) <78bc8ec3-0bca-3438-b55b-ee199057b2c3> /Users/USER/Library/Developer/XCTestDevices/DA18C050-0BBA-425F-89CC-E65C006880BD/data/Containers/Bundle/Application/C79387DC-B49A-4394-BA83-3418D953C7BD/Scribe.app/Scribe.debug.dylib
+       0x101d28000 -        0x102033fff org.ggml.llama (1.0) <052ce4b0-81d7-3406-aee6-6ab9d7c16176> /Users/USER/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/llama.framework/llama
+       0x100b2c000 -        0x100b4bfff com.apple.swiftdata.swiftui (1.0) <967535f1-7d2c-3368-89e3-e679dfb42faf> /Volumes/VOLUME/*/_SwiftData_SwiftUI.framework/_SwiftData_SwiftUI
+       0x10086c000 -        0x10086ffff libswift_stdio.dylib (*) <c6237a3d-737b-3ebf-9a2e-d94222238b15> /Volumes/VOLUME/*/libswift_stdio.dylib
+       0x100898000 -        0x1008a3fff libsystem_platform.dylib (*) <ab067c03-4295-3c6a-8577-178702f2e737> /usr/lib/system/libsystem_platform.dylib
+       0x100b74000 -        0x100baffff libsystem_kernel.dylib (*) <e3862500-b15a-3426-b2ce-9713149fcc8a> /usr/lib/system/libsystem_kernel.dylib
+       0x10146c000 -        0x10147bfff libsystem_pthread.dylib (*) <4111fc73-d5d4-33fe-bc39-17d853f6fe12> /usr/lib/system/libsystem_pthread.dylib
+       0x101450000 -        0x101457fff com.apple.dt.XCTest (16.0) <c6c02bc4-a206-3ade-acfe-44c4c4f900bd> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/XCTest
+       0x1018bc000 -        0x1019c3fff com.apple.dt.XCTestCore (16.0) <a4fe16dd-e8c7-3c24-81c4-546c8b3a4d06> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestCore.framework/XCTestCore
+       0x101ac8000 -        0x101baffff com.apple.dt.XCUIAutomation (16.0) <5b517707-cebc-3d3b-803e-39fce55fd8c5> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCUIAutomation.framework/XCUIAutomation
+       0x101630000 -        0x10168bfff com.apple.dt.XCTAutomationSupport (16.0) <3e7aec56-13ee-3a4b-ae88-a23a9dd3e155> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework/XCTAutomationSupport
+       0x101528000 -        0x101553fff com.apple.metricmeasurement (0) <91207f14-357a-357f-ab60-09ce7b10c29e> /Volumes/VOLUME/*/MetricMeasurement.framework/MetricMeasurement
+       0x102218000 -        0x10224ffff com.apple.dt.ResultDataPublisher (16.0) <2d8eebf0-9659-3978-ae2e-84cc181c7ba2> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/ResultDataPublisher.framework/ResultDataPublisher
+       0x102970000 -        0x102ac7fff com.apple.dt.swift-testing (1.0) <a26c360b-0f98-3a52-bfe7-304deda4f1ef> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/Testing.framework/Testing
+       0x1014ec000 -        0x1014f3fff com.apple.dt.XCTestSupport (16.0) <02215fc9-8f0a-32f4-8df5-68983fef08c2> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestSupport.framework/XCTestSupport
+       0x1016ec000 -        0x101713fff com.apple.dt.instruments.DTXConnectionServices (16.0) <5f7bb3ee-c013-333c-b64e-14c40ceb3666> /Volumes/VOLUME/*/DTXConnectionServices.framework/DTXConnectionServices
+       0x1008e4000 -        0x1008e7fff lib_TestingInterop.dylib (*) <58b1101a-6ba2-3964-9659-54657b4457ed> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/lib_TestingInterop.dylib
+       0x101508000 -        0x10150ffff com.apple.dt.AutomationMode (1.0) <12124edd-faf5-3852-bff9-b84edb6b0635> /Volumes/VOLUME/*/AutomationMode.framework/AutomationMode
+       0x1017d4000 -        0x10180ffff com.apple.accessibility.AccessibilityAudit (1.0) <a1cf2055-f10f-30e2-ba92-2cb59b43569f> /Volumes/VOLUME/*/AccessibilityAudit.framework/AccessibilityAudit
+       0x100878000 -        0x10087bfff libswiftUIKit.dylib (*) <733b1a6c-a00a-35cd-8132-26deac6d0847> /Volumes/VOLUME/*/libswiftUIKit.dylib
+       0x101738000 -        0x10175bfff com.apple.accessibility.AccessibilityPlatformTranslation (1.0) <8ba1f821-fb26-35eb-9369-1fd478804920> /Volumes/VOLUME/*/AccessibilityPlatformTranslation.framework/AccessibilityPlatformTranslation
+       0x102394000 -        0x102403fff com.apple.UIUnderstanding (1.0) <289639fc-2290-3f9b-9300-d3f30505392c> /Volumes/VOLUME/*/UIUnderstanding.framework/UIUnderstanding
+       0x1014b4000 -        0x1014b7fff com.apple.performance.SignpostNotification (1.174.8) <da2ac32a-f922-3cdf-b148-6265740db42f> /Volumes/VOLUME/*/SignpostNotification.framework/SignpostNotification
+       0x1022d4000 -        0x1022f7fff com.scribe.app.tests (1.0) <dfabfd60-bfa3-3821-b52b-12652b2609dd> /Users/USER/Library/Developer/XCTestDevices/DA18C050-0BBA-425F-89CC-E65C006880BD/data/Containers/Bundle/Application/C79387DC-B49A-4394-BA83-3418D953C7BD/Scribe.app/PlugIns/ScribeTests.xctest/ScribeTests
+       0x103328000 -        0x103387fff libXCTestSwiftSupport.dylib (*) <2d4f499f-7db5-36a2-8f8e-670fea41ac87> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib
+       0x1014c4000 -        0x1014cbfff com.apple.dt.swift-testing.overlay.Foundation (1.0) <b9005405-409c-3098-b3eb-7ac00bfc24ef> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/_Testing_Foundation.framework/_Testing_Foundation
+       0x101790000 -        0x10179ffff com.apple.dt.PreviewsServices (16.0) <ff56334c-e263-3acc-8b4b-38c23ea519b6> /Volumes/VOLUME/*/PreviewsServices.framework/PreviewsServices
+       0x101610000 -        0x10161bfff libobjc-trampolines.dylib (*) <49cee1df-baf9-3af7-b2c5-649c8c59d66e> /Volumes/VOLUME/*/libobjc-trampolines.dylib
+       0x1009ec000 -        0x100a93fff dyld (*) <9f682dcf-340c-3bfa-bcdd-dd702f30313e> /usr/lib/dyld
+       0x1980c9000 -        0x1985896df libswiftCore.dylib (*) <bdcc3744-659d-3242-a7df-7fe649493f97> /Volumes/VOLUME/*/libswiftCore.dylib
+       0x18038d000 -        0x1807bde9f com.apple.CoreFoundation (6.9) <60b1c025-06f0-35b4-9149-fe4b24bd02d1> /Volumes/VOLUME/*/CoreFoundation.framework/CoreFoundation
+       0x1932c9000 -        0x1932d0d9f com.apple.GraphicsServices (1.0) <55830c0b-fa63-3323-910b-4dc23d8cc6a6> /Volumes/VOLUME/*/GraphicsServices.framework/GraphicsServices
+       0x18525f000 -        0x18754a09f com.apple.UIKitCore (1.0) <a75a925a-252d-38a6-ae19-31ffbf14a755> /Volumes/VOLUME/*/UIKitCore.framework/UIKitCore
+       0x1d25a7000 -        0x1d374e59f com.apple.SwiftUI (7.4.27.1.101) <c25cb71e-a536-3b44-b7ae-f12b03900444> /Volumes/VOLUME/*/SwiftUI.framework/SwiftUI
+               0x0 - 0xffffffffffffffff ??? (*) <00000000-0000-0000-0000-000000000000> ???
+       0x180038000 -        0x180074943 libobjc.A.dylib (*) <b1cd6b14-472d-396c-bc0f-8d8cd4b5c31e> /Volumes/VOLUME/*/libobjc.A.dylib
+       0x180184000 -        0x1801c93bf libdispatch.dylib (*) <746b681e-29ce-3657-abc0-6fce3d59da62> /Volumes/VOLUME/*/libdispatch.dylib
+       0x1800a0000 -        0x1800be01f libsystem_trace.dylib (*) <c062feb1-4391-3f35-ac05-7ab1d2dff2cd> /Volumes/VOLUME/*/libsystem_trace.dylib
+       0x18083d000 -        0x1815d0bff com.apple.Foundation (6.9) <d19e3444-cb0f-3327-877d-26fda92a282f> /Volumes/VOLUME/*/Foundation.framework/Foundation
+
+External Modification Summary:
+  Calls made by other processes targeting this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by all processes on this machine:
+    task_for_pid: 125
+    thread_create: 0
+    thread_set_state: 74
+
+VM Region Summary:
+ReadOnly portion of Libraries: Total=1.7G resident=0K(0%) swapped_out_or_unallocated=1.7G(100%)
+Writable regions: Total=44.8M written=1522K(3%) resident=1522K(3%) swapped_out=0K(0%) unallocated=43.3M(97%)
+
+                                VIRTUAL   REGION 
+REGION TYPE                        SIZE    COUNT (non-coalesced) 
+===========                     =======  ======= 
+Activity Tracing                   256K        1 
+AttributeGraph Data               1024K        1 
+ColorSync                           16K        1 
+CoreAnimation                       64K        1 
+Foundation                          16K        1 
+Kernel Alloc Once                   32K        1 
+MALLOC                            21.0M       11 
+MALLOC guard page                 3536K        4 
+SQLite page cache                  256K        2 
+STACK GUARD                       56.1M        9 
+Stack                             12.2M        9 
+VM_ALLOCATE                         32K        1 
+__AUTH_CONST                        32K        1 
+__DATA                            57.2M      842 
+__DATA_CONST                     103.3M      857 
+__DATA_DIRTY                       155K       14 
+__FONT_DATA                        2352        1 
+__LINKEDIT                       734.3M       35 
+__LLVM_COV                        1392K        2 
+__OBJC_RO                         55.6M        1 
+__OBJC_RW                         2334K        1 
+__TEXT                             1.0G      872 
+__TPRO_CONST                       164K        3 
+dyld private memory                3.0G       16 
+mapped file                       49.7M       10 
+page table in kernel              1522K        1 
+shared memory                       16K        1 
+===========                     =======  ======= 
+TOTAL                              5.1G     2699 
+
+
+-----------
+Full Report
+-----------
+
+{"app_name":"Scribe","timestamp":"2026-04-09 17:45:31.00 +0300","app_version":"1.0","slice_uuid":"db7efadd-befa-3b6e-8d4b-919bf0a06ed1","build_version":"1","platform":7,"bundleID":"com.scribe.app","share_with_app_devs":1,"is_first_party":0,"bug_type":"309","os_version":"macOS 26.4 (25E246)","roots_installed":0,"name":"Scribe","incident_id":"93DA8878-F135-4B11-B765-64CAC9E1DC1C"}
+{
+  "uptime" : 220000,
+  "procRole" : "Foreground",
+  "version" : 2,
+  "userID" : 501,
+  "deployVersion" : 210,
+  "modelCode" : "Mac15,9",
+  "coalitionID" : 36880,
+  "osVersion" : {
+    "train" : "macOS 26.4",
+    "build" : "25E246",
+    "releaseType" : "User"
+  },
+  "captureTime" : "2026-04-09 17:45:28.8205 +0300",
+  "codeSigningMonitor" : 2,
+  "incident" : "93DA8878-F135-4B11-B765-64CAC9E1DC1C",
+  "pid" : 20046,
+  "translated" : false,
+  "cpuType" : "ARM-64",
+  "procLaunch" : "2026-04-09 17:45:26.8122 +0300",
+  "procStartAbsTime" : 5504903166617,
+  "procExitAbsTime" : 5504951347199,
+  "procName" : "Scribe",
+  "procPath" : "\/Users\/USER\/Library\/Developer\/XCTestDevices\/DA18C050-0BBA-425F-89CC-E65C006880BD\/data\/Containers\/Bundle\/Application\/C79387DC-B49A-4394-BA83-3418D953C7BD\/Scribe.app\/Scribe",
+  "bundleInfo" : {"CFBundleShortVersionString":"1.0","CFBundleVersion":"1","CFBundleIdentifier":"com.scribe.app"},
+  "storeInfo" : {"deviceIdentifierForVendor":"579663B2-1157-597D-BB1C-E6F1BAEAB373","thirdParty":true},
+  "parentProc" : "launchd_sim",
+  "parentPid" : 19825,
+  "coalitionName" : "com.apple.CoreSimulator.SimDevice.DA18C050-0BBA-425F-89CC-E65C006880BD",
+  "crashReporterKey" : "D3C81108-D128-D827-6EFC-D48DDA84E24C",
+  "appleIntelligenceStatus" : {"state":"unavailable","reasons":["selectedLanguageDoesNotMatchSelectedSiriLanguage","selectedLanguageDoesNotMatchSelectedSiriLanguageInfo(system: en-GB, siri: en)"]},
+  "developerMode" : 1,
+  "responsiblePid" : 3732,
+  "responsibleProc" : "SimulatorTrampoline",
+  "codeSigningID" : "com.scribe.app",
+  "codeSigningTeamID" : "",
+  "codeSigningFlags" : 570425857,
+  "codeSigningValidationCategory" : 10,
+  "codeSigningTrustLevel" : 4294967295,
+  "codeSigningAuxiliaryInfo" : 0,
+  "instructionByteStream" : {"beforePC":"qwEAtev8YNMrAQC14AMFquEDBqrkAwqq5QMJquYDB6rnAwiqBWD\/lw==","atPC":"IAAg1IifgVICAAAUaLqBUv8TALnoBwD5SACAUugDADlAFgDQABAPkQ=="},
+  "bootSessionUUID" : "F5339563-9BA0-4617-90F7-1424297E8C14",
+  "wakeTime" : 15879,
+  "sleepWakeUUID" : "09392138-C775-4C61-9F2E-6E480C474A4C",
+  "sip" : "enabled",
+  "exception" : {"codes":"0x0000000000000001, 0x00000001981ca94c","rawCodes":[1,6846982476],"type":"EXC_BREAKPOINT","signal":"SIGTRAP"},
+  "termination" : {"flags":0,"code":5,"namespace":"SIGNAL","indicator":"Trace\/BPT trap: 5","byProc":"exc handler","byPid":20046},
+  "os_fault" : {"process":"Scribe"},
+  "extMods" : {"caller":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"system":{"thread_create":0,"thread_set_state":74,"task_for_pid":125},"targeted":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"warnings":0},
+  "faultingThread" : 0,
+  "threads" : [{"triggered":true,"id":5523821,"threadState":{"x":[{"value":4343250944},{"value":0},{"value":18446744073709551552},{"value":4396124672},{"value":4396124800},{"value":6163205568},{"value":100},{"value":0},{"value":0},{"value":4290330463},{"value":8638815619432608},{"value":8620171166399488},{"value":1052266987520},{"value":13},{"value":0},{"value":4343005184},{"value":18446726483666796544},{"value":18446744072367376383},{"value":0},{"value":6163205776},{"value":4439309504},{"value":6442691584,"symbolLocation":0,"symbol":"objc_msgSend"},{"value":4440276992},{"value":4440277312},{"value":4334080240},{"value":4334080240},{"value":1},{"value":4321303404,"symbolLocation":0,"symbol":"__XCTAsyncEnumerate_block_invoke.100"},{"value":4321988040,"symbolLocation":0,"symbol":"__block_descriptor_56_ea8_32s40bs48bs_e8_v12\u0001?0B8l"}],"flavor":"ARM_THREAD_STATE64","lr":{"value":6846982476},"cpsr":{"value":4096},"fp":{"value":6163205744},"sp":{"value":6163205712},"esr":{"value":4060086273,"description":"(Breakpoint) brk 1"},"pc":{"value":6846982476,"matchesCrashFrame":1},"far":{"value":0}},"queue":"com.apple.main-thread","frames":[{"imageOffset":1055052,"symbol":"closure #1 in closure #1 in _assertionFailure(_:_:file:line:flags:)","symbolLocation":460,"imageIndex":34},{"imageOffset":1053884,"symbol":"_assertionFailure(_:_:file:line:flags:)","symbolLocation":236,"imageIndex":34},{"imageOffset":212736,"sourceLine":65,"sourceFile":"SLinkPacketParser.swift","symbol":"SLinkPacketParser.findHeader()","imageIndex":5,"symbolLocation":292},{"imageOffset":209772,"sourceLine":24,"sourceFile":"SLinkPacketParser.swift","symbol":"SLinkPacketParser.tryParsePacket()","imageIndex":5,"symbolLocation":136},{"imageOffset":209100,"sourceLine":14,"sourceFile":"SLinkPacketParser.swift","symbol":"SLinkPacketParser.feed(_:)","imageIndex":5,"symbolLocation":240},{"imageOffset":77984,"sourceLine":12,"sourceFile":"SLinkPacketParserTests.swift","symbol":"SLinkPacketParserTests.testParserFindsHeader()","imageIndex":28,"symbolLocation":296},{"imageOffset":79488,"sourceFile":"\/<compiler-generated>","symbol":"@objc SLinkPacketParserTests.testParserFindsHeader()","symbolLocation":44,"imageIndex":28},{"imageOffset":1290432,"symbol":"__invoking___","symbolLocation":144,"imageIndex":35},{"imageOffset":1278752,"symbol":"-[NSInvocation invoke]","symbolLocation":276,"imageIndex":35},{"imageOffset":121220,"symbol":"+[XCTFailableInvocation invokeStandardConventionInvocation:completion:]","symbolLocation":60,"imageIndex":13},{"imageOffset":121152,"symbol":"__90+[XCTFailableInvocation invokeInvocation:withTestMethodConvention:lastObservedErrorIssue:]_block_invoke_3","symbolLocation":24,"imageIndex":13},{"imageOffset":119100,"symbol":"__81+[XCTFailableInvocation invokeWithAsynchronousWait:lastObservedErrorIssue:block:]_block_invoke","symbolLocation":304,"imageIndex":13},{"imageOffset":58848,"symbol":"__49+[XCTSwiftErrorObservation observeErrorsInBlock:]_block_invoke","symbolLocation":28,"imageIndex":13},{"imageOffset":559680,"symbol":"static XCTSwiftErrorObservation._observeErrors(in:)","symbolLocation":312,"imageIndex":13},{"imageOffset":559808,"symbol":"@objc static XCTSwiftErrorObservation._observeErrors(in:)","symbolLocation":44,"imageIndex":13},{"imageOffset":58612,"symbol":"+[XCTSwiftErrorObservation observeErrorsInBlock:]","symbolLocation":164,"imageIndex":13},{"imageOffset":118556,"symbol":"+[XCTFailableInvocation invokeWithAsynchronousWait:lastObservedErrorIssue:block:]","symbolLocation":180,"imageIndex":13},{"imageOffset":120448,"symbol":"+[XCTFailableInvocation invokeInvocation:withTestMethodConvention:lastObservedErrorIssue:]","symbolLocation":424,"imageIndex":13},{"imageOffset":121360,"symbol":"+[XCTFailableInvocation invokeInvocation:lastObservedErrorIssue:]","symbolLocation":68,"imageIndex":13},{"imageOffset":272072,"symbol":"-[XCTestCase invokeTestMethod:]","symbolLocation":60,"imageIndex":13},{"imageOffset":273692,"symbol":"__24-[XCTestCase invokeTest]_block_invoke.90","symbolLocation":64,"imageIndex":13},{"imageOffset":295040,"symbol":"-[XCTestCase(XCTIssueHandling) _caughtUnhandledDeveloperExceptionPermittingControlFlowInterruptions:caughtInterruptionException:whileExecutingBlock:]","symbolLocation":160,"imageIndex":13},{"imageOffset":272656,"symbol":"-[XCTestCase invokeTest]","symbolLocation":524,"imageIndex":13},{"imageOffset":279228,"symbol":"__26-[XCTestCase performTest:]_block_invoke.127","symbolLocation":32,"imageIndex":13},{"imageOffset":295040,"symbol":"-[XCTestCase(XCTIssueHandling) _caughtUnhandledDeveloperExceptionPermittingControlFlowInterruptions:caughtInterruptionException:whileExecutingBlock:]","symbolLocation":160,"imageIndex":13},{"imageOffset":277688,"symbol":"__26-[XCTestCase performTest:]_block_invoke.117","symbolLocation":492,"imageIndex":13},{"imageOffset":46392,"symbol":"+[XCTContext _runInChildOfContext:forTestCase:markAsReportingBase:block:]","symbolLocation":164,"imageIndex":13},{"imageOffset":46144,"symbol":"+[XCTContext runInContextForTestCase:markAsReportingBase:block:]","symbolLocation":96,"imageIndex":13},{"imageOffset":276360,"symbol":"-[XCTestCase performTest:]","symbolLocation":248,"imageIndex":13},{"imageOffset":259832,"symbol":"-[XCTest runTest]","symbolLocation":44,"imageIndex":13},{"imageOffset":321344,"symbol":"-[XCTestSuite runTestBasedOnRepetitionPolicy:testRun:]","symbolLocation":60,"imageIndex":13},{"imageOffset":320880,"symbol":"__27-[XCTestSuite performTest:]_block_invoke","symbolLocation":176,"imageIndex":13},{"imageOffset":318316,"symbol":"__59-[XCTestSuite _performProtectedSectionForTest:testSection:]_block_invoke","symbolLocation":40,"imageIndex":13},{"imageOffset":46392,"symbol":"+[XCTContext _runInChildOfContext:forTestCase:markAsReportingBase:block:]","symbolLocation":164,"imageIndex":13},{"imageOffset":46144,"symbol":"+[XCTContext runInContextForTestCase:markAsReportingBase:block:]","symbolLocation":96,"imageIndex":13},{"imageOffset":318184,"symbol":"-[XCTestSuite _performProtectedSectionForTest:testSection:]","symbolLocation":140,"imageIndex":13},{"imageOffset":319520,"symbol":"-[XCTestSuite performTest:]","symbolLocation":208,"imageIndex":13},{"imageOffset":259832,"symbol":"-[XCTest runTest]","symbolLocation":44,"imageIndex":13},{"imageOffset":436996,"symbol":"__89-[XCTTestRunSession executeTestsWithIdentifiers:skippingTestsWithIdentifiers:completion:]_block_invoke","symbolLocation":532,"imageIndex":13},{"imageOffset":46392,"symbol":"+[XCTContext _runInChildOfContext:forTestCase:markAsReportingBase:block:]","symbolLocation":164,"imageIndex":13},{"imageOffset":46144,"symbol":"+[XCTContext runInContextForTestCase:markAsReportingBase:block:]","symbolLocation":96,"imageIndex":13},{"imageOffset":436224,"symbol":"-[XCTTestRunSession executeTestsWithIdentifiers:skippingTestsWithIdentifiers:completion:]","symbolLocation":296,"imageIndex":13},{"imageOffset":399332,"symbol":"__103-[XCTExecutionWorker executeTestIdentifiers:skippingTestIdentifiers:completionHandler:completionQueue:]_block_invoke_2","symbolLocation":128,"imageIndex":13},{"imageOffset":399884,"symbol":"__XCTAsyncEnumerateWithWaiter_block_invoke","symbolLocation":212,"imageIndex":13},{"imageOffset":400288,"symbol":"__XCTAsyncEnumerate_block_invoke.100","symbolLocation":52,"imageIndex":13},{"imageOffset":395716,"symbol":"XCTAsyncEnumerateWithWaiter","symbolLocation":480,"imageIndex":13},{"imageOffset":399024,"symbol":"__103-[XCTExecutionWorker executeTestIdentifiers:skippingTestIdentifiers:completionHandler:completionQueue:]_block_invoke","symbolLocation":124,"imageIndex":13},{"imageOffset":396416,"symbol":"-[XCTExecutionWorker runWithError:]","symbolLocation":76,"imageIndex":13},{"imageOffset":387972,"symbol":"__25-[XCTestDriver _runTests]_block_invoke.289","symbolLocation":52,"imageIndex":13},{"imageOffset":458080,"symbol":"-[XCTestObservationCenter _observeTestExecutionForTestBundle:inBlock:]","symbolLocation":96,"imageIndex":13},{"imageOffset":386404,"symbol":"-[XCTestDriver _runTests]","symbolLocation":1124,"imageIndex":13},{"imageOffset":394324,"symbol":"_XCTestMain","symbolLocation":116,"imageIndex":13},{"imageOffset":5260,"symbol":"RunTestsFromRunLoop","symbolLocation":108,"imageIndex":3},{"imageOffset":358012,"symbol":"__CFMachPortPerform","symbolLocation":164,"imageIndex":35},{"imageOffset":606292,"symbol":"__CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE1_PERFORM_FUNCTION__","symbolLocation":56,"imageIndex":35},{"imageOffset":603812,"symbol":"__CFRunLoopDoSource1","symbolLocation":476,"imageIndex":35},{"imageOffset":599920,"symbol":"__CFRunLoopRun","symbolLocation":2100,"imageIndex":35},{"imageOffset":578352,"symbol":"_CFRunLoopRunSpecificWithOptions","symbolLocation":496,"imageIndex":35},{"imageOffset":10688,"symbol":"GSEventRunModal","symbolLocation":116,"imageIndex":36},{"imageOffset":18986100,"symbol":"-[UIApplication _run]","symbolLocation":776,"imageIndex":37},{"imageOffset":26302460,"symbol":"UIApplicationMain","symbolLocation":120,"imageIndex":37},{"imageOffset":8109012,"symbol":"closure #1 in KitRendererCommon(_:)","symbolLocation":164,"imageIndex":38},{"imageOffset":8108360,"symbol":"runApp<A>(_:)","symbolLocation":180,"imageIndex":38},{"imageOffset":5557556,"symbol":"static App.main()","symbolLocation":148,"imageIndex":38},{"imageOffset":230136,"sourceFile":"\/<compiler-generated>","symbol":"static ScribeApp.$main()","symbolLocation":40,"imageIndex":5},{"imageOffset":230308,"sourceFile":"ScribeApp.swift","symbol":"__debug_main_executable_dylib_entry_point","symbolLocation":12,"imageIndex":5},{"imageOffset":45236,"symbol":"start_sim","symbolLocation":20,"imageIndex":1},{"imageOffset":130468,"symbol":"start","symbolLocation":6992,"imageIndex":33}]},{"id":5524129,"threadState":{"x":[{"value":18446744073709551612},{"value":0},{"value":257},{"value":0},{"value":335007449088},{"value":0},{"value":2},{"value":0},{"value":1},{"value":3},{"value":19},{"value":2},{"value":78},{"value":0},{"value":0},{"value":0},{"value":515},{"value":18446744072367376383},{"value":0},{"value":6163785488},{"value":1},{"value":17409},{"value":6163785440},{"value":6444109852,"symbolLocation":0,"symbol":"_dispatch_main_queue_push"},{"value":18},{"value":4307435520},{"value":0},{"value":0},{"value":9223372036873190311}],"flavor":"ARM_THREAD_STATE64","lr":{"value":6444052236},"cpsr":{"value":1073745920},"fp":{"value":6163785312},"sp":{"value":6163785280},"esr":{"value":1442840704,"description":"(Syscall)"},"pc":{"value":4306986888},"far":{"value":0}},"queue":"com.apple.libtrace.state.block-list","frames":[{"imageOffset":10120,"symbol":"__ulock_wait","symbolLocation":8,"imageIndex":10},{"imageOffset":12044,"symbol":"_dispatch_thread_main_event_wait_slow","symbolLocation":72,"imageIndex":41},{"imageOffset":73120,"symbol":"__DISPATCH_WAIT_FOR_QUEUE__","symbolLocation":484,"imageIndex":41},{"imageOffset":71716,"symbol":"_dispatch_sync_f_slow","symbolLocation":156,"imageIndex":41},{"imageOffset":102540,"symbol":"___os_state_request_for_self_block_invoke","symbolLocation":340,"imageIndex":42},{"imageOffset":5792,"symbol":"_dispatch_call_block_and_release","symbolLocation":24,"imageIndex":41},{"imageOffset":114328,"symbol":"_dispatch_client_callout","symbolLocation":12,"imageIndex":41},{"imageOffset":42788,"symbol":"_dispatch_lane_serial_drain","symbolLocation":984,"imageIndex":41},{"imageOffset":45544,"symbol":"_dispatch_lane_invoke","symbolLocation":396,"imageIndex":41},{"imageOffset":89792,"symbol":"_dispatch_root_queue_drain_deferred_wlh","symbolLocation":288,"imageIndex":41},{"imageOffset":87560,"symbol":"_dispatch_workloop_worker_thread","symbolLocation":692,"imageIndex":41},{"imageOffset":11304,"symbol":"_pthread_wqthread","symbolLocation":288,"imageIndex":11},{"imageOffset":6696,"symbol":"start_wqthread","symbolLocation":8,"imageIndex":11}]},{"id":5524131,"frames":[],"threadState":{"x":[{"value":6164361216},{"value":3587},{"value":6163824640},{"value":0},{"value":409604},{"value":18446744073709551615},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0}],"flavor":"ARM_THREAD_STATE64","lr":{"value":0},"cpsr":{"value":4096},"fp":{"value":0},"sp":{"value":6164361216},"esr":{"value":1442840704,"description":"(Syscall)"},"pc":{"value":4316387872},"far":{"value":0}}},{"id":5524132,"frames":[],"threadState":{"x":[{"value":6164934656},{"value":3843},{"value":6164398080},{"value":0},{"value":409604},{"value":18446744073709551615},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0}],"flavor":"ARM_THREAD_STATE64","lr":{"value":0},"cpsr":{"value":4096},"fp":{"value":0},"sp":{"value":6164934656},"esr":{"value":1442840704,"description":"(Syscall)"},"pc":{"value":4316387872},"far":{"value":0}}},{"id":5524133,"frames":[],"threadState":{"x":[{"value":6165508096},{"value":9219},{"value":6164971520},{"value":0},{"value":409602},{"value":18446744073709551615},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0}],"flavor":"ARM_THREAD_STATE64","lr":{"value":0},"cpsr":{"value":4096},"fp":{"value":0},"sp":{"value":6165508096},"esr":{"value":1442840704,"description":"(Syscall)"},"pc":{"value":4316387872},"far":{"value":0}}},{"id":5524134,"name":"com.apple.uikit.eventfetch-thread","threadState":{"x":[{"value":268451845},{"value":21592279046},{"value":8589934592},{"value":51689931407360},{"value":2162692},{"value":51689931407360},{"value":2},{"value":4294967295},{"value":0},{"value":17179869184},{"value":0},{"value":2},{"value":0},{"value":0},{"value":12035},{"value":3072},{"value":18446744073709551569},{"value":18446744072367376383},{"value":0},{"value":4294967295},{"value":2},{"value":51689931407360},{"value":2162692},{"value":51689931407360},{"value":21592279046},{"value":6166076808},{"value":8589934592},{"value":18446744073709550527},{"value":4307255296,"symbolLocation":0,"symbol":"_libkernel_string_functions"}],"flavor":"ARM_THREAD_STATE64","lr":{"value":4307050076},"cpsr":{"value":4096},"fp":{"value":6166076656},"sp":{"value":6166076576},"esr":{"value":1442840704,"description":"(Syscall)"},"pc":{"value":4306979696},"far":{"value":0}},"frames":[{"imageOffset":2928,"symbol":"mach_msg2_trap","symbolLocation":8,"imageIndex":10},{"imageOffset":73308,"symbol":"mach_msg2_internal","symbolLocation":72,"imageIndex":10},{"imageOffset":35908,"symbol":"mach_msg_overwrite","symbolLocation":484,"imageIndex":10},{"imageOffset":3824,"symbol":"mach_msg","symbolLocation":20,"imageIndex":10},{"imageOffset":602604,"symbol":"__CFRunLoopServiceMachPort","symbolLocation":156,"imageIndex":35},{"imageOffset":598948,"symbol":"__CFRunLoopRun","symbolLocation":1128,"imageIndex":35},{"imageOffset":578352,"symbol":"_CFRunLoopRunSpecificWithOptions","symbolLocation":496,"imageIndex":35},{"imageOffset":9218748,"symbol":"-[NSRunLoop(NSRunLoop) runMode:beforeDate:]","symbolLocation":208,"imageIndex":43},{"imageOffset":9219288,"symbol":"-[NSRunLoop(NSRunLoop) runUntilDate:]","symbolLocation":60,"imageIndex":43},{"imageOffset":16049160,"symbol":"-[UIEventFetcher threadMain]","symbolLocation":404,"imageIndex":37},{"imageOffset":9371468,"symbol":"__NSThread__start__","symbolLocation":716,"imageIndex":43},{"imageOffset":26172,"symbol":"_pthread_start","symbolLocation":104,"imageIndex":11},{"imageOffset":6708,"symbol":"thread_start","symbolLocation":8,"imageIndex":11}]},{"id":5524135,"frames":[],"threadState":{"x":[{"value":6166654976},{"value":13571},{"value":6166118400},{"value":0},{"value":409604},{"value":18446744073709551615},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0}],"flavor":"ARM_THREAD_STATE64","lr":{"value":0},"cpsr":{"value":4096},"fp":{"value":0},"sp":{"value":6166654976},"esr":{"value":1442840704,"description":"(Syscall)"},"pc":{"value":4316387872},"far":{"value":0}}},{"id":5524138,"frames":[],"threadState":{"x":[{"value":6167228416},{"value":18179},{"value":6166691840},{"value":0},{"value":409604},{"value":18446744073709551615},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0}],"flavor":"ARM_THREAD_STATE64","lr":{"value":0},"cpsr":{"value":4096},"fp":{"value":0},"sp":{"value":6167228416},"esr":{"value":1442840704,"description":"(Syscall)"},"pc":{"value":4316387872},"far":{"value":0}}},{"id":5524139,"frames":[],"threadState":{"x":[{"value":6167801856},{"value":20739},{"value":6167265280},{"value":0},{"value":409604},{"value":18446744073709551615},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0}],"flavor":"ARM_THREAD_STATE64","lr":{"value":0},"cpsr":{"value":4096},"fp":{"value":0},"sp":{"value":6167801856},"esr":{"value":1442840704,"description":"(Syscall)"},"pc":{"value":4316387872},"far":{"value":0}}}],
+  "usedImages" : [
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4303650816,
+    "CFBundleShortVersionString" : "1.0",
+    "CFBundleIdentifier" : "com.scribe.app",
+    "size" : 16384,
+    "uuid" : "db7efadd-befa-3b6e-8d4b-919bf0a06ed1",
+    "path" : "\/Users\/USER\/Library\/Developer\/XCTestDevices\/DA18C050-0BBA-425F-89CC-E65C006880BD\/data\/Containers\/Bundle\/Application\/C79387DC-B49A-4394-BA83-3418D953C7BD\/Scribe.app\/Scribe",
+    "name" : "Scribe",
+    "CFBundleVersion" : "1"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4304371712,
+    "size" : 327680,
+    "uuid" : "dfd921ff-b983-310e-ba90-bc98fcd29fff",
+    "path" : "\/Volumes\/VOLUME\/*\/dyld_sim",
+    "name" : "dyld_sim"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4307435520,
+    "size" : 638976,
+    "uuid" : "57de808b-491b-32e4-80e3-8ed52750d307",
+    "path" : "\/Volumes\/VOLUME\/*\/libRPAC.dylib",
+    "name" : "libRPAC.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4303896576,
+    "size" : 16384,
+    "uuid" : "0579d6f4-b211-3ec8-a147-c26c7291ed6f",
+    "path" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/usr\/lib\/libXCTestBundleInject.dylib",
+    "name" : "libXCTestBundleInject.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4314480640,
+    "size" : 278528,
+    "uuid" : "39c9f585-5d4f-3aff-80d2-ae5862bd2d3d",
+    "path" : "\/Volumes\/VOLUME\/*\/libMainThreadChecker.dylib",
+    "name" : "libMainThreadChecker.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4350459904,
+    "size" : 13647872,
+    "uuid" : "78bc8ec3-0bca-3438-b55b-ee199057b2c3",
+    "path" : "\/Users\/USER\/Library\/Developer\/XCTestDevices\/DA18C050-0BBA-425F-89CC-E65C006880BD\/data\/Containers\/Bundle\/Application\/C79387DC-B49A-4394-BA83-3418D953C7BD\/Scribe.app\/Scribe.debug.dylib",
+    "name" : "Scribe.debug.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4325539840,
+    "CFBundleShortVersionString" : "1.0",
+    "CFBundleIdentifier" : "org.ggml.llama",
+    "size" : 3194880,
+    "uuid" : "052ce4b0-81d7-3406-aee6-6ab9d7c16176",
+    "path" : "\/Users\/USER\/Library\/Developer\/Xcode\/DerivedData\/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn\/Build\/Products\/Debug-iphonesimulator\/llama.framework\/llama",
+    "name" : "llama",
+    "CFBundleVersion" : "1"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4306681856,
+    "CFBundleShortVersionString" : "1.0",
+    "CFBundleIdentifier" : "com.apple.swiftdata.swiftui",
+    "size" : 131072,
+    "uuid" : "967535f1-7d2c-3368-89e3-e679dfb42faf",
+    "path" : "\/Volumes\/VOLUME\/*\/_SwiftData_SwiftUI.framework\/_SwiftData_SwiftUI",
+    "name" : "_SwiftData_SwiftUI",
+    "CFBundleVersion" : "6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4303798272,
+    "size" : 16384,
+    "uuid" : "c6237a3d-737b-3ebf-9a2e-d94222238b15",
+    "path" : "\/Volumes\/VOLUME\/*\/libswift_stdio.dylib",
+    "name" : "libswift_stdio.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4303978496,
+    "size" : 49152,
+    "uuid" : "ab067c03-4295-3c6a-8577-178702f2e737",
+    "path" : "\/usr\/lib\/system\/libsystem_platform.dylib",
+    "name" : "libsystem_platform.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4306976768,
+    "size" : 245760,
+    "uuid" : "e3862500-b15a-3426-b2ce-9713149fcc8a",
+    "path" : "\/usr\/lib\/system\/libsystem_kernel.dylib",
+    "name" : "libsystem_kernel.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4316381184,
+    "size" : 65536,
+    "uuid" : "4111fc73-d5d4-33fe-bc39-17d853f6fe12",
+    "path" : "\/usr\/lib\/system\/libsystem_pthread.dylib",
+    "name" : "libsystem_pthread.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4316266496,
+    "CFBundleShortVersionString" : "16.0",
+    "CFBundleIdentifier" : "com.apple.dt.XCTest",
+    "size" : 32768,
+    "uuid" : "c6c02bc4-a206-3ade-acfe-44c4c4f900bd",
+    "path" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/Library\/Frameworks\/XCTest.framework\/XCTest",
+    "name" : "XCTest",
+    "CFBundleVersion" : "24833"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4320903168,
+    "CFBundleShortVersionString" : "16.0",
+    "CFBundleIdentifier" : "com.apple.dt.XCTestCore",
+    "size" : 1081344,
+    "uuid" : "a4fe16dd-e8c7-3c24-81c4-546c8b3a4d06",
+    "path" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/Library\/PrivateFrameworks\/XCTestCore.framework\/XCTestCore",
+    "name" : "XCTestCore",
+    "CFBundleVersion" : "24833"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4323049472,
+    "CFBundleShortVersionString" : "16.0",
+    "CFBundleIdentifier" : "com.apple.dt.XCUIAutomation",
+    "size" : 950272,
+    "uuid" : "5b517707-cebc-3d3b-803e-39fce55fd8c5",
+    "path" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/Library\/Frameworks\/XCUIAutomation.framework\/XCUIAutomation",
+    "name" : "XCUIAutomation",
+    "CFBundleVersion" : "24833"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4318232576,
+    "CFBundleShortVersionString" : "16.0",
+    "CFBundleIdentifier" : "com.apple.dt.XCTAutomationSupport",
+    "size" : 376832,
+    "uuid" : "3e7aec56-13ee-3a4b-ae88-a23a9dd3e155",
+    "path" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/Library\/PrivateFrameworks\/XCTAutomationSupport.framework\/XCTAutomationSupport",
+    "name" : "XCTAutomationSupport",
+    "CFBundleVersion" : "24833"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4317151232,
+    "CFBundleShortVersionString" : "0",
+    "CFBundleIdentifier" : "com.apple.metricmeasurement",
+    "size" : 180224,
+    "uuid" : "91207f14-357a-357f-ab60-09ce7b10c29e",
+    "path" : "\/Volumes\/VOLUME\/*\/MetricMeasurement.framework\/MetricMeasurement",
+    "name" : "MetricMeasurement",
+    "CFBundleVersion" : "1"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4330717184,
+    "CFBundleShortVersionString" : "16.0",
+    "CFBundleIdentifier" : "com.apple.dt.ResultDataPublisher",
+    "size" : 229376,
+    "uuid" : "2d8eebf0-9659-3978-ae2e-84cc181c7ba2",
+    "path" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/Library\/PrivateFrameworks\/ResultDataPublisher.framework\/ResultDataPublisher",
+    "name" : "ResultDataPublisher",
+    "CFBundleVersion" : "24757"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4338417664,
+    "CFBundleShortVersionString" : "1.0",
+    "CFBundleIdentifier" : "com.apple.dt.swift-testing",
+    "size" : 1409024,
+    "uuid" : "a26c360b-0f98-3a52-bfe7-304deda4f1ef",
+    "path" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/Library\/Frameworks\/Testing.framework\/Testing",
+    "name" : "Testing",
+    "CFBundleVersion" : "1743"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4316905472,
+    "CFBundleShortVersionString" : "16.0",
+    "CFBundleIdentifier" : "com.apple.dt.XCTestSupport",
+    "size" : 32768,
+    "uuid" : "02215fc9-8f0a-32f4-8df5-68983fef08c2",
+    "path" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/Library\/PrivateFrameworks\/XCTestSupport.framework\/XCTestSupport",
+    "name" : "XCTestSupport",
+    "CFBundleVersion" : "24833"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4319002624,
+    "CFBundleShortVersionString" : "16.0",
+    "CFBundleIdentifier" : "com.apple.dt.instruments.DTXConnectionServices",
+    "size" : 163840,
+    "uuid" : "5f7bb3ee-c013-333c-b64e-14c40ceb3666",
+    "path" : "\/Volumes\/VOLUME\/*\/DTXConnectionServices.framework\/DTXConnectionServices",
+    "name" : "DTXConnectionServices",
+    "CFBundleVersion" : "64575.73.1"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4304289792,
+    "size" : 16384,
+    "uuid" : "58b1101a-6ba2-3964-9659-54657b4457ed",
+    "path" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/usr\/lib\/lib_TestingInterop.dylib",
+    "name" : "lib_TestingInterop.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4317020160,
+    "CFBundleShortVersionString" : "1.0",
+    "CFBundleIdentifier" : "com.apple.dt.AutomationMode",
+    "size" : 32768,
+    "uuid" : "12124edd-faf5-3852-bff9-b84edb6b0635",
+    "path" : "\/Volumes\/VOLUME\/*\/AutomationMode.framework\/AutomationMode",
+    "name" : "AutomationMode",
+    "CFBundleVersion" : "1"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4319952896,
+    "CFBundleShortVersionString" : "1.0",
+    "CFBundleIdentifier" : "com.apple.accessibility.AccessibilityAudit",
+    "size" : 245760,
+    "uuid" : "a1cf2055-f10f-30e2-ba92-2cb59b43569f",
+    "path" : "\/Volumes\/VOLUME\/*\/AccessibilityAudit.framework\/AccessibilityAudit",
+    "name" : "AccessibilityAudit",
+    "CFBundleVersion" : "187.40"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4303847424,
+    "size" : 16384,
+    "uuid" : "733b1a6c-a00a-35cd-8132-26deac6d0847",
+    "path" : "\/Volumes\/VOLUME\/*\/libswiftUIKit.dylib",
+    "name" : "libswiftUIKit.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4319313920,
+    "CFBundleShortVersionString" : "1.0",
+    "CFBundleIdentifier" : "com.apple.accessibility.AccessibilityPlatformTranslation",
+    "size" : 147456,
+    "uuid" : "8ba1f821-fb26-35eb-9369-1fd478804920",
+    "path" : "\/Volumes\/VOLUME\/*\/AccessibilityPlatformTranslation.framework\/AccessibilityPlatformTranslation",
+    "name" : "AccessibilityPlatformTranslation",
+    "CFBundleVersion" : "545.15"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4332273664,
+    "CFBundleShortVersionString" : "1.0",
+    "CFBundleIdentifier" : "com.apple.UIUnderstanding",
+    "size" : 458752,
+    "uuid" : "289639fc-2290-3f9b-9300-d3f30505392c",
+    "path" : "\/Volumes\/VOLUME\/*\/UIUnderstanding.framework\/UIUnderstanding",
+    "name" : "UIUnderstanding",
+    "CFBundleVersion" : "1"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4316676096,
+    "CFBundleShortVersionString" : "1.174.8",
+    "CFBundleIdentifier" : "com.apple.performance.SignpostNotification",
+    "size" : 16384,
+    "uuid" : "da2ac32a-f922-3cdf-b148-6265740db42f",
+    "path" : "\/Volumes\/VOLUME\/*\/SignpostNotification.framework\/SignpostNotification",
+    "name" : "SignpostNotification",
+    "CFBundleVersion" : "174.8"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4331487232,
+    "CFBundleShortVersionString" : "1.0",
+    "CFBundleIdentifier" : "com.scribe.app.tests",
+    "size" : 147456,
+    "uuid" : "dfabfd60-bfa3-3821-b52b-12652b2609dd",
+    "path" : "\/Users\/USER\/Library\/Developer\/XCTestDevices\/DA18C050-0BBA-425F-89CC-E65C006880BD\/data\/Containers\/Bundle\/Application\/C79387DC-B49A-4394-BA83-3418D953C7BD\/Scribe.app\/PlugIns\/ScribeTests.xctest\/ScribeTests",
+    "name" : "ScribeTests",
+    "CFBundleVersion" : "1"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4348608512,
+    "size" : 393216,
+    "uuid" : "2d4f499f-7db5-36a2-8f8e-670fea41ac87",
+    "path" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/usr\/lib\/libXCTestSwiftSupport.dylib",
+    "name" : "libXCTestSwiftSupport.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4316741632,
+    "CFBundleShortVersionString" : "1.0",
+    "CFBundleIdentifier" : "com.apple.dt.swift-testing.overlay.Foundation",
+    "size" : 32768,
+    "uuid" : "b9005405-409c-3098-b3eb-7ac00bfc24ef",
+    "path" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/Library\/Frameworks\/_Testing_Foundation.framework\/_Testing_Foundation",
+    "name" : "_Testing_Foundation",
+    "CFBundleVersion" : "1743"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4319674368,
+    "CFBundleShortVersionString" : "16.0",
+    "CFBundleIdentifier" : "com.apple.dt.PreviewsServices",
+    "size" : 65536,
+    "uuid" : "ff56334c-e263-3acc-8b4b-38c23ea519b6",
+    "path" : "\/Volumes\/VOLUME\/*\/PreviewsServices.framework\/PreviewsServices",
+    "name" : "PreviewsServices",
+    "CFBundleVersion" : "23.40.29"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4318101504,
+    "size" : 49152,
+    "uuid" : "49cee1df-baf9-3af7-b2c5-649c8c59d66e",
+    "path" : "\/Volumes\/VOLUME\/*\/libobjc-trampolines.dylib",
+    "name" : "libobjc-trampolines.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 4305371136,
+    "size" : 688128,
+    "uuid" : "9f682dcf-340c-3bfa-bcdd-dd702f30313e",
+    "path" : "\/usr\/lib\/dyld",
+    "name" : "dyld"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 6845927424,
+    "size" : 4982496,
+    "uuid" : "bdcc3744-659d-3242-a7df-7fe649493f97",
+    "path" : "\/Volumes\/VOLUME\/*\/libswiftCore.dylib",
+    "name" : "libswiftCore.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 6446174208,
+    "CFBundleShortVersionString" : "6.9",
+    "CFBundleIdentifier" : "com.apple.CoreFoundation",
+    "size" : 4394656,
+    "uuid" : "60b1c025-06f0-35b4-9149-fe4b24bd02d1",
+    "path" : "\/Volumes\/VOLUME\/*\/CoreFoundation.framework\/CoreFoundation",
+    "name" : "CoreFoundation",
+    "CFBundleVersion" : "4424.1.101"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 6764138496,
+    "CFBundleShortVersionString" : "1.0",
+    "CFBundleIdentifier" : "com.apple.GraphicsServices",
+    "size" : 32160,
+    "uuid" : "55830c0b-fa63-3323-910b-4dc23d8cc6a6",
+    "path" : "\/Volumes\/VOLUME\/*\/GraphicsServices.framework\/GraphicsServices",
+    "name" : "GraphicsServices",
+    "CFBundleVersion" : "1.0"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 6528823296,
+    "CFBundleShortVersionString" : "1.0",
+    "CFBundleIdentifier" : "com.apple.UIKitCore",
+    "size" : 36614304,
+    "uuid" : "a75a925a-252d-38a6-ae19-31ffbf14a755",
+    "path" : "\/Volumes\/VOLUME\/*\/UIKitCore.framework\/UIKitCore",
+    "name" : "UIKitCore",
+    "CFBundleVersion" : "9126.4.27.1.105"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 7824109568,
+    "CFBundleShortVersionString" : "7.4.27.1.101",
+    "CFBundleIdentifier" : "com.apple.SwiftUI",
+    "size" : 18511264,
+    "uuid" : "c25cb71e-a536-3b44-b7ae-f12b03900444",
+    "path" : "\/Volumes\/VOLUME\/*\/SwiftUI.framework\/SwiftUI",
+    "name" : "SwiftUI",
+    "CFBundleVersion" : "7.4.27.1.101"
+  },
+  {
+    "size" : 0,
+    "source" : "A",
+    "base" : 0,
+    "uuid" : "00000000-0000-0000-0000-000000000000"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 6442680320,
+    "size" : 248132,
+    "uuid" : "b1cd6b14-472d-396c-bc0f-8d8cd4b5c31e",
+    "path" : "\/Volumes\/VOLUME\/*\/libobjc.A.dylib",
+    "name" : "libobjc.A.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 6444040192,
+    "size" : 283584,
+    "uuid" : "746b681e-29ce-3657-abc0-6fce3d59da62",
+    "path" : "\/Volumes\/VOLUME\/*\/libdispatch.dylib",
+    "name" : "libdispatch.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 6443106304,
+    "size" : 122912,
+    "uuid" : "c062feb1-4391-3f35-ac05-7ab1d2dff2cd",
+    "path" : "\/Volumes\/VOLUME\/*\/libsystem_trace.dylib",
+    "name" : "libsystem_trace.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 6451089408,
+    "CFBundleShortVersionString" : "6.9",
+    "CFBundleIdentifier" : "com.apple.Foundation",
+    "size" : 14236672,
+    "uuid" : "d19e3444-cb0f-3327-877d-26fda92a282f",
+    "path" : "\/Volumes\/VOLUME\/*\/Foundation.framework\/Foundation",
+    "name" : "Foundation",
+    "CFBundleVersion" : "4424.1.101"
+  }
+],
+  "sharedCache" : {
+  "base" : 6442450944,
+  "size" : 3383132160,
+  "uuid" : "dbab5e3a-27c9-37db-9611-b081ecc18c21"
+},
+  "vmSummary" : "ReadOnly portion of Libraries: Total=1.7G resident=0K(0%) swapped_out_or_unallocated=1.7G(100%)\nWritable regions: Total=44.8M written=1522K(3%) resident=1522K(3%) swapped_out=0K(0%) unallocated=43.3M(97%)\n\n                                VIRTUAL   REGION \nREGION TYPE                        SIZE    COUNT (non-coalesced) \n===========                     =======  ======= \nActivity Tracing                   256K        1 \nAttributeGraph Data               1024K        1 \nColorSync                           16K        1 \nCoreAnimation                       64K        1 \nFoundation                          16K        1 \nKernel Alloc Once                   32K        1 \nMALLOC                            21.0M       11 \nMALLOC guard page                 3536K        4 \nSQLite page cache                  256K        2 \nSTACK GUARD                       56.1M        9 \nStack                             12.2M        9 \nVM_ALLOCATE                         32K        1 \n__AUTH_CONST                        32K        1 \n__DATA                            57.2M      842 \n__DATA_CONST                     103.3M      857 \n__DATA_DIRTY                       155K       14 \n__FONT_DATA                        2352        1 \n__LINKEDIT                       734.3M       35 \n__LLVM_COV                        1392K        2 \n__OBJC_RO                         55.6M        1 \n__OBJC_RW                         2334K        1 \n__TEXT                             1.0G      872 \n__TPRO_CONST                       164K        3 \ndyld private memory                3.0G       16 \nmapped file                       49.7M       10 \npage table in kernel              1522K        1 \nshared memory                       16K        1 \n===========                     =======  ======= \nTOTAL                              5.1G     2699 \n",
+  "legacyInfo" : {
+  "threadTriggered" : {
+    "queue" : "com.apple.main-thread"
+  }
+},
+  "logWritingSignature" : "3571b1c46a88991bd1f31a6231de5ee934b61642",
+  "roots_installed" : 0,
+  "bug_type" : "309",
+  "trmStatus" : 1,
+  "trialInfo" : {
+  "rollouts" : [
+    {
+      "rolloutId" : "60da5e84ab0ca017dace9abf",
+      "factorPackIds" : [
+
+      ],
+      "deploymentId" : 240000008
+    },
+    {
+      "rolloutId" : "645eb1d0417dab722a215927",
+      "factorPackIds" : [
+
+      ],
+      "deploymentId" : 240000005
+    }
+  ],
+  "experiments" : [
+
+  ]
+}
+}
+

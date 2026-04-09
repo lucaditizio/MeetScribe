@@ -1,6 +1,8 @@
 import Foundation
 import Combine
 
+// Note: BluetoothDevice and ScannerConnectionDelegate are in Services/BLEService/BluetoothDevice.swift
+
 // MARK: - BLE Service Protocols
 
 /// Protocol for BLE device scanning
@@ -10,19 +12,6 @@ public protocol BluetoothDeviceScannerProtocol: AnyObject {
     
     func startScan()
     func stopScan()
-}
-
-/// Represents a discovered BLE device
-public struct BluetoothDevice: Identifiable, Sendable {
-    public let id: UUID
-    public let name: String
-    public let rssi: Int
-    
-    public init(id: UUID, name: String, rssi: Int) {
-        self.id = id
-        self.name = name
-        self.rssi = rssi
-    }
 }
 
 /// Protocol for BLE device connection management

@@ -3,7 +3,7 @@ import XCTest
 
 final class BluetoothDeviceTests: XCTestCase {
     func testBluetoothDeviceInitialization() {
-        let id = UUID()
+        let id = UUID().uuidString
         let device = BluetoothDevice(
             id: id,
             name: "Test Device",
@@ -17,7 +17,7 @@ final class BluetoothDeviceTests: XCTestCase {
     
     func testBluetoothDeviceIdentifiable() {
         let device = BluetoothDevice(
-            id: UUID(),
+            id: UUID().uuidString,
             name: "LA518",
             rssi: -70
         )
@@ -27,7 +27,7 @@ final class BluetoothDeviceTests: XCTestCase {
     
     func testBluetoothDeviceSendable() {
         let device = BluetoothDevice(
-            id: UUID(),
+            id: UUID().uuidString,
             name: "BLE Mic",
             rssi: -55
         )
@@ -38,13 +38,13 @@ final class BluetoothDeviceTests: XCTestCase {
     
     func testBluetoothDeviceDifferentRSSI() {
         let strongSignal = BluetoothDevice(
-            id: UUID(),
+            id: UUID().uuidString,
             name: "Nearby",
             rssi: -45
         )
         
         let weakSignal = BluetoothDevice(
-            id: UUID(),
+            id: UUID().uuidString,
             name: "Far",
             rssi: -85
         )
