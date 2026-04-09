@@ -1,0 +1,31 @@
+{
+  "" : {
+    "const-values" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/build/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/EventSource-primary.swiftconstvalues",
+    "dependencies" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/build/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/EventSource-primary.d",
+    "diagnostics" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/build/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/EventSource-primary.dia",
+    "emit-module-dependencies" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/build/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/EventSource-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/build/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/EventSource-primary-emit-module.dia",
+    "pch" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/build/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/EventSource-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/build/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/EventSource-primary.swiftdeps"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/Sources/EventSource/AsyncEventsSequence.swift" : {
+    "index-unit-output-path" : "/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/AsyncEventsSequence.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/build/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/AsyncEventsSequence.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/build/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/AsyncEventsSequence.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/Sources/EventSource/AsyncSequence+Events.swift" : {
+    "index-unit-output-path" : "/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/AsyncSequence+Events.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/build/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/AsyncSequence+Events.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/build/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/AsyncSequence+Events.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/Sources/EventSource/EventSource+AsyncHTTPClient.swift" : {
+    "index-unit-output-path" : "/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/EventSource+AsyncHTTPClient.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/build/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/EventSource+AsyncHTTPClient.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/build/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/EventSource+AsyncHTTPClient.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/Sources/EventSource/EventSource.swift" : {
+    "index-unit-output-path" : "/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/EventSource.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/build/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/EventSource.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/EventSource/build/EventSource.build/Release-iphoneos/EventSource.build/Objects-normal/arm64/EventSource.o"
+  }
+}

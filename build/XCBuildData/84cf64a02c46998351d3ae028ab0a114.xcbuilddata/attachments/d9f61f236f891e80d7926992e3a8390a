@@ -1,0 +1,4 @@
+module yyjson {
+umbrella header "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/yyjson/src/yyjson.h"
+export *
+}

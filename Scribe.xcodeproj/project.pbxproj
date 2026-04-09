@@ -7,29 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A00000010000000000000001 /* ScribeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000020000000000000001 /* ScribeApp.swift */; };
+		052CE5862F876BC600AE1053 /* FluidAudio in Frameworks */ = {isa = PBXBuildFile; productRef = B00000010000000000000001 /* FluidAudio */; };
+		052CE5872F876BC600AE1053 /* LlamaSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B00000010000000000000002 /* LlamaSwift */; };
+		052CE5882F876BC600AE1053 /* HuggingFace in Frameworks */ = {isa = PBXBuildFile; productRef = B00000010000000000000003 /* HuggingFace */; };
+		052CE5892F876BC600AE1053 /* Transformers in Frameworks */ = {isa = PBXBuildFile; productRef = B00000010000000000000004 /* Transformers */; };
+		052CE58A2F876BC600AE1053 /* Opus in Frameworks */ = {isa = PBXBuildFile; productRef = B00000010000000000000005 /* Opus */; };
+		052CE58B2F876BC600AE1053 /* yyjson in Frameworks */ = {isa = PBXBuildFile; productRef = B00000010000000000000006 /* yyjson */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A00000160000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A00000150000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A00000040000000000000001;
+			remoteInfo = Scribe;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		A00000020000000000000001 /* ScribeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScribeApp.swift; sourceTree = "<group>"; };
-		A00000020000000000000002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A00000020000000000000003 /* ScribeTests_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A00000020000000000000001 /* Scribe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scribe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00000020000000000000002 /* ScribeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScribeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		A00000030000000000000001 /* Exceptions for "Scribe" folder in "Sources" build phase */ = {
+		A00000030000000000000001 /* Exceptions for "ScribeTests" folder in "ScribeTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = A00000040000000000000001 /* Scribe */;
+			target = A00000040000000000000002 /* ScribeTests */;
 		};
-		A00000030000000000000002 /* Exceptions for "Scribe" folder in "Resources" build phase */ = {
+		A00000030000000000000002 /* Exceptions for "Scribe" folder in "Scribe" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				".gitkeep",
-				"*/.gitkeep",
-				"*/**/.gitkeep",
+				.gitkeep,
+				Info.plist,
 			);
 			target = A00000040000000000000001 /* Scribe */;
 		};
@@ -39,8 +52,7 @@
 		A00000050000000000000001 /* Scribe */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				A00000030000000000000001 /* Exceptions for "Scribe" folder in "Sources" build phase */,
-				A00000030000000000000002 /* Exceptions for "Scribe" folder in "Resources" build phase */,
+				A00000030000000000000002 /* Exceptions for "Scribe" folder in "Scribe" target */,
 			);
 			path = Scribe;
 			sourceTree = "<group>";
@@ -48,6 +60,7 @@
 		A00000050000000000000002 /* ScribeTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				A00000030000000000000001 /* Exceptions for "ScribeTests" folder in "ScribeTests" target */,
 			);
 			path = ScribeTests;
 			sourceTree = "<group>";
@@ -56,6 +69,19 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		A00000060000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				052CE58B2F876BC600AE1053 /* yyjson in Frameworks */,
+				052CE58A2F876BC600AE1053 /* Opus in Frameworks */,
+				052CE5892F876BC600AE1053 /* Transformers in Frameworks */,
+				052CE5882F876BC600AE1053 /* HuggingFace in Frameworks */,
+				052CE5872F876BC600AE1053 /* LlamaSwift in Frameworks */,
+				052CE5862F876BC600AE1053 /* FluidAudio in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000060000000000000002 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -77,8 +103,8 @@
 		A00000080000000000000001 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A00000090000000000000001 /* Scribe.app */,
-				A00000090000000000000002 /* ScribeTests.xctest */,
+				A00000020000000000000001 /* Scribe.app */,
+				A00000020000000000000002 /* ScribeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,7 +137,7 @@
 				B00000010000000000000006 /* yyjson */,
 			);
 			productName = Scribe;
-			productReference = A00000090000000000000001 /* Scribe.app */;
+			productReference = A00000020000000000000001 /* Scribe.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A00000040000000000000002 /* ScribeTests */ = {
@@ -119,7 +145,8 @@
 			buildConfigurationList = A00000100000000000000002 /* Build configuration list for PBXNativeTarget "ScribeTests" */;
 			buildPhases = (
 				A00000110000000000000002 /* Sources */,
-				A00000130000000000000001 /* Frameworks */,
+				A00000060000000000000002 /* Frameworks */,
+				A00000120000000000000002 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -133,7 +160,7 @@
 			packageProductDependencies = (
 			);
 			productName = ScribeTests;
-			productReference = A00000090000000000000002 /* ScribeTests.xctest */;
+			productReference = A00000020000000000000002 /* ScribeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -143,8 +170,8 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastSwiftUpdateCheck = 2640;
+				LastUpgradeCheck = 2640;
 				TargetAttributes = {
 					A00000040000000000000001 = {
 						CreatedOnToolsVersion = 16.2;
@@ -165,12 +192,12 @@
 			mainGroup = A00000070000000000000001;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				C00000010000000000000001 /* XCRemoteSwiftPackageReference "https://github.com/FluidInference/FluidAudio.git" */,
-				C00000010000000000000002 /* XCRemoteSwiftPackageReference "https://github.com/mattt/llama.swift.git" */,
-				C00000010000000000000003 /* XCRemoteSwiftPackageReference "https://github.com/huggingface/swift-huggingface.git" */,
-				C00000010000000000000004 /* XCRemoteSwiftPackageReference "https://github.com/huggingface/swift-transformers.git" */,
-				C00000010000000000000005 /* XCRemoteSwiftPackageReference "https://github.com/alta/swift-opus.git" */,
-				C00000010000000000000006 /* XCRemoteSwiftPackageReference "https://github.com/ibireme/yyjson.git" */,
+				C00000010000000000000001 /* XCRemoteSwiftPackageReference "FluidAudio" */,
+				C00000010000000000000002 /* XCRemoteSwiftPackageReference "llama.swift" */,
+				C00000010000000000000003 /* XCRemoteSwiftPackageReference "swift-huggingface" */,
+				C00000010000000000000004 /* XCRemoteSwiftPackageReference "swift-transformers" */,
+				C00000010000000000000005 /* XCRemoteSwiftPackageReference "swift-opus" */,
+				C00000010000000000000006 /* XCRemoteSwiftPackageReference "yyjson" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A00000080000000000000001 /* Products */;
@@ -185,6 +212,13 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		A00000120000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000120000000000000002 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -217,16 +251,6 @@
 			targetProxy = A00000160000000000000001 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXContainerItemProxy section */
-		A00000160000000000000001 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A00000150000000000000001 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A00000040000000000000001;
-			remoteInfo = Scribe;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin XCBuildConfiguration section */
 		A00000170000000000000001 /* Debug */ = {
@@ -358,7 +382,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				EXCLUDED_SOURCE_FILE_NAMES = ".gitkeep";
+				EXCLUDED_SOURCE_FILE_NAMES = .gitkeep;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Scribe/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Scribe;
@@ -391,7 +415,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				EXCLUDED_SOURCE_FILE_NAMES = ".gitkeep";
+				EXCLUDED_SOURCE_FILE_NAMES = .gitkeep;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Scribe/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Scribe;
@@ -422,7 +446,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				EXCLUDED_SOURCE_FILE_NAMES = .gitkeep;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				INFOPLIST_FILE = ScribeTests/Info.plist;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scribe.app.tests;
@@ -442,7 +468,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				EXCLUDED_SOURCE_FILE_NAMES = .gitkeep;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				INFOPLIST_FILE = ScribeTests/Info.plist;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scribe.app.tests;
@@ -487,7 +515,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C00000010000000000000001 /* XCRemoteSwiftPackageReference "https://github.com/FluidInference/FluidAudio.git" */ = {
+		C00000010000000000000001 /* XCRemoteSwiftPackageReference "FluidAudio" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/FluidInference/FluidAudio.git";
 			requirement = {
@@ -495,7 +523,7 @@
 				kind = branch;
 			};
 		};
-		C00000010000000000000002 /* XCRemoteSwiftPackageReference "https://github.com/mattt/llama.swift.git" */ = {
+		C00000010000000000000002 /* XCRemoteSwiftPackageReference "llama.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mattt/llama.swift.git";
 			requirement = {
@@ -503,7 +531,7 @@
 				minimumVersion = 2.8628.0;
 			};
 		};
-		C00000010000000000000003 /* XCRemoteSwiftPackageReference "https://github.com/huggingface/swift-huggingface.git" */ = {
+		C00000010000000000000003 /* XCRemoteSwiftPackageReference "swift-huggingface" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/huggingface/swift-huggingface.git";
 			requirement = {
@@ -511,7 +539,7 @@
 				kind = branch;
 			};
 		};
-		C00000010000000000000004 /* XCRemoteSwiftPackageReference "https://github.com/huggingface/swift-transformers.git" */ = {
+		C00000010000000000000004 /* XCRemoteSwiftPackageReference "swift-transformers" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/huggingface/swift-transformers.git";
 			requirement = {
@@ -519,7 +547,7 @@
 				kind = branch;
 			};
 		};
-		C00000010000000000000005 /* XCRemoteSwiftPackageReference "https://github.com/alta/swift-opus.git" */ = {
+		C00000010000000000000005 /* XCRemoteSwiftPackageReference "swift-opus" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alta/swift-opus.git";
 			requirement = {
@@ -527,7 +555,7 @@
 				minimumVersion = 0.0.2;
 			};
 		};
-		C00000010000000000000006 /* XCRemoteSwiftPackageReference "https://github.com/ibireme/yyjson.git" */ = {
+		C00000010000000000000006 /* XCRemoteSwiftPackageReference "yyjson" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ibireme/yyjson.git";
 			requirement = {
@@ -540,32 +568,32 @@
 /* Begin XCSwiftPackageProductDependency section */
 		B00000010000000000000001 /* FluidAudio */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C00000010000000000000001 /* XCRemoteSwiftPackageReference "https://github.com/FluidInference/FluidAudio.git" */;
+			package = C00000010000000000000001 /* XCRemoteSwiftPackageReference "FluidAudio" */;
 			productName = FluidAudio;
 		};
 		B00000010000000000000002 /* LlamaSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C00000010000000000000002 /* XCRemoteSwiftPackageReference "https://github.com/mattt/llama.swift.git" */;
+			package = C00000010000000000000002 /* XCRemoteSwiftPackageReference "llama.swift" */;
 			productName = LlamaSwift;
 		};
 		B00000010000000000000003 /* HuggingFace */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C00000010000000000000003 /* XCRemoteSwiftPackageReference "https://github.com/huggingface/swift-huggingface.git" */;
+			package = C00000010000000000000003 /* XCRemoteSwiftPackageReference "swift-huggingface" */;
 			productName = HuggingFace;
 		};
 		B00000010000000000000004 /* Transformers */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C00000010000000000000004 /* XCRemoteSwiftPackageReference "https://github.com/huggingface/swift-transformers.git" */;
+			package = C00000010000000000000004 /* XCRemoteSwiftPackageReference "swift-transformers" */;
 			productName = Transformers;
 		};
 		B00000010000000000000005 /* Opus */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C00000010000000000000005 /* XCRemoteSwiftPackageReference "https://github.com/alta/swift-opus.git" */;
+			package = C00000010000000000000005 /* XCRemoteSwiftPackageReference "swift-opus" */;
 			productName = Opus;
 		};
 		B00000010000000000000006 /* yyjson */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C00000010000000000000006 /* XCRemoteSwiftPackageReference "https://github.com/ibireme/yyjson.git" */;
+			package = C00000010000000000000006 /* XCRemoteSwiftPackageReference "yyjson" */;
 			productName = yyjson;
 		};
 /* End XCSwiftPackageProductDependency section */

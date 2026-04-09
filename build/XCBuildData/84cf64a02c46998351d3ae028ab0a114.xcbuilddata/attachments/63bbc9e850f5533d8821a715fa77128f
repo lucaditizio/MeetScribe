@@ -1,0 +1,9 @@
+/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/Sources/Generation/Decoders.swift
+/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/Sources/Generation/Generation.swift
+/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/Sources/Generation/GenerationConfig.swift
+/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/Sources/Generation/LogitsWarper/LogitsProcessor.swift
+/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/Sources/Generation/LogitsWarper/MinPLogitsWarper.swift
+/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/Sources/Generation/LogitsWarper/RepetitionPenaltyLogitsProcessor.swift
+/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/Sources/Generation/LogitsWarper/TemperatureLogitsWarper.swift
+/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/Sources/Generation/LogitsWarper/TopKLogitsWarper.swift
+/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/Sources/Generation/LogitsWarper/TopPLogitsWarper.swift

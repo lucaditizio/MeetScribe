@@ -1,0 +1,16 @@
+{
+  "" : {
+    "const-values" : "/Users/lucaditizio/github/MeetScribe/build/Scribe.build/Release-iphoneos/ScribeTests.build/Objects-normal/arm64/ScribeTests-primary.swiftconstvalues",
+    "dependencies" : "/Users/lucaditizio/github/MeetScribe/build/Scribe.build/Release-iphoneos/ScribeTests.build/Objects-normal/arm64/ScribeTests-primary.d",
+    "diagnostics" : "/Users/lucaditizio/github/MeetScribe/build/Scribe.build/Release-iphoneos/ScribeTests.build/Objects-normal/arm64/ScribeTests-primary.dia",
+    "emit-module-dependencies" : "/Users/lucaditizio/github/MeetScribe/build/Scribe.build/Release-iphoneos/ScribeTests.build/Objects-normal/arm64/ScribeTests-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/lucaditizio/github/MeetScribe/build/Scribe.build/Release-iphoneos/ScribeTests.build/Objects-normal/arm64/ScribeTests-primary-emit-module.dia",
+    "pch" : "/Users/lucaditizio/github/MeetScribe/build/Scribe.build/Release-iphoneos/ScribeTests.build/Objects-normal/arm64/ScribeTests-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/lucaditizio/github/MeetScribe/build/Scribe.build/Release-iphoneos/ScribeTests.build/Objects-normal/arm64/ScribeTests-primary.swiftdeps"
+  },
+  "/Users/lucaditizio/github/MeetScribe/ScribeTests/App/ScribeAppTests.swift" : {
+    "index-unit-output-path" : "/Scribe.build/Release-iphoneos/ScribeTests.build/Objects-normal/arm64/ScribeAppTests.o",
+    "llvm-bc" : "/Users/lucaditizio/github/MeetScribe/build/Scribe.build/Release-iphoneos/ScribeTests.build/Objects-normal/arm64/ScribeAppTests.bc",
+    "object" : "/Users/lucaditizio/github/MeetScribe/build/Scribe.build/Release-iphoneos/ScribeTests.build/Objects-normal/arm64/ScribeAppTests.o"
+  }
+}

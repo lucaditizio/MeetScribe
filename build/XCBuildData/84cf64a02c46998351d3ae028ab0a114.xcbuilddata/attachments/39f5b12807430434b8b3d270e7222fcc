@@ -1,0 +1,856 @@
+{
+  "" : {
+    "const-values" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/FluidAudio-primary.swiftconstvalues",
+    "dependencies" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/FluidAudio-primary.d",
+    "diagnostics" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/FluidAudio-primary.dia",
+    "emit-module-dependencies" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/FluidAudio-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/FluidAudio-primary-emit-module.dia",
+    "pch" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/FluidAudio-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/FluidAudio-primary.swiftdeps"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/AsrTypes.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrTypes.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrTypes.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrTypes.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/AudioBuffer.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioBuffer.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioBuffer.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioBuffer.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/ParakeetLanguageModels.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ParakeetLanguageModels.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ParakeetLanguageModels.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ParakeetLanguageModels.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CTC/ARPALanguageModel.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ARPALanguageModel.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ARPALanguageModel.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ARPALanguageModel.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CTC/CtcDecoder.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcDecoder.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcDecoder.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcDecoder.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CTC/CtcJaManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcJaManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcJaManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcJaManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CTC/CtcJaModels.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcJaModels.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcJaModels.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcJaModels.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CTC/CtcZhCnManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcZhCnManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcZhCnManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcZhCnManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CTC/CtcZhCnModels.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcZhCnModels.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcZhCnModels.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcZhCnModels.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CustomVocabulary/BKTree/BKTree.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/BKTree.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/BKTree.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/BKTree.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CustomVocabulary/BKTree/VocabularyRescorer+CandidateMatching.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VocabularyRescorer+CandidateMatching.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VocabularyRescorer+CandidateMatching.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VocabularyRescorer+CandidateMatching.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CustomVocabulary/ContextBiasingConstants.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ContextBiasingConstants.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ContextBiasingConstants.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ContextBiasingConstants.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CustomVocabulary/CustomVocabularyContext.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CustomVocabularyContext.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CustomVocabularyContext.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CustomVocabularyContext.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CustomVocabulary/Rescorer/VocabularyRescorer+TokenEvaluation.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VocabularyRescorer+TokenEvaluation.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VocabularyRescorer+TokenEvaluation.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VocabularyRescorer+TokenEvaluation.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CustomVocabulary/Rescorer/VocabularyRescorer+TokenRescoring.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VocabularyRescorer+TokenRescoring.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VocabularyRescorer+TokenRescoring.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VocabularyRescorer+TokenRescoring.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CustomVocabulary/Rescorer/VocabularyRescorer+Utilities.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VocabularyRescorer+Utilities.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VocabularyRescorer+Utilities.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VocabularyRescorer+Utilities.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CustomVocabulary/Rescorer/VocabularyRescorer.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VocabularyRescorer.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VocabularyRescorer.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VocabularyRescorer.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CustomVocabulary/WordSpotting/BpeTokenizer.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/BpeTokenizer.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/BpeTokenizer.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/BpeTokenizer.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CustomVocabulary/WordSpotting/CtcDPAlgorithm.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcDPAlgorithm.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcDPAlgorithm.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcDPAlgorithm.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CustomVocabulary/WordSpotting/CtcKeywordSpotter+Inference.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcKeywordSpotter+Inference.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcKeywordSpotter+Inference.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcKeywordSpotter+Inference.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CustomVocabulary/WordSpotting/CtcKeywordSpotter.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcKeywordSpotter.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcKeywordSpotter.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcKeywordSpotter.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CustomVocabulary/WordSpotting/CtcModels.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcModels.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcModels.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcModels.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/CustomVocabulary/WordSpotting/CtcTokenizer.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcTokenizer.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcTokenizer.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/CtcTokenizer.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/SlidingWindowAsrManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SlidingWindowAsrManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SlidingWindowAsrManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SlidingWindowAsrManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/SlidingWindowAsrSession.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SlidingWindowAsrSession.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SlidingWindowAsrSession.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SlidingWindowAsrSession.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/AsrManager+Pipeline.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrManager+Pipeline.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrManager+Pipeline.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrManager+Pipeline.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/AsrManager+TokenProcessing.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrManager+TokenProcessing.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrManager+TokenProcessing.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrManager+TokenProcessing.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/AsrManager+Transcription.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrManager+Transcription.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrManager+Transcription.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrManager+Transcription.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/AsrManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/AsrModels.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrModels.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrModels.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AsrModels.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/ChunkProcessor.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ChunkProcessor.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ChunkProcessor.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ChunkProcessor.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/BlasIndex.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/BlasIndex.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/BlasIndex.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/BlasIndex.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/EncoderFrameView.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/EncoderFrameView.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/EncoderFrameView.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/EncoderFrameView.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtConfig.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtConfig.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtConfig.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtConfig.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtDecoderState.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtDecoderState.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtDecoderState.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtDecoderState.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtDecoderV2.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtDecoderV2.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtDecoderV2.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtDecoderV2.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtDecoderV3.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtDecoderV3.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtDecoderV3.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtDecoderV3.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtDurationMapping.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtDurationMapping.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtDurationMapping.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtDurationMapping.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtFrameNavigation.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtFrameNavigation.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtFrameNavigation.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtFrameNavigation.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtHypothesis.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtHypothesis.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtHypothesis.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtHypothesis.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtJointDecision.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtJointDecision.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtJointDecision.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtJointDecision.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtJointInputProvider.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtJointInputProvider.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtJointInputProvider.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtJointInputProvider.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtModelInference.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtModelInference.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtModelInference.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtModelInference.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/TdtJaManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtJaManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtJaManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtJaManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/TdtJaModels.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtJaModels.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtJaModels.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TdtJaModels.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/Streaming/EOU/StreamingEouAsrManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StreamingEouAsrManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StreamingEouAsrManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StreamingEouAsrManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/Streaming/EncoderCacheManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/EncoderCacheManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/EncoderCacheManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/EncoderCacheManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/Streaming/Nemotron/NemotronChunkSize.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/NemotronChunkSize.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/NemotronChunkSize.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/NemotronChunkSize.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/Streaming/Nemotron/NemotronStreamingConfig.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/NemotronStreamingConfig.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/NemotronStreamingConfig.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/NemotronStreamingConfig.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/Streaming/Nemotron/StreamingNemotronAsrManager+Pipeline.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StreamingNemotronAsrManager+Pipeline.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StreamingNemotronAsrManager+Pipeline.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StreamingNemotronAsrManager+Pipeline.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/Streaming/Nemotron/StreamingNemotronAsrManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StreamingNemotronAsrManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StreamingNemotronAsrManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StreamingNemotronAsrManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/Streaming/ParakeetModelVariant.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ParakeetModelVariant.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ParakeetModelVariant.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ParakeetModelVariant.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/Streaming/RnntDecoder.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/RnntDecoder.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/RnntDecoder.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/RnntDecoder.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/Streaming/StreamingAsrManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StreamingAsrManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StreamingAsrManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StreamingAsrManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/Streaming/StreamingAsrUtils.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StreamingAsrUtils.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StreamingAsrUtils.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StreamingAsrUtils.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/Streaming/Tokenizer.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Tokenizer.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Tokenizer.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Tokenizer.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/TokenDeduplication/SequenceMatch.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SequenceMatch.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SequenceMatch.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SequenceMatch.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/TokenDeduplication/SequenceMatcher.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SequenceMatcher.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SequenceMatcher.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SequenceMatcher.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Qwen3/Qwen3AsrConfig.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Qwen3AsrConfig.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Qwen3AsrConfig.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Qwen3AsrConfig.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Qwen3/Qwen3AsrManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Qwen3AsrManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Qwen3AsrManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Qwen3AsrManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Qwen3/Qwen3AsrModels.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Qwen3AsrModels.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Qwen3AsrModels.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Qwen3AsrModels.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Qwen3/Qwen3RoPE.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Qwen3RoPE.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Qwen3RoPE.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Qwen3RoPE.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Qwen3/Qwen3StreamingManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Qwen3StreamingManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Qwen3StreamingManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/Qwen3StreamingManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Qwen3/WhisperMelSpectrogram.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/WhisperMelSpectrogram.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/WhisperMelSpectrogram.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/WhisperMelSpectrogram.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ASR/Shared/PunctuationCommitLayer.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PunctuationCommitLayer.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PunctuationCommitLayer.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PunctuationCommitLayer.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Clustering/SpeakerManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SpeakerManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SpeakerManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SpeakerManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Clustering/SpeakerOperations.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SpeakerOperations.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SpeakerOperations.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SpeakerOperations.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Clustering/SpeakerTypes.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SpeakerTypes.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SpeakerTypes.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SpeakerTypes.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Core/DiarizerManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/DiarizerManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/DiarizerManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/DiarizerManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Core/DiarizerModels.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/DiarizerModels.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/DiarizerModels.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/DiarizerModels.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Core/DiarizerTypes.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/DiarizerTypes.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/DiarizerTypes.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/DiarizerTypes.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/DiarizerTimeline.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/DiarizerTimeline.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/DiarizerTimeline.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/DiarizerTimeline.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Extraction/EmbeddingExtractor.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/EmbeddingExtractor.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/EmbeddingExtractor.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/EmbeddingExtractor.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/LS-EEND/LSEENDDatatypes.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/LSEENDDatatypes.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/LSEENDDatatypes.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/LSEENDDatatypes.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/LS-EEND/LSEENDDiarizer.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/LSEENDDiarizer.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/LSEENDDiarizer.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/LSEENDDiarizer.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/LS-EEND/LSEENDModelInference.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/LSEENDModelInference.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/LSEENDModelInference.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/LSEENDModelInference.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/LS-EEND/LSEENDPreprocessor.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/LSEENDPreprocessor.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/LSEENDPreprocessor.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/LSEENDPreprocessor.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Offline/Clustering/AHCClustering.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AHCClustering.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AHCClustering.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AHCClustering.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Offline/Clustering/KMeansClustering.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KMeansClustering.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KMeansClustering.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KMeansClustering.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Offline/Clustering/SpeakerCountConstraints.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SpeakerCountConstraints.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SpeakerCountConstraints.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SpeakerCountConstraints.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Offline/Clustering/VBxClustering.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VBxClustering.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VBxClustering.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VBxClustering.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Offline/Core/OfflineDiarizerManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineDiarizerManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineDiarizerManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineDiarizerManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Offline/Core/OfflineDiarizerModels.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineDiarizerModels.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineDiarizerModels.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineDiarizerModels.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Offline/Core/OfflineDiarizerTypes.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineDiarizerTypes.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineDiarizerTypes.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineDiarizerTypes.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Offline/Extraction/OfflineEmbeddingExtractor.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineEmbeddingExtractor.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineEmbeddingExtractor.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineEmbeddingExtractor.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Offline/Extraction/PLDATransform.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PLDATransform.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PLDATransform.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PLDATransform.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Offline/Extraction/WeightInterpolation.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/WeightInterpolation.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/WeightInterpolation.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/WeightInterpolation.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Offline/Segmentation/OfflineSegmentationProcessor.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineSegmentationProcessor.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineSegmentationProcessor.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineSegmentationProcessor.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Offline/Utils/OfflineReconstruction.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineReconstruction.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineReconstruction.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/OfflineReconstruction.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Offline/Utils/VDSPOperations.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VDSPOperations.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VDSPOperations.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VDSPOperations.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Segmentation/AudioValidation.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioValidation.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioValidation.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioValidation.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Segmentation/SegmentationProcessor.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SegmentationProcessor.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SegmentationProcessor.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SegmentationProcessor.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Segmentation/SlidingWindow.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SlidingWindow.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SlidingWindow.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SlidingWindow.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Sortformer/SortformerDiarizer.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SortformerDiarizer.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SortformerDiarizer.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SortformerDiarizer.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Sortformer/SortformerModelInference.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SortformerModelInference.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SortformerModelInference.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SortformerModelInference.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Sortformer/SortformerStateUpdater.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SortformerStateUpdater.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SortformerStateUpdater.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SortformerStateUpdater.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Diarizer/Sortformer/SortformerTypes.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SortformerTypes.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SortformerTypes.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SortformerTypes.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/DownloadUtils.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/DownloadUtils.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/DownloadUtils.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/DownloadUtils.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/FluidAudioSwift.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/FluidAudioSwift.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/FluidAudioSwift.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/FluidAudioSwift.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ITN/TextNormalizer.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TextNormalizer.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TextNormalizer.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TextNormalizer.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ModelNames.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ModelNames.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ModelNames.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ModelNames.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/ModelRegistry.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ModelRegistry.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ModelRegistry.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ModelRegistry.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/ANEMemoryOptimizer.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ANEMemoryOptimizer.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ANEMemoryOptimizer.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ANEMemoryOptimizer.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/ANEMemoryUtils.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ANEMemoryUtils.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ANEMemoryUtils.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ANEMemoryUtils.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/ASRConstants.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ASRConstants.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ASRConstants.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ASRConstants.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/AppLogger.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AppLogger.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AppLogger.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AppLogger.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/AssetDownloader.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AssetDownloader.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AssetDownloader.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AssetDownloader.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/AudioConverter.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioConverter.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioConverter.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioConverter.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/AudioMelSpectrogram.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioMelSpectrogram.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioMelSpectrogram.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioMelSpectrogram.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/AudioSampleSource.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioSampleSource.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioSampleSource.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioSampleSource.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/AudioSource.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioSource.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioSource.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioSource.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/AudioSourceFactory.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioSourceFactory.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioSourceFactory.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioSourceFactory.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/AudioStream.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioStream.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioStream.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioStream.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/MLArrayCache.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MLArrayCache.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MLArrayCache.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MLArrayCache.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/MLModel+Prediction.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MLModel+Prediction.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MLModel+Prediction.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MLModel+Prediction.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/MLModelConfigurationUtils.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MLModelConfigurationUtils.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MLModelConfigurationUtils.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MLModelConfigurationUtils.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/MLMultiArray+Extensions.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MLMultiArray+Extensions.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MLMultiArray+Extensions.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MLMultiArray+Extensions.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/ModelWarmup.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ModelWarmup.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ModelWarmup.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ModelWarmup.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/PerformanceMetrics.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PerformanceMetrics.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PerformanceMetrics.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PerformanceMetrics.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/ProgressEmitter.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ProgressEmitter.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ProgressEmitter.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ProgressEmitter.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/StringUtils.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StringUtils.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StringUtils.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/StringUtils.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/SystemInfo.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SystemInfo.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SystemInfo.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SystemInfo.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/Shared/ZeroCopyFeatureProvider.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ZeroCopyFeatureProvider.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ZeroCopyFeatureProvider.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/ZeroCopyFeatureProvider.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/G2P/MultilingualG2PError.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MultilingualG2PError.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MultilingualG2PError.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MultilingualG2PError.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/G2P/MultilingualG2PLanguage.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MultilingualG2PLanguage.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MultilingualG2PLanguage.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MultilingualG2PLanguage.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/G2P/MultilingualG2PModel.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MultilingualG2PModel.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MultilingualG2PModel.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/MultilingualG2PModel.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/Assets/Lexicon/G2PModel.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/G2PModel.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/G2PModel.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/G2PModel.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/Assets/Lexicon/KokoroVocabulary.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroVocabulary.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroVocabulary.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroVocabulary.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/Assets/Lexicon/LexiconAssetManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/LexiconAssetManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/LexiconAssetManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/LexiconAssetManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/Assets/TtsResourceDownloader.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsResourceDownloader.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsResourceDownloader.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsResourceDownloader.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/KokoroTtsManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroTtsManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroTtsManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroTtsManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/Pipeline/Postprocess/KokoroSynthesizer+Types.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer+Types.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer+Types.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer+Types.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/Pipeline/Preprocess/KokoroChunker.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroChunker.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroChunker.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroChunker.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/Pipeline/Preprocess/KokoroModelCache.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroModelCache.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroModelCache.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroModelCache.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/Pipeline/Preprocess/KokoroSynthesizer+LexiconCache.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer+LexiconCache.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer+LexiconCache.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer+LexiconCache.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/Pipeline/Preprocess/PhonemeMapper.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PhonemeMapper.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PhonemeMapper.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PhonemeMapper.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/Pipeline/Preprocess/TtsTextPreprocessor.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsTextPreprocessor.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsTextPreprocessor.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsTextPreprocessor.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/Pipeline/Synthesize/KokoroSynthesizer+Memory.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer+Memory.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer+Memory.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer+Memory.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/Pipeline/Synthesize/KokoroSynthesizer+ModelUtils.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer+ModelUtils.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer+ModelUtils.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer+ModelUtils.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/Pipeline/Synthesize/KokoroSynthesizer+VoiceEmbeddings.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer+VoiceEmbeddings.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer+VoiceEmbeddings.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer+VoiceEmbeddings.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/Pipeline/Synthesize/KokoroSynthesizer.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/KokoroSynthesizer.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Kokoro/TtsCustomLexicon.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsCustomLexicon.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsCustomLexicon.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsCustomLexicon.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/PocketTTS/Assets/PocketTtsConstantsLoader.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsConstantsLoader.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsConstantsLoader.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsConstantsLoader.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/PocketTTS/Assets/PocketTtsResourceDownloader.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsResourceDownloader.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsResourceDownloader.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsResourceDownloader.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/PocketTTS/Pipeline/PocketTtsModelStore.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsModelStore.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsModelStore.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsModelStore.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/PocketTTS/Pipeline/PocketTtsSession.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSession.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSession.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSession.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/PocketTTS/Pipeline/PocketTtsSynthesizer+Flow.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSynthesizer+Flow.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSynthesizer+Flow.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSynthesizer+Flow.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/PocketTTS/Pipeline/PocketTtsSynthesizer+KVCache.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSynthesizer+KVCache.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSynthesizer+KVCache.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSynthesizer+KVCache.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/PocketTTS/Pipeline/PocketTtsSynthesizer+Mimi.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSynthesizer+Mimi.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSynthesizer+Mimi.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSynthesizer+Mimi.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/PocketTTS/Pipeline/PocketTtsSynthesizer+Types.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSynthesizer+Types.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSynthesizer+Types.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSynthesizer+Types.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/PocketTTS/Pipeline/PocketTtsSynthesizer.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSynthesizer.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSynthesizer.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsSynthesizer.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/PocketTTS/Pipeline/PocketTtsVoiceCloner.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsVoiceCloner.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsVoiceCloner.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsVoiceCloner.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/PocketTTS/PocketTTSError.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTTSError.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTTSError.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTTSError.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/PocketTTS/PocketTtsConstants.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsConstants.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsConstants.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsConstants.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/PocketTTS/PocketTtsManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/PocketTtsManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/PocketTTS/Tokenizer/SentencePieceProto.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SentencePieceProto.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SentencePieceProto.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SentencePieceProto.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/PocketTTS/Tokenizer/SentencePieceTokenizer.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SentencePieceTokenizer.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SentencePieceTokenizer.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SentencePieceTokenizer.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/SSML/SSMLProcessor.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SSMLProcessor.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SSMLProcessor.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SSMLProcessor.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/SSML/SSMLTagParser.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SSMLTagParser.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SSMLTagParser.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SSMLTagParser.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/SSML/SSMLTypes.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SSMLTypes.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SSMLTypes.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SSMLTypes.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/SSML/SayAsInterpreter.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SayAsInterpreter.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SayAsInterpreter.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/SayAsInterpreter.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/Shared/AudioPostProcessor.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioPostProcessor.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioPostProcessor.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/AudioPostProcessor.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/TtsBackend.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsBackend.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsBackend.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsBackend.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/TtsConstants.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsConstants.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsConstants.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsConstants.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/TTS/TtsModels.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsModels.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsModels.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/TtsModels.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/VAD/VadManager+SpeechSegmentation.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VadManager+SpeechSegmentation.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VadManager+SpeechSegmentation.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VadManager+SpeechSegmentation.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/VAD/VadManager+Streaming.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VadManager+Streaming.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VadManager+Streaming.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VadManager+Streaming.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/VAD/VadManager.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VadManager.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VadManager.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VadManager.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/Sources/FluidAudio/VAD/VadTypes.swift" : {
+    "index-unit-output-path" : "/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VadTypes.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VadTypes.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/FluidAudio/build/FluidAudio.build/Release-iphoneos/FluidAudio.build/Objects-normal/arm64/VadTypes.o"
+  }
+}

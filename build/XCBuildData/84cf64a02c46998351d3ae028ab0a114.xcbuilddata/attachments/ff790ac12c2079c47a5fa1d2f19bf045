@@ -1,0 +1,4 @@
+module Opus {
+header "Opus-Swift.h"
+export *
+}

@@ -1,0 +1,51 @@
+{
+  "" : {
+    "const-values" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus-primary.swiftconstvalues",
+    "dependencies" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus-primary.d",
+    "diagnostics" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus-primary.dia",
+    "emit-module-dependencies" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus-primary-emit-module.dia",
+    "pch" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus-primary.swiftdeps"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/Sources/Opus/AVAudioFormat+Extensions.swift" : {
+    "index-unit-output-path" : "/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/AVAudioFormat+Extensions.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/AVAudioFormat+Extensions.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/AVAudioFormat+Extensions.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/Sources/Opus/AVAudioFrameCount+Extensions.swift" : {
+    "index-unit-output-path" : "/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/AVAudioFrameCount+Extensions.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/AVAudioFrameCount+Extensions.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/AVAudioFrameCount+Extensions.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/Sources/Opus/Double+Extensions.swift" : {
+    "index-unit-output-path" : "/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Double+Extensions.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Double+Extensions.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Double+Extensions.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/Sources/Opus/Opus.Application.swift" : {
+    "index-unit-output-path" : "/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus.Application.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus.Application.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus.Application.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/Sources/Opus/Opus.Decoder.swift" : {
+    "index-unit-output-path" : "/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus.Decoder.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus.Decoder.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus.Decoder.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/Sources/Opus/Opus.Encoder.swift" : {
+    "index-unit-output-path" : "/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus.Encoder.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus.Encoder.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus.Encoder.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/Sources/Opus/Opus.Error.swift" : {
+    "index-unit-output-path" : "/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus.Error.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus.Error.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus.Error.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/Sources/Opus/Opus.swift" : {
+    "index-unit-output-path" : "/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-opus/build/Opus.build/Release-iphoneos/Opus.build/Objects-normal/arm64/Opus.o"
+  }
+}

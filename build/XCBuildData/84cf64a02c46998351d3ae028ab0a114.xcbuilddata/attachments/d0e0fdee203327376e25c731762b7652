@@ -1,0 +1,26 @@
+{
+  "" : {
+    "const-values" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/build/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/Models-primary.swiftconstvalues",
+    "dependencies" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/build/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/Models-primary.d",
+    "diagnostics" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/build/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/Models-primary.dia",
+    "emit-module-dependencies" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/build/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/Models-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/build/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/Models-primary-emit-module.dia",
+    "pch" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/build/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/Models-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/build/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/Models-primary.swiftdeps"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/Sources/Models/LanguageModel.swift" : {
+    "index-unit-output-path" : "/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/LanguageModel.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/build/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/LanguageModel.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/build/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/LanguageModel.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/Sources/Models/LanguageModelTypes.swift" : {
+    "index-unit-output-path" : "/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/LanguageModelTypes.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/build/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/LanguageModelTypes.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/build/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/LanguageModelTypes.o"
+  },
+  "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/Sources/Models/Weights.swift" : {
+    "index-unit-output-path" : "/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/Weights.o",
+    "llvm-bc" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/build/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/Weights.bc",
+    "object" : "/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers/build/swift-transformers.build/Release-iphoneos/Models.build/Objects-normal/arm64/Weights.o"
+  }
+}
