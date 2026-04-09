@@ -917,7 +917,7 @@ RecordingDetailView:
   }
   ```
 
-- [ ] 4.1. Create Recording.swift Entity
+- [x] 4.1. Create Recording.swift Entity
 
   **Files**: Core/Entities/Recording.swift, ScribeTests/Entities/EntityTests.swift
   **Category**: quick
@@ -951,7 +951,7 @@ RecordingDetailView:
   }
   ```
 
-- [ ] 4.2. Create Transcript.swift and SpeakerSegment
+- [x] 4.2. Create Transcript.swift and SpeakerSegment
 
   **Files**: Core/Entities/Transcript.swift, ScribeTests/Entities/EntityTests.swift (append)
   **Category**: quick
@@ -959,7 +959,7 @@ RecordingDetailView:
 
   **What**: Create SpeakerSegment struct (speakerId: String, start: TimeInterval, end: TimeInterval, text: String) and Transcript struct (segments: [SpeakerSegment]). Both Codable and Equatable. Only import Foundation.
 
-- [ ] 4.3. Create MeetingSummary.swift and TopicSection
+- [x] 4.3. Create MeetingSummary.swift and TopicSection
 
   **Files**: Core/Entities/MeetingSummary.swift, ScribeTests/Entities/EntityTests.swift (append)
   **Category**: quick
@@ -967,7 +967,7 @@ RecordingDetailView:
 
   **What**: Create MeetingSummary struct (title: String, meetingNotes: [TopicSection], actionItems: String, mindMapNodes: [MindMapNode]) and TopicSection struct (topic: String, bullets: [String]). Reference: LLMService.swift in embedded reference. Both Codable. Write test verifying JSON round-trip encoding/decoding.
 
-- [ ] 4.4. Create MindMapNode.swift, AudioSample.swift, RecordingSource.swift
+- [x] 4.4. Create MindMapNode.swift, AudioSample.swift, RecordingSource.swift
 
   **Files**: Core/Entities/MindMapNode.swift, Core/Entities/AudioSample.swift, Core/Entities/RecordingSource.swift
   **Category**: quick
