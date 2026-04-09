@@ -1118,7 +1118,7 @@ RecordingDetailView:
 
   **What**: Create ConnectionStateMachine enum with states matching the SLink init sequence. Reference: embedded reference DeviceConnectionManager.swift has ConnectionState enum with 9 cases (disconnected, connecting, connected, binding, initializing, initialized, bound, failed(String), reconnecting(Int)). Add transitions and max reconnection attempts (5 from BluetoothConfig). Write tests for all transitions and error handling.
 
-- [ ] 10.2. Create SLinkInitOrchestrator.swift
+- [x] 10.2. Create SLinkInitOrchestrator.swift
 
   **Files**: Services/BLEService/SLinkInitOrchestrator.swift, ScribeTests/Services/BLE/SLinkInitOrchestratorTests.swift
   **Category**: unspecified-low
