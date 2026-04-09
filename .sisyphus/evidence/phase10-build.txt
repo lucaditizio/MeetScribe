@@ -1,0 +1,306 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -scheme Scribe -destination "platform=iOS Simulator,name=iPhone 15 Plus" build
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  llama.swift: https://github.com/mattt/llama.swift.git @ 2.8720.0
+  swift-atomics: https://github.com/apple/swift-atomics.git @ 1.3.0
+  FluidAudio: https://github.com/FluidInference/FluidAudio.git @ main (04747b3)
+  swift-nio: https://github.com/apple/swift-nio.git @ 2.97.1
+  Jinja: https://github.com/huggingface/swift-jinja.git @ 2.3.5
+  yyjson: https://github.com/ibireme/yyjson.git @ 0.12.0
+  Opus: https://github.com/alta/swift-opus.git @ 0.0.2
+  swift-collections: https://github.com/apple/swift-collections.git @ 1.4.1
+  swift-huggingface: https://github.com/huggingface/swift-huggingface.git @ main (b721959)
+  swift-system: https://github.com/apple/swift-system.git @ 1.6.4
+  swift-crypto: https://github.com/apple/swift-crypto.git @ 4.3.1
+  swift-asn1: https://github.com/apple/swift-asn1.git @ 1.6.0
+  EventSource: https://github.com/mattt/EventSource.git @ 1.4.1
+  swift-transformers: https://github.com/huggingface/swift-transformers.git @ main (7f1f9d0)
+
+2026-04-09 19:15:23.288 xcodebuild[35877:5715307] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (47 targets)
+    Target 'Scribe' in project 'Scribe'
+        ➜ Explicit dependency on target 'yyjson' in project 'yyjson'
+        ➜ Explicit dependency on target 'Opus' in project 'Opus'
+        ➜ Explicit dependency on target 'Transformers' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'HuggingFace' in project 'swift-huggingface'
+        ➜ Explicit dependency on target 'LlamaSwift' in project 'llama.swift'
+        ➜ Explicit dependency on target 'FluidAudio' in project 'FluidAudio'
+    Target 'FluidAudio' in project 'FluidAudio'
+        ➜ Explicit dependency on target 'FluidAudio' in project 'FluidAudio'
+        ➜ Explicit dependency on target 'FastClusterWrapper' in project 'FluidAudio'
+        ➜ Explicit dependency on target 'MachTaskSelfWrapper' in project 'FluidAudio'
+    Target 'FluidAudio' in project 'FluidAudio'
+        ➜ Explicit dependency on target 'FastClusterWrapper' in project 'FluidAudio'
+        ➜ Explicit dependency on target 'MachTaskSelfWrapper' in project 'FluidAudio'
+    Target 'MachTaskSelfWrapper' in project 'FluidAudio' (no dependencies)
+    Target 'FastClusterWrapper' in project 'FluidAudio' (no dependencies)
+    Target 'LlamaSwift' in project 'llama.swift'
+        ➜ Explicit dependency on target 'LlamaSwift' in project 'llama.swift'
+    Target 'LlamaSwift' in project 'llama.swift' (no dependencies)
+    Target 'Transformers' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'Tokenizers' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'Generation' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'Models' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'Hub' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'Jinja' in project 'Jinja'
+        ➜ Explicit dependency on target 'HuggingFace' in project 'swift-huggingface'
+        ➜ Explicit dependency on target 'OrderedCollections' in project 'swift-collections'
+        ➜ Explicit dependency on target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'yyjson' in project 'yyjson'
+    Target 'Models' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'Hub' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'Tokenizers' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'Generation' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'Jinja' in project 'Jinja'
+        ➜ Explicit dependency on target 'HuggingFace' in project 'swift-huggingface'
+        ➜ Explicit dependency on target 'OrderedCollections' in project 'swift-collections'
+        ➜ Explicit dependency on target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'yyjson' in project 'yyjson'
+    Target 'Generation' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'Hub' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'Tokenizers' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'Jinja' in project 'Jinja'
+        ➜ Explicit dependency on target 'HuggingFace' in project 'swift-huggingface'
+        ➜ Explicit dependency on target 'OrderedCollections' in project 'swift-collections'
+        ➜ Explicit dependency on target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'yyjson' in project 'yyjson'
+    Target 'Tokenizers' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'Hub' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'Jinja' in project 'Jinja'
+        ➜ Explicit dependency on target 'HuggingFace' in project 'swift-huggingface'
+        ➜ Explicit dependency on target 'OrderedCollections' in project 'swift-collections'
+        ➜ Explicit dependency on target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'yyjson' in project 'yyjson'
+    Target 'Hub' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'swift-transformers_Hub' in project 'swift-transformers'
+        ➜ Explicit dependency on target 'Jinja' in project 'Jinja'
+        ➜ Explicit dependency on target 'HuggingFace' in project 'swift-huggingface'
+        ➜ Explicit dependency on target 'OrderedCollections' in project 'swift-collections'
+        ➜ Explicit dependency on target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'yyjson' in project 'yyjson'
+    Target 'HuggingFace' in project 'swift-huggingface'
+        ➜ Explicit dependency on target 'HuggingFace' in project 'swift-huggingface'
+        ➜ Explicit dependency on target 'EventSource' in project 'EventSource'
+        ➜ Explicit dependency on target 'Crypto' in project 'swift-crypto'
+    Target 'HuggingFace' in project 'swift-huggingface'
+        ➜ Explicit dependency on target 'EventSource' in project 'EventSource'
+        ➜ Explicit dependency on target 'Crypto' in project 'swift-crypto'
+    Target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'swift-crypto_Crypto' in project 'swift-crypto'
+    Target 'Crypto' in project 'swift-crypto'
+        ➜ Explicit dependency on target 'swift-crypto_Crypto' in project 'swift-crypto'
+    Target 'swift-crypto_Crypto' in project 'swift-crypto' (no dependencies)
+    Target 'EventSource' in project 'EventSource'
+        ➜ Explicit dependency on target 'EventSource' in project 'EventSource'
+        ➜ Explicit dependency on target 'NIOCore' in project 'swift-nio'
+    Target 'EventSource' in project 'EventSource'
+        ➜ Explicit dependency on target 'NIOCore' in project 'swift-nio'
+    Target 'NIOCore' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOCore' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOAtomics' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOConcurrencyHelpers' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIOBase64' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOOpenBSD' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIODarwin' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOLinux' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWindows' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWASI' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIODataStructures' in project 'swift-nio'
+        ➜ Explicit dependency on target 'DequeModule' in project 'swift-collections'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+    Target 'NIOCore' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOAtomics' in project 'swift-nio'
+        ➜ Explicit dependency on target 'NIOConcurrencyHelpers' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIOBase64' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOOpenBSD' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIODarwin' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOLinux' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWindows' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOWASI' in project 'swift-nio'
+        ➜ Explicit dependency on target '_NIODataStructures' in project 'swift-nio'
+        ➜ Explicit dependency on target 'DequeModule' in project 'swift-collections'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+    Target 'Atomics' in project 'swift-atomics'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+        ➜ Explicit dependency on target '_AtomicsShims' in project 'swift-atomics'
+    Target 'Atomics' in project 'swift-atomics'
+        ➜ Explicit dependency on target '_AtomicsShims' in project 'swift-atomics'
+    Target '_AtomicsShims' in project 'swift-atomics' (no dependencies)
+    Target 'DequeModule' in project 'swift-collections'
+        ➜ Explicit dependency on target 'DequeModule' in project 'swift-collections'
+        ➜ Explicit dependency on target 'InternalCollectionsUtilities' in project 'swift-collections'
+        ➜ Explicit dependency on target 'ContainersPreview' in project 'swift-collections'
+    Target 'DequeModule' in project 'swift-collections'
+        ➜ Explicit dependency on target 'InternalCollectionsUtilities' in project 'swift-collections'
+        ➜ Explicit dependency on target 'ContainersPreview' in project 'swift-collections'
+    Target 'ContainersPreview' in project 'swift-collections'
+        ➜ Explicit dependency on target 'InternalCollectionsUtilities' in project 'swift-collections'
+    Target '_NIODataStructures' in project 'swift-nio' (no dependencies)
+    Target 'CNIOWASI' in project 'swift-nio' (no dependencies)
+    Target 'CNIOWindows' in project 'swift-nio' (no dependencies)
+    Target 'CNIOLinux' in project 'swift-nio' (no dependencies)
+    Target 'CNIODarwin' in project 'swift-nio' (no dependencies)
+    Target 'CNIOOpenBSD' in project 'swift-nio' (no dependencies)
+    Target '_NIOBase64' in project 'swift-nio' (no dependencies)
+    Target 'NIOConcurrencyHelpers' in project 'swift-nio'
+        ➜ Explicit dependency on target 'CNIOAtomics' in project 'swift-nio'
+    Target 'CNIOAtomics' in project 'swift-nio' (no dependencies)
+    Target 'Jinja' in project 'Jinja'
+        ➜ Explicit dependency on target 'Jinja' in project 'Jinja'
+        ➜ Explicit dependency on target 'OrderedCollections' in project 'swift-collections'
+    Target 'Jinja' in project 'Jinja'
+        ➜ Explicit dependency on target 'OrderedCollections' in project 'swift-collections'
+    Target 'OrderedCollections' in project 'swift-collections'
+        ➜ Explicit dependency on target 'OrderedCollections' in project 'swift-collections'
+        ➜ Explicit dependency on target 'InternalCollectionsUtilities' in project 'swift-collections'
+    Target 'OrderedCollections' in project 'swift-collections'
+        ➜ Explicit dependency on target 'InternalCollectionsUtilities' in project 'swift-collections'
+    Target 'InternalCollectionsUtilities' in project 'swift-collections' (no dependencies)
+    Target 'swift-transformers_Hub' in project 'swift-transformers' (no dependencies)
+    Target 'Opus' in project 'Opus'
+        ➜ Explicit dependency on target 'Opus' in project 'Opus'
+        ➜ Explicit dependency on target 'Copus' in project 'Opus'
+    Target 'Opus' in project 'Opus'
+        ➜ Explicit dependency on target 'Copus' in project 'Opus'
+    Target 'Copus' in project 'Opus' (no dependencies)
+    Target 'yyjson' in project 'yyjson'
+        ➜ Explicit dependency on target 'yyjson' in project 'yyjson'
+    Target 'yyjson' in project 'yyjson' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -x c++ -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ReadFileContents /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/share/docc/features.json
+
+Build description signature: a5f6d8f744ef3f58adcfeadaafe27a85
+Build description path: /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/XCBuildData/a5f6d8f744ef3f58adcfeadaafe27a85.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk /Users/lucaditizio/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E237-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+    cd /Users/lucaditizio/github/MeetScribe/Scribe.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -o /Users/lucaditizio/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E237-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+
+ProcessInfoPlistFile /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/swift-crypto_Crypto.bundle/Info.plist /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-crypto.build/Debug-iphonesimulator/swift-crypto_Crypto.build/empty-swift-crypto_Crypto.plist (in target 'swift-crypto_Crypto' from project 'swift-crypto')
+    cd /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-crypto
+    builtin-infoPlistUtility /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-crypto.build/Debug-iphonesimulator/swift-crypto_Crypto.build/empty-swift-crypto_Crypto.plist -producttype com.apple.product-type.bundle -expandbuildsettings -format binary -platform iphonesimulator -o /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/swift-crypto_Crypto.bundle/Info.plist
+
+ProcessInfoPlistFile /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/swift-transformers_Hub.bundle/Info.plist /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-transformers.build/Debug-iphonesimulator/swift-transformers_Hub.build/empty-swift-transformers_Hub.plist (in target 'swift-transformers_Hub' from project 'swift-transformers')
+    cd /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/SourcePackages/checkouts/swift-transformers
+    builtin-infoPlistUtility /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-transformers.build/Debug-iphonesimulator/swift-transformers_Hub.build/empty-swift-transformers_Hub.plist -producttype com.apple.product-type.bundle -expandbuildsettings -format binary -platform iphonesimulator -o /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/swift-transformers_Hub.bundle/Info.plist
+
+ProcessProductPackaging "" /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Scribe.app-Simulated.xcent (in target 'Scribe' from project 'Scribe')
+    cd /Users/lucaditizio/github/MeetScribe
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "J99F8GKHAW.com.scribe.app";
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Scribe.app-Simulated.xcent
+
+ProcessProductPackagingDER /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Scribe.app-Simulated.xcent /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Scribe.app-Simulated.xcent.der (in target 'Scribe' from project 'Scribe')
+    cd /Users/lucaditizio/github/MeetScribe
+    /usr/bin/derq query -f xml -i /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Scribe.app-Simulated.xcent -o /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Scribe.app-Simulated.xcent.der --raw
+
+ProcessInfoPlistFile /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Info.plist /Users/lucaditizio/github/MeetScribe/Scribe/Info.plist (in target 'Scribe' from project 'Scribe')
+    cd /Users/lucaditizio/github/MeetScribe
+    builtin-infoPlistUtility /Users/lucaditizio/github/MeetScribe/Scribe/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -scanforprivacyfile /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Frameworks/llama.framework -scanforprivacyfile /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/swift-crypto_Crypto.bundle -scanforprivacyfile /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/swift-transformers_Hub.bundle -o /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Info.plist
+
+Ld /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Scribe.debug.dylib normal (in target 'Scribe' from project 'Scribe')
+    cd /Users/lucaditizio/github/MeetScribe
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios18.0-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -O0 -L/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator -filelist /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Objects-normal/arm64/Scribe.LinkFileList -install_name @rpath/Scribe.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Objects-normal/arm64/Scribe_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Objects-normal/arm64/Scribe_dependency_info.dat -fobjc-link-runtime -fprofile-instr-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Objects-normal/arm64/Scribe.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Objects-normal/arm64/Scribe-linker-args.resp -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -lc++ -Wl,-no_warn_duplicate_libraries -Wl,-no_warn_duplicate_libraries -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -framework llama -Xlinker -no_adhoc_codesign -o /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Scribe.debug.dylib -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Opus.build/Debug-iphonesimulator/Opus.build/Objects-normal/arm64/Opus.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Opus.build/Debug-iphonesimulator/Opus.build/Objects-normal/arm64/Opus-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-transformers.build/Debug-iphonesimulator/Tokenizers.build/Objects-normal/arm64/Tokenizers.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-transformers.build/Debug-iphonesimulator/Tokenizers.build/Objects-normal/arm64/Tokenizers-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-transformers.build/Debug-iphonesimulator/Generation.build/Objects-normal/arm64/Generation.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-transformers.build/Debug-iphonesimulator/Generation.build/Objects-normal/arm64/Generation-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-transformers.build/Debug-iphonesimulator/Models.build/Objects-normal/arm64/Models.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-transformers.build/Debug-iphonesimulator/Models.build/Objects-normal/arm64/Models-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Jinja.build/Debug-iphonesimulator/Jinja.build/Objects-normal/arm64/Jinja.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Jinja.build/Debug-iphonesimulator/Jinja.build/Objects-normal/arm64/Jinja-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-collections.build/Debug-iphonesimulator/OrderedCollections.build/Objects-normal/arm64/OrderedCollections.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-collections.build/Debug-iphonesimulator/OrderedCollections.build/Objects-normal/arm64/OrderedCollections-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-collections.build/Debug-iphonesimulator/InternalCollectionsUtilities.build/Objects-normal/arm64/InternalCollectionsUtilities.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-collections.build/Debug-iphonesimulator/InternalCollectionsUtilities.build/Objects-normal/arm64/InternalCollectionsUtilities-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-huggingface.build/Debug-iphonesimulator/HuggingFace.build/Objects-normal/arm64/HuggingFace.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-huggingface.build/Debug-iphonesimulator/HuggingFace.build/Objects-normal/arm64/HuggingFace-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/EventSource.build/Debug-iphonesimulator/EventSource.build/Objects-normal/arm64/EventSource.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/EventSource.build/Debug-iphonesimulator/EventSource.build/Objects-normal/arm64/EventSource-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/NIOCore.build/Objects-normal/arm64/NIOCore.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/NIOCore.build/Objects-normal/arm64/NIOCore-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/NIOConcurrencyHelpers.build/Objects-normal/arm64/NIOConcurrencyHelpers.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/NIOConcurrencyHelpers.build/Objects-normal/arm64/NIOConcurrencyHelpers-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/_NIOBase64.build/Objects-normal/arm64/_NIOBase64.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/_NIOBase64.build/Objects-normal/arm64/_NIOBase64-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/_NIODataStructures.build/Objects-normal/arm64/_NIODataStructures.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-nio.build/Debug-iphonesimulator/_NIODataStructures.build/Objects-normal/arm64/_NIODataStructures-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-collections.build/Debug-iphonesimulator/DequeModule.build/Objects-normal/arm64/DequeModule.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-collections.build/Debug-iphonesimulator/DequeModule.build/Objects-normal/arm64/DequeModule-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-collections.build/Debug-iphonesimulator/ContainersPreview.build/Objects-normal/arm64/ContainersPreview.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-collections.build/Debug-iphonesimulator/ContainersPreview.build/Objects-normal/arm64/ContainersPreview-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-atomics.build/Debug-iphonesimulator/Atomics.build/Objects-normal/arm64/Atomics.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-atomics.build/Debug-iphonesimulator/Atomics.build/Objects-normal/arm64/Atomics-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-crypto.build/Debug-iphonesimulator/Crypto.build/Objects-normal/arm64/Crypto.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-crypto.build/Debug-iphonesimulator/Crypto.build/Objects-normal/arm64/Crypto-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-transformers.build/Debug-iphonesimulator/Hub.build/Objects-normal/arm64/Hub.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/swift-transformers.build/Debug-iphonesimulator/Hub.build/Objects-normal/arm64/Hub-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/llama.swift.build/Debug-iphonesimulator/LlamaSwift.build/Objects-normal/arm64/LlamaSwift.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/llama.swift.build/Debug-iphonesimulator/LlamaSwift.build/Objects-normal/arm64/LlamaSwift-linker-args.resp -Xlinker -add_ast_path -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/FluidAudio.build/Debug-iphonesimulator/FluidAudio.build/Objects-normal/arm64/FluidAudio.swiftmodule @/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/FluidAudio.build/Debug-iphonesimulator/FluidAudio.build/Objects-normal/arm64/FluidAudio-linker-args.resp
+
+ConstructStubExecutorLinkFileList /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Scribe-ExecutorLinkFileList-normal-arm64.txt (in target 'Scribe' from project 'Scribe')
+    cd /Users/lucaditizio/github/MeetScribe
+    construct-stub-executor-link-file-list /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Scribe.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Scribe-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'Scribe' from project 'Scribe')
+
+Ld /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Scribe normal (in target 'Scribe' from project 'Scribe')
+    cd /Users/lucaditizio/github/MeetScribe
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios18.0-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -O0 -L/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/PackageFrameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Scribe-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Scribe-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Scribe-ExecutorLinkFileList-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Scribe.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Scribe.app-Simulated.xcent.der /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Scribe.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Scribe
+
+CopySwiftLibs /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app (in target 'Scribe' from project 'Scribe')
+    cd /Users/lucaditizio/github/MeetScribe
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Scribe.debug.dylib --scan-folder /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Frameworks --scan-folder /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/PlugIns --scan-folder /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/SystemExtensions --scan-folder /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Extensions --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+ExtractAppIntentsMetadata (in target 'Scribe' from project 'Scribe')
+    cd /Users/lucaditizio/github/MeetScribe
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name Scribe --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk --xcode-version 17E192 --platform-family iOS --deployment-target 18.0 --bundle-identifier com.scribe.app --output /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app --target-triple arm64-apple-ios18.0-simulator --binary-file /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Scribe --dependency-file /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Objects-normal/arm64/Scribe_dependency_info.dat --stringsdata-file /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Objects-normal/arm64/Scribe.SwiftFileList --metadata-file-list /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Scribe.DependencyMetadataFileList --static-metadata-file-list /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Scribe.DependencyStaticMetadataFileList --swift-const-vals-list /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Intermediates.noindex/Scribe.build/Debug-iphonesimulator/Scribe.build/Objects-normal/arm64/Scribe.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-04-09 19:15:26.021 appintentsmetadataprocessor[35946:5715663] Starting appintentsmetadataprocessor export
+2026-04-09 19:15:26.026 appintentsmetadataprocessor[35946:5715663] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+CodeSign /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Scribe.debug.dylib (in target 'Scribe' from project 'Scribe')
+    cd /Users/lucaditizio/github/MeetScribe
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Scribe.debug.dylib
+
+CodeSign /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/__preview.dylib (in target 'Scribe' from project 'Scribe')
+    cd /Users/lucaditizio/github/MeetScribe
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/__preview.dylib
+/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/__preview.dylib: replacing existing signature
+
+CodeSign /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app (in target 'Scribe' from project 'Scribe')
+    cd /Users/lucaditizio/github/MeetScribe
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app
+
+Validate /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app (in target 'Scribe' from project 'Scribe')
+    cd /Users/lucaditizio/github/MeetScribe
+    builtin-validationUtility /Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app -shallow-bundle -infoplist-subpath Info.plist
+
+note: Removed stale file '/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Frameworks/Testing.framework'
+
+note: Removed stale file '/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Frameworks/XCTAutomationSupport.framework'
+
+note: Removed stale file '/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Frameworks/XCTest.framework'
+
+note: Removed stale file '/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Frameworks/XCTestCore.framework'
+
+note: Removed stale file '/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Frameworks/XCTestSupport.framework'
+
+note: Removed stale file '/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Frameworks/XCUIAutomation.framework'
+
+note: Removed stale file '/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Frameworks/XCUnit.framework'
+
+note: Removed stale file '/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Frameworks/libXCTestBundleInject.dylib'
+
+note: Removed stale file '/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/Frameworks/libXCTestSwiftSupport.dylib'
+
+note: Removed stale file '/Users/lucaditizio/Library/Developer/Xcode/DerivedData/Scribe-dmsqqbxnsegbfrcmyjfozmmjtnrn/Build/Products/Debug-iphonesimulator/Scribe.app/PlugIns'
+
+** BUILD SUCCEEDED **
+

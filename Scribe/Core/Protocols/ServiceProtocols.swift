@@ -24,12 +24,31 @@ public protocol DeviceConnectionManagerProtocol: AnyObject {
     func sendCommand(_ command: Data)
 }
 
-/// Connection state for BLE devices
-public enum ConnectionState: Sendable {
+/// Connection state for BLE devices with 9 states per plan specification
+public enum ConnectionState: Equatable {
     case disconnected
     case connecting
     case connected
-    case error(Error)
+    case binding
+    case initializing
+    case initialized
+    case bound
+    case failed(String)
+    case reconnecting(Int)
+    
+    public var isError: Bool {
+        if case .failed = self { return true }
+        return false
+    }
+    
+    public var isConnected: Bool {
+        switch self {
+        case .connected, .binding, .initializing, .initialized, .bound:
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 // MARK: - Audio Service Protocols
