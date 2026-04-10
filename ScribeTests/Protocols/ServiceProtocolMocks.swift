@@ -172,4 +172,10 @@ class MockRecordingRepository: RecordingRepositoryProtocol {
     func delete(_ recording: Recording) async throws {
         recordings.removeAll { $0.id == recording.id }
     }
+    
+    func update(_ recording: Recording) async throws {
+        if let index = recordings.firstIndex(where: { $0.id == recording.id }) {
+            recordings[index] = recording
+        }
+    }
 }

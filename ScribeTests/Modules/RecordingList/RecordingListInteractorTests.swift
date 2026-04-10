@@ -52,6 +52,7 @@ private final class MockRecordingRepositoryForTests: RecordingRepositoryProtocol
     }
     
     func save(_ recording: Recording) async throws {}
+    func update(_ recording: Recording) async throws {}
     func fetch(by id: UUID) async throws -> Recording? {
         return Recording(
             id: id,

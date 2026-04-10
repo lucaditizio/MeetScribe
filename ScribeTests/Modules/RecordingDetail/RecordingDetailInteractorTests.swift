@@ -28,14 +28,11 @@ private final class MockInteractorOutput: RecordingDetailInteractorOutput {
 
 private final class MockRecordingRepositoryForTests: RecordingRepositoryProtocol {
     var fetchByIdCalled = false
-    func fetch(by id: String) async throws -> Recording? {
-        fetchByIdCalled = true
-        return nil
-    }
     func fetchAll() async throws -> [Recording] { [] }
     func delete(_ recording: Recording) async throws {}
     func save(_ recording: Recording) async throws {}
     func fetch(by id: UUID) async throws -> Recording? {
+        fetchByIdCalled = true
         return nil
     }
     func update(_ recording: Recording) async throws {}
