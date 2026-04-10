@@ -36,6 +36,7 @@
 - RecordingRepositoryProtocol requires ALL methods: save, fetchAll, fetch(by:), delete, update
 - Common failure: mocks missing update() → build fails silently in test compilation
 - Always check test output for "TEST FAILED" and "Testing cancelled"
+- Simulator busy errors look like test failures but aren't - check for "Simulator device failed to launch - Busy"
 
 ## Method Naming Conventions
 - Action methods: `obtainRecordings()`, `processRecording()`, `startScan()`
