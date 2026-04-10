@@ -1284,7 +1284,7 @@ RecordingDetailView:
 
 ### Phase 3 — ML Services
 
-- [ ] 16.1. Create VADConfig.swift and VADService.swift
+- [x] 16.1. Create VADConfig.swift and VADService.swift
 
   **Files**: Services/MLService/VAD/VADConfig.swift, Services/MLService/VAD/VADService.swift
   **Category**: unspecified-low
@@ -1294,7 +1294,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT implement custom VAD — use FluidAudio only. Do NOT coexist with other ML models in RAM.
 
-- [ ] 16.2. Create VAD Tests
+- [x] 16.2. Create VAD Tests
 
   **Files**: ScribeTests/Services/ML/VADServiceTests.swift
   **Category**: quick
