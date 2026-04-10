@@ -1346,7 +1346,7 @@ RecordingDetailView:
 
   **What**: Test transcription with mock model output. Test FallbackASRService activation for non-Swiss-German.
 
-- [ ] 19.1. Create DiarizationService.swift
+- [x] 19.1. Create DiarizationService.swift
 
   **Files**: Services/MLService/Diarization/DiarizationService.swift
   **Category**: unspecified-low
@@ -1356,7 +1356,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT implement custom diarization — use FluidAudio only.
 
-- [ ] 19.2. Create Diarization Tests
+- [x] 19.2. Create Diarization Tests
 
   **Files**: ScribeTests/Services/ML/DiarizationServiceTests.swift
   **Category**: quick
