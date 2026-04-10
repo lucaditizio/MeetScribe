@@ -1,7 +1,7 @@
 import Foundation
 
 /// Configuration for the ML inference pipeline
-struct PipelineConfig: Sendable {
+public struct PipelineConfig: Sendable {
     // MARK: - Model URLs
     let swissGermanWhisperURL = "jlnslv/whisper-large-v3-turbo-swiss-german-coreml"
     

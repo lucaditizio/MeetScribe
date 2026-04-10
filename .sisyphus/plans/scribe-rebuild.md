@@ -1302,7 +1302,7 @@ RecordingDetailView:
 
   **What**: Test VAD with mock audio (speech returns true, silence returns false). Verify model is nullified after use.
 
-- [ ] 17.1. Create LanguageDetector.swift
+- [x] 17.1. Create LanguageDetector.swift
 
   **Files**: Services/MLService/ASR/LanguageDetector.swift
   **Category**: unspecified-low
@@ -1312,7 +1312,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT implement custom language detection — use Whisper's capability.
 
-- [ ] 17.2. Create LanguageDetector Tests
+- [x] 17.2. Create LanguageDetector Tests
 
   **Files**: ScribeTests/Services/ML/LanguageDetectorTests.swift
   **Category**: quick

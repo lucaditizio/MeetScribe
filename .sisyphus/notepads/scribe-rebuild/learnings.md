@@ -169,3 +169,20 @@ ScribeTests/
 - xcodebuild test command: `xcodebuild -scheme Scribe test -only-testing:ScribeTests/InternalMicRecorderTests`
   - Build failed due to missing signing team requirement (not code issue)
   - Code compiles successfully, tests are syntactically correct
+
+## Task 17.2 - LanguageDetectorTests (2026-04-10)
+- Created LanguageDetectorTests.swift in ScribeTests/Services/ML/ directory
+- Tests verify LanguageDetector error handling and interface contract
+- Test patterns used:
+  - testSwissGermanDetection() - verifies interface with Swiss German language codes
+  - testEnglishDetection() - verifies stub returns "en" with 0.95 confidence
+  - testEmptyAudioThrowsError() - verifies throws LanguageDetectionError.emptyAudioData
+  - testInsufficientSamplesThrowsError() - verifies throws LanguageDetectionError.insufficientSamples
+- Key insight: guard checks audioData.count (bytes), not sample count
+  - minASRSamples = 8000 bytes, Float32 samples = 4 bytes each
+  - Insufficient samples threshold = 1999 samples (7996 bytes)
+- Mock audio data generation: sine wave pattern via sin() function
+- Build verification: passed
+- Test verification: all 4 tests passed
+- Quality: 83 lines, zero print statements, zero force unwraps (except standard XCTest ! pattern), zero empty catch blocks
+- Note: LanguageDetector is stub - real Whisper integration in task 18.1
