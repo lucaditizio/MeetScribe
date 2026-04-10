@@ -42,4 +42,10 @@ public final class RecordingRepository: RecordingRepositoryProtocol {
         try context.save()
         ScribeLogger.info("Recording deleted: \(recording.id)", category: .audio)
     }
+    
+    public func update(_ recording: Recording) async throws {
+        let context = ModelContext(modelContainer)
+        try context.save()
+        ScribeLogger.info("Recording updated: \(recording.id)", category: .audio)
+    }
 }

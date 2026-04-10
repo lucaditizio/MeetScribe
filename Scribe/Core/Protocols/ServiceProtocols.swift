@@ -175,4 +175,5 @@ public protocol RecordingRepositoryProtocol: AnyObject {
     func fetchAll() async throws -> [Recording]
     func fetch(by id: UUID) async throws -> Recording?
     func delete(_ recording: Recording) async throws
+    func update(_ recording: Recording) async throws
 }

@@ -1458,7 +1458,7 @@ RecordingDetailView:
 
   **What**: Test Interactor with MockRecordingRepository: obtainRecordings → fetchAll called → output gets results. Test Presenter with MockInteractor: didTriggerViewReady → interactor.obtainRecordings called.
 
-- [ ] 22.1. RecordingDetailModule — Protocols + State
+- [x] 22.1. RecordingDetailModule — Protocols + State
 
   **Files**: Modules/RecordingDetailModule/Interactor/RecordingDetailInteractorInput.swift, Modules/RecordingDetailModule/Interactor/RecordingDetailInteractorOutput.swift, Modules/RecordingDetailModule/Presenter/RecordingDetailViewOutput.swift, Modules/RecordingDetailModule/Presenter/RecordingDetailViewInput.swift, Modules/RecordingDetailModule/Presenter/RecordingDetailModuleInput.swift, Modules/RecordingDetailModule/Presenter/RecordingDetailModuleOutput.swift, Modules/RecordingDetailModule/Presenter/RecordingDetailState.swift, Modules/RecordingDetailModule/Router/RecordingDetailRouterInput.swift
   **Category**: quick
@@ -1466,7 +1466,7 @@ RecordingDetailView:
 
   **What**: Create all RecordingDetailModule protocols and state. ModuleInput accepts recording ID. State: recording, selectedTab (summary/transcript/mindmap), isProcessing. Router: embedWaveformPlayback(), embedTranscript(), embedSummary(), embedMindMap().
 
-- [ ] 22.2. RecordingDetailModule — Interactor
+- [x] 22.2. RecordingDetailModule — Interactor
 
   **Files**: Modules/RecordingDetailModule/Interactor/RecordingDetailInteractor.swift
   **Category**: unspecified-low
@@ -1474,7 +1474,7 @@ RecordingDetailView:
 
   **What**: Create RecordingDetailInteractor holding RecordingRepositoryProtocol. Receives recording ID via ModuleInput, loads full recording. Methods: obtainRecording(id:), updateRecording(_:).
 
-- [ ] 22.3. RecordingDetailModule — Presenter, Router, Assembly
+- [x] 22.3. RecordingDetailModule — Presenter, Router, Assembly
 
   **Files**: Modules/RecordingDetailModule/Presenter/RecordingDetailPresenter.swift, Modules/RecordingDetailModule/Router/RecordingDetailRouter.swift, Modules/RecordingDetailModule/Assembly/RecordingDetailAssembly.swift
   **Category**: unspecified-low
@@ -1482,7 +1482,7 @@ RecordingDetailView:
 
   **What**: Presenter @Observable holds RecordingDetailState. Coordinates sub-module communication. Assembly wires all components and embeds sub-modules.
 
-- [ ] 22.4. RecordingDetailModule — Tests
+- [x] 22.4. RecordingDetailModule — Tests
 
   **Files**: ScribeTests/Modules/RecordingDetail/RecordingDetailInteractorTests.swift, ScribeTests/Modules/RecordingDetail/RecordingDetailPresenterTests.swift
   **Category**: quick
