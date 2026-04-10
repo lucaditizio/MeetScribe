@@ -2,8 +2,8 @@ import SwiftData
 import Foundation
 
 /// Container for SwiftData model configuration
-final class SwiftDataModelContainer {
-    static let shared: ModelContainer = {
+public final class SwiftDataModelContainer {
+    public static let shared: ModelContainer = {
         let schema = Schema([
             Recording.self,
             Transcript.self, 

@@ -3,18 +3,21 @@ import Combine
 @testable import Scribe
 
 final class InternalMicRecorderTests: XCTestCase {
-    private var recorder: InternalMicRecorder!
+    private var recorder: AudioRecorderProtocol!
+    private var mockRecorder: MockAudioRecorder!
     private var cancellables: Set<AnyCancellable>!
     
     override func setUp() {
         super.setUp()
-        recorder = InternalMicRecorder()
+        mockRecorder = MockAudioRecorder()
+        recorder = mockRecorder
         cancellables = []
     }
     
     override func tearDown() {
         cancellables = nil
         recorder = nil
+        mockRecorder = nil
         super.tearDown()
     }
     
@@ -45,12 +48,14 @@ final class InternalMicRecorderTests: XCTestCase {
         
         recorder.startRecording(source: .rawInternal)
         
-        let recording = await recorder.stopRecording()
+        _ = await recorder.stopRecording()
         
         XCTAssertTrue(receivedStates.contains(false), "isRecordingPublisher should emit false after stopRecording")
     }
     
     func testStopRecordingReturnsNilWhenNotRecording() async {
+        mockRecorder.shouldReturnRecording = false
+        
         let recording = await recorder.stopRecording()
         
         XCTAssertNil(recording, "stopRecording should return nil when not in recording state")
@@ -70,7 +75,7 @@ final class InternalMicRecorderTests: XCTestCase {
         recorder.startRecording(source: .rawInternal)
         
         let trueCount = receivedStates.filter { $0 == true }.count
-        XCTAssertEqual(trueCount, 1)
+        XCTAssertEqual(trueCount, 1, "Should only emit true once despite multiple start calls")
     }
     
     func testStopRecordingReturnsRecordingObject() async {
@@ -119,5 +124,16 @@ final class InternalMicRecorderTests: XCTestCase {
     
     func testAudioDataPublisherExists() {
         XCTAssertNotNil(recorder.audioDataPublisher, "audioDataPublisher should exist")
+    }
+    
+    func testBLESourceRecording() async {
+        recorder.startRecording(source: .rawBle)
+        
+        let recording = await recorder.stopRecording()
+        
+        XCTAssertNotNil(recording)
+        if let recording = recording {
+            XCTAssertEqual(recording.source, .rawBle, "Recording source should be rawBle")
+        }
     }
 }

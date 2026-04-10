@@ -35,20 +35,32 @@ class MockDeviceConnectionManager: DeviceConnectionManagerProtocol {
     var audioDataPublisher: AnyPublisher<Data, Never> {
         audioDataSubject.eraseToAnyPublisher()
     }
-    
-    private let connectionStateSubject = CurrentValueSubject<ConnectionState, Never>(.disconnected)
+
+    private let connectionStateSubject: CurrentValueSubject<ConnectionState, Never>
     private let audioDataSubject = PassthroughSubject<Data, Never>()
-    
+
+    init(initialState: ConnectionState = .disconnected) {
+        connectionStateSubject = CurrentValueSubject<ConnectionState, Never>(initialState)
+    }
+
     func connect(to device: BluetoothDevice) {
         connectionStateSubject.send(.connecting)
         connectionStateSubject.send(.connected)
     }
-    
+
     func disconnect() {
         connectionStateSubject.send(.disconnected)
     }
-    
+
     func sendCommand(_ command: Data) {}
+
+    func mockSetConnectionState(_ state: ConnectionState) {
+        connectionStateSubject.send(state)
+    }
+
+    func mockSendAudioData(_ data: Data) {
+        audioDataSubject.send(data)
+    }
 }
 
 // MARK: - Audio Mocks
@@ -64,13 +76,46 @@ class MockAudioRecorder: AudioRecorderProtocol {
     private let isRecordingSubject = CurrentValueSubject<Bool, Never>(false)
     private let audioDataSubject = PassthroughSubject<Data, Never>()
     
+    private(set) var startRecordingCalled = false
+    private(set) var stopRecordingCalled = false
+    private(set) var lastRecordingSource: RecordingSource?
+    var shouldReturnRecording = true
+    var mockRecordingDuration: TimeInterval = 1.0
+    
     func startRecording(source: RecordingSource) {
+        guard !isRecordingSubject.value else { return }
+        startRecordingCalled = true
+        lastRecordingSource = source
         isRecordingSubject.send(true)
     }
     
     func stopRecording() async -> Recording? {
+        stopRecordingCalled = true
         isRecordingSubject.send(false)
-        return nil
+        
+        guard shouldReturnRecording else { return nil }
+        
+        return Recording(
+            title: "Test Recording",
+            date: Date(),
+            duration: mockRecordingDuration,
+            fileName: "test-recording.caf",
+            filePath: "/test/path/test-recording.caf",
+            source: lastRecordingSource ?? .rawInternal
+        )
+    }
+    
+    func mockSendAudioData(_ data: Data) {
+        audioDataSubject.send(data)
+    }
+    
+    func reset() {
+        startRecordingCalled = false
+        stopRecordingCalled = false
+        lastRecordingSource = nil
+        shouldReturnRecording = true
+        mockRecordingDuration = 1.0
+        isRecordingSubject.send(false)
     }
 }
 

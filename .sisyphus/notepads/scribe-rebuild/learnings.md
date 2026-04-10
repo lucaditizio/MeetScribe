@@ -95,6 +95,19 @@ ScribeTests/
 
 ## Session Log
 
+## Task 14.1 - AudioPlayer Implementation (2026-04-10)
+- Created AudioPlayer.swift in Scribe/Services/AudioService/
+- Implements AudioPlayerProtocol with AVAudioPlayer wrapper
+- Key features:
+  - @Observable state via Combine (CurrentValueSubject)
+  - Speed cycling: 1.0x → 1.5x → 2.0x → 1.0x
+  - Skip ±15 seconds via seek methods
+  - Session management: setActive(true/false)
+  - Publishers: playbackStatePublisher, currentTimePublisher
+- Build verification: passed with deprecation warning (allowBluetooth → allowBluetoothHFP)
+- Quality: 188 lines, zero print, zero force unwraps, zero empty catch blocks
+- Note: @objc + NSObject inheritance required for AVAudioPlayerDelegate conformance
+
 ## Task 1.1 - Xcode Project Creation (2026-04-09)
 - Created Xcode project at ROOT level (not nested Scribe/Scribe/Scribe)
 - Used PBXFileSystemSynchronizedRootGroup for automatic file discovery

@@ -764,7 +764,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT add dependencies beyond the 6 listed. Do NOT create a separate Package.swift — add as Xcode project package dependencies.
 
-- [ ] 1.3. Create First Test + Verify Build
+- [x] 1.3. Create First Test + Verify Build
 
   **Files**: ScribeTests/App/ScribeAppTests.swift
   **Category**: quick
@@ -883,7 +883,7 @@ RecordingDetailView:
 
   **Key Code**: See embedded reference — current code has 133 print() calls that must all become ScribeLogger calls.
 
-- [ ] 3.2. Create Extension Files
+- [x] 3.2. Create Extension Files
 
   **Files**: Core/Infrastructure/Extensions/Date+Formatting.swift, Core/Infrastructure/Extensions/String+Validation.swift, Core/Infrastructure/Extensions/TimeInterval+Formatting.swift
   **Category**: quick
@@ -891,7 +891,7 @@ RecordingDetailView:
 
   **What**: Create three extensions. Reference: RecordingCardView.swift has `formatDuration()` that should be extracted. TimeInterval+Formatting: formatDuration → "1:05" or "1:01:01". String+Validation: isEmptyOrNil, isValidFilename. Date+Formatting: formatted date strings. Write tests for TimeInterval formatting edge cases (0, 65, 3661).
 
-- [ ] 3.3. Create SwiftDataModelContainer.swift
+- [x] 3.3. Create SwiftDataModelContainer.swift
 
   **Files**: Core/Infrastructure/Persistence/SwiftDataModelContainer.swift
   **Category**: quick
@@ -993,7 +993,7 @@ RecordingDetailView:
 
   **What**: Create VIPER base protocols: ModuleInput (base for module configuration), ModuleOutput (base for module results with associatedtype OutputType), AssemblyProtocol (base for module factories with associatedtype ViewType). Write tests verifying protocol conformance compiles.
 
-- [ ] 6.1. Create Theme.swift
+- [x] 6.1. Create Theme.swift
 
   **Files**: SharedUI/Theme/Theme.swift, ScribeTests/SharedUI/ThemeTests.swift
   **Category**: quick
@@ -1018,7 +1018,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT change ANY color values — exact match required.
 
-- [ ] 6.2. Create Spacing.swift + Typography.swift
+- [x] 6.2. Create Spacing.swift + Typography.swift
 
   **Files**: SharedUI/Theme/Spacing.swift, SharedUI/Theme/Typography.swift, ScribeTests/SharedUI/ThemeTests.swift (append)
   **Category**: quick
@@ -1026,7 +1026,7 @@ RecordingDetailView:
 
   **What**: Create Spacing with all hardcoded UI values from current views. Reference: RecordButtonView (80x80, 70x70 outer/inner circles), WaveformView (50 bars, 3pt spacing, 2pt corner radius, 4pt min height), skip buttons (15s), playback button (44pt scribeRed), dashboard padding etc. Create Typography with system font styles.
 
-- [ ] 7.1. Create ServiceRegistry.swift
+- [x] 7.1. Create ServiceRegistry.swift
 
   **Files**: App/ServiceRegistry.swift
   **Category**: quick
@@ -1036,7 +1036,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT implement any service — only register placeholder types. Do NOT use global singletons outside ServiceRegistry.
 
-- [ ] 7.2. Create AppAssembly.swift
+- [x] 7.2. Create AppAssembly.swift
 
   **Files**: App/AppAssembly.swift, ScribeTests/App/AppAssemblyTests.swift
   **Category**: quick
@@ -1044,7 +1044,7 @@ RecordingDetailView:
 
   **What**: Create AppAssembly that wires all service stubs from ServiceRegistry and has factory methods for each of the 8 modules (returns placeholder Views for now). Update ScribeApp.swift to use AppAssembly. Write test verifying assembly creates all components.
 
-- [ ] 7.3. Verify Phase 1 — Full Build
+- [x] 7.3. Verify Phase 1 — Full Build
 
   **Files**: None (verification only)
   **Category**: quick
@@ -1056,7 +1056,7 @@ RecordingDetailView:
 
 ### Phase 2 — BLE + Audio Services
 
-- [ ] 8.1. Create SLinkConstants, SLinkCommand, SLinkConnectionState
+- [x] 8.1. Create SLinkConstants, SLinkCommand, SLinkConnectionState
 
   **Files**: Services/BLEService/SLink/SLinkConstants.swift, Services/BLEService/SLink/SLinkCommand.swift, Services/BLEService/SLink/SLinkConnectionState.swift
   **Category**: unspecified-low
@@ -1066,7 +1066,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT modify any SLink protocol logic — copy values as-is from the embedded reference.
 
-- [ ] 8.2. Create SLinkProtocol.swift and SLinkPacketParser.swift
+- [x] 8.2. Create SLinkProtocol.swift and SLinkPacketParser.swift
 
   **Files**: Services/BLEService/SLink/SLinkProtocol.swift, Services/BLEService/SLink/SLinkPacketParser.swift
   **Category**: unspecified-high
@@ -1076,7 +1076,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT modify SLink protocol logic. Do NOT change BLE characteristic UUIDs. Do NOT change 8-step init sequence.
 
-- [ ] 8.3. Create SLink Tests
+- [x] 8.3. Create SLink Tests
 
   **Files**: ScribeTests/Services/BLE/SLinkPacketParserTests.swift, ScribeTests/Services/BLE/SLinkChecksumTests.swift
   **Category**: quick
@@ -1084,7 +1084,7 @@ RecordingDetailView:
 
   **What**: Write tests for packet parsing (feed raw Data) and checksum validation (known input → known output from the XOR 0x5F00 algorithm). Verify the checksum for handshake command (0x0202 with empty payload) matches expected output. Verify parsing matches current behavior.
 
-- [ ] 9.1. Create BluetoothDevice.swift
+- [x] 9.1. Create BluetoothDevice.swift
 
   **Files**: Services/BLEService/BluetoothDevice.swift
   **Category**: quick
@@ -1092,7 +1092,7 @@ RecordingDetailView:
 
   **What**: Create BluetoothDevice value type. Reference: embedded reference BluetoothDevice.swift has id (String), name (String), rssi (Int), isConnected (Bool), batteryLevel (Int?). Conforms to Identifiable, Equatable. ALSO create ScannerConnectionDelegate protocol with scannerDidConnect, scannerDidFailToConnect, scannerDidDisconnect methods (from the embedded reference).
 
-- [ ] 9.2. Create BluetoothDeviceScanner.swift
+- [x] 9.2. Create BluetoothDeviceScanner.swift
 
   **Files**: Services/BLEService/BluetoothDeviceScanner.swift
   **Category**: unspecified-low
@@ -1102,7 +1102,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT modify SLink protocol logic. Do NOT use print statements.
 
-- [ ] 9.3. Create BluetoothDeviceScanner Tests
+- [x] 9.3. Create BluetoothDeviceScanner Tests
 
   **Files**: ScribeTests/Services/BLE/BluetoothDeviceScannerTests.swift
   **Category**: quick
@@ -1128,7 +1128,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT modify SLink protocol logic.
 
-- [ ] 10.3. Create KeepAliveService.swift and DeviceConnectionManager.swift
+- [x] 10.3. Create KeepAliveService.swift and DeviceConnectionManager.swift
 
   **Files**: Services/BLEService/KeepAliveService.swift, Services/BLEService/DeviceConnectionManager.swift
   **Category**: unspecified-high
@@ -1138,7 +1138,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT create a single 676-line god class. Do NOT use print statements.
 
-- [ ] 10.4. Create DeviceConnectionManager Tests
+- [x] 10.4. Create DeviceConnectionManager Tests
 
   **Files**: ScribeTests/Services/BLE/DeviceConnectionManagerTests.swift
   **Category**: unspecified-low
@@ -1146,7 +1146,7 @@ RecordingDetailView:
 
   **What**: Write tests with mocked CoreBluetooth: verify scan → connect → init → keep-alive → disconnect lifecycle. Test reconnection (max 5 attempts). Test connection timeout.
 
-- [ ] 10.5. Verify BLE Services Build
+- [x] 10.5. Verify BLE Services Build
 
   **Files**: None (verification only)
   **Category**: quick
@@ -1174,7 +1174,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT modify Opus decoding logic. Do NOT use print statements.
 
-- [ ] 11.3. Create Opus Decoder Tests
+- [x] 11.3. Create Opus Decoder Tests
 
   **Files**: ScribeTests/Services/Audio/OpusAudioDecoderTests.swift
   **Category**: quick
@@ -1210,7 +1210,7 @@ RecordingDetailView:
 
   **What**: Test recorder lifecycle (start/stop). Verify no empty catch blocks in Services/AudioService/ (grep).
 
-- [ ] 13.1. Create UnifiedRecorder.swift
+- [x] 13.1. Create UnifiedRecorder.swift
 
   **Files**: Services/AudioService/UnifiedRecorder.swift
   **Category**: unspecified-low
@@ -1220,7 +1220,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT implement recording logic directly — delegate to internal/BLE recorders.
 
-- [ ] 13.2. Create RecordingOrchestrator.swift
+- [x] 13.2. Create RecordingOrchestrator.swift
 
   **Files**: Services/AudioService/RecordingOrchestrator.swift
   **Category**: unspecified-low
@@ -1228,7 +1228,7 @@ RecordingDetailView:
 
   **What**: Create RecordingOrchestrator that manages recording lifecycle. Reference: current UnifiedRecorder.swift handles start, stop, source routing. Move business logic here from the old god class. Handles BLE disconnect mid-recording (falls back to internal or stops cleanly). Replace ALL print statements with ScribeLogger.
 
-- [ ] 13.3. Create UnifiedRecorder Tests
+- [x] 13.3. Create UnifiedRecorder Tests
 
   **Files**: ScribeTests/Services/Audio/UnifiedRecorderTests.swift
   **Category**: quick
@@ -1236,7 +1236,7 @@ RecordingDetailView:
 
   **What**: Test BLE routing (connected → starts AudioStreamProtocol, disconnected → starts InternalMicRecorder). Test BLE disconnect mid-recording (stops cleanly, saves partial).
 
-- [ ] 14.1. Create AudioPlayer.swift
+- [x] 14.1. Create AudioPlayer.swift
 
   **Files**: Services/AudioService/AudioPlayer.swift
   **Category**: unspecified-low
@@ -1246,7 +1246,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT implement UI — only audio logic.
 
-- [ ] 14.2. Create WaveformAnalyzer.swift and AudioConverter.swift
+- [x] 14.2. Create WaveformAnalyzer.swift and AudioConverter.swift
 
   **Files**: Services/AudioService/WaveformAnalyzer.swift, Services/AudioService/AudioConverter.swift
   **Category**: unspecified-low
@@ -1256,7 +1256,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT implement custom codecs — use AVAudioConverter or existing libraries.
 
-- [ ] 14.3. Create Audio Player + Waveform Tests
+- [x] 14.3. Create Audio Player + Waveform Tests
 
   **Files**: ScribeTests/Services/Audio/AudioPlayerTests.swift, ScribeTests/Services/Audio/WaveformAnalyzerTests.swift
   **Category**: quick
@@ -1264,7 +1264,7 @@ RecordingDetailView:
 
   **What**: Test speed cycling (1.0→1.5→2.0→1.0). Test waveform produces 50 normalized bars in [0.05, 1.0]. Test AudioConverter throws on invalid file path.
 
-- [ ] 15.1. Create RecordingRepository.swift
+- [x] 15.1. Create RecordingRepository.swift
 
   **Files**: Services/RecordingService/RecordingRepository.swift
   **Category**: quick
@@ -1274,7 +1274,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT add business logic — pure data access only. Do NOT use print statements.
 
-- [ ] 15.2. Create RecordingRepository Tests
+- [x] 15.2. Create RecordingRepository Tests
 
   **Files**: ScribeTests/Services/Recording/RecordingRepositoryTests.swift
   **Category**: quick
