@@ -1420,7 +1420,7 @@ RecordingDetailView:
 > - X.3: Presenter + Router + Assembly (mediator, navigation, wiring)
 > - X.4: Module Tests
 
-- [ ] 21.1. RecordingListModule — Protocols + State
+- [x] 21.1. RecordingListModule — Protocols + State
 
   **Files**: Modules/RecordingListModule/Interactor/RecordingListInteractorInput.swift, Modules/RecordingListModule/Interactor/RecordingListInteractorOutput.swift, Modules/RecordingListModule/Presenter/RecordingListViewOutput.swift, Modules/RecordingListModule/Presenter/RecordingListViewInput.swift, Modules/RecordingListModule/Presenter/RecordingListModuleInput.swift, Modules/RecordingListModule/Presenter/RecordingListModuleOutput.swift, Modules/RecordingListModule/Presenter/RecordingListState.swift, Modules/RecordingListModule/Router/RecordingListRouterInput.swift
   **Category**: quick
@@ -1430,7 +1430,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT implement business logic — define interfaces only.
 
-- [ ] 21.2. RecordingListModule — Interactor
+- [x] 21.2. RecordingListModule — Interactor
 
   **Files**: Modules/RecordingListModule/Interactor/RecordingListInteractor.swift
   **Category**: unspecified-low
@@ -1440,7 +1440,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT access services directly from Presenter. Do NOT hold state (only dependencies + weak output).
 
-- [ ] 21.3. RecordingListModule — Presenter, Router, Assembly
+- [x] 21.3. RecordingListModule — Presenter, Router, Assembly
 
   **Files**: Modules/RecordingListModule/Presenter/RecordingListPresenter.swift, Modules/RecordingListModule/Router/RecordingListRouter.swift, Modules/RecordingListModule/Assembly/RecordingListAssembly.swift
   **Category**: unspecified-low
@@ -1450,7 +1450,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT put business logic in Presenter — Presenter only mediates.
 
-- [ ] 21.4. RecordingListModule — Tests
+- [x] 21.4. RecordingListModule — Tests
 
   **Files**: ScribeTests/Modules/RecordingList/RecordingListInteractorTests.swift, ScribeTests/Modules/RecordingList/RecordingListPresenterTests.swift
   **Category**: quick
