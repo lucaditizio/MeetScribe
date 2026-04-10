@@ -135,6 +135,7 @@
 				B00000010000000000000004 /* Transformers */,
 				B00000010000000000000005 /* Opus */,
 				B00000010000000000000006 /* yyjson */,
+				B00000010000000000000007 /* WhisperKit */,
 			);
 			productName = Scribe;
 			productReference = A00000020000000000000001 /* Scribe.app */;
@@ -198,6 +199,7 @@
 				C00000010000000000000004 /* XCRemoteSwiftPackageReference "swift-transformers" */,
 				C00000010000000000000005 /* XCRemoteSwiftPackageReference "swift-opus" */,
 				C00000010000000000000006 /* XCRemoteSwiftPackageReference "yyjson" */,
+				C00000010000000000000007 /* XCRemoteSwiftPackageReference "WhisperKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A00000080000000000000001 /* Products */;
@@ -563,6 +565,14 @@
 				minimumVersion = 0.10.0;
 			};
 		};
+		C00000010000000000000007 /* XCRemoteSwiftPackageReference "WhisperKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/argmaxinc/WhisperKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -595,6 +605,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C00000010000000000000006 /* XCRemoteSwiftPackageReference "yyjson" */;
 			productName = yyjson;
+		};
+		B00000010000000000000007 /* WhisperKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C00000010000000000000007 /* XCRemoteSwiftPackageReference "WhisperKit" */;
+			productName = WhisperKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

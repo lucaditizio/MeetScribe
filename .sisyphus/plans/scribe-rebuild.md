@@ -1320,7 +1320,7 @@ RecordingDetailView:
 
   **What**: Test with mock Whisper output: Swiss German returns isSwissGerman=true, English returns isSwissGerman=false.
 
-- [ ] 18.1. Create WhisperCoreMLService.swift
+- [x] 18.1. Create WhisperCoreMLService.swift
 
   **Files**: Services/MLService/ASR/WhisperCoreMLService.swift
   **Category**: unspecified-high
@@ -1330,7 +1330,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT load multiple models simultaneously. Do NOT implement custom ASR.
 
-- [ ] 18.2. Create FallbackASRService.swift
+- [x] 18.2. Create FallbackASRService.swift
 
   **Files**: Services/MLService/ASR/FallbackASRService.swift
   **Category**: unspecified-low
@@ -1338,7 +1338,7 @@ RecordingDetailView:
 
   **What**: Create FallbackASRService implementing TranscriptionServiceProtocol. Uses FluidAudio Parakeet (reference: TranscriptionService in embedded InferencePipeline.swift) or general Whisper model for non-Swiss-German audio. Sequential memory management.
 
-- [ ] 18.3. Create ASR Tests
+- [x] 18.3. Create ASR Tests
 
   **Files**: ScribeTests/Services/ML/WhisperCoreMLServiceTests.swift, ScribeTests/Services/ML/FallbackASRServiceTests.swift
   **Category**: quick
