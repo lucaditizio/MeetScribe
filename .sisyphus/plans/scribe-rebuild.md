@@ -1364,7 +1364,7 @@ RecordingDetailView:
 
   **What**: Test diarization with mock audio (produces multiple segments). Test fallback to "Speaker 1" on error.
 
-- [ ] 20.1. Create LLMService.swift
+- [x] 20.1. Create LLMService.swift
 
   **Files**: Services/MLService/Summarization/LLMService.swift
   **Category**: unspecified-high
@@ -1386,7 +1386,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT implement custom LLM inference. Do NOT load multiple models simultaneously.
 
-- [ ] 20.2. Create ProgressTracker.swift
+- [x] 20.2. Create ProgressTracker.swift
 
   **Files**: Services/MLService/Pipeline/ProgressTracker.swift
   **Category**: quick
@@ -1394,7 +1394,7 @@ RecordingDetailView:
 
   **What**: Create ProgressTracker as @Observable class. Reference: InferencePipeline.swift has isProcessing, currentStep, progress fields. Tracks: current stage (VAD/LanguageDetection/ASR/Diarization/Summarization), stage count, percentage complete, stage descriptions.
 
-- [ ] 20.3. Create InferencePipeline.swift
+- [x] 20.3. Create InferencePipeline.swift
 
   **Files**: Services/MLService/Pipeline/InferencePipeline.swift
   **Category**: unspecified-high
@@ -1404,7 +1404,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT implement ML logic directly — delegate to services. Do NOT load multiple models simultaneously.
 
-- [ ] 20.4. Create ML Pipeline Tests
+- [x] 20.4. Create ML Pipeline Tests
 
   **Files**: ScribeTests/Services/ML/LLMServiceTests.swift, ScribeTests/Services/ML/InferencePipelineTests.swift
   **Category**: unspecified-low
