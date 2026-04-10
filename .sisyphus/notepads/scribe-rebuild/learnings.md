@@ -29,6 +29,14 @@
 - Interactor holds **weak** ref to Presenter (called `output`)
 - Interactor holds **strong** refs to Services
 
+## Test Quality (CRITICAL)
+- Always RUN tests after subagent completes - don't accept "tests pass" claims
+- Verify BUILD succeeds first, then run actual tests with test target
+- Mock protocols MUST fully conform - missing methods cause silent build failures
+- RecordingRepositoryProtocol requires ALL methods: save, fetchAll, fetch(by:), delete, update
+- Common failure: mocks missing update() → build fails silently in test compilation
+- Always check test output for "TEST FAILED" and "Testing cancelled"
+
 ## Method Naming Conventions
 - Action methods: `obtainRecordings()`, `processRecording()`, `startScan()`
 - Completion methods: `didObtainRecordings()`, `didProcessRecording()`, `didFailWithError()`
