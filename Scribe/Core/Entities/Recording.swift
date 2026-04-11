@@ -14,7 +14,11 @@ public final class Recording {
     public var createdAt: Date
     public var updatedAt: Date
     
-
+    public var rawTranscript: String
+    public var actionItems: String?
+    public var meetingNotes: String?
+    
+    @Relationship(deleteRule: .cascade) public var transcript: Transcript?
     
     public init(
         id: UUID = UUID(),
@@ -25,7 +29,11 @@ public final class Recording {
         filePath: String,
         source: RecordingSource = .rawInternal,
         createdAt: Date = Date(),
-        updatedAt: Date = Date()
+        updatedAt: Date = Date(),
+        rawTranscript: String = "",
+        actionItems: String? = nil,
+        meetingNotes: String? = nil,
+        transcript: Transcript? = nil
     ) {
         self.id = id
         self.title = title
@@ -36,5 +44,9 @@ public final class Recording {
         self.source = source
         self.createdAt = createdAt
         self.updatedAt = updatedAt
+        self.rawTranscript = rawTranscript
+        self.actionItems = actionItems
+        self.meetingNotes = meetingNotes
+        self.transcript = transcript
     }
 }

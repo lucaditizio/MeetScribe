@@ -1522,7 +1522,7 @@ RecordingDetailView:
 
   **What**: Test Interactor with MockAudioPlayer: playAudio → player.play() called, cycleSpeed → speed incremented.
 
-- [ ] 24.1. TranscriptModule — Protocols + State
+- [x] 24.1. TranscriptModule — Protocols + State
 
   **Files**: Modules/TranscriptModule/Interactor/TranscriptInteractorInput.swift, Modules/TranscriptModule/Interactor/TranscriptInteractorOutput.swift, Modules/TranscriptModule/Presenter/TranscriptViewOutput.swift, Modules/TranscriptModule/Presenter/TranscriptViewInput.swift, Modules/TranscriptModule/Presenter/TranscriptModuleInput.swift, Modules/TranscriptModule/Presenter/TranscriptState.swift
   **Category**: quick
@@ -1530,7 +1530,7 @@ RecordingDetailView:
 
   **What**: Create TranscriptModule protocols and state. InteractorInput: obtainTranscriptSegments(), renameSpeaker(from:to:). ViewOutput: didTapSpeaker(speakerId:). State: parsed segments, selectedSpeakerForRename. No Router (embedded). Reference: RecordingDetailView.swift TranscriptInteractiveView for the `[Speaker N - MM:SS]` parsing pattern.
 
-- [ ] 24.2. TranscriptModule — Interactor
+- [x] 24.2. TranscriptModule — Interactor
 
   **Files**: Modules/TranscriptModule/Interactor/TranscriptInteractor.swift
   **Category**: unspecified-low
@@ -1538,7 +1538,7 @@ RecordingDetailView:
 
   **What**: Create TranscriptInteractor holding RecordingRepositoryProtocol. Reference: RecordingDetailView.swift parseTranscript function parses `[Speaker N - MM:SS]` format into TranscriptSegment structs. **IMPORTANT**: renameSpeaker must update rawTranscript, actionItems, AND meetingNotes JSON (all three fields) — see RecordingDetailView.swift lines 254-264.
 
-- [ ] 24.3. TranscriptModule — Presenter + Assembly
+- [x] 24.3. TranscriptModule — Presenter + Assembly
 
   **Files**: Modules/TranscriptModule/Presenter/TranscriptPresenter.swift, Modules/TranscriptModule/Assembly/TranscriptAssembly.swift
   **Category**: unspecified-low
@@ -1546,7 +1546,7 @@ RecordingDetailView:
 
   **What**: Presenter @Observable holds TranscriptState. Handles rename flow: View taps speaker → Presenter asks Interactor to rename. Assembly wires components.
 
-- [ ] 24.4. TranscriptModule — Tests
+- [x] 24.4. TranscriptModule — Tests
 
   **Files**: ScribeTests/Modules/Transcript/TranscriptInteractorTests.swift
   **Category**: quick
