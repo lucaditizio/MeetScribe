@@ -197,3 +197,23 @@ ScribeTests/
 - Test verification: all 4 tests passed
 - Quality: 83 lines, zero print statements, zero force unwraps (except standard XCTest ! pattern), zero empty catch blocks
 - Note: LanguageDetector is stub - real Whisper integration in task 18.1
+
+## Task 31.1 - TranscriptModule View + SummaryModule View (2026-04-11)
+- Created TranscriptTabView.swift in Scribe/Modules/TranscriptModule/View/
+- Created SummaryTabView.swift in Scribe/Modules/SummaryModule/View/
+- Both views follow passive VIPER pattern:
+  - View holds strong reference to Presenter (called `output`)
+  - View reads state from Presenter via `@State` property
+  - View forwards user actions via output protocol methods
+- TranscriptTabView displays speaker segments in list:
+  - Each segment shows speaker label (scribeRed) with timestamp (secondary color)
+  - Tap speaker triggers didTapSpeaker(speakerId:)
+  - Shows rename alert when state.selectedSpeakerForRename is set
+  - Empty state: "No transcript available" with doc.text.magnifyingglass icon
+- SummaryTabView displays topic sections and action items:
+  - Topic sections: title (headline bold) + content (body), card background
+  - Action items: "Action Items" heading + bullet list with circle icons
+  - Empty state: "No summary available" with doc.text.magnifyingglass icon
+- Theme usage: scribeRed, obsidian background, cardBackgroundDark, cornerRadius 20pt
+- Spacing usage: cardPadding (16), contentPadding (12), sectionSpacing (20)
+- Build verification: `xcodebuild -scheme Scribe -destination 'platform=iOS Simulator,name=iPhone 15 Plus' build` - **BUILD SUCCEEDED**

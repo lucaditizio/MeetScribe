@@ -277,12 +277,12 @@ Phase 4 — VIPER Module Stacks (~32 sub-tasks, serial):
   27.1 → 27.2 → 27.3 → 27.4  (AgentGenerating)
   28.1 → 28.2 → 28.3 → 28.4  (DeviceSettings)
 
-Phase 5 — Views (~12 sub-tasks, serial):
+Phase 5 — Views (~14 sub-tasks, serial):
   29.1 → 29.2 → 29.3  (RecordingList views)
   30.1 → 30.2          (RecordingDetail + Waveform views)
   31.1 → 31.2          (Transcript + Summary views)
-  32.1                  (MindMap view)
-  33.1                  (AgentGenerating view)
+  32.1 → 32.2          (MindMap view + tests)
+  33.1 → 33.2          (AgentGenerating view + tests)
   34.1 → 34.2          (DeviceSettings views)
 
 Phase 6 — App Wiring + Integration (~6 sub-tasks, serial):
@@ -1687,7 +1687,7 @@ RecordingDetailView:
 
   **What**: Test RecordingDetailView renders recording from Presenter state. Test WaveformPlaybackView reads playback state from Presenter.
 
-- [ ] 31.1. TranscriptModule View + SummaryModule View
+- [x] 31.1. TranscriptModule View + SummaryModule View
 
   **Files**: Modules/TranscriptModule/View/TranscriptTabView.swift, Modules/SummaryModule/View/SummaryTabView.swift
   **Category**: visual-engineering
@@ -1697,7 +1697,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT put parsing or rename logic in View. Do NOT change transcript format.
 
-- [ ] 31.2. Transcript + Summary View Tests
+- [x] 31.2. Transcript + Summary View Tests
 
   **Files**: ScribeTests/Modules/Transcript/TranscriptTabViewTests.swift
   **Category**: quick
@@ -1715,6 +1715,14 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT change mind map rendering logic.
 
+- [ ] 32.2. MindMapModule View Tests
+
+  **Files**: ScribeTests/Modules/MindMap/MindMapViewTests.swift
+  **Category**: quick
+  **Verify**: `xcodebuild -scheme Scribe test -only-testing:ScribeTests/MindMapViewTests`
+
+  **What**: Test MindMapView renders MindMapNode tree from Presenter state. Test recursive rendering of nested nodes. Test empty state with network icon.
+
 - [ ] 33.1. AgentGeneratingModule View
 
   **Files**: Modules/AgentGeneratingModule/View/AgentGeneratingView.swift
@@ -1724,6 +1732,14 @@ RecordingDetailView:
   **What**: Reference: embedded AgentGeneratingView.swift for EXACT animation parameters. iOS 18+: MeshGradient 3x3 (see reference for exact points and colors). Fallback: LinearGradient (black, scribeRed.opacity(0.8), indigo). Pulsating circles: 140pt/100pt/80pt with waveform.circle.fill. "ARTIFICIAL INTELLIGENCE" (headline, white 0.7). Progress text (title3, white) with .contentTransition(.numericText()). Progress bar: 250x6pt capsule white fill. Animations: mesh 4.0s easeInOut repeatForever, circle pulse 1.5s. STRICT VIPER: reads progress from Presenter.
 
   **Must NOT**: Do NOT change animation timing or gradient colors.
+
+- [ ] 33.2. AgentGeneratingModule View Tests
+
+  **Files**: ScribeTests/Modules/AgentGenerating/AgentGeneratingViewTests.swift
+  **Category**: quick
+  **Verify**: `xcodebuild -scheme Scribe test -only-testing:ScribeTests/AgentGeneratingViewTests`
+
+  **What**: Test AgentGeneratingView renders progress from Presenter state. Test progress percentage display. Test animations trigger correctly.
 
 - [ ] 34.1. DeviceSettingsModule View
 
