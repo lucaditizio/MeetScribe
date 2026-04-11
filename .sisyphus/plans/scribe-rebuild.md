@@ -1490,7 +1490,7 @@ RecordingDetailView:
 
   **What**: Test Interactor loads recording by ID. Test Presenter mediation.
 
-- [ ] 23.1. WaveformPlaybackModule — Protocols + State
+- [x] 23.1. WaveformPlaybackModule — Protocols + State
 
   **Files**: Modules/WaveformPlaybackModule/Interactor/WaveformPlaybackInteractorInput.swift, Modules/WaveformPlaybackModule/Interactor/WaveformPlaybackInteractorOutput.swift, Modules/WaveformPlaybackModule/Presenter/WaveformPlaybackViewOutput.swift, Modules/WaveformPlaybackModule/Presenter/WaveformPlaybackViewInput.swift, Modules/WaveformPlaybackModule/Presenter/WaveformPlaybackModuleInput.swift, Modules/WaveformPlaybackModule/Presenter/WaveformPlaybackState.swift
   **Category**: quick
@@ -1498,7 +1498,7 @@ RecordingDetailView:
 
   **What**: Create all WaveformPlaybackModule protocols and state. No Router (embedded sub-module). State: isPlaying, currentTime, duration, speed, waveformBars.
 
-- [ ] 23.2. WaveformPlaybackModule — Interactor
+- [x] 23.2. WaveformPlaybackModule — Interactor
 
   **Files**: Modules/WaveformPlaybackModule/Interactor/WaveformPlaybackInteractor.swift
   **Category**: quick
@@ -1506,7 +1506,7 @@ RecordingDetailView:
 
   **What**: Create WaveformPlaybackInteractor holding AudioPlayerProtocol and WaveformAnalyzer. Methods: obtainWaveformData(), playAudio(), pauseAudio(), seekTo(_:), cycleSpeed(). Delegates to services via protocols.
 
-- [ ] 23.3. WaveformPlaybackModule — Presenter + Assembly
+- [x] 23.3. WaveformPlaybackModule — Presenter + Assembly
 
   **Files**: Modules/WaveformPlaybackModule/Presenter/WaveformPlaybackPresenter.swift, Modules/WaveformPlaybackModule/Assembly/WaveformPlaybackAssembly.swift
   **Category**: quick
@@ -1514,7 +1514,7 @@ RecordingDetailView:
 
   **What**: Presenter @Observable holds PlaybackState. ModuleInput accepts audio file URL. Assembly wires components. No Router.
 
-- [ ] 23.4. WaveformPlaybackModule — Tests
+- [x] 23.4. WaveformPlaybackModule — Tests
 
   **Files**: ScribeTests/Modules/WaveformPlayback/WaveformPlaybackInteractorTests.swift
   **Category**: quick

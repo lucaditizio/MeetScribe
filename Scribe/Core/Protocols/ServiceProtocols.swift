@@ -88,6 +88,11 @@ public protocol WaveformGeneratorProtocol: AnyObject {
     func generateWaveform(from url: URL, targetSampleCount: Int) async throws -> [AudioSample]
 }
 
+/// Protocol for waveform analysis
+public protocol WaveformAnalyzerProtocol: AnyObject {
+    func analyze(url: URL, barCount: Int) async throws -> [AudioSample]
+}
+
 // MARK: - ML Service Protocols
 
 /// Protocol for Voice Activity Detection

@@ -1,8 +1,9 @@
 import Foundation
 import AVFoundation
 import CoreMedia
+import Combine
 
-public final class WaveformAnalyzer {
+public final class WaveformAnalyzer: WaveformAnalyzerProtocol {
     
     private enum Constants {
         static let minNormalizedValue: Float = 0.05

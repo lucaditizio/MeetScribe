@@ -37,6 +37,8 @@
 - Common failure: mocks missing update() → build fails silently in test compilation
 - Always check test output for "TEST FAILED" and "Testing cancelled"
 - Simulator busy errors look like test failures but aren't - check for "Simulator device failed to launch - Busy"
+- Mock naming: use unique names per test file (e.g., MockRecordingRepositoryForTests) to avoid conflicts
+- When subagent adds protocols (e.g., WaveformAnalyzerProtocol), verify it doesn't conflict with existing code
 
 ## Method Naming Conventions
 - Action methods: `obtainRecordings()`, `processRecording()`, `startScan()`
