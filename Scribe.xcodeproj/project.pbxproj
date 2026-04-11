@@ -13,6 +13,7 @@
 		052CE5892F876BC600AE1053 /* Transformers in Frameworks */ = {isa = PBXBuildFile; productRef = B00000010000000000000004 /* Transformers */; };
 		052CE58A2F876BC600AE1053 /* Opus in Frameworks */ = {isa = PBXBuildFile; productRef = B00000010000000000000005 /* Opus */; };
 		052CE58B2F876BC600AE1053 /* yyjson in Frameworks */ = {isa = PBXBuildFile; productRef = B00000010000000000000006 /* yyjson */; };
+		059E41822F8A2732004E3D94 /* WhisperKit in Frameworks */ = {isa = PBXBuildFile; productRef = B00000010000000000000007 /* WhisperKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				059E41822F8A2732004E3D94 /* WhisperKit in Frameworks */,
 				052CE58B2F876BC600AE1053 /* yyjson in Frameworks */,
 				052CE58A2F876BC600AE1053 /* Opus in Frameworks */,
 				052CE5892F876BC600AE1053 /* Transformers in Frameworks */,
@@ -540,6 +542,8 @@
 				branch = main;
 				kind = branch;
 			};
+			traits = (
+			);
 		};
 		C00000010000000000000004 /* XCRemoteSwiftPackageReference "swift-transformers" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -548,6 +552,8 @@
 				branch = main;
 				kind = branch;
 			};
+			traits = (
+			);
 		};
 		C00000010000000000000005 /* XCRemoteSwiftPackageReference "swift-opus" */ = {
 			isa = XCRemoteSwiftPackageReference;

@@ -1641,7 +1641,7 @@ RecordingDetailView:
 > All views follow strict VIPER: View reads state from Presenter, forwards user actions to Presenter. Zero business logic in View.
 > Reference: See embedded "UI Layout Reference" section for exact dimensions, colors, and animations.
 
-- [ ] 29.1. RecordingListModule — RecordingListView
+- [x] 29.1. RecordingListModule — RecordingListView
 
   **Files**: Modules/RecordingListModule/View/RecordingListView.swift
   **Category**: visual-engineering
@@ -1651,7 +1651,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT change any visual appearance — exact match required. Do NOT put business logic in View.
 
-- [ ] 29.2. RecordingListModule — RecordingCardView + RecordButtonView
+- [x] 29.2. RecordingListModule — RecordingCardView + RecordButtonView
 
   **Files**: Modules/RecordingListModule/View/RecordingCardView.swift, Modules/RecordingListModule/View/RecordButtonView.swift
   **Category**: visual-engineering
@@ -1661,7 +1661,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT change animation timing or visual design.
 
-- [ ] 29.3. RecordingListModule — View Tests
+- [x] 29.3. RecordingListModule — View Tests
 
   **Files**: ScribeTests/Modules/RecordingList/RecordingListViewTests.swift
   **Category**: quick
