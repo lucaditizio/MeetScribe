@@ -1669,7 +1669,7 @@ RecordingDetailView:
 
   **What**: Test RecordingListView renders Presenter state (3 mock recordings → 3 cards). Test RecordButtonView tap forwards output.didTapRecord().
 
-- [ ] 30.1. RecordingDetailModule View + WaveformPlaybackView
+- [x] 30.1. RecordingDetailModule View + WaveformPlaybackView
 
   **Files**: Modules/RecordingDetailModule/View/RecordingDetailView.swift, Modules/WaveformPlaybackModule/View/WaveformPlaybackView.swift
   **Category**: visual-engineering
@@ -1679,7 +1679,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT change visual appearance. Do NOT put playback logic in View.
 
-- [ ] 30.2. RecordingDetail + Waveform View Tests
+- [x] 30.2. RecordingDetail + Waveform View Tests
 
   **Files**: ScribeTests/Modules/RecordingDetail/RecordingDetailViewTests.swift
   **Category**: quick
