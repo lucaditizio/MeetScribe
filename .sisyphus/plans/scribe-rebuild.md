@@ -1741,7 +1741,7 @@ RecordingDetailView:
 
   **What**: Test AgentGeneratingView renders progress from Presenter state. Test progress percentage display. Test animations trigger correctly.
 
-- [ ] 34.1. DeviceSettingsModule View
+- [x] 34.1. DeviceSettingsModule View
 
   **Files**: Modules/DeviceSettingsModule/View/DeviceSettingsView.swift
   **Category**: visual-engineering
@@ -1751,7 +1751,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT change visual appearance. Do NOT wrap @Observable classes in @State.
 
-- [ ] 34.2. DeviceSettings View Test
+- [x] 34.2. DeviceSettings View Test
 
   **Files**: ScribeTests/Modules/DeviceSettings/DeviceSettingsViewTests.swift
   **Category**: quick
