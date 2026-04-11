@@ -1705,7 +1705,7 @@ RecordingDetailView:
 
   **What**: Test TranscriptTabView forwards speaker tap to Presenter. Test SummaryTabView renders TopicSections from Presenter.
 
-- [ ] 32.1. MindMapModule View
+- [x] 32.1. MindMapModule View
 
   **Files**: Modules/MindMapModule/View/MindMapView.swift
   **Category**: visual-engineering
@@ -1715,7 +1715,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT change mind map rendering logic.
 
-- [ ] 32.2. MindMapModule View Tests
+- [x] 32.2. MindMapModule View Tests
 
   **Files**: ScribeTests/Modules/MindMap/MindMapViewTests.swift
   **Category**: quick
