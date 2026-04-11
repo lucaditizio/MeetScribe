@@ -1723,7 +1723,7 @@ RecordingDetailView:
 
   **What**: Test MindMapView renders MindMapNode tree from Presenter state. Test recursive rendering of nested nodes. Test empty state with network icon.
 
-- [ ] 33.1. AgentGeneratingModule View
+- [x] 33.1. AgentGeneratingModule View
 
   **Files**: Modules/AgentGeneratingModule/View/AgentGeneratingView.swift
   **Category**: visual-engineering
@@ -1733,7 +1733,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT change animation timing or gradient colors.
 
-- [ ] 33.2. AgentGeneratingModule View Tests
+- [x] 33.2. AgentGeneratingModule View Tests
 
   **Files**: ScribeTests/Modules/AgentGenerating/AgentGeneratingViewTests.swift
   **Category**: quick
