@@ -1554,7 +1554,7 @@ RecordingDetailView:
 
   **What**: Test renameSpeaker updates all 3 fields (rawTranscript, actionItems, meetingNotes). Test segment parsing.
 
-- [ ] 25.1. SummaryModule — Protocols + State + Interactor
+- [x] 25.1. SummaryModule — Protocols + State + Interactor
 
   **Files**: Modules/SummaryModule/Interactor/SummaryInteractorInput.swift, Modules/SummaryModule/Interactor/SummaryInteractorOutput.swift, Modules/SummaryModule/Presenter/SummaryViewOutput.swift, Modules/SummaryModule/Presenter/SummaryViewInput.swift, Modules/SummaryModule/Presenter/SummaryModuleInput.swift, Modules/SummaryModule/Presenter/SummaryState.swift, Modules/SummaryModule/Interactor/SummaryInteractor.swift
   **Category**: quick
@@ -1562,7 +1562,7 @@ RecordingDetailView:
 
   **What**: Create all SummaryModule protocols, state, and Interactor. Simple read-only module. Interactor obtains and parses summary from Recording (TopicSections). State: topic sections, action items, loading.
 
-- [ ] 25.2. SummaryModule — Presenter + Assembly + Tests
+- [x] 25.2. SummaryModule — Presenter + Assembly + Tests
 
   **Files**: Modules/SummaryModule/Presenter/SummaryPresenter.swift, Modules/SummaryModule/Assembly/SummaryAssembly.swift, ScribeTests/Modules/Summary/SummaryInteractorTests.swift
   **Category**: quick
@@ -1570,7 +1570,7 @@ RecordingDetailView:
 
   **What**: Presenter @Observable holds SummaryState. Assembly wires components. Test Interactor returns parsed summary from mock recording.
 
-- [ ] 26.1. MindMapModule — Protocols + State + Interactor
+- [x] 26.1. MindMapModule — Protocols + State + Interactor
 
   **Files**: Modules/MindMapModule/Interactor/MindMapInteractorInput.swift, Modules/MindMapModule/Interactor/MindMapInteractorOutput.swift, Modules/MindMapModule/Presenter/MindMapViewOutput.swift, Modules/MindMapModule/Presenter/MindMapViewInput.swift, Modules/MindMapModule/Presenter/MindMapModuleInput.swift, Modules/MindMapModule/Presenter/MindMapState.swift, Modules/MindMapModule/Interactor/MindMapInteractor.swift
   **Category**: quick
@@ -1578,7 +1578,7 @@ RecordingDetailView:
 
   **What**: Create all MindMapModule protocols, state, and Interactor. Simple read-only module. Interactor parses MindMapNode JSON tree. State: mind map nodes, loading.
 
-- [ ] 26.2. MindMapModule — Presenter + Assembly + Tests
+- [x] 26.2. MindMapModule — Presenter + Assembly + Tests
 
   **Files**: Modules/MindMapModule/Presenter/MindMapPresenter.swift, Modules/MindMapModule/Assembly/MindMapAssembly.swift, ScribeTests/Modules/MindMap/MindMapInteractorTests.swift
   **Category**: quick
