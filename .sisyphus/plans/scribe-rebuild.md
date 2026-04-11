@@ -1586,7 +1586,7 @@ RecordingDetailView:
 
   **What**: Presenter @Observable holds MindMapState. Assembly wires. Test Interactor parses MindMapNode JSON into recursive tree.
 
-- [ ] 27.1. AgentGeneratingModule — Protocols + State + Interactor
+- [x] 27.1. AgentGeneratingModule — Protocols + State + Interactor
 
   **Files**: Modules/AgentGeneratingModule/Interactor/AgentGeneratingInteractorInput.swift, Modules/AgentGeneratingModule/Interactor/AgentGeneratingInteractorOutput.swift, Modules/AgentGeneratingModule/Presenter/AgentGeneratingViewOutput.swift, Modules/AgentGeneratingModule/Presenter/AgentGeneratingViewInput.swift, Modules/AgentGeneratingModule/Presenter/AgentGeneratingModuleInput.swift, Modules/AgentGeneratingModule/Presenter/AgentGeneratingModuleOutput.swift, Modules/AgentGeneratingModule/Presenter/AgentGeneratingState.swift, Modules/AgentGeneratingModule/Interactor/AgentGeneratingInteractor.swift
   **Category**: quick
@@ -1594,7 +1594,7 @@ RecordingDetailView:
 
   **What**: Create all AgentGeneratingModule protocols, state, and Interactor. Interactor delegates to InferencePipeline: startProcessing(recordingId:), cancelProcessing(). State: processing stage, progress percentage, isProcessing. Has ModuleOutput for completion/failure reporting. Reference: InferencePipeline.swift for progress format strings.
 
-- [ ] 27.2. AgentGeneratingModule — Presenter + Assembly + Tests
+- [x] 27.2. AgentGeneratingModule — Presenter + Assembly + Tests
 
   **Files**: Modules/AgentGeneratingModule/Presenter/AgentGeneratingPresenter.swift, Modules/AgentGeneratingModule/Assembly/AgentGeneratingAssembly.swift, ScribeTests/Modules/AgentGenerating/AgentGeneratingInteractorTests.swift
   **Category**: quick
@@ -1610,7 +1610,7 @@ RecordingDetailView:
 
   **What**: Create all DeviceSettingsModule protocols and state. InteractorInput: startScan(), connectToDevice(_:), disconnect(). ViewOutput: didTapScan(), didTapDevice(_:), didTapDisconnect(). State: discovered devices, connection state, isScanning. RouterInput: closeCurrentModule().
 
-- [ ] 28.2. DeviceSettingsModule — Interactor
+- [x] 28.2. DeviceSettingsModule — Interactor
 
   **Files**: Modules/DeviceSettingsModule/Interactor/DeviceSettingsInteractor.swift
   **Category**: unspecified-low
@@ -1620,7 +1620,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT put BLE logic in Presenter.
 
-- [ ] 28.3. DeviceSettingsModule — Presenter, Router, Assembly
+- [x] 28.3. DeviceSettingsModule — Presenter, Router, Assembly
 
   **Files**: Modules/DeviceSettingsModule/Presenter/DeviceSettingsPresenter.swift, Modules/DeviceSettingsModule/Router/DeviceSettingsRouter.swift, Modules/DeviceSettingsModule/Assembly/DeviceSettingsAssembly.swift
   **Category**: unspecified-low
@@ -1628,7 +1628,7 @@ RecordingDetailView:
 
   **What**: Presenter @Observable holds DeviceSettingsState. Receives View events, forwards to Interactor. Router handles module dismissal. Assembly wires all components.
 
-- [ ] 28.4. DeviceSettingsModule — Tests
+- [x] 28.4. DeviceSettingsModule — Tests
 
   **Files**: ScribeTests/Modules/DeviceSettings/DeviceSettingsInteractorTests.swift
   **Category**: quick
