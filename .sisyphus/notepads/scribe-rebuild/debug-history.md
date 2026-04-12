@@ -65,3 +65,10 @@
 - RecordingListInteractor: Injected DeviceConnectionManager, now checks `deviceConnectionManager.isConnected`
 - RecordingSource selection now dynamic: `.rawBle` if connected, `.rawInternal` otherwise
 - Updated RecordingListAssembly and AppAssembly to pass DeviceConnectionManager
+
+### Bug 6: Duplicate Modules Folder
+**Issue:** Root-level `Modules/` folder with duplicate files (TranscriptAssembly, WaveformPlaybackAssembly, etc.)
+**Root Cause:** Subagent placed files in wrong location during Task 35.2 wiring
+**Fix Applied (2026-04-12):**
+- Deleted entire `/Modules` folder at project root
+- Verified build still succeeds with `Scribe/Modules/` (correct location)
