@@ -105,20 +105,19 @@ public final class AudioConverter {
     private func generateOutputURL(for sourceURL: URL, suffix: String) -> URL {
         let directory = sourceURL.deletingLastPathComponent()
         let filename = sourceURL.deletingPathExtension().lastPathComponent
-        let ext = sourceURL.pathExtension
-        return directory.appendingPathComponent("\(filename)\(suffix).\(ext)")
+        return directory.appendingPathComponent("\(filename)\(suffix).caf")
     }
     
     public func convertCAFToPCM(url: URL) async throws -> [Float] {
         guard FileManager.default.fileExists(atPath: url.path) else {
-            ScribeLogger.error("CAF file not found at path: \(url.path)", category: .audio)
+            ScribeLogger.error("Audio file not found at path: \(url.path)", category: .audio)
             throw AudioConverterError.fileNotFound(url.path)
         }
         
         let pathExtension = url.pathExtension.lowercased()
-        guard pathExtension == "caf" else {
-            ScribeLogger.error("Invalid file format: expected .caf, got .\(pathExtension)", category: .audio)
-            throw AudioConverterError.invalidFormat("Expected CAF file, got .\(pathExtension)")
+        guard pathExtension == "caf" || pathExtension == "m4a" else {
+            ScribeLogger.error("Invalid file format: expected .caf or .m4a, got .\(pathExtension)", category: .audio)
+            throw AudioConverterError.invalidFormat("Expected CAF/M4A file, got .\(pathExtension)")
         }
         
         ScribeLogger.debug("Starting CAF to PCM conversion for: \(url.lastPathComponent)", category: .audio)

@@ -1,5 +1,6 @@
 import Foundation
 import SwiftData
+import Combine
 
 @Observable
 public final class RecordingListPresenter: RecordingListViewOutput, RecordingListViewInput, RecordingListInteractorOutput {
@@ -7,6 +8,7 @@ public final class RecordingListPresenter: RecordingListViewOutput, RecordingLis
     private weak var view: RecordingListViewInput?
     private let interactor: RecordingListInteractorInput
     private let router: RecordingListRouterInput
+    private var cancellables = Set<AnyCancellable>()
     
     public init(
         view: RecordingListViewInput?,
@@ -16,6 +18,16 @@ public final class RecordingListPresenter: RecordingListViewOutput, RecordingLis
         self.view = view
         self.interactor = interactor
         self.router = router
+        subscribeToRecordingState()
+    }
+    
+    private func subscribeToRecordingState() {
+        interactor.isRecordingPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isRecording in
+                self?.state.isRecording = isRecording
+            }
+            .store(in: &cancellables)
     }
     
     public func didTriggerViewReady() {

@@ -2,9 +2,9 @@ import AVFoundation
 import Combine
 import UIKit
 
-/// Records audio from the internal microphone using AVAudioEngine
+/// Records audio from the internal microphone using AVAudioRecorder
 /// Implements AudioRecorderProtocol for unified audio recording interface
-public final class InternalMicRecorder: NSObject, AudioRecorderProtocol {
+public final class InternalMicRecorder: NSObject, AudioRecorderProtocol, AVAudioRecorderDelegate {
     
     // MARK: - AudioRecorderProtocol Properties
     
@@ -16,14 +16,10 @@ public final class InternalMicRecorder: NSObject, AudioRecorderProtocol {
     private let isRecordingSubject = CurrentValueSubject<Bool, Never>(false)
     private let audioDataSubject = PassthroughSubject<Data, Never>()
     
-    private var audioEngine: AVAudioEngine?
-    private var opusEncoder: OpusEncoder?
+    private var audioRecorder: AVAudioRecorder?
     private var outputFileURL: URL?
-    private var fileHandle: FileHandle?
     
-    private let audioConfig = AudioConfig()
     private let hapticGenerator = UIImpactFeedbackGenerator(style: .medium)
-    
     private var routeChangeObserver: NSObjectProtocol?
     
     // MARK: - Initialization
@@ -49,8 +45,7 @@ public final class InternalMicRecorder: NSObject, AudioRecorderProtocol {
         
         do {
             try configureAudioSession()
-            try setupAudioEngine()
-            try setupOutputFile()
+            try setupRecorder()
             
             hapticGenerator.impactOccurred()
             isRecordingSubject.send(true)
@@ -90,111 +85,48 @@ public final class InternalMicRecorder: NSObject, AudioRecorderProtocol {
             try session.setCategory(.playAndRecord, mode: .default, options: [.allowBluetoothHFP, .defaultToSpeaker])
             try session.setActive(true)
             
-            // Attempt to set preferred sample rate
-            try session.setPreferredSampleRate(audioConfig.sampleRate)
-            
-            ScribeLogger.info("Audio session configured - category: playAndRecord, sampleRate: \(audioConfig.sampleRate)", category: .audio)
+            ScribeLogger.info("Audio session configured - category: playAndRecord", category: .audio)
         } catch {
             ScribeLogger.error("Failed to configure audio session: \(error.localizedDescription)", category: .audio)
             throw InternalMicRecorderError.audioSessionConfigurationFailed
         }
     }
     
-    // MARK: - Audio Engine Setup
+    // MARK: - Recorder Setup
     
-    private func setupAudioEngine() throws {
-        audioEngine = AVAudioEngine()
-        guard let audioEngine = audioEngine else {
-            ScribeLogger.error("Failed to create audio engine", category: .audio)
-            throw InternalMicRecorderError.audioEngineCreationFailed
-        }
-        
-        let inputNode = audioEngine.inputNode
-        let inputFormat = inputNode.outputFormat(forBus: 0)
-        
-        // Create Opus encoder
-        do {
-            opusEncoder = try OpusEncoder.makeDefault()
-        } catch {
-            ScribeLogger.error("Failed to create Opus encoder: \(error.localizedDescription)", category: .audio)
-            throw InternalMicRecorderError.encoderCreationFailed
-        }
-        
-        // Install tap on input node
-        inputNode.installTap(onBus: 0, bufferSize: AVAudioFrameCount(audioConfig.frameSize), format: inputFormat) { [weak self] buffer, time in
-            self?.processAudioBuffer(buffer)
-        }
-        
-        do {
-            try audioEngine.start()
-            ScribeLogger.info("Audio engine started successfully", category: .audio)
-        } catch {
-            ScribeLogger.error("Failed to start audio engine: \(error.localizedDescription)", category: .audio)
-            throw InternalMicRecorderError.audioEngineStartFailed
-        }
-    }
-    
-    // MARK: - Output File Setup
-    
-    private func setupOutputFile() throws {
+    private func setupRecorder() throws {
         let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileName = UUID().uuidString
-        let fileURL = documentsPath.appendingPathComponent("\(fileName).\(audioConfig.fileExtension)")
+        let fileURL = documentsPath.appendingPathComponent("\(fileName).m4a")
         
         outputFileURL = fileURL
         
-        // Create empty file
+        let settings: [String: Any] = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 48000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+        
         do {
-            FileManager.default.createFile(atPath: fileURL.path, contents: nil, attributes: nil)
-            fileHandle = try FileHandle(forWritingTo: fileURL)
-            ScribeLogger.info("Output file created: \(fileURL.lastPathComponent)", category: .audio)
+            audioRecorder = try AVAudioRecorder(url: fileURL, settings: settings)
+            audioRecorder?.delegate = self
+            audioRecorder?.prepareToRecord()
+            
+            let success = audioRecorder?.record() ?? false
+            guard success else {
+                ScribeLogger.error("Failed to start recorder", category: .audio)
+                throw InternalMicRecorderError.recorderStartFailed
+            }
+            
+            ScribeLogger.info("Recorder started: \(fileURL.lastPathComponent)", category: .audio)
         } catch {
-            ScribeLogger.error("Failed to create output file: \(error.localizedDescription)", category: .audio)
-            throw InternalMicRecorderError.fileCreationFailed
+            ScribeLogger.error("Failed to create recorder: \(error.localizedDescription)", category: .audio)
+            throw InternalMicRecorderError.recorderCreationFailed
         }
     }
     
-    // MARK: - Audio Processing
-    
-    private func processAudioBuffer(_ buffer: AVAudioPCMBuffer) {
-        guard let opusEncoder = opusEncoder,
-              let fileHandle = fileHandle,
-              let audioData = buffer.floatChannelData?[0] else {
-            ScribeLogger.error("Invalid audio buffer state", category: .audio)
-            return
-        }
-        
-        let frameCount = Int(buffer.frameLength)
-        let expectedFrameCount = audioConfig.frameSize
-        
-        // Process complete frames only
-        guard frameCount == expectedFrameCount else {
-            ScribeLogger.warning("Incomplete frame: \(frameCount) vs expected \(expectedFrameCount)", category: .audio)
-            return
-        }
-        
-        // Convert to array
-        let pcmData = Array(UnsafeBufferPointer(start: audioData, count: frameCount))
-        
-        do {
-            // Encode to Opus
-            let opusPacket = try opusEncoder.encode(pcmData)
-            
-            // Write packet size (4 bytes) followed by packet data
-            var packetSize = Int32(opusPacket.count)
-            let sizeData = Data(bytes: &packetSize, count: MemoryLayout<Int32>.size)
-            
-            fileHandle.write(sizeData)
-            fileHandle.write(opusPacket)
-            
-            // Emit audio data for subscribers
-            audioDataSubject.send(opusPacket)
-        } catch {
-            ScribeLogger.error("Failed to encode audio: \(error.localizedDescription)", category: .audio)
-        }
-    }
-    
-    // MARK: - USB-C Plug & Play
+    // MARK: - Route Change Handling
     
     private func setupRouteChangeObserver() {
         routeChangeObserver = NotificationCenter.default.addObserver(
@@ -216,7 +148,6 @@ public final class InternalMicRecorder: NSObject, AudioRecorderProtocol {
         
         ScribeLogger.info("Audio route changed - reason: \(routeChangeReasonDescription(reason))", category: .audio)
         
-        // Handle new device connection
         switch reason {
         case .newDeviceAvailable:
             setPreferredInputToUSB()
@@ -231,7 +162,6 @@ public final class InternalMicRecorder: NSObject, AudioRecorderProtocol {
         let session = AVAudioSession.sharedInstance()
         let currentRoute = session.currentRoute
         
-        // Look for USB audio or headset mic
         for input in currentRoute.inputs {
             let portType = input.portType
             
@@ -271,24 +201,8 @@ public final class InternalMicRecorder: NSObject, AudioRecorderProtocol {
             return nil
         }
         
-        // Close file handle
-        do {
-            try fileHandle?.close()
-        } catch {
-            ScribeLogger.error("Failed to close file handle: \(error.localizedDescription)", category: .audio)
-        }
-        
-        // Get file attributes for duration
-        var duration: TimeInterval = 0
-        do {
-            let attributes = try FileManager.default.attributesOfItem(atPath: fileURL.path)
-            if let fileSize = attributes[.size] as? UInt64 {
-                // Rough estimate: Opus at ~24kbps, adjust as needed
-                duration = Double(fileSize) / 3000.0 // Approximate
-            }
-        } catch {
-            ScribeLogger.error("Failed to get file attributes: \(error.localizedDescription)", category: .audio)
-        }
+        let duration = audioRecorder?.currentTime ?? 0
+        audioRecorder?.stop()
         
         let recording = Recording(
             title: "Recording \(formatDate(Date()))",
@@ -307,21 +221,8 @@ public final class InternalMicRecorder: NSObject, AudioRecorderProtocol {
     // MARK: - Cleanup
     
     private func cleanup() {
-        // Stop audio engine
-        audioEngine?.inputNode.removeTap(onBus: 0)
-        audioEngine?.stop()
-        audioEngine = nil
-        
-        // Close file handle
-        do {
-            try fileHandle?.close()
-        } catch {
-            ScribeLogger.error("Failed to close file handle during cleanup: \(error.localizedDescription)", category: .audio)
-        }
-        fileHandle = nil
-        
-        // Reset state
-        opusEncoder = nil
+        audioRecorder?.stop()
+        audioRecorder = nil
         outputFileURL = nil
         isRecordingSubject.send(false)
     }
@@ -333,17 +234,22 @@ public final class InternalMicRecorder: NSObject, AudioRecorderProtocol {
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
         return formatter.string(from: date)
     }
+    
+    // MARK: - AVAudioRecorderDelegate
+    
+    public func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if !flag {
+            ScribeLogger.warning("Recorder finished with failure", category: .audio)
+        }
+    }
 }
 
 // MARK: - Errors
 
 public enum InternalMicRecorderError: Error {
     case audioSessionConfigurationFailed
-    case audioEngineCreationFailed
-    case audioEngineStartFailed
-    case formatCreationFailed
-    case encoderCreationFailed
-    case fileCreationFailed
+    case recorderCreationFailed
+    case recorderStartFailed
     case recordingNotActive
 }
 
@@ -352,16 +258,10 @@ extension InternalMicRecorderError: LocalizedError {
         switch self {
         case .audioSessionConfigurationFailed:
             return "Failed to configure audio session"
-        case .audioEngineCreationFailed:
-            return "Failed to create audio engine"
-        case .audioEngineStartFailed:
-            return "Failed to start audio engine"
-        case .formatCreationFailed:
-            return "Failed to create audio format"
-        case .encoderCreationFailed:
-            return "Failed to create Opus encoder"
-        case .fileCreationFailed:
-            return "Failed to create output file"
+        case .recorderCreationFailed:
+            return "Failed to create audio recorder"
+        case .recorderStartFailed:
+            return "Failed to start audio recorder"
         case .recordingNotActive:
             return "No active recording"
         }

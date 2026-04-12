@@ -10,6 +10,10 @@ public final class RecordingListInteractor: RecordingListInteractorInput {
     private let audioConverter: AudioConverter
     private let deviceConnectionManager: DeviceConnectionManagerProtocol
     
+    public var isRecordingPublisher: AnyPublisher<Bool, Never> {
+        audioRecorder.isRecordingPublisher
+    }
+    
     public init(
         output: RecordingListInteractorOutput?,
         recordingRepository: RecordingRepositoryProtocol,
