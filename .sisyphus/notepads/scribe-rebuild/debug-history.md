@@ -87,3 +87,12 @@
 
 **Remaining warnings (lower priority):**
 - AgentGeneratingInteractor module import warnings (3x)
+
+### Bug 8: Bluetooth Not Working - Missing Privacy Keys
+**Issue:** Scan button does nothing, console shows "Bluetooth not powered on", Bluetooth not in iOS Settings for app
+**Root Cause:** Info.plist missing iOS Bluetooth privacy keys - without these, iOS denies Bluetooth access silently
+**Fix Applied (2026-04-12):**
+- Added to Scribe/Info.plist:
+  - `NSBluetoothAlwaysUsageDescription` - "MeetScribe needs Bluetooth to connect to external recording devices."
+  - `NSBluetoothPeripheralUsageDescription` - "MeetScribe needs Bluetooth to connect to external recording devices."
+**Expected Result:** iOS will now prompt user for Bluetooth permission on first scan attempt
