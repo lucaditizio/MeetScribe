@@ -7,4 +7,5 @@ public protocol RecordingDetailViewOutput: AnyObject {
     func didTapSkipBackward()
     func didSelectTab(_ tab: RecordingDetailTab)
     func didTapGenerateTranscript()
+    func didExitRecordingDetail()
 }

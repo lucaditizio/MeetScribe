@@ -43,6 +43,9 @@ public struct RecordingDetailView: View {
         .navigationTitle("Recording")
         .navigationBarTitleDisplayMode(.automatic)
         .preferredColorScheme(.dark)
+        .onDisappear {
+            presenter.didExitRecordingDetail()
+        }
     }
     
     @State private var selectedTabBinding: RecordingDetailTab = .summary

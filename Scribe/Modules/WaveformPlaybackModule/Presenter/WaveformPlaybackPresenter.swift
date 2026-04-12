@@ -48,6 +48,10 @@ public final class WaveformPlaybackPresenter: WaveformPlaybackViewOutput, Wavefo
         interactor.cycleSpeed()
     }
     
+    public func pausePlayback() {
+        interactor.pauseAudio()
+    }
+    
     // MARK: - WaveformPlaybackInteractorOutput
     
     public func didObtainWaveformData(_ bars: [Float]) {

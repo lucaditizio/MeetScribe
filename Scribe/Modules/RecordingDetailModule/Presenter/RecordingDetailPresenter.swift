@@ -37,6 +37,6 @@ public final class RecordingDetailPresenter: RecordingDetailViewOutput {
     public func didTapSkipBackward() {}
     
     public func didExitRecordingDetail() {
-        waveformPresenter?.interactor?.pauseAudio()
+        waveformPresenter?.pausePlayback()
     }
 }

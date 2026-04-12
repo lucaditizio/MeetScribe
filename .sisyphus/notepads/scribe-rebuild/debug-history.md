@@ -227,6 +227,20 @@ let interactor = RecordingListInteractor(
 - Implemented `didUpdateSpeed(_:)` in `WaveformPlaybackPresenter` to update `state.speed`.
 - UI now correctly displays speed changes (1x → 1.5x → 2x) when speed button is tapped.
 
+### Bug 20: Audio Continues Playing After Navigation Back
+**Issue:** When navigating back from RecordingDetailView to RecordingListView without pausing, audio continues playing in background.
+**Root Cause:**
+1. No `.onDisappear` handler in `RecordingDetailView` to trigger cleanup.
+2. `RecordingDetailViewOutput` protocol lacked `didExitRecordingDetail()` callback.
+3. `RecordingDetailPresenter` had no handler to pause waveform playback on exit.
+4. `WaveformPlaybackPresenter` didn't expose `pausePlayback()` method for external callers.
+**Fix Applied (2026-04-12):**
+- Added `didExitRecordingDetail()` to `RecordingDetailViewOutput` protocol.
+- Implemented `.onDisappear { presenter.didExitRecordingDetail() }` in `RecordingDetailView`.
+- Added `didExitRecordingDetail()` handler in `RecordingDetailPresenter` to call `waveformPresenter?.pausePlayback()`.
+- Added `pausePlayback()` method in `WaveformPlaybackPresenter` to expose pause functionality.
+- Audio now stops when navigating back to RecordingListView.
+
 ---
 
 ## Files Modified in This Session
