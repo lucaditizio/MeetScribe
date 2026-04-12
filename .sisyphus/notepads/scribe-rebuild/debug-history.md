@@ -72,3 +72,18 @@
 **Fix Applied (2026-04-12):**
 - Deleted entire `/Modules` folder at project root
 - Verified build still succeeds with `Scribe/Modules/` (correct location)
+
+### Bug 7: Build Warnings - High Priority Fixes
+**Issue:** 4 high-priority warnings (1 critical, 3 deprecated)
+**Fix Applied (2026-04-12):**
+1. **Critical**: InternalMicRecorder.swift:71 - main actor isolation
+   - Wrapped `impactOccurred()` in `await MainActor.run { }`
+2. **Deprecated**: AudioPlayer.swift:55 - allowBluetooth
+   - Changed to `.allowBluetoothHFP`
+3. **Deprecated**: InternalMicRecorder.swift:90 - allowBluetooth
+   - Changed to `.allowBluetoothHFP`
+4. **Deprecated**: WaveformAnalyzer.swift:24 - AVAsset(url:)
+   - Changed to `AVURLAsset(url:)`
+
+**Remaining warnings (lower priority):**
+- AgentGeneratingInteractor module import warnings (3x)

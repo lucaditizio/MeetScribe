@@ -68,7 +68,9 @@ public final class InternalMicRecorder: NSObject, AudioRecorderProtocol {
             return nil
         }
         
-        hapticGenerator.impactOccurred()
+        await MainActor.run {
+            hapticGenerator.impactOccurred()
+        }
         isRecordingSubject.send(false)
         
         let recording = await finalizeRecording()
@@ -85,7 +87,7 @@ public final class InternalMicRecorder: NSObject, AudioRecorderProtocol {
         let session = AVAudioSession.sharedInstance()
         
         do {
-            try session.setCategory(.playAndRecord, mode: .default, options: [.allowBluetooth, .defaultToSpeaker])
+            try session.setCategory(.playAndRecord, mode: .default, options: [.allowBluetoothHFP, .defaultToSpeaker])
             try session.setActive(true)
             
             // Attempt to set preferred sample rate

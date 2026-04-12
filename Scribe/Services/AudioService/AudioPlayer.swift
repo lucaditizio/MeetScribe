@@ -52,7 +52,7 @@ import Combine
         player.rate = currentRate
         
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.allowAirPlay, .allowBluetooth])
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.allowAirPlay, .allowBluetoothHFP])
             try AVAudioSession.sharedInstance().setActive(true)
             
             player.play()

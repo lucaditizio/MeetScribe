@@ -21,7 +21,7 @@ public final class WaveformAnalyzer: WaveformAnalyzerProtocol {
         
         ScribeLogger.debug("Starting waveform analysis for: \(url.lastPathComponent)", category: .audio)
         
-        let asset = AVAsset(url: url)
+        let asset = AVURLAsset(url: url)
         let reader = try AVAssetReader(asset: asset)
         
         guard let audioTrack = try await asset.loadTracks(withMediaType: .audio).first else {
