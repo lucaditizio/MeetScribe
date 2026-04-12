@@ -8,6 +8,7 @@ import Combine
     
     private var audioPlayer: AVAudioPlayer?
     private var currentRate: Float = 1.0
+    private var timer: Timer?
     
     private let playbackStateSubject = CurrentValueSubject<PlaybackState, Never>(.idle)
     private let currentTimeSubject = CurrentValueSubject<TimeInterval, Never>(0.0)
@@ -29,6 +30,7 @@ import Combine
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer?.delegate = self
+            audioPlayer?.enableRate = true
             audioPlayer?.prepareToPlay()
             
             currentTimeSubject.send(audioPlayer?.currentTime ?? 0.0)
@@ -52,11 +54,12 @@ import Combine
         player.rate = currentRate
         
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.allowAirPlay, .allowBluetoothHFP])
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             
             player.play()
             playbackStateSubject.send(.playing)
+            startTimer()
             
             ScribeLogger.info("Playback started at \(currentRate)x speed", category: .audio)
         } catch {
@@ -72,6 +75,7 @@ import Combine
         }
         
         player.pause()
+        stopTimer()
         playbackStateSubject.send(.paused)
         
         ScribeLogger.info("Playback paused", category: .audio)
@@ -97,6 +101,7 @@ import Combine
         
         player.stop()
         player.currentTime = 0.0
+        stopTimer()
         currentTimeSubject.send(0.0)
         playbackStateSubject.send(.idle)
         
@@ -147,6 +152,19 @@ import Combine
         }
     }
     
+    private func startTimer() {
+        stopTimer()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
+            guard let self = self, let player = self.audioPlayer, player.isPlaying else { return }
+            self.currentTimeSubject.send(player.currentTime)
+        }
+    }
+    
+    private func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
     private func deactivateAudioSession() {
         do {
             try AVAudioSession.sharedInstance().setActive(false)
@@ -171,6 +189,7 @@ extension AudioPlayer: AVAudioPlayerDelegate {
     public func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
             ScribeLogger.info("Audio playback completed successfully", category: .audio)
+            stopTimer()
             deactivateAudioSession()
             playbackStateSubject.send(.idle)
         } else {
@@ -183,6 +202,7 @@ extension AudioPlayer: AVAudioPlayerDelegate {
     public func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         let playbackError = error ?? NSError(domain: "AudioPlayer", code: -2, userInfo: [NSLocalizedDescriptionKey: "Decode error occurred"])
         ScribeLogger.error("Decode error: \(playbackError.localizedDescription)", category: .audio)
+        stopTimer()
         playbackStateSubject.send(.error(playbackError))
     }
 }

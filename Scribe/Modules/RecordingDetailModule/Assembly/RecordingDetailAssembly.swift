@@ -16,13 +16,11 @@ public final class RecordingDetailAssembly {
         )
         let router = RecordingDetailRouter(viewController: nil)
         
-        let waveformPresenter = WaveformPlaybackPresenter(
-            view: nil,
-            interactor: WaveformPlaybackInteractor(
-                output: nil,
-                audioPlayer: audioPlayer,
-                waveformAnalyzer: WaveformAnalyzer()
-            )
+        let waveformPresenter = WaveformPlaybackAssembly.createModule(
+            recordingId: recordingId,
+            recordingRepository: recordingRepository,
+            audioPlayer: audioPlayer,
+            waveformAnalyzer: WaveformAnalyzer()
         )
         
         let presenter = RecordingDetailPresenter(

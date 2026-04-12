@@ -106,22 +106,29 @@ public struct RecordingListView: View {
     // MARK: - Recordings List
 
     private var recordingsListView: some View {
-        ScrollView {
-            LazyVStack(spacing: Spacing.sectionSpacing) {
-                ForEach(sortedRecordings, id: \.id) { recording in
-                    RecordingCardView(
-                        recording: recording,
-                        onTap: {
-                            presenter.didTapRecording(id: recording.id.uuidString)
-                        },
-                        onDelete: {
-                            presenter.didDeleteRecording(id: recording.id.uuidString)
-                        }
-                    )
+        List {
+            ForEach(sortedRecordings, id: \.id) { recording in
+                RecordingCardView(
+                    recording: recording,
+                    onTap: {
+                        presenter.didTapRecording(id: recording.id.uuidString)
+                    }
+                )
+                .listRowSeparator(.hidden)
+                .listRowBackground(Color.clear)
+                .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                    Button(role: .destructive) {
+                        presenter.didDeleteRecording(id: recording.id.uuidString)
+                    } label: {
+                        Label("Delete", systemImage: "trash")
+                    }
+                    .tint(Theme.scribeRed)
                 }
             }
-            .padding(.vertical, Spacing.sectionSpacing)
         }
+        .listStyle(.plain)
+        .scrollContentBackground(.hidden)
     }
 
     // MARK: - Sorted Recordings (Passively sorted — no business logic)

@@ -36,9 +36,10 @@ public final class AppAssembly {
         return RecordingDetailView(presenter: presenter)
     }
 
-    /// WaveformPlayback — embedded inside RecordingDetailView.
     public func makeWaveformPlaybackModule(recordingId: UUID, output: (any ModuleOutput)?) -> some View {
         let presenter = WaveformPlaybackAssembly.createModule(
+            recordingId: recordingId.uuidString,
+            recordingRepository: services.recordingRepository,
             audioPlayer: services.audioPlayer,
             waveformAnalyzer: WaveformAnalyzer()
         )

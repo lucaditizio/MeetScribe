@@ -160,6 +160,48 @@ Failed to create tap due to format mismatch
 - stopRecording() now calls fetchAll() immediately after save() to ensure data is available
 - Passes fresh recordings directly to didObtainRecordings()
 
+### Bug 13: VIPER Wiring - Presenter Not Receiving Callbacks
+**Issue:** Recording starts/stops, converter runs, recordings saved, but presenter never receives callbacks
+**Root Cause:** RecordingListAssembly created interactor with `output: nil`:
+```swift
+let interactor = RecordingListInteractor(
+    audioRecorder: audioRecorder,
+    converter: audioConverter,
+    repository: recordingRepository,
+    deviceConnectionManager: deviceConnectionManager,
+    output: nil  // <-- Presenter never connected!
+)
+```
+**Fix Applied (2026-04-12):**
+- RecordingListAssembly.build(): Pass `presenter` as interactor's `output` parameter
+- Presenter now receives didStartRecording(), didStopRecording(), didObtainRecordings() callbacks
+- VIPER callback chain now complete: Interactor → Presenter → View
+
+### Bug 14: Swipe-to-Delete Missing
+**Issue:** Recordings could only be deleted via a tiny red bin button. Native fluid swipe-to-delete was missing.
+**Root Cause:** The `RecordingListView` used a `ScrollView` containing a `LazyVStack`, which fundamentally lacks native `.swipeActions` layout capabilities mapping to standard iOS interactions.
+**Fix Applied (2026-04-12):**
+- Transitioned `recordingsListView` to use a `List` component.
+- Added `.listStyle(.plain)` and applied edge padding logic (`.listRowSeparator(.hidden)`, `.listRowBackground(Color.clear)`) to maintain custom UI aesthetics completely while restoring the fluid native `.swipeActions` swipe-to-delete. Removed the tiny red bin from `RecordingCardView.swift`.
+
+### Bug 15: RecordingDetailView Title Lagging
+**Issue:** Returning from RecordingDetailView resulted in the "MeetScribe" title briefly lagging behind visually.
+**Root Cause:** A duplicate `NavigationStack` existed redundantly enclosing the `RecordingDetailView`. Nested navigation frames crash internal safe-area display transitions. Furthermore, explicit forcing of `.navigationBarTitleDisplayMode(.inline)` within these structures compounded Apple navigation size tracking.
+**Fix Applied (2026-04-12):**
+- Entirely extracted the superfluous `NavigationStack` from inside `RecordingDetailView`. 
+- Set `.navigationBarTitleDisplayMode(.automatic)` allowing the root stack to natively compute size animations back to `.large`.
+
+### Bug 16: Missing Audio Progress & Playback Error (-50)
+**Issue:** Playback crashed with `OSStatus error -50 (kAudio_ParamError)` and waveform progress tracking was stalled despite successfully drawing shapes.
+**Root Cause:**
+1. `AudioPlayer` session options were set to `.allowBluetoothHFP` overriding `.playback` category constraints forcing an OS crash.
+2. `AudioPlayer` never instantiated any `Timer` instance to constantly broadcast progress ticks through `currentTimePublisher`.
+3. `audioPlayer.enableRate` was missing, rejecting `.rate` modification adjustments on initialization.
+**Fix Applied (2026-04-12):**
+- Stripped `.allowBluetoothHFP` from AVAudioSession playback initialization (now uses baseline setup natively supporting standard A2DP outputs).
+- Engineered a safe background `Timer` block pulsing `player.currentTime` into the observable publishers smoothly every 0.1s.
+- `WaveformPlaybackInteractor` securely pushes `didUpdateDuration` backwards through the VIPER stack to fix height normalization states.
+
 ---
 
 ## Files Modified in This Session
@@ -172,3 +214,4 @@ Failed to create tap due to format mismatch
 - `Scribe/Modules/RecordingListModule/Interactor/RecordingListInteractor.swift` - isRecordingPublisher, fix stopRecording(), await fetch after save
 - `Scribe/Modules/RecordingListModule/Interactor/RecordingListInteractorInput.swift` - protocol updated
 - `Scribe/Modules/RecordingListModule/Presenter/RecordingListPresenter.swift` - subscribes to recording state
+- `Scribe/Modules/RecordingListModule/Assembly/RecordingListAssembly.swift` - wired presenter as output

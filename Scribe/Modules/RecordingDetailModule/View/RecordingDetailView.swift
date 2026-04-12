@@ -8,43 +8,41 @@ public struct RecordingDetailView: View {
     }
     
     public var body: some View {
-        NavigationStack {
-            ZStack {
-                Theme.obsidian
-                    .ignoresSafeArea()
+        ZStack {
+            Theme.obsidian
+                .ignoresSafeArea()
+            
+            VStack(spacing: 0) {
+                pickerView
+                    .padding(.top, 16)
+                    .padding(.horizontal, Spacing.contentPadding)
                 
-                VStack(spacing: 0) {
-                    pickerView
-                        .padding(.top, 16)
-                        .padding(.horizontal, Spacing.contentPadding)
-                    
-                    ScrollView {
-                        VStack(spacing: Spacing.sectionSpacing) {
-                            recordingHeaderView
-                            
-                            if let waveformPresenter = presenter.waveformPresenter {
-                                WaveformPlaybackView(presenter: waveformPresenter)
-                            }
-                            
-                            tabContentView
+                ScrollView {
+                    VStack(spacing: Spacing.sectionSpacing) {
+                        recordingHeaderView
+                        
+                        if let waveformPresenter = presenter.waveformPresenter {
+                            WaveformPlaybackView(presenter: waveformPresenter)
                         }
-                        .padding(.horizontal, Spacing.contentPadding)
-                        .padding(.vertical, Spacing.sectionSpacing)
+                        
+                        tabContentView
                     }
-                }
-                
-                if !presenter.state.hasTranscript {
-                    VStack {
-                        Spacer()
-                        generateTranscriptCTA
-                            .padding(.bottom, 32)
-                    }
+                    .padding(.horizontal, Spacing.contentPadding)
+                    .padding(.vertical, Spacing.sectionSpacing)
                 }
             }
-            .navigationTitle("Recording")
-            .navigationBarTitleDisplayMode(.inline)
-            .preferredColorScheme(.dark)
+            
+            if !presenter.state.hasTranscript {
+                VStack {
+                    Spacer()
+                    generateTranscriptCTA
+                        .padding(.bottom, 32)
+                }
+            }
         }
+        .navigationTitle("Recording")
+        .navigationBarTitleDisplayMode(.automatic)
+        .preferredColorScheme(.dark)
     }
     
     @State private var selectedTabBinding: RecordingDetailTab = .summary

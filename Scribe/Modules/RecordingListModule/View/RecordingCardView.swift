@@ -3,12 +3,10 @@ import SwiftUI
 public struct RecordingCardView: View {
     let recording: Recording
     let onTap: () -> Void
-    let onDelete: () -> Void
     
-    public init(recording: Recording, onTap: @escaping () -> Void, onDelete: @escaping () -> Void) {
+    public init(recording: Recording, onTap: @escaping () -> Void) {
         self.recording = recording
         self.onTap = onTap
-        self.onDelete = onDelete
     }
     
     public var body: some View {
@@ -44,13 +42,6 @@ public struct RecordingCardView: View {
                         .foregroundColor(Theme.accentGray)
                     
                     Spacer()
-                    
-                    // Delete button
-                    Button(action: onDelete) {
-                        Image(systemName: "trash")
-                            .font(.caption)
-                            .foregroundColor(Theme.scribeRed)
-                    }
                 }
             }
             .padding(Spacing.cardPadding)

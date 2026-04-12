@@ -1,7 +1,7 @@
 import Foundation
 
 @Observable
-public final class WaveformPlaybackPresenter: WaveformPlaybackViewOutput {
+public final class WaveformPlaybackPresenter: WaveformPlaybackViewOutput, WaveformPlaybackModuleInput, WaveformPlaybackInteractorOutput {
     public var state = WaveformPlaybackState()
     private weak var view: WaveformPlaybackViewInput?
     private let interactor: WaveformPlaybackInteractorInput
@@ -12,6 +12,10 @@ public final class WaveformPlaybackPresenter: WaveformPlaybackViewOutput {
     ) {
         self.view = view
         self.interactor = interactor
+    }
+    
+    public func configureWith(recordingId: String) {
+        interactor.configureWith(recordingId: recordingId)
     }
     
     public func didTriggerViewReady() {
@@ -42,5 +46,24 @@ public final class WaveformPlaybackPresenter: WaveformPlaybackViewOutput {
     
     public func didTapSpeed() {
         interactor.cycleSpeed()
+    }
+    
+    // MARK: - WaveformPlaybackInteractorOutput
+    
+    public func didObtainWaveformData(_ bars: [Float]) {
+        state.waveformBars = bars
+    }
+    
+    public func didUpdatePlaybackState(isPlaying: Bool, currentTime: TimeInterval) {
+        state.isPlaying = isPlaying
+        state.currentTime = currentTime
+    }
+    
+    public func didUpdateDuration(_ duration: TimeInterval) {
+        state.duration = duration
+    }
+    
+    public func didFailWithError(_ error: Error) {
+        print("WaveformPlayback error: \(error)")
     }
 }
