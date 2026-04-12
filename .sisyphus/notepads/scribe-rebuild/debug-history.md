@@ -202,6 +202,18 @@ let interactor = RecordingListInteractor(
 - Engineered a safe background `Timer` block pulsing `player.currentTime` into the observable publishers smoothly every 0.1s.
 - `WaveformPlaybackInteractor` securely pushes `didUpdateDuration` backwards through the VIPER stack to fix height normalization states.
 
+### Bug 17: Playback Speed Cycling on Start Button
+**Issue:** Each tap on the start playback button cycles playback speed (1x → 1.5x → 2x), and pressing the playback speed button does nothing.
+**Root Cause:**
+1. `AudioPlayer.play()` method automatically cycles `currentRate` via `nextPlaybackRate()` every time play is called (lines 52-54).
+2. `WaveformPlaybackInteractor.cycleSpeed()` only updates local state but never calls `audioPlayer.setRate()` - the comment confirms it's a "mocking visual effect" only.
+3. `AudioPlayerProtocol` had no `setRate(_:)` method, so speed button had no way to actually change playback rate.
+**Fix Applied (2026-04-12):**
+- Added `setRate(_:)` method to `AudioPlayerProtocol` in `ServiceProtocols.swift`.
+- Implemented `setRate(_:)` in `AudioPlayer.swift` to update `currentRate` and `player.rate`.
+- Removed speed cycling from `AudioPlayer.play()` - now uses configured `currentRate` instead.
+- Wired `cycleSpeed()` to call `audioPlayer.setRate(currentSpeed)` to actually change playback speed.
+
 ---
 
 ## Files Modified in This Session

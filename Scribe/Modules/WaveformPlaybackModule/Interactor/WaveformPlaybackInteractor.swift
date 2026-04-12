@@ -106,7 +106,8 @@ public final class WaveformPlaybackInteractor: WaveformPlaybackInteractorInput {
     public func cycleSpeed() {
         currentSpeedIndex = (currentSpeedIndex + 1) % speeds.count
         currentSpeed = speeds[currentSpeedIndex]
-        // Currently the player API does not support speed changes per ServiceProtocols, this is mocking visual effect
+        audioPlayer.setRate(currentSpeed)
+        output?.didUpdatePlaybackState(isPlaying: self.isPlaying, currentTime: self.lastTime)
     }
 }
 

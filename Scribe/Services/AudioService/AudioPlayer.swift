@@ -49,8 +49,6 @@ import Combine
             return
         }
         
-        // Cycle playback rate: 1.0x → 1.5x → 2.0x → 1.0x
-        currentRate = nextPlaybackRate(from: currentRate)
         player.rate = currentRate
         
         do {
@@ -108,6 +106,18 @@ import Combine
         deactivateAudioSession()
         
         ScribeLogger.info("Playback stopped", category: .audio)
+    }
+    
+    public func setRate(_ rate: Float) {
+        guard let player = audioPlayer else {
+            ScribeLogger.warning("Cannot set rate: no audio loaded", category: .audio)
+            return
+        }
+        
+        currentRate = rate
+        player.rate = rate
+        
+        ScribeLogger.info("Playback rate set to \(rate)x speed", category: .audio)
     }
     
     // MARK: - Skip Methods

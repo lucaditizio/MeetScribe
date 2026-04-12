@@ -73,6 +73,7 @@ public protocol AudioPlayerProtocol: AnyObject {
     func pause()
     func seek(to time: TimeInterval)
     func stop()
+    func setRate(_ rate: Float)
 }
 
 /// Playback state
