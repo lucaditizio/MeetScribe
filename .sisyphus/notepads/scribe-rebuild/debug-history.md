@@ -241,6 +241,18 @@ let interactor = RecordingListInteractor(
 - Added `pausePlayback()` method in `WaveformPlaybackPresenter` to expose pause functionality.
 - Audio now stops when navigating back to RecordingListView.
 
+### Bug 21: App Title Scrolls with Recordings
+**Issue:** "MeetScribe" title in navigation bar scrolls with recordings list, making it disappear when scrolling down.
+**Root Cause:**
+1. `navigationTitle("MeetScribe")` and `navigationBarTitleDisplayMode(.large)` placed on `RecordingListView`.
+2. Navigation bar title scrolls with content in ScrollView/List.
+**Fix Applied (2026-04-12):**
+- Removed `navigationTitle("MeetScribe")` from `RecordingListView`.
+- Removed `navigationBarTitleDisplayMode(.large)` from `RecordingListView`.
+- Added `Text("MeetScribe")` to toolbar with `.font(.headline)` and `.foregroundColor(.white)`.
+- Wrapped toolbar items in `ToolbarItemGroup(placement: .primaryAction)`.
+- Title now fixed in toolbar, always visible alongside "add device" button.
+
 ---
 
 ## Files Modified in This Session

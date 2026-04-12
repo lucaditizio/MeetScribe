@@ -47,8 +47,11 @@ public struct RecordingListView: View {
             .navigationBarTitleDisplayMode(.large)
             .preferredColorScheme(.dark)
             .toolbar {
-                // Settings button — opens DeviceSettings sheet (single toolbar button per plan)
-                ToolbarItem(placement: .primaryAction) {
+                ToolbarItemGroup(placement: .primaryAction) {
+                    Text("MeetScribe")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                    
                     Button {
                         presenter.didTapSettings()
                     } label: {
