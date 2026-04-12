@@ -1,19 +1,23 @@
 import Foundation
 import SwiftData
+import Combine
 
 public final class RecordingListInteractor: RecordingListInteractorInput {
     private weak var output: RecordingListInteractorOutput?
     private let recordingRepository: RecordingRepositoryProtocol
     private let audioRecorder: AudioRecorderProtocol
+    private let deviceConnectionManager: DeviceConnectionManagerProtocol
     
     public init(
         output: RecordingListInteractorOutput?,
         recordingRepository: RecordingRepositoryProtocol,
-        audioRecorder: AudioRecorderProtocol
+        audioRecorder: AudioRecorderProtocol,
+        deviceConnectionManager: DeviceConnectionManagerProtocol
     ) {
         self.output = output
         self.recordingRepository = recordingRepository
         self.audioRecorder = audioRecorder
+        self.deviceConnectionManager = deviceConnectionManager
     }
     
     public func obtainRecordings() {
@@ -44,9 +48,10 @@ public final class RecordingListInteractor: RecordingListInteractorInput {
     }
     
     public func startRecording() {
+        let source: RecordingSource = deviceConnectionManager.isConnected ? .rawBle : .rawInternal
         Task {
             do {
-                try await audioRecorder.startRecording(source: .rawInternal)
+                try await audioRecorder.startRecording(source: source)
                 output?.didStartRecording()
             } catch {
                 output?.didFailWithError(error)

@@ -55,3 +55,13 @@
 - Toolbar button (mic.badge.plus) → opens DeviceSettings ✓
 - Bottom RecordButtonView → starts/stops actual recording ✓
 - AgentGenerating remains available for post-recording ML processing
+
+### Bug 5: Hardcoded Recording Source
+**Issue:** StartRecording used hardcoded `.rawInternal` regardless of external mic connection
+**Root Cause:** DeviceConnectionManager was not injected into RecordingListInteractor
+**Fix Applied (2026-04-12):**
+- DeviceConnectionManagerProtocol: Added `isConnected` property
+- DeviceConnectionManager.swift: Implemented `isConnected` computed property
+- RecordingListInteractor: Injected DeviceConnectionManager, now checks `deviceConnectionManager.isConnected`
+- RecordingSource selection now dynamic: `.rawBle` if connected, `.rawInternal` otherwise
+- Updated RecordingListAssembly and AppAssembly to pass DeviceConnectionManager

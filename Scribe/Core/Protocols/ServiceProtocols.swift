@@ -18,6 +18,7 @@ public protocol BluetoothDeviceScannerProtocol: AnyObject {
 public protocol DeviceConnectionManagerProtocol: AnyObject {
     var connectionStatePublisher: AnyPublisher<ConnectionState, Never> { get }
     var audioDataPublisher: AnyPublisher<Data, Never> { get }
+    var isConnected: Bool { get }
     
     func connect(to device: BluetoothDevice)
     func disconnect()

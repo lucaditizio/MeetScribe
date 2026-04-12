@@ -14,6 +14,10 @@ public final class DeviceConnectionManager: NSObject, DeviceConnectionManagerPro
         audioDataSubject.eraseToAnyPublisher()
     }
     
+    public var isConnected: Bool {
+        connectionStateSubject.value.isConnected
+    }
+    
     // MARK: - Private Properties
     private let connectionStateSubject = CurrentValueSubject<ConnectionState, Never>(.disconnected)
     private let audioDataSubject = PassthroughSubject<Data, Never>()
