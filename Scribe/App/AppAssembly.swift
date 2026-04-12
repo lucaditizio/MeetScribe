@@ -96,11 +96,7 @@ public final class AppAssembly {
             scanner: services.bluetoothDeviceScanner,
             connectionManager: services.deviceConnectionManager
         )
-        let view = DeviceSettingsView(output: presenter)
-        if let viewInput = view as? DeviceSettingsViewInput {
-            presenter.view = viewInput
-        }
-        return view
+        return DeviceSettingsView(presenter: presenter)
     }
 
     // MARK: - Initialization

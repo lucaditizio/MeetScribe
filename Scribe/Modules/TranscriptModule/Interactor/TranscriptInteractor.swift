@@ -48,12 +48,12 @@ public final class TranscriptInteractor: TranscriptInteractorInput {
         
         Task {
             do {
-                guard var recording = try await recordingRepository.fetch(by: uuid) else {
+                guard let recording = try await recordingRepository.fetch(by: uuid) else {
                     output?.didFailWithError(TranscriptError.recordingNotFound)
                     return
                 }
                 
-                var updatedRawTranscript = recording.rawTranscript.replacingOccurrences(of: oldName, with: newName)
+                let updatedRawTranscript = recording.rawTranscript.replacingOccurrences(of: oldName, with: newName)
                 
                 var updatedActionItems = recording.actionItems
                 if let items = recording.actionItems {

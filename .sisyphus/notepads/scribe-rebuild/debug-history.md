@@ -112,3 +112,16 @@
 - Presenter calls view?.displayDevices() when data changes
 - View updates local @State in display methods
 - SwiftUI triggers redraw
+
+### Bug 10: SwiftUI-native VIPER for DeviceSettingsView
+**Issue:** Bluetooth scan UI not updating - display methods couldn't be wired (struct vs class-only protocol)
+**Root Cause:** Classical VIPER display method pattern incompatible with SwiftUI Views (structs can't conform to AnyObject protocols)
+**Fix Applied (2026-04-12):**
+- Rewrote DeviceSettingsView to use SwiftUI-native pattern:
+  - `@Bindable var presenter: DeviceSettingsPresenter` - SwiftUI observes Presenter's @Observable state
+  - Direct access to `presenter.state.discoveredDevices` in body
+  - Removed display methods and @State wrapper
+- Updated AppAssembly to pass presenter directly to View
+- Pattern now matches AgentGeneratingView (the only view using correct pattern)
+
+**Key insight:** The codebase mixed classical VIPER (display methods) with SwiftUI-native (@Bindable). AgentGeneratingView was the only correct implementation. DeviceSettingsView now follows suit.

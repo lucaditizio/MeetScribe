@@ -1,5 +1,4 @@
 import Foundation
-import Scribe
 
 public final class AgentGeneratingInteractor: AgentGeneratingInteractorInput {
     private weak var output: AgentGeneratingInteractorOutput?

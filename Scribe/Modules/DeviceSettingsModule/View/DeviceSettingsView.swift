@@ -1,50 +1,20 @@
 import SwiftUI
 
-/// Passive VIPER View: reads state from Presenter, forwards user actions to Presenter
 public struct DeviceSettingsView: View {
-    // MARK: - Properties
+    @Bindable var presenter: DeviceSettingsPresenter
     
-    /// Strong reference to Presenter (output)
-    public var output: DeviceSettingsViewOutput
-    
-    /// State from Presenter (observed via @State wrapper)
-    @State private var state: DeviceSettingsState
-    
-    // MARK: - Init
-    
-    public init(output: DeviceSettingsViewOutput) {
-        self.output = output
-        self._state = State(initialValue: DeviceSettingsState())
+    public init(presenter: DeviceSettingsPresenter) {
+        self.presenter = presenter
     }
-    
-    // MARK: - Display Methods
-    
-    public func displayDevices(_ devices: [DeviceSettingsBluetoothDevice]) {
-        state.discoveredDevices = devices
-    }
-    
-    public func displayConnectionState(_ connectionState: DeviceSettingsConnectionState) {
-        state.connectionState = connectionState
-    }
-    
-    public func displayError(_ error: Error) {
-        ScribeLogger.error("DeviceSettings error: \(error.localizedDescription)", category: .ble)
-    }
-    
-    // MARK: - Body
     
     public var body: some View {
         ZStack {
-            // Background
             Theme.obsidian
                 .ignoresSafeArea()
             
             ScrollView {
                 VStack(spacing: Spacing.sectionSpacing) {
-                    // Connection Status Card
                     connectionStatusCard
-                    
-                    // Device List Card
                     deviceListCard
                 }
                 .padding(Spacing.cardPadding)
@@ -52,7 +22,7 @@ public struct DeviceSettingsView: View {
         }
         .preferredColorScheme(.dark)
         .onAppear {
-            output.didTriggerViewReady()
+            presenter.didTriggerViewReady()
         }
     }
     
@@ -60,23 +30,18 @@ public struct DeviceSettingsView: View {
     
     private var connectionStatusCard: some View {
         VStack(spacing: Spacing.contentPadding) {
-            // Header
             HStack {
                 Text("Connection Status")
                     .font(.headline)
                     .foregroundColor(.primary)
-                
                 Spacer()
             }
             
-            // Status content
             HStack(spacing: 12) {
-                // Status dot
                 Circle()
                     .fill(statusColor)
                     .frame(width: 12, height: 12)
                 
-                // Status text
                 VStack(alignment: .leading, spacing: 2) {
                     Text(statusText)
                         .font(.subheadline)
@@ -92,31 +57,26 @@ public struct DeviceSettingsView: View {
                 
                 Spacer()
                 
-                // Disconnect button (only when connected)
                 if isConnected {
                     Button {
-                        output.didTapDisconnect()
+                        presenter.didTapDisconnect()
                     } label: {
                         Text("Disconnect")
                             .font(.subheadline)
                             .foregroundColor(Theme.scribeRed)
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 6)
-                            .background(Theme.scribeRed.opacity(0.15))
-                            .cornerRadius(8)
                     }
                 }
             }
         }
         .padding(Spacing.cardPadding)
-        .scribeCardStyle()
+        .background(Theme.cardBackgroundDark)
+        .cornerRadius(20)
     }
     
     // MARK: - Device List Card
     
     private var deviceListCard: some View {
         VStack(spacing: Spacing.contentPadding) {
-            // Header with Scan button
             HStack {
                 Text("Available Devices")
                     .font(.headline)
@@ -125,17 +85,17 @@ public struct DeviceSettingsView: View {
                 Spacer()
                 
                 Button {
-                    output.didTapScan()
+                    presenter.didTapScan()
                 } label: {
                     HStack(spacing: 4) {
-                        if state.isScanning {
+                        if presenter.state.isScanning {
                             ProgressView()
                                 .scaleEffect(0.8)
                                 .tint(.white)
                         } else {
                             Image(systemName: "antenna.radiowaves.left.and.right")
                         }
-                        Text(state.isScanning ? "Scanning..." : "Scan")
+                        Text(presenter.state.isScanning ? "Scanning..." : "Scan")
                     }
                     .font(.subheadline)
                     .foregroundColor(.white)
@@ -144,11 +104,10 @@ public struct DeviceSettingsView: View {
                     .background(Theme.scribeRed)
                     .cornerRadius(8)
                 }
-                .disabled(state.isScanning)
+                .disabled(presenter.state.isScanning)
             }
             
-            // Device list
-            if state.discoveredDevices.isEmpty {
+            if presenter.state.discoveredDevices.isEmpty {
                 Text("No devices found")
                     .font(.subheadline)
                     .foregroundColor(Theme.accentGray)
@@ -156,15 +115,15 @@ public struct DeviceSettingsView: View {
                     .padding(.vertical, 20)
             } else {
                 VStack(spacing: 0) {
-                    ForEach(state.discoveredDevices) { device in
+                    ForEach(presenter.state.discoveredDevices) { device in
                         DeviceRow(
                             device: device,
                             onTap: {
-                                output.didTapDevice(device)
+                                presenter.didTapDevice(device)
                             }
                         )
                         
-                        if device.id != state.discoveredDevices.last?.id {
+                        if device.id != presenter.state.discoveredDevices.last?.id {
                             Divider()
                                 .background(Theme.accentGray.opacity(0.3))
                         }
@@ -173,44 +132,45 @@ public struct DeviceSettingsView: View {
             }
         }
         .padding(Spacing.cardPadding)
-        .scribeCardStyle()
+        .background(Theme.cardBackgroundDark)
+        .cornerRadius(20)
     }
     
-    // MARK: - Status Helpers
+    // MARK: - Computed Properties
     
-    public var statusColor: Color {
-        switch state.connectionState {
-        case .connected:
-            return .green
-        case .connecting, .disconnecting:
-            return .yellow
+    private var statusColor: Color {
+        switch presenter.state.connectionState {
         case .disconnected:
             return Theme.accentGray
+        case .connecting, .disconnecting:
+            return .yellow
+        case .connected:
+            return .green
         }
     }
     
-    public var statusText: String {
-        switch state.connectionState {
-        case .connected:
-            return "Connected"
-        case .connecting:
-            return "Connecting..."
-        case .disconnecting:
-            return "Disconnecting..."
+    private var statusText: String {
+        switch presenter.state.connectionState {
         case .disconnected:
             return "Disconnected"
+        case .connecting:
+            return "Connecting..."
+        case .connected:
+            return "Connected"
+        case .disconnecting:
+            return "Disconnecting..."
         }
     }
     
-    public var connectedDeviceName: String? {
-        if case .connected(let device) = state.connectionState {
+    private var connectedDeviceName: String? {
+        if case .connected(let device) = presenter.state.connectionState {
             return device.name
         }
         return nil
     }
     
-    public var isConnected: Bool {
-        if case .connected = state.connectionState {
+    private var isConnected: Bool {
+        if case .connected = presenter.state.connectionState {
             return true
         }
         return false
@@ -226,55 +186,29 @@ private struct DeviceRow: View {
     var body: some View {
         Button(action: onTap) {
             HStack(spacing: 12) {
-                // Mic icon
                 Image(systemName: "mic.fill")
-                    .font(.system(size: 20))
-                    .foregroundColor(Theme.accentGray)
-                    .frame(width: 32)
+                    .font(.title2)
+                    .foregroundColor(Theme.scribeRed)
+                    .frame(width: 30)
                 
-                // Device name
-                Text(device.name)
-                    .font(.subheadline)
-                    .foregroundColor(.primary)
-                    .lineLimit(1)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(device.name)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(.primary)
+                    
+                    Text("RSSI: \(device.rssi)")
+                        .font(.caption)
+                        .foregroundColor(Theme.accentGray)
+                }
                 
                 Spacer()
                 
-                // RSSI badge
-                rssiBadge
-                
-                // Chevron
                 Image(systemName: "chevron.right")
                     .font(.caption)
                     .foregroundColor(Theme.accentGray)
             }
             .padding(.vertical, 12)
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(PlainButtonStyle())
-    }
-    
-    private var rssiBadge: some View {
-        HStack(spacing: 4) {
-            Image(systemName: "wifi")
-                .font(.caption2)
-            Text("\(device.rssi)")
-                .font(.caption2)
-        }
-        .foregroundColor(rssiColor)
-        .padding(.horizontal, 8)
-        .padding(.vertical, 4)
-        .background(rssiColor.opacity(0.15))
-        .cornerRadius(6)
-    }
-    
-    private var rssiColor: Color {
-        if device.rssi > -50 {
-            return .green
-        } else if device.rssi > -70 {
-            return .yellow
-        } else {
-            return Theme.scribeRed
         }
     }
 }
