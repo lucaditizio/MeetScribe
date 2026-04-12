@@ -102,6 +102,13 @@
 **Root Cause:** DeviceSettingsView created local `state` property without @State wrapper - SwiftUI couldn't observe Presenter state changes
 **Hypothesis:** Only DeviceSettingsView had this bug among all 10 views - others use @State or @Bindable correctly
 **Fix Applied (2026-04-12):**
-- DeviceSettingsView.swift: Changed `public var state` to `@State private var state`
-- Changed init to use `_state = State(initialValue: DeviceSettingsState())`
-- Aligns with codebase pattern (8 other views use @State wrapper)
+- DeviceSettingsView.swift: Added `@State` wrapper to state property
+- Added display methods (displayDevices, displayConnectionState, displayError) to View
+- DeviceSettingsPresenter.swift: Changed view to `public weak var view: (any DeviceSettingsViewInput)?`
+- AppAssembly.swift: Wire view to presenter after creating View
+
+**Architecture now:**
+- View has @State for local rendering
+- Presenter calls view?.displayDevices() when data changes
+- View updates local @State in display methods
+- SwiftUI triggers redraw

@@ -1,12 +1,12 @@
 import Foundation
+import SwiftUI
 
 @Observable
 public final class DeviceSettingsPresenter: DeviceSettingsModuleInput,
-                                            DeviceSettingsViewInput,
                                             DeviceSettingsViewOutput,
                                             DeviceSettingsInteractorOutput {
     public var state = DeviceSettingsState()
-    private weak var view: DeviceSettingsViewInput?
+    public weak var view: (any DeviceSettingsViewInput)?
     private let interactor: DeviceSettingsInteractorInput
     private let router: DeviceSettingsRouterInput
 

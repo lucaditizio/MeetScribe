@@ -17,6 +17,20 @@ public struct DeviceSettingsView: View {
         self._state = State(initialValue: DeviceSettingsState())
     }
     
+    // MARK: - Display Methods
+    
+    public func displayDevices(_ devices: [DeviceSettingsBluetoothDevice]) {
+        state.discoveredDevices = devices
+    }
+    
+    public func displayConnectionState(_ connectionState: DeviceSettingsConnectionState) {
+        state.connectionState = connectionState
+    }
+    
+    public func displayError(_ error: Error) {
+        ScribeLogger.error("DeviceSettings error: \(error.localizedDescription)", category: .ble)
+    }
+    
     // MARK: - Body
     
     public var body: some View {
