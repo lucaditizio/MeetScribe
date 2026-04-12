@@ -125,3 +125,43 @@
 - Pattern now matches AgentGeneratingView (the only view using correct pattern)
 
 **Key insight:** The codebase mixed classical VIPER (display methods) with SwiftUI-native (@Bindable). AgentGeneratingView was the only correct implementation. DeviceSettingsView now follows suit.
+
+### Bug 9: Internal Mic Recording Crash - Format Mismatch
+**Issue:** App crashes on recording start with internal mic:
+```
+Format mismatch: input hw <...48000Hz...>, client format <...16000Hz...>
+Failed to create tap due to format mismatch
+```
+**Root Cause:** InternalMicRecorder tried to install AVAudioEngine tap at 16kHz, but internal iOS mic runs at 48kHz native. AVAudioEngine can't bridge at tap-install time.
+**Fix Applied (2026-04-12):**
+- Rewrote InternalMicRecorder to use AVAudioRecorder at 48kHz AAC (.m4a) - matching original Scribe
+- AudioConverter extended to accept both .caf and .m4a input, output .caf with _16kHz suffix
+- RecordingListInteractor wired to convert after recording stops
+
+### Bug 10: UI Doesn't Update After Recording Starts
+**Issue:** Recording starts but UI shows start button (not stop button)
+**Root Cause:** No state sync between InternalMicRecorder and UI - presenter didn't know recording started
+**Fix Applied (2026-04-12):**
+- RecordingListInteractor exposes isRecordingPublisher (from AudioRecorderProtocol)
+- RecordingListInteractorInput protocol updated to include isRecordingPublisher
+- RecordingListPresenter subscribes to recording state, updates state.isRecording
+
+### Bug 11: Recording Not Showing in UI
+**Issue:** Recording starts/stops/converts, but RecordingListView doesn't show the file
+**Root Cause:** Recording created with original .m4a path BEFORE conversion, only local object updated
+**Fix Applied (2026-04-12):**
+- RecordingListInteractor.stopRecording(): Create Recording AFTER conversion with converted .caf path
+- Save converted Recording to repository so UI fetches correct .caf path
+
+---
+
+## Files Modified in This Session
+
+### Audio Service
+- `Scribe/Services/AudioService/InternalMicRecorder.swift` - AVAudioRecorder @ 48kHz AAC
+- `Scribe/Services/AudioService/AudioConverter.swift` - accepts .caf/.m4a, outputs .caf
+
+### RecordingListModule
+- `Scribe/Modules/RecordingListModule/Interactor/RecordingListInteractor.swift` - isRecordingPublisher, fix stopRecording()
+- `Scribe/Modules/RecordingListModule/Interactor/RecordingListInteractorInput.swift` - protocol updated
+- `Scribe/Modules/RecordingListModule/Presenter/RecordingListPresenter.swift` - subscribes to recording state

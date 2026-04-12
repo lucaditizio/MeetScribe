@@ -70,14 +70,31 @@ public final class RecordingListInteractor: RecordingListInteractorInput {
     public func stopRecording() {
         Task {
             do {
-                let result = try await audioRecorder.stopRecording()
+                let rawRecording = try await audioRecorder.stopRecording()
                 
-                if let recording = result {
-                    let fileURL = URL(fileURLWithPath: recording.filePath)
-                    let convertedURL = try await audioConverter.convertTo16kHzIfNeeded(sourceURL: fileURL)
-                    recording.filePath = convertedURL.path
+                guard let recording = rawRecording else {
+                    output?.didStopRecording(result: nil)
+                    return
                 }
-                output?.didStopRecording(result: result)
+                
+                // Convert to 16kHz first
+                let fileURL = URL(fileURLWithPath: recording.filePath)
+                let convertedURL = try await audioConverter.convertTo16kHzIfNeeded(sourceURL: fileURL)
+                
+                // Create Recording with converted path (what gets saved to repo)
+                let finalRecording = Recording(
+                    title: recording.title,
+                    date: recording.date,
+                    duration: recording.duration,
+                    fileName: convertedURL.lastPathComponent,
+                    filePath: convertedURL.path,
+                    source: recording.source
+                )
+                
+                // Save to repository (so UI fetches correct .caf path)
+                try await recordingRepository.save(finalRecording)
+                
+                output?.didStopRecording(result: finalRecording)
             } catch {
                 output?.didFailWithError(error)
             }
