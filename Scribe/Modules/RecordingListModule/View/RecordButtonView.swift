@@ -23,6 +23,10 @@ public struct RecordButtonView: View {
                     RoundedRectangle(cornerRadius: 6)
                         .fill(Color.white)
                         .frame(width: 24, height: 24)
+                } else {
+                    Image(systemName: "mic.fill")
+                        .font(.system(size: 30))
+                        .foregroundColor(.white)
                 }
             }
         }
