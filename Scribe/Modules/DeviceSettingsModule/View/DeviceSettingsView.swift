@@ -8,13 +8,13 @@ public struct DeviceSettingsView: View {
     public var output: DeviceSettingsViewOutput
     
     /// State from Presenter (read-only, updated via Presenter)
-    @State public var state: DeviceSettingsState
+    public var state: DeviceSettingsState
     
     // MARK: - Init
     
     public init(output: DeviceSettingsViewOutput) {
         self.output = output
-        self._state = State(initialValue: DeviceSettingsState())
+        self.state = DeviceSettingsState()
     }
     
     // MARK: - Body
