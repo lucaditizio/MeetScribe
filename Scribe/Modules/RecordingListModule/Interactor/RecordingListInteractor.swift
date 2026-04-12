@@ -94,7 +94,10 @@ public final class RecordingListInteractor: RecordingListInteractorInput {
                 // Save to repository (so UI fetches correct .caf path)
                 try await recordingRepository.save(finalRecording)
                 
+                // Fetch recordings after save completes
+                let recordings = try await recordingRepository.fetchAll()
                 output?.didStopRecording(result: finalRecording)
+                output?.didObtainRecordings(recordings)
             } catch {
                 output?.didFailWithError(error)
             }
