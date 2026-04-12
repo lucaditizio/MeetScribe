@@ -11,21 +11,23 @@ public final class RecordingListAssembly {
         appAssembly: AppAssembly
     ) -> RecordingListView {
         let router = RecordingListRouter(appAssembly: appAssembly)
-
+        
+        let presenter = RecordingListPresenter(
+            view: nil,
+            interactor: nil,
+            router: router
+        )
+        
         let interactor = RecordingListInteractor(
-            output: nil,
+            output: presenter,
             recordingRepository: recordingRepository,
             audioRecorder: audioRecorder,
             audioConverter: audioConverter,
             deviceConnectionManager: deviceConnectionManager
         )
-
-        let presenter = RecordingListPresenter(
-            view: nil,
-            interactor: interactor,
-            router: router
-        )
-
+        
+        presenter.interactor = interactor
+        
         return RecordingListView(presenter: presenter, router: router)
     }
 }

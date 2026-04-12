@@ -6,22 +6,24 @@ import Combine
 public final class RecordingListPresenter: RecordingListViewOutput, RecordingListViewInput, RecordingListInteractorOutput {
     public var state = RecordingListState()
     private weak var view: RecordingListViewInput?
-    private let interactor: RecordingListInteractorInput
+    var interactor: RecordingListInteractorInput?
     private let router: RecordingListRouterInput
     private var cancellables = Set<AnyCancellable>()
     
     public init(
         view: RecordingListViewInput?,
-        interactor: RecordingListInteractorInput,
+        interactor: RecordingListInteractorInput?,
         router: RecordingListRouterInput
     ) {
         self.view = view
         self.interactor = interactor
         self.router = router
-        subscribeToRecordingState()
+        if let interactor = interactor {
+            subscribeToRecordingState(interactor: interactor)
+        }
     }
     
-    private func subscribeToRecordingState() {
+    private func subscribeToRecordingState(interactor: RecordingListInteractorInput) {
         interactor.isRecordingPublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] isRecording in
@@ -31,14 +33,14 @@ public final class RecordingListPresenter: RecordingListViewOutput, RecordingLis
     }
     
     public func didTriggerViewReady() {
-        interactor.obtainRecordings()
+        interactor?.obtainRecordings()
     }
     
     public func didTapRecord() {
         if state.isRecording {
-            interactor.stopRecording()
+            interactor?.stopRecording()
         } else {
-            interactor.startRecording()
+            interactor?.startRecording()
         }
     }
     
@@ -52,7 +54,7 @@ public final class RecordingListPresenter: RecordingListViewOutput, RecordingLis
     }
     
     public func didDeleteRecording(id: String) {
-        interactor.deleteRecording(id: id)
+        interactor?.deleteRecording(id: id)
     }
     
     public func displayRecordings(_ recordings: [Recording]) {
@@ -73,7 +75,7 @@ public final class RecordingListPresenter: RecordingListViewOutput, RecordingLis
     public func didStopRecording(result: Recording?) {
         state.isRecording = false
         if result != nil {
-            interactor.obtainRecordings()
+            interactor?.obtainRecordings()
         }
     }
     
