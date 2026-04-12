@@ -153,6 +153,13 @@ Failed to create tap due to format mismatch
 - RecordingListInteractor.stopRecording(): Create Recording AFTER conversion with converted .caf path
 - Save converted Recording to repository so UI fetches correct .caf path
 
+### Bug 12: Recording Not Showing After Save
+**Issue:** Recording shows in console log but UI still empty
+**Root Cause:** Race condition - fetch runs async but UI updates before save completes
+**Fix Applied (2026-04-12):**
+- stopRecording() now calls fetchAll() immediately after save() to ensure data is available
+- Passes fresh recordings directly to didObtainRecordings()
+
 ---
 
 ## Files Modified in This Session
@@ -162,6 +169,6 @@ Failed to create tap due to format mismatch
 - `Scribe/Services/AudioService/AudioConverter.swift` - accepts .caf/.m4a, outputs .caf
 
 ### RecordingListModule
-- `Scribe/Modules/RecordingListModule/Interactor/RecordingListInteractor.swift` - isRecordingPublisher, fix stopRecording()
+- `Scribe/Modules/RecordingListModule/Interactor/RecordingListInteractor.swift` - isRecordingPublisher, fix stopRecording(), await fetch after save
 - `Scribe/Modules/RecordingListModule/Interactor/RecordingListInteractorInput.swift` - protocol updated
 - `Scribe/Modules/RecordingListModule/Presenter/RecordingListPresenter.swift` - subscribes to recording state
