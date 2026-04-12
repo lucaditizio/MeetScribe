@@ -9,6 +9,106 @@ public final class AudioConverter {
     
     public init() {}
     
+    public func sampleRate(of url: URL) throws -> Double {
+        guard FileManager.default.fileExists(atPath: url.path) else {
+            ScribeLogger.error("Audio file not found at path: \(url.path)", category: .audio)
+            throw AudioConverterError.fileNotFound(url.path)
+        }
+        
+        do {
+            let audioFile = try AVAudioFile(forReading: url)
+            let sampleRate = audioFile.processingFormat.sampleRate
+            ScribeLogger.debug("Detected sample rate: \(sampleRate)Hz for \(url.lastPathComponent)", category: .audio)
+            return sampleRate
+        } catch {
+            ScribeLogger.error("Failed to detect sample rate: \(error.localizedDescription)", category: .audio)
+            throw AudioConverterError.sampleRateDetectionFailed(error)
+        }
+    }
+    
+    public func convertTo16kHzIfNeeded(sourceURL: URL) async throws -> URL {
+        let sourceRate = try sampleRate(of: sourceURL)
+        
+        if sourceRate == Constants.targetSampleRate {
+            ScribeLogger.debug("Source already at 16kHz, skipping conversion", category: .audio)
+            return sourceURL
+        }
+        
+        ScribeLogger.info("Converting \(Int(sourceRate))Hz → 16kHz for \(sourceURL.lastPathComponent)", category: .audio)
+        return try await convertTo16kHz(sourceURL: sourceURL)
+    }
+    
+    private func convertTo16kHz(sourceURL: URL) async throws -> URL {
+        guard FileManager.default.fileExists(atPath: sourceURL.path) else {
+            throw AudioConverterError.fileNotFound(sourceURL.path)
+        }
+        
+        let sourceFile = try AVAudioFile(forReading: sourceURL)
+        let sourceFormat = sourceFile.processingFormat
+        let frameCount = AVAudioFrameCount(sourceFile.length)
+        
+        guard let targetFormat = AVAudioFormat(
+            commonFormat: .pcmFormatFloat32,
+            sampleRate: Constants.targetSampleRate,
+            channels: 1,
+            interleaved: false
+        ) else {
+            throw AudioConverterError.conversionFailed(NSError(domain: "AudioConverter", code: -1, userInfo: [NSLocalizedDescriptionKey: "Failed to create target audio format"]))
+        }
+        
+        guard let sourceBuffer = AVAudioPCMBuffer(pcmFormat: sourceFormat, frameCapacity: frameCount) else {
+            throw AudioConverterError.bufferCreationFailed
+        }
+        
+        try sourceFile.read(into: sourceBuffer)
+        
+        let outputURL = generateOutputURL(for: sourceURL, suffix: "_16kHz")
+        
+        guard let outputFile = try? AVAudioFile(
+            forWriting: outputURL,
+            settings: targetFormat.settings,
+            commonFormat: .pcmFormatFloat32,
+            interleaved: false
+        ) else {
+            throw AudioConverterError.conversionFailed(NSError(domain: "AudioConverter", code: -2, userInfo: [NSLocalizedDescriptionKey: "Failed to create output audio file"]))
+        }
+        
+        guard let converter = AVAudioConverter(from: sourceFormat, to: targetFormat) else {
+            throw AudioConverterError.conversionFailed(NSError(domain: "AudioConverter", code: -3, userInfo: [NSLocalizedDescriptionKey: "Failed to create audio converter"]))
+        }
+        
+        let outputFrameCapacity = AVAudioFrameCount(Double(frameCount) * Constants.targetSampleRate / sourceFormat.sampleRate)
+        guard let outputBuffer = AVAudioPCMBuffer(pcmFormat: targetFormat, frameCapacity: outputFrameCapacity) else {
+            throw AudioConverterError.bufferCreationFailed
+        }
+        
+        var error: NSError?
+        let status = converter.convert(to: outputBuffer, error: &error) { inNumPackets, outStatus in
+            outStatus.pointee = .haveData
+            return sourceBuffer
+        }
+        
+        if status == .error || error != nil {
+            throw AudioConverterError.conversionFailed(error ?? NSError(domain: "AudioConverter", code: -4, userInfo: [NSLocalizedDescriptionKey: "Conversion failed with unknown error"]))
+        }
+        
+        do {
+            try outputFile.write(from: outputBuffer)
+        } catch {
+            throw AudioConverterError.writeFailed(error)
+        }
+        
+        ScribeLogger.info("Conversion complete: \(outputURL.lastPathComponent)", category: .audio)
+        return outputURL
+    }
+    
+    private func generateOutputURL(for sourceURL: URL, suffix: String) -> URL {
+        let directory = sourceURL.deletingLastPathComponent()
+        let filename = sourceURL.deletingPathExtension().lastPathComponent
+        let ext = sourceURL.pathExtension
+        return directory.appendingPathComponent("\(filename)\(suffix).\(ext)")
+    }
+    
     public func convertCAFToPCM(url: URL) async throws -> [Float] {
         guard FileManager.default.fileExists(atPath: url.path) else {
             ScribeLogger.error("CAF file not found at path: \(url.path)", category: .audio)
@@ -129,11 +229,13 @@ public enum AudioConverterError: LocalizedError {
     case readFailed(Error)
     case noChannelData
     case conversionFailed(Error)
+    case sampleRateDetectionFailed(Error?)
+    case writeFailed(Error)
     
     public var errorDescription: String? {
         switch self {
         case .fileNotFound(let path):
-            return "CAF file not found at path: \(path)"
+            return "Audio file not found at path: \(path)"
         case .invalidFormat(let message):
             return "Invalid audio format: \(message)"
         case .fileOpenFailed(let error):
@@ -146,6 +248,13 @@ public enum AudioConverterError: LocalizedError {
             return "No channel data available in audio buffer"
         case .conversionFailed(let error):
             return "Audio conversion failed: \(error.localizedDescription)"
+        case .sampleRateDetectionFailed(let error):
+            if let error = error {
+                return "Failed to detect sample rate: \(error.localizedDescription)"
+            }
+            return "Failed to detect sample rate"
+        case .writeFailed(let error):
+            return "Failed to write audio file: \(error.localizedDescription)"
         }
     }
 }

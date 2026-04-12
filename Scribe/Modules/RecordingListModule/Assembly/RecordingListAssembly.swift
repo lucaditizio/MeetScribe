@@ -6,6 +6,7 @@ public final class RecordingListAssembly {
     public static func build(
         recordingRepository: RecordingRepositoryProtocol,
         audioRecorder: AudioRecorderProtocol,
+        audioConverter: AudioConverter,
         deviceConnectionManager: DeviceConnectionManagerProtocol,
         appAssembly: AppAssembly
     ) -> RecordingListView {
@@ -15,6 +16,7 @@ public final class RecordingListAssembly {
             output: nil,
             recordingRepository: recordingRepository,
             audioRecorder: audioRecorder,
+            audioConverter: audioConverter,
             deviceConnectionManager: deviceConnectionManager
         )
 

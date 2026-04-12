@@ -112,17 +112,6 @@ public final class InternalMicRecorder: NSObject, AudioRecorderProtocol {
         let inputNode = audioEngine.inputNode
         let inputFormat = inputNode.outputFormat(forBus: 0)
         
-        // Target format: 16kHz mono Float32 PCM
-        guard let targetFormat = AVAudioFormat(
-            commonFormat: .pcmFormatFloat32,
-            sampleRate: audioConfig.sampleRate,
-            channels: 1,
-            interleaved: false
-        ) else {
-            ScribeLogger.error("Failed to create target audio format", category: .audio)
-            throw InternalMicRecorderError.formatCreationFailed
-        }
-        
         // Create Opus encoder
         do {
             opusEncoder = try OpusEncoder.makeDefault()
@@ -132,7 +121,7 @@ public final class InternalMicRecorder: NSObject, AudioRecorderProtocol {
         }
         
         // Install tap on input node
-        inputNode.installTap(onBus: 0, bufferSize: AVAudioFrameCount(audioConfig.frameSize), format: targetFormat) { [weak self] buffer, time in
+        inputNode.installTap(onBus: 0, bufferSize: AVAudioFrameCount(audioConfig.frameSize), format: inputFormat) { [weak self] buffer, time in
             self?.processAudioBuffer(buffer)
         }
         

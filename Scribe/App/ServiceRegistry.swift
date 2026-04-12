@@ -49,6 +49,9 @@ public final class ServiceRegistry {
     public lazy var audioRecorder: AudioRecorderProtocol =
         InternalMicRecorder()
 
+    public lazy var audioConverter: AudioConverter =
+        AudioConverter()
+
     public lazy var audioPlayer: AudioPlayerProtocol =
         AudioPlayer()
 

@@ -1,22 +1,26 @@
 import Foundation
 import SwiftData
 import Combine
+import AVFoundation
 
 public final class RecordingListInteractor: RecordingListInteractorInput {
     private weak var output: RecordingListInteractorOutput?
     private let recordingRepository: RecordingRepositoryProtocol
     private let audioRecorder: AudioRecorderProtocol
+    private let audioConverter: AudioConverter
     private let deviceConnectionManager: DeviceConnectionManagerProtocol
     
     public init(
         output: RecordingListInteractorOutput?,
         recordingRepository: RecordingRepositoryProtocol,
         audioRecorder: AudioRecorderProtocol,
+        audioConverter: AudioConverter,
         deviceConnectionManager: DeviceConnectionManagerProtocol
     ) {
         self.output = output
         self.recordingRepository = recordingRepository
         self.audioRecorder = audioRecorder
+        self.audioConverter = audioConverter
         self.deviceConnectionManager = deviceConnectionManager
     }
     
@@ -63,6 +67,12 @@ public final class RecordingListInteractor: RecordingListInteractorInput {
         Task {
             do {
                 let result = try await audioRecorder.stopRecording()
+                
+                if let recording = result {
+                    let fileURL = URL(fileURLWithPath: recording.filePath)
+                    let convertedURL = try await audioConverter.convertTo16kHzIfNeeded(sourceURL: fileURL)
+                    recording.filePath = convertedURL.path
+                }
                 output?.didStopRecording(result: result)
             } catch {
                 output?.didFailWithError(error)

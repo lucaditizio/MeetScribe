@@ -20,6 +20,7 @@ public final class AppAssembly {
         RecordingListAssembly.build(
             recordingRepository: services.recordingRepository,
             audioRecorder: services.audioRecorder,
+            audioConverter: services.audioConverter,
             deviceConnectionManager: services.deviceConnectionManager,
             appAssembly: self
         )
