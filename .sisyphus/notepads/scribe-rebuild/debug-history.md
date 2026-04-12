@@ -214,6 +214,19 @@ let interactor = RecordingListInteractor(
 - Removed speed cycling from `AudioPlayer.play()` - now uses configured `currentRate` instead.
 - Wired `cycleSpeed()` to call `audioPlayer.setRate(currentSpeed)` to actually change playback speed.
 
+### Bug 18: UI Does Not Display Playback Speed Changes
+**Issue:** Clicking the playback speed button changes the actual audio playback rate, but the UI speed capsule remains stuck at 1.0x.
+**Root Cause:**
+1. `WaveformPlaybackInteractor.cycleSpeed()` calls `audioPlayer.setRate()` but never notifies the presenter via `output?.didUpdateSpeed()`.
+2. `WaveformPlaybackInteractorOutput` protocol lacked `didUpdateSpeed(_:)` callback.
+3. `WaveformPlaybackPresenter.didUpdatePlaybackState()` only updates `isPlaying` and `currentTime`, never `speed`.
+4. VIPER chain broken: Interactor → Presenter → View never receives speed update.
+**Fix Applied (2026-04-12):**
+- Added `didUpdateSpeed(_:)` method to `WaveformPlaybackInteractorOutput` protocol.
+- Updated `cycleSpeed()` to call `output?.didUpdateSpeed(currentSpeed)` instead of `didUpdatePlaybackState()`.
+- Implemented `didUpdateSpeed(_:)` in `WaveformPlaybackPresenter` to update `state.speed`.
+- UI now correctly displays speed changes (1x → 1.5x → 2x) when speed button is tapped.
+
 ---
 
 ## Files Modified in This Session

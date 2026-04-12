@@ -107,7 +107,7 @@ public final class WaveformPlaybackInteractor: WaveformPlaybackInteractorInput {
         currentSpeedIndex = (currentSpeedIndex + 1) % speeds.count
         currentSpeed = speeds[currentSpeedIndex]
         audioPlayer.setRate(currentSpeed)
-        output?.didUpdatePlaybackState(isPlaying: self.isPlaying, currentTime: self.lastTime)
+        output?.didUpdateSpeed(currentSpeed)
     }
 }
 

@@ -63,6 +63,10 @@ public final class WaveformPlaybackPresenter: WaveformPlaybackViewOutput, Wavefo
         state.duration = duration
     }
     
+    public func didUpdateSpeed(_ speed: Float) {
+        state.speed = speed
+    }
+    
     public func didFailWithError(_ error: Error) {
         print("WaveformPlayback error: \(error)")
     }
