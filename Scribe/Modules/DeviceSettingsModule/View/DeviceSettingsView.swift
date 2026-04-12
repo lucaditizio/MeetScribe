@@ -7,14 +7,14 @@ public struct DeviceSettingsView: View {
     /// Strong reference to Presenter (output)
     public var output: DeviceSettingsViewOutput
     
-    /// State from Presenter (read-only, updated via Presenter)
-    public var state: DeviceSettingsState
+    /// State from Presenter (observed via @State wrapper)
+    @State private var state: DeviceSettingsState
     
     // MARK: - Init
     
     public init(output: DeviceSettingsViewOutput) {
         self.output = output
-        self.state = DeviceSettingsState()
+        self._state = State(initialValue: DeviceSettingsState())
     }
     
     // MARK: - Body

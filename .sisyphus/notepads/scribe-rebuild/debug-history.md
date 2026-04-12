@@ -96,3 +96,12 @@
   - `NSBluetoothAlwaysUsageDescription` - "MeetScribe needs Bluetooth to connect to external recording devices."
   - `NSBluetoothPeripheralUsageDescription` - "MeetScribe needs Bluetooth to connect to external recording devices."
 **Expected Result:** iOS will now prompt user for Bluetooth permission on first scan attempt
+
+### Bug 9: DeviceSettings View Not Updating (State Sync Issue)
+**Issue:** Bluetooth scanning works (console shows discovered devices) but UI shows "No devices found"
+**Root Cause:** DeviceSettingsView created local `state` property without @State wrapper - SwiftUI couldn't observe Presenter state changes
+**Hypothesis:** Only DeviceSettingsView had this bug among all 10 views - others use @State or @Bindable correctly
+**Fix Applied (2026-04-12):**
+- DeviceSettingsView.swift: Changed `public var state` to `@State private var state`
+- Changed init to use `_state = State(initialValue: DeviceSettingsState())`
+- Aligns with codebase pattern (8 other views use @State wrapper)
