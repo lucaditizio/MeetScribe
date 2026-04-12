@@ -1,22 +1,70 @@
-import Foundation
 import SwiftUI
+import Combine
 
+/// Navigation router for RecordingListModule.
+///
+/// SwiftUI drives navigation declaratively, so the router publishes
+/// destination state that `RecordingListView` observes via `.navigationDestination`
+/// and `.sheet` modifiers.  The `AppAssembly` reference lets the router
+/// build real module views without taking on any business logic.
+@Observable
 public final class RecordingListRouter: RecordingListRouterInput {
+
+    // MARK: - Navigation State (observed by RecordingListView)
+
+    /// The recording whose detail screen should be pushed onto the NavigationStack.
+    public var selectedRecording: Recording?
+
+    /// Controls DeviceSettings sheet presentation.
+    public var isShowingDeviceSettings: Bool = false
+
+    /// Controls AgentGenerating sheet presentation.
+    public var isShowingAgentGenerating: Bool = false
+
+    /// The recording being processed in the AgentGenerating sheet.
+    public var processingRecording: Recording?
+
+    // MARK: - Dependencies
     private weak var viewController: UIViewController?
-    
-    public init(viewController: UIViewController?) {
+    private let appAssembly: AppAssembly
+
+    // MARK: - Initialization
+    public init(viewController: UIViewController? = nil, appAssembly: AppAssembly) {
         self.viewController = viewController
+        self.appAssembly = appAssembly
     }
-    
+
+    // MARK: - RecordingListRouterInput
+
     public func openRecordingDetail(with recording: Recording) {
-        // Navigation implementation
+        selectedRecording = recording
     }
-    
+
     public func openDeviceSettings() {
-        // Navigation implementation
+        isShowingDeviceSettings = true
     }
-    
+
     public func openAgentGenerating() {
-        // Navigation implementation
+        isShowingAgentGenerating = true
+    }
+
+    // MARK: - View Factories (called from RecordingListView sheet/navigation bodies)
+
+    @ViewBuilder
+    public func recordingDetailView(for recording: Recording) -> some View {
+        appAssembly.makeRecordingDetailModule(recordingId: recording.id, output: nil)
+    }
+
+    @ViewBuilder
+    public func deviceSettingsView() -> some View {
+        appAssembly.makeDeviceSettingsModule(output: nil)
+    }
+
+    @ViewBuilder
+    public func agentGeneratingView() -> some View {
+        appAssembly.makeAgentGeneratingModule(
+            recordingId: processingRecording?.id ?? UUID(),
+            output: nil
+        )
     }
 }

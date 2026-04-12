@@ -1,6 +1,6 @@
 import Foundation
 
-public final class TranscriptPresenter: TranscriptModuleInput {
+public final class TranscriptPresenter: TranscriptModuleInput, TranscriptViewOutput {
     private weak var view: TranscriptViewInput?
     private let interactor: TranscriptInteractorInput
     public var state: TranscriptState

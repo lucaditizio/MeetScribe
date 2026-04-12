@@ -1,8 +1,13 @@
 import Foundation
 
+/// Assembly for RecordingDetailModule.
+/// Accepts a shared RecordingRepositoryProtocol injected from AppAssembly.
 public final class RecordingDetailAssembly {
-    public static func createModule(recordingId: String) -> RecordingDetailViewInput {
-        let recordingRepository = RecordingRepository()
+
+    public static func createModule(
+        recordingId: String,
+        recordingRepository: RecordingRepositoryProtocol
+    ) -> RecordingDetailPresenter {
         let interactor = RecordingDetailInteractor(
             output: nil,
             recordingRepository: recordingRepository
@@ -13,9 +18,10 @@ public final class RecordingDetailAssembly {
             interactor: interactor,
             router: router
         )
-        
+
+        // Kick off initial data load
         interactor.obtainRecording(id: recordingId)
-        
-        return presenter as! RecordingDetailViewInput
+
+        return presenter
     }
 }

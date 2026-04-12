@@ -26,7 +26,8 @@ public final class RecordingListPresenter: RecordingListViewOutput, RecordingLis
     }
     
     public func didTapRecording(id: String) {
-        // Navigation handled by router
+        guard let recording = state.recordings.first(where: { $0.id.uuidString == id }) else { return }
+        router.openRecordingDetail(with: recording)
     }
     
     public func didTapSettings() {
