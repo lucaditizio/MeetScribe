@@ -19,6 +19,7 @@ public final class AppAssembly {
     public func makeRecordingListModule(output: (any ModuleOutput)?) -> some View {
         RecordingListAssembly.build(
             recordingRepository: services.recordingRepository,
+            audioRecorder: services.audioRecorder,
             appAssembly: self
         )
     }

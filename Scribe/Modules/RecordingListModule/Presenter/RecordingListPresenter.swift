@@ -1,7 +1,8 @@
 import Foundation
+import SwiftData
 
 @Observable
-public final class RecordingListPresenter: RecordingListViewOutput, RecordingListViewInput {
+public final class RecordingListPresenter: RecordingListViewOutput, RecordingListViewInput, RecordingListInteractorOutput {
     public var state = RecordingListState()
     private weak var view: RecordingListViewInput?
     private let interactor: RecordingListInteractorInput
@@ -22,7 +23,11 @@ public final class RecordingListPresenter: RecordingListViewOutput, RecordingLis
     }
     
     public func didTapRecord() {
-        router.openAgentGenerating()
+        if state.isRecording {
+            interactor.stopRecording()
+        } else {
+            interactor.startRecording()
+        }
     }
     
     public func didTapRecording(id: String) {
@@ -46,6 +51,29 @@ public final class RecordingListPresenter: RecordingListViewOutput, RecordingLis
     
     public func displayError(_ error: Error) {
         state.isLoading = false
+        view?.displayError(error)
+    }
+    
+    public func didStartRecording() {
+        state.isRecording = true
+    }
+    
+    public func didStopRecording(result: Recording?) {
+        state.isRecording = false
+        if result != nil {
+            interactor.obtainRecordings()
+        }
+    }
+    
+    public func didObtainRecordings(_ recordings: [Recording]) {
+        state.recordings = recordings
+        state.isLoading = false
+        view?.displayRecordings(recordings)
+    }
+    
+    public func didFailWithError(_ error: Error) {
+        state.isLoading = false
+        state.isRecording = false
         view?.displayError(error)
     }
 }

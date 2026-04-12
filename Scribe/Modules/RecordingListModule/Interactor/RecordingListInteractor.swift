@@ -1,15 +1,19 @@
 import Foundation
+import SwiftData
 
 public final class RecordingListInteractor: RecordingListInteractorInput {
     private weak var output: RecordingListInteractorOutput?
     private let recordingRepository: RecordingRepositoryProtocol
+    private let audioRecorder: AudioRecorderProtocol
     
     public init(
         output: RecordingListInteractorOutput?,
-        recordingRepository: RecordingRepositoryProtocol
+        recordingRepository: RecordingRepositoryProtocol,
+        audioRecorder: AudioRecorderProtocol
     ) {
         self.output = output
         self.recordingRepository = recordingRepository
+        self.audioRecorder = audioRecorder
     }
     
     public func obtainRecordings() {
@@ -31,9 +35,30 @@ public final class RecordingListInteractor: RecordingListInteractorInput {
                     return
                 }
                 try await recordingRepository.delete(recording)
-                // Refresh after delete
                 let recordings = try await recordingRepository.fetchAll()
                 output?.didObtainRecordings(recordings)
+            } catch {
+                output?.didFailWithError(error)
+            }
+        }
+    }
+    
+    public func startRecording() {
+        Task {
+            do {
+                try await audioRecorder.startRecording(source: .rawInternal)
+                output?.didStartRecording()
+            } catch {
+                output?.didFailWithError(error)
+            }
+        }
+    }
+    
+    public func stopRecording() {
+        Task {
+            do {
+                let result = try await audioRecorder.stopRecording()
+                output?.didStopRecording(result: result)
             } catch {
                 output?.didFailWithError(error)
             }

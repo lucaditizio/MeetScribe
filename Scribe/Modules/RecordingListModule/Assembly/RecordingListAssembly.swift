@@ -7,20 +7,17 @@ import Foundation
 /// it just receives a ready-to-display view.
 public final class RecordingListAssembly {
 
-    /// Builds and returns the fully wired RecordingListView.
-    /// - Parameters:
-    ///   - recordingRepository: Shared repository injected from ServiceRegistry.
-    ///   - appAssembly: AppAssembly passed to the Router so it can build
-    ///     destination views during navigation without holding services itself.
     public static func build(
         recordingRepository: RecordingRepositoryProtocol,
+        audioRecorder: AudioRecorderProtocol,
         appAssembly: AppAssembly
     ) -> RecordingListView {
         let router = RecordingListRouter(appAssembly: appAssembly)
 
         let interactor = RecordingListInteractor(
             output: nil,
-            recordingRepository: recordingRepository
+            recordingRepository: recordingRepository,
+            audioRecorder: audioRecorder
         )
 
         let presenter = RecordingListPresenter(

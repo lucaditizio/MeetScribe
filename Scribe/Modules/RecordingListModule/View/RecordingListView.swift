@@ -51,21 +51,10 @@ public struct RecordingListView: View {
             .navigationBarTitleDisplayMode(.large)
             .preferredColorScheme(.dark)
             .toolbar {
-                // Settings button — opens DeviceSettings sheet
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        output.didTapSettings()
-                    } label: {
-                        Image(systemName: "antenna.radiowaves.left.and.right")
-                            .foregroundColor(Theme.accentGray)
-                            .font(.title3)
-                    }
-                }
-
-                // Record button — opens AgentGenerating sheet
+                // Settings button — opens DeviceSettings sheet (single toolbar button per plan)
                 ToolbarItem(placement: .primaryAction) {
                     Button {
-                        output.didTapRecord()
+                        output.didTapSettings()
                     } label: {
                         Image(systemName: "mic.badge.plus")
                             .foregroundColor(Theme.scribeRed)

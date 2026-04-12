@@ -4,4 +4,6 @@ import Foundation
 public protocol RecordingListInteractorInput: AnyObject {
     func obtainRecordings()
     func deleteRecording(id: String)
+    func startRecording()
+    func stopRecording()
 }
