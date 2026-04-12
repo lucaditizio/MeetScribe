@@ -148,24 +148,9 @@ public struct RecordingListView: View {
     // MARK: - Bottom Bar
 
     private var bottomBarView: some View {
-        HStack {
-            // Mic source indicator badge
-            HStack(spacing: 8) {
-                Image(systemName: "mic.fill")
-                    .font(.caption)
-                Text(state.micSource)
-                    .font(.caption)
-                    .textCase(.uppercase)
-            }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 6)
-            .background(Theme.cardBackgroundDark)
-            .cornerRadius(16)
-            .foregroundColor(Theme.accentGray)
-
-            Spacer()
-
-            // Record button
+        VStack(spacing: 12) {
+            micSourceIndicator
+            
             RecordButtonView(
                 isRecording: state.isRecording,
                 onTap: {
@@ -174,6 +159,20 @@ public struct RecordingListView: View {
             )
         }
         .padding(.bottom, 20)
-        .padding(.horizontal, Spacing.contentPadding)
+    }
+    
+    private var micSourceIndicator: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "mic.fill")
+                .font(.caption)
+            Text(state.micSource)
+                .font(.caption)
+                .textCase(.uppercase)
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 6)
+        .background(Theme.cardBackgroundDark)
+        .cornerRadius(16)
+        .foregroundColor(Theme.accentGray)
     }
 }

@@ -1771,7 +1771,7 @@ RecordingDetailView:
 
   **Must NOT**: Do NOT implement business logic in App layer. Do NOT use global singletons — all DI through Assembly chain.
 
-- [ ] 35.2. Wire Navigation and Module Communication
+- [x] 35.2. Wire Navigation and Module Communication
 
   **Files**: App/AppAssembly.swift (update), Modules/RecordingListModule/Router/RecordingListRouter.swift (update)
   **Category**: unspecified-low

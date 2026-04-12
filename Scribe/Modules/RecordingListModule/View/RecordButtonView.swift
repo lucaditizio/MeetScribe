@@ -27,8 +27,8 @@ public struct RecordButtonView: View {
                     Circle()
                         .fill(Color.white)
                         .frame(
-                            width: Spacing.recordButtonInnerSize,
-                            height: Spacing.recordButtonInnerSize
+                            width: Spacing.recordButtonOuterSize - 20,
+                            height: Spacing.recordButtonOuterSize - 20
                         )
                 }
             }
