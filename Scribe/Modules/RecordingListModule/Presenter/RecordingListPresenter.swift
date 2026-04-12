@@ -80,6 +80,7 @@ public final class RecordingListPresenter: RecordingListViewOutput, RecordingLis
     public func didObtainRecordings(_ recordings: [Recording]) {
         state.recordings = recordings
         state.isLoading = false
+        ScribeLogger.info("didObtainRecordings called: \(recordings.count) recordings", category: .audio)
         view?.displayRecordings(recordings)
     }
     
