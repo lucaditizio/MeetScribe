@@ -23,13 +23,6 @@ public struct RecordButtonView: View {
                     RoundedRectangle(cornerRadius: 6)
                         .fill(Color.white)
                         .frame(width: 24, height: 24)
-                } else {
-                    Circle()
-                        .fill(Color.white)
-                        .frame(
-                            width: Spacing.recordButtonOuterSize - 20,
-                            height: Spacing.recordButtonOuterSize - 20
-                        )
                 }
             }
         }
