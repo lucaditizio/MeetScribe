@@ -5,4 +5,5 @@ public protocol RecordingDetailRouterInput: AnyObject {
     func embedTranscript(with recording: Recording)
     func embedSummary(with recording: Recording)
     func embedMindMap(with recording: Recording)
+    func didExitRecordingDetail()
 }

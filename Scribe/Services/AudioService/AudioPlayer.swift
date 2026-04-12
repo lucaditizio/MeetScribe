@@ -187,7 +187,6 @@ import Combine
     // MARK: - Deinit
     
     deinit {
-        stop()
         audioPlayer = nil
         ScribeLogger.debug("AudioPlayer deinitialized", category: .audio)
     }

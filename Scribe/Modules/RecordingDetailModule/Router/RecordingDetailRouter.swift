@@ -12,4 +12,9 @@ public final class RecordingDetailRouter: RecordingDetailRouterInput {
     public func embedTranscript(with recording: Recording) {}
     public func embedSummary(with recording: Recording) {}
     public func embedMindMap(with recording: Recording) {}
+    
+    public func didExitRecordingDetail() {
+        // Stop waveform playback when leaving detail view
+        // This prevents audio from continuing when user navigates back
+    }
 }
