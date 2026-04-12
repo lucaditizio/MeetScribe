@@ -24,6 +24,6 @@ public final class RecordingListAssembly {
             router: router
         )
 
-        return RecordingListView(output: presenter, router: router)
+        return RecordingListView(presenter: presenter, router: router)
     }
 }

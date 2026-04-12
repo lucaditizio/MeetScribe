@@ -4,17 +4,13 @@ import SwiftUI
 public struct MindMapView: View {
     // MARK: - Properties
     
-    /// Strong reference to Presenter (output)
-    public var output: MindMapViewOutput
-    
-    /// State from Presenter (read-only, updated via Presenter)
-    @State private var state: MindMapState
+    /// Bindable presenter (SwiftUI-native VIPER)
+    @Bindable var presenter: MindMapPresenter
     
     // MARK: - Init
     
-    public init(output: MindMapViewOutput) {
-        self.output = output
-        self._state = State(initialValue: MindMapState())
+    public init(presenter: MindMapPresenter) {
+        self.presenter = presenter
     }
     
     // MARK: - Body
@@ -26,14 +22,14 @@ public struct MindMapView: View {
                 .ignoresSafeArea()
             
             VStack {
-                if state.isLoading {
+                if presenter.state.isLoading {
                     loadingView
-                } else if state.nodes.isEmpty {
+                } else if presenter.state.nodes.isEmpty {
                     emptyStateView
                 } else {
                     ScrollView {
                         VStack(alignment: .leading, spacing: Spacing.sectionSpacing) {
-                            ForEach(state.nodes.sorted { $0.order < $1.order }, id: \.id) { node in
+                            ForEach(presenter.state.nodes.sorted { $0.order < $1.order }, id: \.id) { node in
                                 MindMapNodeView(node: node, depth: 0)
                             }
                         }
@@ -44,7 +40,7 @@ public struct MindMapView: View {
         }
         .preferredColorScheme(.dark)
         .onAppear {
-            output.didTriggerViewReady()
+            presenter.didTriggerViewReady()
         }
     }
     
@@ -75,7 +71,7 @@ public struct MindMapView: View {
                 .font(Typography.headline)
                 .foregroundColor(Theme.accentGray)
             
-            if let error = state.error {
+            if let error = presenter.state.error {
                 Text(error.localizedDescription)
                     .font(Typography.footnote)
                     .foregroundColor(Theme.scribeRed)

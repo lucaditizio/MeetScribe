@@ -1,21 +1,17 @@
 import SwiftUI
 import SwiftData
 
-/// Passive VIPER View: reads state from Presenter, forwards user actions to Presenter
+/// SwiftUI-native VIPER View: binds to Presenter for state and actions
 public struct TranscriptTabView: View {
     // MARK: - Properties
     
-    /// Strong reference to Presenter (output)
-    public var output: TranscriptViewOutput
-    
-    /// State from Presenter (read-only, updated via Presenter)
-    @State internal var state: TranscriptState
+    /// Bindable presenter - provides state and handles actions
+    @Bindable var presenter: TranscriptPresenter
     
     // MARK: - Init
     
-    public init(output: TranscriptViewOutput) {
-        self.output = output
-        self._state = State(initialValue: TranscriptState())
+    public init(presenter: TranscriptPresenter) {
+        self.presenter = presenter
     }
     
     // MARK: - Body
@@ -27,7 +23,7 @@ public struct TranscriptTabView: View {
                 .ignoresSafeArea()
             
             VStack(spacing: 0) {
-                if state.segments.isEmpty {
+                if presenter.state.segments.isEmpty {
                     emptyStateView
                 } else {
                     transcriptListView
@@ -36,22 +32,22 @@ public struct TranscriptTabView: View {
         }
         .preferredColorScheme(.dark)
         .onAppear {
-            output.didTriggerViewReady()
+            presenter.didTriggerViewReady()
         }
         .alert("Rename Speaker", isPresented: Binding(
-            get: { state.selectedSpeakerForRename != nil },
-            set: { if !$0 { state.selectedSpeakerForRename = nil } }
+            get: { presenter.state.selectedSpeakerForRename != nil },
+            set: { if !$0 { presenter.didCancelRename() } }
         )) {
             TextField("Speaker name", text: .constant(""))
             Button("Cancel", role: .cancel) {
-                state.selectedSpeakerForRename = nil
+                presenter.didCancelRename()
             }
             Button("Rename") {
                 // Presenter handles the rename logic
-                state.selectedSpeakerForRename = nil
+                presenter.didConfirmRename()
             }
         } message: {
-            if let speakerId = state.selectedSpeakerForRename {
+            if let speakerId = presenter.state.selectedSpeakerForRename {
                 Text("Rename speaker \(speakerId)")
             }
         }
@@ -63,7 +59,7 @@ public struct TranscriptTabView: View {
     private var transcriptListView: some View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: Spacing.sectionSpacing) {
-                ForEach(state.segments, id: \.id) { segment in
+                ForEach(presenter.state.segments, id: \.id) { segment in
                     transcriptSegmentView(segment: segment)
                 }
             }
@@ -78,7 +74,7 @@ public struct TranscriptTabView: View {
             // Speaker label with timestamp
             HStack {
                 Button {
-                    output.didTapSpeaker(speakerId: segment.speakerId)
+                    presenter.didTapSpeaker(speakerId: segment.speakerId)
                 } label: {
                     HStack(spacing: 4) {
                         Text(segment.speakerName)

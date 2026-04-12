@@ -1,20 +1,16 @@
 import SwiftUI
 
-/// Passive VIPER View: reads state from Presenter, forwards user actions to Presenter
+/// SwiftUI-native VIPER View: binds to Presenter, forwards user actions to Presenter
 public struct SummaryTabView: View {
     // MARK: - Properties
     
-    /// Strong reference to Presenter (output)
-    public var output: SummaryViewOutput
-    
-    /// State from Presenter (read-only, updated via Presenter)
-    @State internal var state: SummaryState
+    /// Bindable Presenter (combines state + output)
+    @Bindable var presenter: SummaryPresenter
     
     // MARK: - Init
     
-    public init(output: SummaryViewOutput) {
-        self.output = output
-        self._state = State(initialValue: SummaryState())
+    public init(presenter: SummaryPresenter) {
+        self.presenter = presenter
     }
     
     // MARK: - Body
@@ -26,7 +22,7 @@ public struct SummaryTabView: View {
                 .ignoresSafeArea()
             
             VStack(spacing: 0) {
-                if state.topicSections.isEmpty && state.actionItems.isEmpty {
+                if presenter.state.topicSections.isEmpty && presenter.state.actionItems.isEmpty {
                     emptyStateView
                 } else {
                     summaryContentView
@@ -35,7 +31,7 @@ public struct SummaryTabView: View {
         }
         .preferredColorScheme(.dark)
         .onAppear {
-            output.didTriggerViewReady()
+            presenter.didTriggerViewReady()
         }
     }
     
@@ -46,12 +42,12 @@ public struct SummaryTabView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: Spacing.sectionSpacing) {
                 // Topic Sections
-                if !state.topicSections.isEmpty {
+                if !presenter.state.topicSections.isEmpty {
                     topicSectionsView
                 }
                 
                 // Action Items
-                if !state.actionItems.isEmpty {
+                if !presenter.state.actionItems.isEmpty {
                     actionItemsView
                 }
             }
@@ -63,7 +59,7 @@ public struct SummaryTabView: View {
     
     private var topicSectionsView: some View {
         VStack(alignment: .leading, spacing: Spacing.contentPadding) {
-            ForEach(state.topicSections) { section in
+            ForEach(presenter.state.topicSections) { section in
                 VStack(alignment: .leading, spacing: 8) {
                     // Section title - headline bold
                     Text(section.title)
@@ -96,7 +92,7 @@ public struct SummaryTabView: View {
                 .padding(.horizontal, Spacing.contentPadding)
             
             VStack(alignment: .leading, spacing: Spacing.contentPadding) {
-                ForEach(state.actionItems, id: \.self) { item in
+                ForEach(presenter.state.actionItems, id: \.self) { item in
                     HStack(alignment: .top, spacing: 12) {
                         // Checkbox indicator
                         Image(systemName: "circle")

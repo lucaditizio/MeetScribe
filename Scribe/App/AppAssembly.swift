@@ -29,9 +29,10 @@ public final class AppAssembly {
     public func makeRecordingDetailModule(recordingId: UUID, output: (any ModuleOutput)?) -> some View {
         let presenter = RecordingDetailAssembly.createModule(
             recordingId: recordingId.uuidString,
-            recordingRepository: services.recordingRepository
+            recordingRepository: services.recordingRepository,
+            audioPlayer: services.audioPlayer
         )
-        return RecordingDetailView(output: presenter)
+        return RecordingDetailView(presenter: presenter)
     }
 
     /// WaveformPlayback — embedded inside RecordingDetailView.
@@ -40,7 +41,7 @@ public final class AppAssembly {
             audioPlayer: services.audioPlayer,
             waveformAnalyzer: WaveformAnalyzer()
         )
-        return WaveformPlaybackView(output: presenter)
+        return WaveformPlaybackView(presenter: presenter)
     }
 
     /// Transcript tab — embedded inside RecordingDetailView.
@@ -49,7 +50,7 @@ public final class AppAssembly {
             recordingId: recordingId.uuidString,
             recordingRepository: services.recordingRepository
         )
-        return TranscriptTabView(output: presenter)
+        return TranscriptTabView(presenter: presenter)
     }
 
     /// Summary tab — embedded inside RecordingDetailView.
@@ -58,7 +59,7 @@ public final class AppAssembly {
             recordingId: recordingId.uuidString,
             recordingRepository: services.recordingRepository
         )
-        return SummaryTabView(output: presenter)
+        return SummaryTabView(presenter: presenter)
     }
 
     /// MindMap tab — embedded inside RecordingDetailView.
@@ -67,7 +68,7 @@ public final class AppAssembly {
             recordingId: recordingId.uuidString,
             recordingRepository: services.recordingRepository
         )
-        return MindMapView(output: presenter)
+        return MindMapView(presenter: presenter)
     }
 
     /// AgentGenerating — presented as a sheet while a recording is processed.

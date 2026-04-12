@@ -10,20 +10,16 @@ public struct RecordingListView: View {
     // MARK: - Properties
 
     /// Presenter reference (user-action receiver + display source)
-    public var output: RecordingListViewOutput
+    @Bindable public var presenter: RecordingListPresenter
 
     /// Router — observed for navigation state changes
     @Bindable public var router: RecordingListRouter
 
-    /// Local UI state driven by Presenter display calls
-    @State private var state: RecordingListState
-
     // MARK: - Init
 
-    public init(output: RecordingListViewOutput, router: RecordingListRouter) {
-        self.output = output
+    public init(presenter: RecordingListPresenter, router: RecordingListRouter) {
+        self.presenter = presenter
         self.router = router
-        self._state = State(initialValue: RecordingListState())
     }
 
     // MARK: - Body
@@ -54,7 +50,7 @@ public struct RecordingListView: View {
                 // Settings button — opens DeviceSettings sheet (single toolbar button per plan)
                 ToolbarItem(placement: .primaryAction) {
                     Button {
-                        output.didTapSettings()
+                        presenter.didTapSettings()
                     } label: {
                         Image(systemName: "mic.badge.plus")
                             .foregroundColor(Theme.scribeRed)
@@ -76,7 +72,7 @@ public struct RecordingListView: View {
             router.agentGeneratingView()
         }
         .onAppear {
-            output.didTriggerViewReady()
+            presenter.didTriggerViewReady()
         }
         .listStyle(.plain)
     }
@@ -85,7 +81,7 @@ public struct RecordingListView: View {
 
     @ViewBuilder
     private var contentView: some View {
-        if state.recordings.isEmpty {
+        if presenter.state.recordings.isEmpty {
             emptyStateView
         } else {
             recordingsListView
@@ -116,10 +112,10 @@ public struct RecordingListView: View {
                     RecordingCardView(
                         recording: recording,
                         onTap: {
-                            output.didTapRecording(id: recording.id.uuidString)
+                            presenter.didTapRecording(id: recording.id.uuidString)
                         },
                         onDelete: {
-                            output.didDeleteRecording(id: recording.id.uuidString)
+                            presenter.didDeleteRecording(id: recording.id.uuidString)
                         }
                     )
                 }
@@ -131,7 +127,7 @@ public struct RecordingListView: View {
     // MARK: - Sorted Recordings (Passively sorted — no business logic)
 
     private var sortedRecordings: [Recording] {
-        state.recordings.sorted { $0.createdAt > $1.createdAt }
+        presenter.state.recordings.sorted { $0.createdAt > $1.createdAt }
     }
 
     // MARK: - Bottom Bar
@@ -141,9 +137,9 @@ public struct RecordingListView: View {
             micSourceIndicator
             
             RecordButtonView(
-                isRecording: state.isRecording,
+                isRecording: presenter.state.isRecording,
                 onTap: {
-                    output.didTapRecord()
+                    presenter.didTapRecord()
                 }
             )
         }
@@ -154,7 +150,7 @@ public struct RecordingListView: View {
         HStack(spacing: 8) {
             Image(systemName: "mic.fill")
                 .font(.caption)
-            Text(state.micSource)
+            Text(presenter.state.micSource)
                 .font(.caption)
                 .textCase(.uppercase)
         }

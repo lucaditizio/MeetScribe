@@ -1,20 +1,14 @@
 import SwiftUI
 
-/// Passive VIPER View: reads state from Presenter, forwards user actions to Presenter
 public struct WaveformPlaybackView: View {
     // MARK: - Properties
     
-    /// Strong reference to Presenter (output)
-    public var output: WaveformPlaybackViewOutput
-    
-    /// State from Presenter (read-only, updated via Presenter)
-    @State private var state: WaveformPlaybackState
+    @Bindable var presenter: WaveformPlaybackPresenter
     
     // MARK: - Init
     
-    public init(output: WaveformPlaybackViewOutput) {
-        self.output = output
-        self._state = State(initialValue: WaveformPlaybackState())
+    public init(presenter: WaveformPlaybackPresenter) {
+        self.presenter = presenter
     }
     
     // MARK: - Body
@@ -34,7 +28,7 @@ public struct WaveformPlaybackView: View {
         .background(Theme.cardBackgroundDark)
         .cornerRadius(Theme.cornerRadius)
         .onAppear {
-            output.didTriggerViewReady()
+            presenter.didTriggerViewReady()
         }
     }
     
@@ -46,7 +40,7 @@ public struct WaveformPlaybackView: View {
                 WaveformBar(
                     index: index,
                     totalBars: Spacing.waveformBarCount,
-                    state: state
+                    state: presenter.state
                 )
             }
         }
@@ -59,7 +53,7 @@ public struct WaveformPlaybackView: View {
         HStack(spacing: 32) {
             // Skip backward 15s
             Button {
-                output.didTapSkipBackward()
+                presenter.didTapSkipBackward()
             } label: {
                 Image(systemName: "gobackward.15")
                     .font(.title2)
@@ -69,9 +63,9 @@ public struct WaveformPlaybackView: View {
             
             // Play/Pause
             Button {
-                output.didTapPlayPause()
+                presenter.didTapPlayPause()
             } label: {
-                Image(systemName: state.isPlaying ? "pause.fill" : "play.fill")
+                Image(systemName: presenter.state.isPlaying ? "pause.fill" : "play.fill")
                     .font(.title)
                     .foregroundColor(.white)
                     .frame(width: Spacing.playbackButtonSize, height: Spacing.playbackButtonSize)
@@ -81,7 +75,7 @@ public struct WaveformPlaybackView: View {
             
             // Skip forward 15s
             Button {
-                output.didTapSkipForward()
+                presenter.didTapSkipForward()
             } label: {
                 Image(systemName: "goforward.15")
                     .font(.title2)
@@ -95,9 +89,9 @@ public struct WaveformPlaybackView: View {
     
     private var speedCapsuleView: some View {
         Button {
-            output.didTapSpeed()
+            presenter.didTapSpeed()
         } label: {
-            Text("\(state.speed, specifier: "%.1f")x")
+            Text("\(presenter.state.speed, specifier: "%.1f")x")
                 .font(.caption)
                 .fontWeight(.medium)
                 .foregroundColor(Theme.scribeRed)

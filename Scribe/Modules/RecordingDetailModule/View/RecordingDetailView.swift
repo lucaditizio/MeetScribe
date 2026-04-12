@@ -1,12 +1,10 @@
 import SwiftUI
 
 public struct RecordingDetailView: View {
-    public var output: RecordingDetailViewOutput
-    @State private var state: RecordingDetailState
+    @Bindable var presenter: RecordingDetailPresenter
     
-    public init(output: RecordingDetailViewOutput) {
-        self.output = output
-        self._state = State(initialValue: RecordingDetailState())
+    public init(presenter: RecordingDetailPresenter) {
+        self.presenter = presenter
     }
     
     public var body: some View {
@@ -24,16 +22,9 @@ public struct RecordingDetailView: View {
                         VStack(spacing: Spacing.sectionSpacing) {
                             recordingHeaderView
                             
-                            WaveformPlaybackView(
-                                output: PassthroughWaveformOutput(
-                                    onViewReady: { [weak output] in output?.didTriggerViewReady() },
-                                    onPlayPause: { [weak output] in output?.didTapPlayPause() },
-                                    onSkipForward: { [weak output] in output?.didTapSkipForward() },
-                                    onSkipBackward: { [weak output] in output?.didTapSkipBackward() },
-                                    onSeek: { _ in },
-                                    onTapSpeed: { }
-                                )
-                            )
+                            if let waveformPresenter = presenter.waveformPresenter {
+                                WaveformPlaybackView(presenter: waveformPresenter)
+                            }
                             
                             tabContentView
                         }
@@ -42,7 +33,7 @@ public struct RecordingDetailView: View {
                     }
                 }
                 
-                if !state.hasTranscript {
+                if !presenter.state.hasTranscript {
                     VStack {
                         Spacer()
                         generateTranscriptCTA
@@ -69,7 +60,7 @@ public struct RecordingDetailView: View {
     
     private var recordingHeaderView: some View {
         VStack(alignment: .leading, spacing: 8) {
-            if let recording = state.recording {
+            if let recording = presenter.state.recording {
                 Text(recording.title)
                     .font(.title2)
                     .fontWeight(.bold)
@@ -94,7 +85,7 @@ public struct RecordingDetailView: View {
     
     @ViewBuilder
     private var tabContentView: some View {
-        switch state.selectedTab {
+        switch presenter.state.selectedTab {
         case .summary:
             summaryContentView
         case .transcript:
@@ -110,7 +101,7 @@ public struct RecordingDetailView: View {
                 .font(.headline)
                 .foregroundColor(.white)
             
-            if let recording = state.recording {
+            if let recording = presenter.state.recording {
                 Text(recording.meetingNotes ?? "No summary available yet.")
                     .font(.body)
                     .foregroundColor(Theme.accentGray)
@@ -132,7 +123,7 @@ public struct RecordingDetailView: View {
                 .font(.headline)
                 .foregroundColor(.white)
             
-            if let recording = state.recording {
+            if let recording = presenter.state.recording {
                 Text(recording.rawTranscript.isEmpty ? "No transcript available yet.\nTap the button below to generate one." : recording.rawTranscript)
                     .font(.body)
                     .foregroundColor(Theme.accentGray)
@@ -154,7 +145,7 @@ public struct RecordingDetailView: View {
                 .font(.headline)
                 .foregroundColor(.white)
             
-            if let recording = state.recording, let actionItems = recording.actionItems {
+            if let recording = presenter.state.recording, let actionItems = recording.actionItems {
                 Text(actionItems)
                     .font(.body)
                     .foregroundColor(Theme.accentGray)
@@ -172,7 +163,7 @@ public struct RecordingDetailView: View {
     
     private var generateTranscriptCTA: some View {
         Button {
-            output.didTapGenerateTranscript()
+            presenter.didTapGenerateTranscript()
         } label: {
             HStack(spacing: 8) {
                 Image(systemName: "waveform")

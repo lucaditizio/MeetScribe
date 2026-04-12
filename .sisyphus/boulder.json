@@ -1,23 +1,32 @@
 {
-  "active_plan": "/Users/lucaditizio/github/MeetScribe/.sisyphus/plans/scribe-rebuild.md",
-  "started_at": "2026-04-09T04:19:34.161Z",
+  "active_plan": "/Users/lucaditizio/github/MeetScribe/.sisyphus/plans/swiftui-viper-migration.md",
+  "started_at": "2026-04-12T08:42:47.038Z",
   "session_ids": [
-    "ses_28f887c4fffeizMjlaS8THga5F"
+    "ses_2837dff42ffeVgA4qTX8JTcy9n"
   ],
   "session_origins": {
-    "ses_28f887c4fffeizMjlaS8THga5F": "direct"
+    "ses_2837dff42ffeVgA4qTX8JTcy9n": "direct"
   },
-  "plan_name": "scribe-rebuild",
+  "plan_name": "swiftui-viper-migration",
   "agent": "atlas",
   "task_sessions": {
-    "final-wave:f1": {
-      "task_key": "final-wave:f1",
-      "task_label": "F1",
-      "task_title": "**Plan Compliance Audit** — `oracle`",
-      "session_id": "ses_28a65280dffePcrha9uk6xUuKo",
+    "todo:1": {
+      "task_key": "todo:1",
+      "task_label": "1",
+      "task_title": "RecordingListView → SwiftUI-native VIPER",
+      "session_id": "ses_27f23c7caffed3Ie9YitYCuCSi",
       "agent": "Sisyphus-Junior",
-      "category": "unspecified-low",
-      "updated_at": "2026-04-10T04:20:11.401Z"
+      "category": "visual-engineering",
+      "updated_at": "2026-04-12T08:45:07.908Z"
+    },
+    "todo:4": {
+      "task_key": "todo:4",
+      "task_label": "4",
+      "task_title": "SummaryTabView → SwiftUI-native VIPER",
+      "session_id": "ses_27f1fb755ffeALO5DR06NKu8M3",
+      "agent": "Sisyphus-Junior",
+      "category": "visual-engineering",
+      "updated_at": "2026-04-12T08:50:48.527Z"
     }
   }
 }
