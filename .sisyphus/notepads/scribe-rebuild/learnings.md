@@ -217,3 +217,34 @@ ScribeTests/
 - Theme usage: scribeRed, obsidian background, cardBackgroundDark, cornerRadius 20pt
 - Spacing usage: cardPadding (16), contentPadding (12), sectionSpacing (20)
 - Build verification: `xcodebuild -scheme Scribe -destination 'platform=iOS Simulator,name=iPhone 15 Plus' build` - **BUILD SUCCEEDED**
+
+## Task 35.1 — Wiring ServiceRegistry + AppAssembly with Real Services (2026-04-12)
+
+### Protocol Gaps Discovered
+- `LLMService` conforms to `SummarizationServiceProtocol`, NOT `LLMServiceProtocol`.
+  `LLMServiceProtocol` requires `generateMindMap(from:)` — added conformance extension in `ServiceRegistry.swift`.
+- `WaveformAnalyzer` conforms to `WaveformAnalyzerProtocol` (method: `analyze(url:barCount:)`),
+  NOT `WaveformGeneratorProtocol` (method: `generateWaveform(from:targetSampleCount:)`).
+  Bridged via retroactive conformance extension in `ServiceRegistry.swift`.
+- `WhisperCoreMLService` conforms to `TranscriptionServiceProtocol`, NOT `ASRServiceProtocol` directly.
+  Both have the same `transcribe(audioData:language:)` signature — added conformance extension.
+
+### InferencePipeline Wiring Pattern
+`InferencePipeline.init` requires `TranscriptionServiceProtocol` and `SummarizationServiceProtocol`
+(not `ASRServiceProtocol` / `LLMServiceProtocol`). Used private concrete-typed backing properties
+(`whisperASR: WhisperCoreMLService`, `llmCore: LLMService`) in `ServiceRegistry` to avoid force casts
+while keeping public protocol facets.
+
+### AppAssembly Pattern
+AppAssembly builds RecordingList VIPER stack inline (router → interactor → presenter → view).
+`services.recordingRepository` is injected into `RecordingListInteractor`.
+The VIPER cycle (Interactor → Presenter output) is not fully closed in the existing Assembly —
+left as-is to avoid touching files outside `App/`.
+
+### ScribeApp.preferredColorScheme
+`.preferredColorScheme(.dark)` is a **View** modifier, not a **Scene** modifier.
+Must be applied inside `WindowGroup { }`, not chained on it.
+
+### Build Pattern
+`xcodebuild ... clean build` is required to pick up file changes; incremental build sometimes
+replays cached errors from prior failed invocations.

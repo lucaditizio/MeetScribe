@@ -1761,7 +1761,7 @@ RecordingDetailView:
 
 ### Phase 6 — App Wiring + Integration + Documentation
 
-- [ ] 35.1. Wire ScribeApp.swift + AppAssembly with Real Services
+- [x] 35.1. Wire ScribeApp.swift + AppAssembly with Real Services
 
   **Files**: App/ScribeApp.swift, App/AppAssembly.swift, App/ServiceRegistry.swift
   **Category**: unspecified-low

@@ -6,6 +6,7 @@ struct ScribeApp: App {
     var body: some Scene {
         WindowGroup {
             AppAssembly.shared.makeRecordingListModule(output: nil)
+                .preferredColorScheme(.dark)
         }
         .modelContainer(SwiftDataModelContainer.shared)
     }
