@@ -29,6 +29,7 @@ public struct AgentGeneratingView: View {
         }
         .onAppear {
             startAnimations()
+            presenter.didTriggerViewReady()
         }
     }
     

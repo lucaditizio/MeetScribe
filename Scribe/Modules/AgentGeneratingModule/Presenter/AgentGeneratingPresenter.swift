@@ -11,7 +11,9 @@ public final class AgentGeneratingPresenter: AgentGeneratingViewOutput, AgentGen
         self.interactor = interactor
     }
     
-    public func didTriggerViewReady() {}
+    public func didTriggerViewReady() {
+        interactor.startProcessing(recordingId: "")
+    }
     
     public func didTapCancel() {
         interactor.cancelProcessing()

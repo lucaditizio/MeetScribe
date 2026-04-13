@@ -304,6 +304,16 @@ Button → RecordingDetailPresenter → Router → AgentGeneratingAssembly
 - VIPER interactor's `output` MUST be wired to presenter - this was missing
 - Progress must flow through Combine publisher from pipeline → interactor → presenter → view
 
+**Bug 25 PART 2 (2026-04-13): Missing View-Ready Trigger**
+**Issue:** Pipeline still stuck at 0% after Part 1 fix. Sheet appeared with animations but processing never started.
+**Root Cause:** VIPER "View Ready" chain was broken:
+1. `AgentGeneratingView.onAppear` only called `startAnimations()`, never called `presenter.didTriggerViewReady()`
+2. `AgentGeneratingPresenter.didTriggerViewReady()` was **empty** - never called `interactor.startProcessing()`
+**Fix Applied:**
+- `AgentGeneratingView.swift`: `.onAppear` now calls `presenter.didTriggerViewReady()`
+- `AgentGeneratingPresenter.swift`: `didTriggerViewReady()` now calls `interactor.startProcessing(recordingId: "")`
+- Note: `startProcessing(recordingId:)` uses the recordingId from `configureWith()` which was already called in Assembly
+
 ### Bug 22: Generate Transcript Button Does Nothing
 **Issue:** Pressing "Generate Transcript" button in RecordingDetailView has no effect - no console output, no navigation.
 **Root Cause (partial - first attempt):**
@@ -376,3 +386,5 @@ Button → RecordingDetailPresenter → Router → AgentGeneratingAssembly
 - `Scribe/Modules/AgentGeneratingModule/Interactor/AgentGeneratingInteractor.swift` - replaced fake Task.sleep stub with real inferencePipeline.process(), added progress subscription
 - `Scribe/Modules/AgentGeneratingModule/Assembly/AgentGeneratingAssembly.swift` - wired interactor.output = presenter, added recordingRepository param
 - `Scribe/App/AppAssembly.swift` - pass recordingRepository to AgentGeneratingAssembly.createModule()
+- `Scribe/Modules/AgentGeneratingModule/View/AgentGeneratingView.swift` - .onAppear now calls presenter.didTriggerViewReady()
+- `Scribe/Modules/AgentGeneratingModule/Presenter/AgentGeneratingPresenter.swift` - didTriggerViewReady() now calls interactor.startProcessing()
