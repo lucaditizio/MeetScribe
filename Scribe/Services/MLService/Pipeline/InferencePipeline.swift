@@ -9,6 +9,7 @@ public final class InferencePipeline: InferencePipelineProtocol {
     private let diarizationService: DiarizationServiceProtocol
     private let summarizationService: SummarizationServiceProtocol
     private let progressTracker: ProgressTracker
+    private let progressSubject = PassthroughSubject<InferenceProgress, Never>()
     private let config: PipelineConfig
     private var isCancelled = false
     
@@ -30,7 +31,7 @@ public final class InferencePipeline: InferencePipelineProtocol {
     }
     
     public var progressPublisher: AnyPublisher<InferenceProgress, Never> {
-        Empty().eraseToAnyPublisher()
+        progressSubject.eraseToAnyPublisher()
     }
     
     public func process(recording: Recording) async throws -> (Transcript, MeetingSummary) {
@@ -75,12 +76,14 @@ public final class InferencePipeline: InferencePipelineProtocol {
     private func runStageVAD(audioData: Data) async throws -> [VADSegment] {
         ScribeLogger.info("Stage 1/5: VAD started", category: .ml)
         progressTracker.updateProgress(stage: "VAD", progress: 0.0)
+        progressSubject.send(InferenceProgress(stage: "VAD", progress: 0.0))
         
         try checkCancellation()
         
         let hasSpeech = vadService.process(buffer: audioData)
         
         progressTracker.updateProgress(stage: "VAD", progress: 1.0)
+        progressSubject.send(InferenceProgress(stage: "VAD", progress: 1.0))
         ScribeLogger.info("Stage 1/5: VAD completed, speech detected: \(hasSpeech)", category: .ml)
         
         if !hasSpeech {
@@ -93,12 +96,14 @@ public final class InferencePipeline: InferencePipelineProtocol {
     private func runStageLanguageDetection(audioData: Data) async throws -> LanguageConfidence {
         ScribeLogger.info("Stage 2/5: Language Detection started", category: .ml)
         progressTracker.updateProgress(stage: "Language Detection", progress: 0.0)
+        progressSubject.send(InferenceProgress(stage: "Language Detection", progress: 0.0))
         
         try checkCancellation()
         
         let languageConfidence = try await languageDetector.detectLanguage(from: audioData)
         
         progressTracker.updateProgress(stage: "Language Detection", progress: 1.0)
+        progressSubject.send(InferenceProgress(stage: "Language Detection", progress: 1.0))
         ScribeLogger.info(
             "Stage 2/5: Language Detection completed, language: \(languageConfidence.language)",
             category: .ml
@@ -110,6 +115,7 @@ public final class InferencePipeline: InferencePipelineProtocol {
     private func runStageASR(audioData: Data, language: String) async throws -> String {
         ScribeLogger.info("Stage 3/5: ASR started", category: .ml)
         progressTracker.updateProgress(stage: "ASR", progress: 0.0)
+        progressSubject.send(InferenceProgress(stage: "ASR", progress: 0.0))
         
         try checkCancellation()
         
@@ -119,6 +125,7 @@ public final class InferencePipeline: InferencePipelineProtocol {
         )
         
         progressTracker.updateProgress(stage: "ASR", progress: 1.0)
+        progressSubject.send(InferenceProgress(stage: "ASR", progress: 1.0))
         ScribeLogger.info("Stage 3/5: ASR completed", category: .ml)
         
         return transcription
@@ -127,6 +134,7 @@ public final class InferencePipeline: InferencePipelineProtocol {
     private func runStageDiarization(audioData: Data) async throws -> [SpeakerSegment] {
         ScribeLogger.info("Stage 4/5: Diarization started", category: .ml)
         progressTracker.updateProgress(stage: "Diarization", progress: 0.0)
+        progressSubject.send(InferenceProgress(stage: "Diarization", progress: 0.0))
         
         try checkCancellation()
         
@@ -136,6 +144,7 @@ public final class InferencePipeline: InferencePipelineProtocol {
         )
         
         progressTracker.updateProgress(stage: "Diarization", progress: 1.0)
+        progressSubject.send(InferenceProgress(stage: "Diarization", progress: 1.0))
         ScribeLogger.info("Stage 4/5: Diarization completed with \(segments.count) segments", category: .ml)
         
         return segments
@@ -144,12 +153,14 @@ public final class InferencePipeline: InferencePipelineProtocol {
     private func runStageSummarization(transcriptText: String) async throws -> MeetingSummary {
         ScribeLogger.info("Stage 5/5: Summarization started", category: .ml)
         progressTracker.updateProgress(stage: "Summarization", progress: 0.0)
+        progressSubject.send(InferenceProgress(stage: "Summarization", progress: 0.0))
         
         try checkCancellation()
         
         let summary = try await summarizationService.summarize(text: transcriptText)
         
         progressTracker.updateProgress(stage: "Summarization", progress: 1.0)
+        progressSubject.send(InferenceProgress(stage: "Summarization", progress: 1.0))
         ScribeLogger.info("Stage 5/5: Summarization completed", category: .ml)
         
         return summary

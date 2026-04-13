@@ -253,6 +253,57 @@ let interactor = RecordingListInteractor(
 - Wrapped toolbar items in `ToolbarItemGroup(placement: .primaryAction)`.
 - Title now fixed in toolbar, always visible alongside "add device" button.
 
+### Bug 25: ML Pipeline Stuck at 0% - Fake Stub Implementation
+**Issue:** After pressing "Generate Transcript", console shows "InferencePipeline initialized" but status stays at 0% forever. No actual ML processing occurs.
+**Root Cause:** `AgentGeneratingInteractor.startProcessing()` was a FAKE stub implementation:
+1. Never called `inferencePipeline.process(recording:)` - the real ML pipeline was never invoked
+2. Used `Task.sleep()` delays to simulate progress (0.1 → 0.3 → 0.5 → 0.8 → 0.95 → 1.0)
+3. `output: AgentGeneratingInteractorOutput?` was passed as `nil` in Assembly - presenter never received any callbacks
+4. `InferencePipeline.progressPublisher` returned `Empty()` - no real progress ever emitted
+
+**Console logs interpretation:**
+| Log | Meaning |
+|-----|---------|
+| `LLMService initialized` | ServiceRegistry created LLMService instance |
+| `ProgressTracker initialized with 5 stages` | ProgressTracker created (but disconnected from UI) |
+| `InferencePipeline initialized` | Pipeline created (but `process()` never called) |
+**No "Starting pipeline processing"** log because `process()` was never called.
+
+**Fix Applied (2026-04-13):**
+1. **AgentGeneratingInteractor.swift:**
+   - Replaced fake `Task.sleep` stub with real `inferencePipeline.process(recording:)` call
+   - Added progress subscription via Combine: `inferencePipeline.progressPublisher` → `output?.didUpdateProgress()`
+   - Added `recordingRepository: RecordingRepositoryProtocol` to fetch actual Recording entity
+   - Changed `output` and `moduleOutput` from `private weak` to `weak` for external wiring
+   - Added proper error handling with `output?.didFailWithError()` and `moduleOutput?.didFailWithError()`
+
+2. **InferencePipeline.swift:**
+   - Added `private let progressSubject = PassthroughSubject<InferenceProgress, Never>()`
+   - Changed `progressPublisher` from `Empty().eraseToAnyPublisher()` to `progressSubject.eraseToAnyPublisher()`
+   - All 5 stages now emit real progress: `progressSubject.send(InferenceProgress(stage: "Name", progress: 0.0/1.0))`
+
+3. **AgentGeneratingAssembly.swift:**
+   - Added `recordingRepository: RecordingRepositoryProtocol` parameter
+   - Added `interactor.output = presenter` AFTER presenter creation (VIPER wiring fix)
+
+4. **AppAssembly.swift:**
+   - Added `recordingRepository: services.recordingRepository` to `AgentGeneratingAssembly.createModule()` call
+
+**Real Pipeline Flow:**
+```
+Button → RecordingDetailPresenter → Router → AgentGeneratingAssembly
+    → Presenter → Interactor.startProcessing()
+        → recordingRepository.fetch(recordingId)  ← Get actual Recording
+        → inferencePipeline.process(recording:)   ← REAL ML pipeline (VAD→ASR→Diarization→Summarization)
+        → progressPublisher.emit(InferenceProgress)  ← Real progress updates
+        → output.didUpdateProgress()  → UI updates with real percentages
+        → output.didCompleteProcessing()  → Sheet dismissal
+```
+
+**Architectural Pattern:**
+- VIPER interactor's `output` MUST be wired to presenter - this was missing
+- Progress must flow through Combine publisher from pipeline → interactor → presenter → view
+
 ### Bug 22: Generate Transcript Button Does Nothing
 **Issue:** Pressing "Generate Transcript" button in RecordingDetailView has no effect - no console output, no navigation.
 **Root Cause (partial - first attempt):**
@@ -265,6 +316,8 @@ let interactor = RecordingListInteractor(
 - Updated `RecordingDetailPresenter.didTapGenerateTranscript()` to call `router.openAgentGenerating(with: recording)`.
 - Implemented empty `openAgentGenerating(with:)` in `RecordingDetailRouter` (VIPER compliance).
 - Added `.sheet(isPresented: $presenter.state.isShowingAgentGenerating)` to `RecordingDetailView`.
+
+**Note:** Bug 22 was later found to be incomplete - see Bug 24 for the true root cause.
 
 ### Bug 23: Generate Button Still Not Working + Tab Selection Broken
 **Issue:** After Bug 22 fix, button still doesn't work AND tab selection (Summary/Transcript/Mind Map) doesn't switch.
@@ -317,3 +370,9 @@ let interactor = RecordingListInteractor(
 - `Scribe/Modules/RecordingDetailModule/Router/RecordingDetailRouterInput.swift` - added openAgentGenerating protocol method
 - `Scribe/Modules/RecordingDetailModule/View/RecordingDetailView.swift` - @Bindable router, sheet bound to $router.isShowingAgentGenerating
 - `Scribe/Modules/RecordingDetailModule/Assembly/RecordingDetailAssembly.swift` - create and return RecordingDetailView with router, wire interactor.output = presenter
+
+### ML Pipeline (Bug 25 Fix)
+- `Scribe/Services/MLService/Pipeline/InferencePipeline.swift` - added PassthroughSubject for progress, all 5 stages emit real progress
+- `Scribe/Modules/AgentGeneratingModule/Interactor/AgentGeneratingInteractor.swift` - replaced fake Task.sleep stub with real inferencePipeline.process(), added progress subscription
+- `Scribe/Modules/AgentGeneratingModule/Assembly/AgentGeneratingAssembly.swift` - wired interactor.output = presenter, added recordingRepository param
+- `Scribe/App/AppAssembly.swift` - pass recordingRepository to AgentGeneratingAssembly.createModule()

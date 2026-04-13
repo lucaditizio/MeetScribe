@@ -77,7 +77,8 @@ public final class AppAssembly {
         let presenter = AgentGeneratingAssembly.createModule(
             recordingId: recordingId.uuidString,
             inferencePipeline: services.inferencePipeline,
-            moduleOutput: output as? AgentGeneratingModuleOutput
+            moduleOutput: output as? AgentGeneratingModuleOutput,
+            recordingRepository: services.recordingRepository
         )
         if #available(iOS 18.0, *) {
             return AnyView(AgentGeneratingView(presenter: presenter))

@@ -8,14 +8,17 @@ public final class AgentGeneratingAssembly {
     public static func createModule(
         recordingId: String,
         inferencePipeline: InferencePipelineProtocol,
-        moduleOutput: AgentGeneratingModuleOutput?
+        moduleOutput: AgentGeneratingModuleOutput?,
+        recordingRepository: RecordingRepositoryProtocol
     ) -> AgentGeneratingPresenter {
         let interactor = AgentGeneratingInteractor(
             output: nil,
             moduleOutput: moduleOutput,
-            inferencePipeline: inferencePipeline
+            inferencePipeline: inferencePipeline,
+            recordingRepository: recordingRepository
         )
         let presenter = AgentGeneratingPresenter(view: nil, interactor: interactor)
+        interactor.output = presenter
         interactor.configureWith(recordingId: recordingId, moduleOutput: moduleOutput)
         return presenter
     }

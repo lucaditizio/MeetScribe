@@ -1,20 +1,25 @@
 import Foundation
+import Combine
 
 public final class AgentGeneratingInteractor: AgentGeneratingInteractorInput {
-    private weak var output: AgentGeneratingInteractorOutput?
-    private weak var moduleOutput: AgentGeneratingModuleOutput?
+    weak var output: AgentGeneratingInteractorOutput?
+    weak var moduleOutput: AgentGeneratingModuleOutput?
     private let inferencePipeline: InferencePipelineProtocol
+    private let recordingRepository: RecordingRepositoryProtocol
     private var recordingId: String?
     private var currentTask: Task<Void, Never>?
+    private var progressCancellable: AnyCancellable?
     
     public init(
         output: AgentGeneratingInteractorOutput?,
         moduleOutput: AgentGeneratingModuleOutput?,
-        inferencePipeline: InferencePipelineProtocol
+        inferencePipeline: InferencePipelineProtocol,
+        recordingRepository: RecordingRepositoryProtocol
     ) {
         self.output = output
         self.moduleOutput = moduleOutput
         self.inferencePipeline = inferencePipeline
+        self.recordingRepository = recordingRepository
     }
     
     public func configureWith(recordingId: String, moduleOutput: AgentGeneratingModuleOutput?) {
@@ -25,31 +30,33 @@ public final class AgentGeneratingInteractor: AgentGeneratingInteractorInput {
     public func startProcessing(recordingId: String) {
         self.recordingId = recordingId
         
-        currentTask = Task {
+        progressCancellable = inferencePipeline.progressPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] inferenceProgress in
+                self?.output?.didUpdateProgress(stage: inferenceProgress.stage, progress: inferenceProgress.progress)
+            }
+        
+        currentTask = Task { [weak self] in
+            guard let self = self else { return }
             do {
-                output?.didUpdateProgress(stage: ProcessingStage.vad.rawValue, progress: 0.1)
-                try await Task.sleep(nanoseconds: 500_000_000)
+                let id = UUID(uuidString: recordingId)
+                guard let recording = try await self.recordingRepository.fetch(by: id ?? UUID()) else {
+                    let error = NSError(domain: "AgentGeneratingInteractor", code: 1, userInfo: [NSLocalizedDescriptionKey: "Recording not found"])
+                    self.output?.didFailWithError(error)
+                    self.moduleOutput?.didFailWithError(error)
+                    return
+                }
                 
-                output?.didUpdateProgress(stage: ProcessingStage.languageDetection.rawValue, progress: 0.3)
-                try await Task.sleep(nanoseconds: 500_000_000)
+                let result = try await self.inferencePipeline.process(recording: recording)
                 
-                output?.didUpdateProgress(stage: ProcessingStage.asr.rawValue, progress: 0.5)
-                try await Task.sleep(nanoseconds: 500_000_000)
-                
-                output?.didUpdateProgress(stage: ProcessingStage.diarization.rawValue, progress: 0.8)
-                try await Task.sleep(nanoseconds: 500_000_000)
-                
-                output?.didUpdateProgress(stage: ProcessingStage.summarization.rawValue, progress: 0.95)
-                try await Task.sleep(nanoseconds: 500_000_000)
-                
-                output?.didUpdateProgress(stage: ProcessingStage.complete.rawValue, progress: 1.0)
-                output?.didCompleteProcessing()
-                moduleOutput?.didFinishProcessing()
+                self.output?.didUpdateProgress(stage: ProcessingStage.complete.rawValue, progress: 1.0)
+                self.output?.didCompleteProcessing()
+                self.moduleOutput?.didFinishProcessing()
                 
             } catch is CancellationError {
             } catch {
-                output?.didFailWithError(error)
-                moduleOutput?.didFailWithError(error)
+                self.output?.didFailWithError(error)
+                self.moduleOutput?.didFailWithError(error)
             }
         }
     }
