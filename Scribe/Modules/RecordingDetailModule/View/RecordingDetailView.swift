@@ -2,9 +2,11 @@ import SwiftUI
 
 public struct RecordingDetailView: View {
     @Bindable var presenter: RecordingDetailPresenter
+    @Bindable public var router: RecordingDetailRouter
     
-    public init(presenter: RecordingDetailPresenter) {
+    public init(presenter: RecordingDetailPresenter, router: RecordingDetailRouter) {
         self.presenter = presenter
+        self.router = router
     }
     
     public var body: some View {
@@ -46,13 +48,11 @@ public struct RecordingDetailView: View {
         .onDisappear {
             presenter.didExitRecordingDetail()
         }
-        .sheet(isPresented: $presenter.state.isShowingAgentGenerating) {
-            if let recording = presenter.state.recording {
-                AppAssembly.shared.makeAgentGeneratingModule(
-                    recordingId: recording.id,
-                    output: nil
-                )
-            }
+        .sheet(isPresented: $router.isShowingAgentGenerating) {
+            AppAssembly.shared.makeAgentGeneratingModule(
+                recordingId: presenter.state.recording?.id ?? UUID(),
+                output: nil
+            )
         }
     }
     

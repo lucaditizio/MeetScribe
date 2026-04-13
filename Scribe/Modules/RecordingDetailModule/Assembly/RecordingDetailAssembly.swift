@@ -9,12 +9,13 @@ public final class RecordingDetailAssembly {
         recordingId: String,
         recordingRepository: RecordingRepositoryProtocol,
         audioPlayer: AudioPlayerProtocol
-    ) -> RecordingDetailPresenter {
+    ) -> RecordingDetailView {
+        let router = RecordingDetailRouter(viewController: nil, appAssembly: .shared)
+        
         let interactor = RecordingDetailInteractor(
             output: nil,
             recordingRepository: recordingRepository
         )
-        let router = RecordingDetailRouter(viewController: nil)
         
         let waveformPresenter = WaveformPlaybackAssembly.createModule(
             recordingId: recordingId,
@@ -29,9 +30,11 @@ public final class RecordingDetailAssembly {
             router: router,
             waveformPresenter: waveformPresenter
         )
-
+        
+        interactor.output = presenter  // Wire the output!
+        
         interactor.obtainRecording(id: recordingId)
 
-        return presenter
+        return RecordingDetailView(presenter: presenter, router: router)
     }
 }

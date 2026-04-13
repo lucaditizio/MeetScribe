@@ -28,12 +28,11 @@ public final class AppAssembly {
 
     /// RecordingDetail — pushed when the user selects a recording.
     public func makeRecordingDetailModule(recordingId: UUID, output: (any ModuleOutput)?) -> some View {
-        let presenter = RecordingDetailAssembly.createModule(
+        RecordingDetailAssembly.createModule(
             recordingId: recordingId.uuidString,
             recordingRepository: services.recordingRepository,
             audioPlayer: services.audioPlayer
         )
-        return RecordingDetailView(presenter: presenter)
     }
 
     public func makeWaveformPlaybackModule(recordingId: UUID, output: (any ModuleOutput)?) -> some View {

@@ -276,6 +276,25 @@ let interactor = RecordingListInteractor(
 - Removed local `@State selectedTabBinding` from `RecordingDetailView`.
 - Changed Picker binding from `$selectedTabBinding` to `$presenter.state.selectedTab`.
 
+### Bug 24: Generate Button Silent - True Root Cause (VIPER wiring broken)
+**Issue:** Generate button still did nothing even after Bug 22/23 fixes.
+**Root Cause (deeper):** VIPER interactor-to-presenter communication was completely broken.
+1. `RecordingDetailAssembly` created interactor with `output: nil` - no one received fetch results.
+2. `RecordingDetailPresenter` did NOT conform to `RecordingDetailInteractorOutput` protocol.
+3. Therefore `state.recording` was NEVER set after `interactor.obtainRecording()` completed.
+4. When button tapped, `guard let recording = state.recording else { return }` always returned early.
+5. Button appeared to do nothing - no console output, no visible effect.
+**Fix Applied (2026-04-13):**
+- Make `RecordingDetailPresenter` conform to `RecordingDetailInteractorOutput`.
+- Implement `didObtainRecording(_ recording: Recording)` to set `state.recording = recording`.
+- Implement `didFailWithError(_ error: Error)` for error handling.
+- Change `RecordingDetailInteractor.output` from `private weak var` to `weak var` (accessible for wiring).
+- Add `interactor.output = presenter` in `RecordingDetailAssembly.createModule()` after presenter creation.
+- Also moved `isShowingAgentGenerating` to `RecordingDetailRouter` (following RecordingListRouter pattern) since `@Observable` cannot track nested struct properties.
+**Architectural Pattern Learned:**
+- RecordingListRouter pattern: Router holds navigation state (`isShowingAgentGenerating`) as direct `@Observable` property, not nested in struct.
+- VIPER requires interactor's `output` to be wired to presenter - this was missing completely.
+
 ---
 
 ## Files Modified in This Session
@@ -291,8 +310,10 @@ let interactor = RecordingListInteractor(
 - `Scribe/Modules/RecordingListModule/Assembly/RecordingListAssembly.swift` - wired presenter as output
 
 ### RecordingDetailModule
-- `Scribe/Modules/RecordingDetailModule/Presenter/RecordingDetailState.swift` - added isShowingAgentGenerating
-- `Scribe/Modules/RecordingDetailModule/Presenter/RecordingDetailPresenter.swift` - wired didTapGenerateTranscript to router, set isShowingAgentGenerating = true
+- `Scribe/Modules/RecordingDetailModule/Presenter/RecordingDetailState.swift` - removed isShowingAgentGenerating (moved to router)
+- `Scribe/Modules/RecordingDetailModule/Presenter/RecordingDetailPresenter.swift` - conform to RecordingDetailInteractorOutput, implement didObtainRecording, set router.isShowingAgentGenerating
+- `Scribe/Modules/RecordingDetailModule/Interactor/RecordingDetailInteractor.swift` - output is no longer private, can be wired externally
+- `Scribe/Modules/RecordingDetailModule/Router/RecordingDetailRouter.swift` - @Observable with isShowingAgentGenerating, appAssembly dependency
 - `Scribe/Modules/RecordingDetailModule/Router/RecordingDetailRouterInput.swift` - added openAgentGenerating protocol method
-- `Scribe/Modules/RecordingDetailModule/Router/RecordingDetailRouter.swift` - implemented openAgentGenerating
-- `Scribe/Modules/RecordingDetailModule/View/RecordingDetailView.swift` - added sheet for AgentGenerating, fixed Picker binding to use presenter.state.selectedTab
+- `Scribe/Modules/RecordingDetailModule/View/RecordingDetailView.swift` - @Bindable router, sheet bound to $router.isShowingAgentGenerating
+- `Scribe/Modules/RecordingDetailModule/Assembly/RecordingDetailAssembly.swift` - create and return RecordingDetailView with router, wire interactor.output = presenter

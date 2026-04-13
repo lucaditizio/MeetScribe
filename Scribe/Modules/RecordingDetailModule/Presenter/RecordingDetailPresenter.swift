@@ -1,7 +1,7 @@
 import Foundation
 
 @Observable
-public final class RecordingDetailPresenter: RecordingDetailViewOutput {
+public final class RecordingDetailPresenter: RecordingDetailViewOutput, RecordingDetailInteractorOutput {
     public var state = RecordingDetailState()
     public var waveformPresenter: WaveformPlaybackPresenter?
     private weak var view: RecordingDetailViewInput?
@@ -26,12 +26,11 @@ public final class RecordingDetailPresenter: RecordingDetailViewOutput {
         state.selectedTab = tab
     }
     
-    public func didTapGenerateTranscript() {
-        guard let recording = state.recording else { return }
-        state.isProcessing = true
-        state.isShowingAgentGenerating = true
-        router.openAgentGenerating(with: recording)
-    }
+public func didTapGenerateTranscript() {
+    guard let recording = state.recording else { return }
+    state.isProcessing = true
+    router.openAgentGenerating(with: recording)
+}
     
     public func didTapPlayPause() {}
     
@@ -41,5 +40,15 @@ public final class RecordingDetailPresenter: RecordingDetailViewOutput {
     
     public func didExitRecordingDetail() {
         waveformPresenter?.pausePlayback()
+    }
+    
+    // MARK: - RecordingDetailInteractorOutput
+    
+    public func didObtainRecording(_ recording: Recording) {
+        state.recording = recording
+    }
+    
+    public func didFailWithError(_ error: Error) {
+        // Handle error - could add error state to presenter if needed
     }
 }

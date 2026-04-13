@@ -1,11 +1,17 @@
 import Foundation
 import SwiftUI
+import Combine
 
+@Observable
 public final class RecordingDetailRouter: RecordingDetailRouterInput {
     private weak var viewController: UIViewController?
+    private let appAssembly: AppAssembly
     
-    public init(viewController: UIViewController?) {
+    public var isShowingAgentGenerating: Bool = false
+    
+    public init(viewController: UIViewController? = nil, appAssembly: AppAssembly = .shared) {
         self.viewController = viewController
+        self.appAssembly = appAssembly
     }
     
     public func embedWaveformPlayback(with recording: Recording) {}
@@ -13,10 +19,9 @@ public final class RecordingDetailRouter: RecordingDetailRouterInput {
     public func embedSummary(with recording: Recording) {}
     public func embedMindMap(with recording: Recording) {}
     
-    public func didExitRecordingDetail() {
-        // Stop waveform playback when leaving detail view
-        // This prevents audio from continuing when user navigates back
-    }
+    public func didExitRecordingDetail() {}
     
-    public func openAgentGenerating(with recording: Recording) {}
+    public func openAgentGenerating(with recording: Recording) {
+        isShowingAgentGenerating = true
+    }
 }

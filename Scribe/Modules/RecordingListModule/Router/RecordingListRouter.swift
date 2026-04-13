@@ -18,12 +18,6 @@ public final class RecordingListRouter: RecordingListRouterInput {
     /// Controls DeviceSettings sheet presentation.
     public var isShowingDeviceSettings: Bool = false
 
-    /// Controls AgentGenerating sheet presentation.
-    public var isShowingAgentGenerating: Bool = false
-
-    /// The recording being processed in the AgentGenerating sheet.
-    public var processingRecording: Recording?
-
     // MARK: - Dependencies
     private weak var viewController: UIViewController?
     private let appAssembly: AppAssembly
@@ -44,10 +38,6 @@ public final class RecordingListRouter: RecordingListRouterInput {
         isShowingDeviceSettings = true
     }
 
-    public func openAgentGenerating() {
-        isShowingAgentGenerating = true
-    }
-
     // MARK: - View Factories (called from RecordingListView sheet/navigation bodies)
 
     @ViewBuilder
@@ -58,13 +48,5 @@ public final class RecordingListRouter: RecordingListRouterInput {
     @ViewBuilder
     public func deviceSettingsView() -> some View {
         appAssembly.makeDeviceSettingsModule(output: nil)
-    }
-
-    @ViewBuilder
-    public func agentGeneratingView() -> some View {
-        appAssembly.makeAgentGeneratingModule(
-            recordingId: processingRecording?.id ?? UUID(),
-            output: nil
-        )
     }
 }

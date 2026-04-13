@@ -10,17 +10,14 @@ public struct RecordingDetailState: Equatable {
     public var recording: Recording?
     public var selectedTab: RecordingDetailTab
     public var isProcessing: Bool
-    public var isShowingAgentGenerating: Bool
     
     public init(
         recording: Recording? = nil,
         selectedTab: RecordingDetailTab = .summary,
-        isProcessing: Bool = false,
-        isShowingAgentGenerating: Bool = false
+        isProcessing: Bool = false
     ) {
         self.recording = recording
         self.selectedTab = selectedTab
         self.isProcessing = isProcessing
-        self.isShowingAgentGenerating = isShowingAgentGenerating
     }
 }

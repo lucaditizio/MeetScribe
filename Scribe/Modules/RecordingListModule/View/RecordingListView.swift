@@ -67,10 +67,6 @@ public struct RecordingListView: View {
         .sheet(isPresented: $router.isShowingDeviceSettings) {
             router.deviceSettingsView()
         }
-        // AgentGenerating sheet (shown while a recording is being processed)
-        .sheet(isPresented: $router.isShowingAgentGenerating) {
-            router.agentGeneratingView()
-        }
         .onAppear {
             presenter.didTriggerViewReady()
         }

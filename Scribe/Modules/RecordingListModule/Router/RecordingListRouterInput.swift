@@ -4,5 +4,5 @@ import Foundation
 public protocol RecordingListRouterInput: AnyObject {
     func openRecordingDetail(with recording: Recording)
     func openDeviceSettings()
-    func openAgentGenerating()
+
 }

@@ -1,7 +1,7 @@
 import Foundation
 
 public final class RecordingDetailInteractor: RecordingDetailInteractorInput {
-    private weak var output: RecordingDetailInteractorOutput?
+    weak var output: RecordingDetailInteractorOutput?
     private let recordingRepository: RecordingRepositoryProtocol
     
     public init(
