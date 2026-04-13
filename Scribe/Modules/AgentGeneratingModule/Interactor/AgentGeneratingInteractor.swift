@@ -62,6 +62,23 @@ public final class AgentGeneratingInteractor: AgentGeneratingInteractorInput {
                 
                 let result = try await self.inferencePipeline.process(recording: recording)
                 
+                let newTranscript = Transcript(
+                    recordingId: recording.id,
+                    fullText: result.0.fullText,
+                    detectedLanguage: result.0.detectedLanguage
+                )
+                let newSummary = MeetingSummary(
+                    recordingId: recording.id,
+                    overview: result.1.overview,
+                    keyPoints: result.1.keyPoints,
+                    actionItems: result.1.actionItems
+                )
+                
+                var updatedRecording = recording
+                updatedRecording.transcript = newTranscript
+                updatedRecording.summary = newSummary
+                try await self.recordingRepository.update(updatedRecording)
+                
                 self.output?.didUpdateProgress(stage: ProcessingStage.complete.rawValue, progress: 1.0)
                 self.output?.didCompleteProcessing()
                 self.moduleOutput?.didFinishProcessing()

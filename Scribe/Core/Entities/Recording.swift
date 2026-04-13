@@ -19,6 +19,7 @@ public final class Recording {
     public var meetingNotes: String?
     
     @Relationship(deleteRule: .cascade) public var transcript: Transcript?
+    @Relationship(deleteRule: .cascade) public var summary: MeetingSummary?
     
     public init(
         id: UUID = UUID(),
@@ -33,7 +34,8 @@ public final class Recording {
         rawTranscript: String = "",
         actionItems: String? = nil,
         meetingNotes: String? = nil,
-        transcript: Transcript? = nil
+        transcript: Transcript? = nil,
+        summary: MeetingSummary? = nil
     ) {
         self.id = id
         self.title = title
@@ -48,5 +50,6 @@ public final class Recording {
         self.actionItems = actionItems
         self.meetingNotes = meetingNotes
         self.transcript = transcript
+        self.summary = summary
     }
 }

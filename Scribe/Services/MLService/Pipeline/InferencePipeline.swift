@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import AVFoundation
 
 public final class InferencePipeline: InferencePipelineProtocol {
     
@@ -13,6 +14,8 @@ public final class InferencePipeline: InferencePipelineProtocol {
     private let progressSubject = PassthroughSubject<InferenceProgress, Never>()
     private let config: PipelineConfig
     private var isCancelled = false
+    
+    private let audioConverter = AudioConverter()
     
     public init(
         vadService: VADServiceProtocol,
@@ -46,7 +49,7 @@ public final class InferencePipeline: InferencePipelineProtocol {
         }
         
         let fileURL = getFileURL(for: recording)
-        let audioData = try loadAudioData(from: recording, fileURL: fileURL)
+        let audioData = try await loadAudioData(from: recording, fileURL: fileURL)
         
         _ = try await runStageVAD(audioURL: fileURL)
         
@@ -182,7 +185,7 @@ public final class InferencePipeline: InferencePipelineProtocol {
         return documentsPath.appendingPathComponent(recording.fileName)
     }
 
-    private func loadAudioData(from recording: Recording, fileURL: URL) throws -> Data {
+    private func loadAudioData(from recording: Recording, fileURL: URL) async throws -> Data {
         
         guard FileManager.default.fileExists(atPath: fileURL.path) else {
             ScribeLogger.error("Audio file not found: \(fileURL.path)", category: .ml)
@@ -190,8 +193,15 @@ public final class InferencePipeline: InferencePipelineProtocol {
         }
         
         do {
-            let data = try Data(contentsOf: fileURL)
-            ScribeLogger.debug("Loaded \(data.count) bytes from audio file", category: .ml)
+            let floatSamples = try await audioConverter.convertCAFToPCMForASR(url: fileURL)
+            
+            var data = Data()
+            floatSamples.withUnsafeBufferPointer { bufferPointer in
+                guard let baseAddress = bufferPointer.baseAddress else { return }
+                data.append(UnsafeBufferPointer(start: baseAddress, count: floatSamples.count))
+            }
+            
+            ScribeLogger.debug("Loaded and converted \(data.count) bytes (\(floatSamples.count) Float32 samples) from audio file", category: .ml)
             return data
         } catch {
             ScribeLogger.error("Failed to load audio file: \(error.localizedDescription)", category: .ml)

@@ -34,6 +34,11 @@ public struct AgentGeneratingView: View {
             startAnimations()
             presenter.didTriggerViewReady()
         }
+        .onChange(of: presenter.state.progress) { _, newValue in
+            if newValue >= 1.0 && presenter.state.error == nil && presenter.state.isProcessing {
+                dismiss()
+            }
+        }
         .alert(
             "Pipeline Error",
             isPresented: Binding(

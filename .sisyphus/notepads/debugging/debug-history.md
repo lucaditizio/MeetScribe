@@ -447,3 +447,20 @@ View.onAppear
 - `ProgressTracker.swift` & `InferencePipeline.swift`: Implemented `globalProgress` calculations traversing stage indexes. Rewrote pipeline strings (`"Voice Detection"`, `"Transcription"`) to permanently map exactly to the valid `ProcessingStage` targets.
 - `LLMService.swift`: Bound a check for `transcript.isEmpty` terminating safely with a generic fallback summary instead of triggering LLM models. Mocked the implementation of `callLLM` to safely output JSON formats natively.
 - `LanguageDetector.swift`: Built an anti-hallucination anchor verifying if a duration under 12.0s triggers `"en"`, aggressively intercepting it backwards to `"gsw"` preventing inappropriate fallback routing across brief queries.
+
+### Bug 27: Transcription Yielding 0 Characters + Sheet Not Dismissing + Empty Results
+
+**Issue:** 
+1. Transcription returns 0 characters (garbage data) because raw CAF file bytes are loaded including headers
+2. AgentGenerating sheet never dismisses on success
+3. Summary/Transcript/Mind Map never appear in UI - results never saved to database
+
+**Root Cause:**
+1. **Audio Loading:** `loadAudioData()` used `Data(contentsOf: fileURL)` which loads entire CAF file including headers. `convertToFloat32Array()` blindly casts these bytes as Float32, reading header bytes as garbage audio values.
+2. **No Auto-Dismiss:** `AgentGeneratingView` had no `.onChange` handler to detect completion and dismiss the sheet.
+3. **Results Not Saved:** After pipeline returned `(Transcript, MeetingSummary)`, the interactor never created Transcript/MeetingSummary objects or saved them to the database.
+
+**Fix Applied (2026-04-13):**
+1. **Audio Loading:** Changed `loadAudioData()` to use `AudioConverter.convertCAFToPCMForASR(url:)` which properly loads audio via AVFoundation, extracts clean Float32 PCM samples, and resamples to 16kHz.
+2. **Auto-Dismiss:** Added `.onChange(of: presenter.state.progress)` in `AgentGeneratingView` that calls `dismiss()` when progress >= 1.0 and no error.
+3. **Save Results:** Added `summary` relationship to `Recording` model. After pipeline returns, create `Transcript` and `MeetingSummary` objects, attach to recording, and call `recordingRepository.update()`.
