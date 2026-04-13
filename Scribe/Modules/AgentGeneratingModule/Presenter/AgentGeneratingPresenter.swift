@@ -12,7 +12,7 @@ public final class AgentGeneratingPresenter: AgentGeneratingViewOutput, AgentGen
     }
     
     public func didTriggerViewReady() {
-        interactor.startProcessing(recordingId: "")
+        interactor.startProcessing(recordingId: nil)
     }
     
     public func didTapCancel() {

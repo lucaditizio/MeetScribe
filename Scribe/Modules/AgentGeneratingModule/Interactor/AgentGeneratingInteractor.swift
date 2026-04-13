@@ -27,9 +27,7 @@ public final class AgentGeneratingInteractor: AgentGeneratingInteractorInput {
         self.moduleOutput = moduleOutput
     }
     
-    public func startProcessing(recordingId: String) {
-        self.recordingId = recordingId
-        
+    public func startProcessing(recordingId: String? = nil) {
         progressCancellable = inferencePipeline.progressPublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] inferenceProgress in
@@ -38,8 +36,14 @@ public final class AgentGeneratingInteractor: AgentGeneratingInteractorInput {
         
         currentTask = Task { [weak self] in
             guard let self = self else { return }
+            guard let rid = self.recordingId else {
+                let error = NSError(domain: "AgentGeneratingInteractor", code: 2, userInfo: [NSLocalizedDescriptionKey: "Recording ID not configured"])
+                self.output?.didFailWithError(error)
+                self.moduleOutput?.didFailWithError(error)
+                return
+            }
             do {
-                let id = UUID(uuidString: recordingId)
+                let id = UUID(uuidString: rid)
                 guard let recording = try await self.recordingRepository.fetch(by: id ?? UUID()) else {
                     let error = NSError(domain: "AgentGeneratingInteractor", code: 1, userInfo: [NSLocalizedDescriptionKey: "Recording not found"])
                     self.output?.didFailWithError(error)

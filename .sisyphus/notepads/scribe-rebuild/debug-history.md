@@ -311,8 +311,31 @@ Button → RecordingDetailPresenter → Router → AgentGeneratingAssembly
 2. `AgentGeneratingPresenter.didTriggerViewReady()` was **empty** - never called `interactor.startProcessing()`
 **Fix Applied:**
 - `AgentGeneratingView.swift`: `.onAppear` now calls `presenter.didTriggerViewReady()`
-- `AgentGeneratingPresenter.swift`: `didTriggerViewReady()` now calls `interactor.startProcessing(recordingId: "")`
-- Note: `startProcessing(recordingId:)` uses the recordingId from `configureWith()` which was already called in Assembly
+- `AgentGeneratingPresenter.swift`: `didTriggerViewReady()` now calls `interactor.startProcessing(recordingId: nil)`
+
+**Bug 25 PART 3 (2026-04-13): Empty String Overwrites recordingId**
+**Issue:** Pipeline still stuck at 0%. Console showed no errors but "Recording not found" or random UUID being used.
+**Root Cause:** Part 2 fix called `startProcessing(recordingId: "")` which:
+1. Overwrote `self.recordingId` (set by `configureWith()`) with empty string
+2. Task closure used local param `recordingId` (now "") instead of `self.recordingId`
+3. `UUID("")` = nil → `id ?? UUID()` created random UUID → fetch failed
+**Fix Applied:**
+- `AgentGeneratingInteractor.startProcessing()`: Changed param to `String? = nil`, removed line that overwrites `self.recordingId`, Task now uses `self.recordingId` from `configureWith()`
+- `AgentGeneratingInteractorInput` protocol: Updated to `func startProcessing(recordingId: String?)`
+- `AgentGeneratingPresenter.didTriggerViewReady()`: Calls `interactor.startProcessing(recordingId: nil)` (nil param doesn't overwrite)
+**VIPER Flow (correct):**
+```
+Assembly.createModule(recordingId: "ABC-123")
+  → interactor.configureWith(recordingId: "ABC-123")  ✓ stored
+  → presenter returns
+
+View.onAppear
+  → presenter.didTriggerViewReady()
+    → interactor.startProcessing(recordingId: nil)
+      → Task uses self.recordingId = "ABC-123"  ✓ correct
+      → fetch(by: UUID("ABC-123"))  ✓ finds recording
+      → pipeline.process()  ✓ real ML runs
+```
 
 ### Bug 22: Generate Transcript Button Does Nothing
 **Issue:** Pressing "Generate Transcript" button in RecordingDetailView has no effect - no console output, no navigation.
@@ -383,8 +406,9 @@ Button → RecordingDetailPresenter → Router → AgentGeneratingAssembly
 
 ### ML Pipeline (Bug 25 Fix)
 - `Scribe/Services/MLService/Pipeline/InferencePipeline.swift` - added PassthroughSubject for progress, all 5 stages emit real progress
-- `Scribe/Modules/AgentGeneratingModule/Interactor/AgentGeneratingInteractor.swift` - replaced fake Task.sleep stub with real inferencePipeline.process(), added progress subscription
+- `Scribe/Modules/AgentGeneratingModule/Interactor/AgentGeneratingInteractor.swift` - replaced fake Task.sleep stub with real inferencePipeline.process(), param String? = nil, Task uses self.recordingId
+- `Scribe/Modules/AgentGeneratingModule/Interactor/AgentGeneratingInteractorInput.swift` - protocol updated to func startProcessing(recordingId: String?)
 - `Scribe/Modules/AgentGeneratingModule/Assembly/AgentGeneratingAssembly.swift` - wired interactor.output = presenter, added recordingRepository param
 - `Scribe/App/AppAssembly.swift` - pass recordingRepository to AgentGeneratingAssembly.createModule()
 - `Scribe/Modules/AgentGeneratingModule/View/AgentGeneratingView.swift` - .onAppear now calls presenter.didTriggerViewReady()
-- `Scribe/Modules/AgentGeneratingModule/Presenter/AgentGeneratingPresenter.swift` - didTriggerViewReady() now calls interactor.startProcessing()
+- `Scribe/Modules/AgentGeneratingModule/Presenter/AgentGeneratingPresenter.swift` - didTriggerViewReady() calls interactor.startProcessing(recordingId: nil)
