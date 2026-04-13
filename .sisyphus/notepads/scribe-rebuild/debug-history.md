@@ -253,6 +253,21 @@ let interactor = RecordingListInteractor(
 - Wrapped toolbar items in `ToolbarItemGroup(placement: .primaryAction)`.
 - Title now fixed in toolbar, always visible alongside "add device" button.
 
+### Bug 22: Generate Transcript Button Does Nothing
+**Issue:** Pressing "Generate Transcript" button in RecordingDetailView has no effect - no console output, no navigation.
+**Root Cause:**
+1. `RecordingDetailPresenter.didTapGenerateTranscript()` only set `state.isProcessing = true` but never called router to navigate.
+2. `RecordingDetailRouterInput` protocol had no `openAgentGenerating(with:)` method.
+3. `RecordingDetailView` had no `.sheet(isPresented:)` binding to present `AgentGeneratingView`.
+**Fix Applied (2026-04-13):**
+- Added `isShowingAgentGenerating: Bool` to `RecordingDetailState`.
+- Added `openAgentGenerating(with: Recording)` to `RecordingDetailRouterInput` protocol.
+- Updated `RecordingDetailPresenter.didTapGenerateTranscript()` to call `router.openAgentGenerating(with: recording)`.
+- Implemented empty `openAgentGenerating(with:)` in `RecordingDetailRouter` (VIPER compliance).
+- Added `.sheet(isPresented: $presenter.state.isShowingAgentGenerating)` to `RecordingDetailView`.
+- Sheet presents `AgentGeneratingView` via `AppAssembly.shared.makeAgentGeneratingModule()`.
+**Note:** Sheet does not auto-dismiss when ML pipeline completes - separate issue to fix.
+
 ---
 
 ## Files Modified in This Session
@@ -266,3 +281,10 @@ let interactor = RecordingListInteractor(
 - `Scribe/Modules/RecordingListModule/Interactor/RecordingListInteractorInput.swift` - protocol updated
 - `Scribe/Modules/RecordingListModule/Presenter/RecordingListPresenter.swift` - subscribes to recording state
 - `Scribe/Modules/RecordingListModule/Assembly/RecordingListAssembly.swift` - wired presenter as output
+
+### RecordingDetailModule
+- `Scribe/Modules/RecordingDetailModule/Presenter/RecordingDetailState.swift` - added isShowingAgentGenerating
+- `Scribe/Modules/RecordingDetailModule/Presenter/RecordingDetailPresenter.swift` - wired didTapGenerateTranscript to router
+- `Scribe/Modules/RecordingDetailModule/Router/RecordingDetailRouterInput.swift` - added openAgentGenerating protocol method
+- `Scribe/Modules/RecordingDetailModule/Router/RecordingDetailRouter.swift` - implemented openAgentGenerating
+- `Scribe/Modules/RecordingDetailModule/View/RecordingDetailView.swift` - added sheet for AgentGenerating

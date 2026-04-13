@@ -6,4 +6,5 @@ public protocol RecordingDetailRouterInput: AnyObject {
     func embedSummary(with recording: Recording)
     func embedMindMap(with recording: Recording)
     func didExitRecordingDetail()
+    func openAgentGenerating(with recording: Recording)
 }

@@ -27,7 +27,9 @@ public final class RecordingDetailPresenter: RecordingDetailViewOutput {
     }
     
     public func didTapGenerateTranscript() {
+        guard let recording = state.recording else { return }
         state.isProcessing = true
+        router.openAgentGenerating(with: recording)
     }
     
     public func didTapPlayPause() {}

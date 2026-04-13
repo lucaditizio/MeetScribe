@@ -17,4 +17,6 @@ public final class RecordingDetailRouter: RecordingDetailRouterInput {
         // Stop waveform playback when leaving detail view
         // This prevents audio from continuing when user navigates back
     }
+    
+    public func openAgentGenerating(with recording: Recording) {}
 }

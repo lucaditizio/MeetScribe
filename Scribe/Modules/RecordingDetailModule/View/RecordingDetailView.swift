@@ -46,6 +46,14 @@ public struct RecordingDetailView: View {
         .onDisappear {
             presenter.didExitRecordingDetail()
         }
+        .sheet(isPresented: $presenter.state.isShowingAgentGenerating) {
+            if let recording = presenter.state.recording {
+                AppAssembly.shared.makeAgentGeneratingModule(
+                    recordingId: recording.id,
+                    output: nil
+                )
+            }
+        }
     }
     
     @State private var selectedTabBinding: RecordingDetailTab = .summary
