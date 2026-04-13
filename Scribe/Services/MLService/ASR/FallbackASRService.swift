@@ -1,18 +1,16 @@
 import Foundation
-import WhisperKit
+import FluidAudio
 
-/// Fallback ASR service using FluidAudio Parakeet or general Whisper for non-Swiss-German audio
+/// Fallback ASR service using FluidAudio Parakeet (.v3 -> parakeet-tdt-0.6b-v3-coreml)
 /// Implements sequential memory management: load → transcribe → nullify
 public final class FallbackASRService: TranscriptionServiceProtocol {
     
     // MARK: - Properties
-    
-    private var whisperKit: WhisperKit?
+    private var asrManager: AsrManager?
     private let config: PipelineConfig
     private let logger: ScribeLogger
     
     // MARK: - Initialization
-    
     init(config: PipelineConfig = PipelineConfig(), logger: ScribeLogger = .shared) {
         self.config = config
         self.logger = logger
@@ -21,128 +19,92 @@ public final class FallbackASRService: TranscriptionServiceProtocol {
     // MARK: - TranscriptionServiceProtocol
     
     public func transcribe(audioData: Data, language: String?) async throws -> String {
-        logger.debug("Starting fallback transcription", category: .ml)
+        logger.debug("Starting fallback transcription with Parakeet", category: .ml)
         
         guard !audioData.isEmpty else {
-            throw WhisperError.emptyAudioData
+            throw FallbackError.emptyAudioData
         }
         
         guard audioData.count >= config.minASRSamples else {
-            throw WhisperError.insufficientSamples
+            throw FallbackError.insufficientSamples
         }
         
-        // Convert Data to Float32 array
+        // Convert Data to Float32 array using our custom method
         let floatSamples = try convertToFloat32Array(from: audioData)
         
-        // Perform transcription with sequential memory management
-        let transcription = try await performTranscription(
-            audioSamples: floatSamples,
-            language: language
-        )
-        
-        logger.info("Fallback transcription completed: \(transcription.prefix(100))...", category: .ml)
-        
-        return transcription
-    }
-    
-    // MARK: - Private Methods
-    
-    private func performTranscription(audioSamples: [Float], language: String?) async throws -> String {
         // Step 1: Load model
         try await loadModel()
         
+        guard let manager = asrManager else {
+            throw FallbackError.modelNotLoaded
+        }
+        
         // Step 2: Run transcription
-        let transcription: String
+        var state = try TdtDecoderState()
+        let resultText: String
         
         do {
-            transcription = try await runTranscription(
-                audioSamples: audioSamples,
-                language: language
-            )
+            logger.debug("Running Parakeet fallback transcription on \(floatSamples.count) samples", category: .ml)
+            let result = try await manager.transcribe(floatSamples, decoderState: &state)
+            resultText = result.text.trimmingCharacters(in: .whitespacesAndNewlines)
+            logger.info("Fallback transcription completed: \(resultText.prefix(100))...", category: .ml)
         } catch {
-            // Ensure model is nullified even if transcription fails
             nullifyModel()
-            throw error
+            logger.error("Fallback transcription failed: \(error.localizedDescription)", category: .ml)
+            throw FallbackError.transcriptionFailed(error.localizedDescription)
         }
         
         // Step 3: Nullify model (CRITICAL for memory management)
         nullifyModel()
         
-        return transcription
+        return resultText
+    }
+
+    public func detectLanguage(audioData: Data) async throws -> String {
+        logger.debug("Starting fallback language detection with Parakeet (stubbed to 'en')", category: .ml)
+        // Parakeet doesn't inherently expose language probabilities like Whisper since it outputs text directly.
+        // We will default to English since this fallback routing handles everything except Swiss German.
+        return "en"
     }
     
+    // MARK: - Private Methods
+    
     private func loadModel() async throws {
-        logger.info("Loading general Whisper model for fallback", category: .ml)
+        logger.info("Loading Parakeet .v3 model for fallback", category: .ml)
         
-        guard whisperKit == nil else {
-            logger.debug("Fallback Whisper model already loaded", category: .ml)
+        guard asrManager == nil else {
+            logger.debug("Fallback Parakeet model already loaded", category: .ml)
             return
         }
         
         do {
-            // Use general Whisper model (not Swiss German specific)
-            let whisperConfig = WhisperKitConfig(
-                model: "medium",
-                modelRepo: "openai/whisper-medium",
-                download: true
-            )
+            let models = try await AsrModels.downloadAndLoad(version: .v3)
+            let manager = AsrManager()
+            try await manager.loadModels(models)
             
-            whisperKit = try await WhisperKit(whisperConfig)
-            
-            logger.info("Fallback Whisper model loaded successfully", category: .ml)
+            asrManager = manager
+            logger.info("Fallback Parakeet model loaded successfully", category: .ml)
         } catch {
-            logger.error("Failed to load fallback Whisper model: \(error.localizedDescription)", category: .ml)
-            throw WhisperError.modelLoadFailed(error.localizedDescription)
-        }
-    }
-    
-    private func runTranscription(audioSamples: [Float], language: String?) async throws -> String {
-        guard let whisperKit = whisperKit else {
-            throw WhisperError.modelNotLoaded
-        }
-        
-        logger.debug("Running fallback transcription on \(audioSamples.count) samples", category: .ml)
-        
-        do {
-            // Default to English for fallback (not Swiss German)
-            let targetLanguage = language ?? "en"
-            
-            let decodingOptions = DecodingOptions(
-                task: .transcribe,
-                language: targetLanguage,
-                temperature: 0.0,
-                wordTimestamps: false
-            )
-            
-            let result = try await whisperKit.transcribe(
-                audioArray: audioSamples,
-                decodeOptions: decodingOptions
-            )
-            
-            guard let transcriptionText = result.first?.text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) else {
-                logger.warning("No fallback transcription result returned", category: .ml)
-                return ""
-            }
-            
-            logger.debug("Fallback transcription produced \(transcriptionText.count) characters", category: .ml)
-            
-            return transcriptionText
-        } catch {
-            logger.error("Fallback transcription failed: \(error.localizedDescription)", category: .ml)
-            throw WhisperError.transcriptionFailed(error.localizedDescription)
+            logger.error("Failed to load fallback Parakeet model: \(error.localizedDescription)", category: .ml)
+            throw FallbackError.modelLoadFailed(error.localizedDescription)
         }
     }
     
     private func nullifyModel() {
-        whisperKit = nil
-        logger.debug("Fallback Whisper model nullified for memory management", category: .ml)
+        if asrManager != nil {
+            Task {
+                await asrManager?.cleanup()
+                asrManager = nil
+                logger.debug("Fallback Parakeet model nullified and cleaned up for memory management", category: .ml)
+            }
+        }
     }
     
     // MARK: - Audio Conversion
     
     private func convertToFloat32Array(from audioData: Data) throws -> [Float] {
         guard audioData.count % 4 == 0 else {
-            throw WhisperError.invalidAudioFormat
+            throw FallbackError.invalidAudioFormat
         }
         
         let sampleCount = audioData.count / 4
@@ -183,9 +145,9 @@ enum FallbackError: LocalizedError {
         case .invalidAudioFormat:
             return "Audio data format is invalid (expected Float32 PCM)"
         case .modelNotLoaded:
-            return "Fallback Whisper model is not loaded"
+            return "Fallback Parakeet model is not loaded"
         case .modelLoadFailed(let reason):
-            return "Failed to load fallback Whisper model: \(reason)"
+            return "Failed to load fallback Parakeet model: \(reason)"
         case .transcriptionFailed(let reason):
             return "Fallback transcription failed: \(reason)"
         }

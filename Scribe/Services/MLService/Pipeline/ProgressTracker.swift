@@ -11,12 +11,18 @@ class ProgressTracker {
     let totalStages: Int = 5
     
     private let stageNames: [String] = [
-        "VAD",
+        "Voice Detection",
         "Language Detection",
-        "ASR",
-        "Diarization",
-        "Summarization"
+        "Transcription",
+        "Speaker Identification",
+        "Generating Summary"
     ]
+    
+    var globalProgress: Double {
+        let baseProgress = Double(currentStageIndex) / Double(totalStages)
+        let stageContribution = progress / Double(totalStages)
+        return baseProgress + stageContribution
+    }
     
     init() {
         logger.info("ProgressTracker initialized with \(self.totalStages) stages")

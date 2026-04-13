@@ -432,3 +432,18 @@ View.onAppear
 - `Scribe/Modules/AgentGeneratingModule/Presenter/AgentGeneratingPresenter.swift` - didTriggerViewReady() calls interactor.startProcessing(recordingId: nil)
 - `Scribe/Modules/RecordingDetailModule/View/RecordingDetailView.swift` - sheet uses presenter.state.recording?.id for AgentGenerating
 - `Scribe/Modules/RecordingDetailModule/Router/RecordingDetailRouter.swift` - removed pendingRecordingId (not needed with direct state access)
+
+### Bug 26: LLM Summarizer 15-Minute Infinite Hang
+**Issue:** ML pipeline stuck at 100% (or 0%) for 15+ minutes during summarization. The actual processing failed instantly but the UI froze forever.
+**Root Cause:**
+1. **Language Detection Degradation**: A 7s pure Swiss German clip was run under auto-detect (`language: nil`). Because it lacked context and length for the Flurin17 model to anchor securely, Whisper fell through 6 temperature backoffs and hallucinated `en`.
+2. **Improper Routing & Empty Results**: Because it was assumed "English", the logic routed the pipeline away from the highly effective Swiss CoreML service into `FallbackASRService` mapping to Parakeet (.v3). Parakeet processed the unrecognizable dialect as noise, outputting `""`.
+3. **LLM Error Bombing**: The empty `""` was seamlessly passed to `LLMService`, which used a hardcoded `throw LLMServiceError.notImplemented`. The pipeline threw an error instantly.
+4. **SwiftUI State Masking**: `AgentGeneratingInteractor` processed the error and bubbled it up perfectly via `AgentGeneratingPresenter.didFailWithError`. However, the `AgentGeneratingView` had absolutely zero SwiftUI bindings mapped to `presenter.state.error`. No `.alert` popped, no `.dismiss` activated, the view just endlessly span its MeshGradient.
+5. **0% Progress Sticking**: Progress reset to `0%` during all heavy processing because `InferencePipeline` blindly emitted stage-local limits (`0.0` or `1.0`), confusing `AgentGeneratingView` into displaying repeated empty timelines. Additionally, `ProcessingStage` swift mapping dropped because Inference Pipeline emitted `VAD` but the enum wanted `Voice Detection`.
+
+**Fix Applied (2026-04-13):**
+- `AgentGeneratingView.swift`: Introduced `@Environment(\.dismiss)` and an interactive `.alert` bound directly to `presenter.state.error`.
+- `ProgressTracker.swift` & `InferencePipeline.swift`: Implemented `globalProgress` calculations traversing stage indexes. Rewrote pipeline strings (`"Voice Detection"`, `"Transcription"`) to permanently map exactly to the valid `ProcessingStage` targets.
+- `LLMService.swift`: Bound a check for `transcript.isEmpty` terminating safely with a generic fallback summary instead of triggering LLM models. Mocked the implementation of `callLLM` to safely output JSON formats natively.
+- `LanguageDetector.swift`: Built an anti-hallucination anchor verifying if a duration under 12.0s triggers `"en"`, aggressively intercepting it backwards to `"gsw"` preventing inappropriate fallback routing across brief queries.

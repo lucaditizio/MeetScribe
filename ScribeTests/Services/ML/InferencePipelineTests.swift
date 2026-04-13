@@ -24,6 +24,7 @@ final class InferencePipelineTests: XCTestCase {
             vadService: mockVADService,
             languageDetector: mockLanguageDetector,
             transcriptionService: mockTranscriptionService,
+            fallbackTranscriptionService: mockTranscriptionService, // Use the same mock for both
             diarizationService: mockDiarizationService,
             summarizationService: mockSummarizationService
         )
@@ -123,6 +124,10 @@ final class MockTranscriptionService: TranscriptionServiceProtocol {
     func transcribe(audioData: Data, language: String?) async throws -> String {
         callCount += 1
         return "Test transcript"
+    }
+    
+    func detectLanguage(audioData: Data) async throws -> String {
+        return "en"
     }
 }
 

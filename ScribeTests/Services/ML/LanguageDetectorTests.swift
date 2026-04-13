@@ -4,16 +4,19 @@ import XCTest
 final class LanguageDetectorTests: XCTestCase {
     private var detector: LanguageDetector!
     private var config: PipelineConfig!
+    private var mockTranscriptionService: MockTranscriptionService!
     
     override func setUp() {
         super.setUp()
         config = PipelineConfig()
-        detector = LanguageDetector(config: config)
+        mockTranscriptionService = MockTranscriptionService()
+        detector = LanguageDetector(config: config, whisperService: mockTranscriptionService)
     }
     
     override func tearDown() {
         detector = nil
         config = nil
+        mockTranscriptionService = nil
         super.tearDown()
     }
     

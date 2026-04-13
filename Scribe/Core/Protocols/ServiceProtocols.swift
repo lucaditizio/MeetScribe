@@ -150,6 +150,7 @@ public protocol InferencePipelineProtocol: AnyObject {
 /// Protocol for audio transcription services
 public protocol TranscriptionServiceProtocol: AnyObject {
     func transcribe(audioData: Data, language: String?) async throws -> String
+    func detectLanguage(audioData: Data) async throws -> String
 }
 
 /// Protocol for text summarization services

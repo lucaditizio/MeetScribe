@@ -12,6 +12,9 @@ public struct AgentGeneratingView: View {
     private let obsidian = Color(red: 0.1, green: 0.1, blue: 0.11)
     private let indigo = Color(red: 0.3, green: 0.2, blue: 0.6)
     
+    @Environment(\.dismiss) private var dismiss
+    
+    
     public init(presenter: AgentGeneratingPresenter) {
         self.presenter = presenter
     }
@@ -30,6 +33,21 @@ public struct AgentGeneratingView: View {
         .onAppear {
             startAnimations()
             presenter.didTriggerViewReady()
+        }
+        .alert(
+            "Pipeline Error",
+            isPresented: Binding(
+                get: { presenter.state.error != nil },
+                set: { if !$0 { presenter.state.error = nil } }
+            )
+        ) {
+            Button("OK", role: .cancel) {
+                dismiss()
+            }
+        } message: {
+            if let error = presenter.state.error {
+                Text(error.localizedDescription)
+            }
         }
     }
     

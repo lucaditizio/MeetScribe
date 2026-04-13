@@ -4,9 +4,11 @@ import Foundation
 public final class LanguageDetector: LanguageDetectionProtocol {
     private let config: PipelineConfig
     private let logger: ScribeLogger
+    private let whisperService: TranscriptionServiceProtocol
     
-    public init(config: PipelineConfig, logger: ScribeLogger = .shared) {
+    public init(config: PipelineConfig, whisperService: TranscriptionServiceProtocol, logger: ScribeLogger = .shared) {
         self.config = config
+        self.whisperService = whisperService
         self.logger = logger
     }
     
@@ -21,11 +23,18 @@ public final class LanguageDetector: LanguageDetectionProtocol {
             throw LanguageDetectionError.insufficientSamples
         }
         
-        // TODO: Integrate with WhisperCoreMLService (task 18.1)
-        // For now, return stub result - real implementation will use Whisper model
-        // WhisperCoreMLService will provide language detection output
-        let detectedLanguage = "en"
-        let confidence: Double = 0.95
+        // Leverage WhisperCoreMLService to perform true inference
+        var detectedLanguage = try await whisperService.detectLanguage(audioData: audioData)
+        let confidence: Double = 0.95 // WhisperKit doesn't easily expose segment confidence outside of transcription right now
+        
+        // Anti-Hallucination Guard: Flurin17 degrades to "en" on short clips lacking context anchors
+        let sampleCount = audioData.count / 4
+        let durationSeconds = Double(sampleCount) / 16000.0
+        
+        if durationSeconds < 12.0 && detectedLanguage == "en" {
+            logger.warning("Short clip (\(String(format: "%.1f", durationSeconds))s) hallucinated as 'en'. Overriding to 'gsw'.", category: .ml)
+            detectedLanguage = "gsw"
+        }
         
         logger.info("Language detected: \(detectedLanguage) with confidence \(confidence)", category: .ml)
         

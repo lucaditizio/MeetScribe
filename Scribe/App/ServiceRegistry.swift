@@ -63,7 +63,7 @@ public final class ServiceRegistry {
         VADService()
 
     public lazy var languageDetection: LanguageDetectionProtocol =
-        LanguageDetector(config: PipelineConfig())
+        LanguageDetector(config: PipelineConfig(), whisperService: whisperASR)
 
     /// Concrete Whisper ASR instance, stored as the concrete type so it can be
     /// passed to InferencePipeline (which needs TranscriptionServiceProtocol)
@@ -71,6 +71,9 @@ public final class ServiceRegistry {
     private lazy var whisperASR: WhisperCoreMLService = WhisperCoreMLService()
 
     public lazy var asrService: ASRServiceProtocol = whisperASR
+
+    /// Concrete Fallback ASR instance
+    private lazy var fallbackASR: FallbackASRService = FallbackASRService()
 
     public lazy var diarizationService: DiarizationServiceProtocol =
         DiarizationService()
@@ -86,6 +89,7 @@ public final class ServiceRegistry {
             vadService: vadService,
             languageDetector: languageDetection,
             transcriptionService: whisperASR,   // WhisperCoreMLService: TranscriptionServiceProtocol
+            fallbackTranscriptionService: fallbackASR, // FallbackASRService: TranscriptionServiceProtocol
             diarizationService: diarizationService,
             summarizationService: llmCore        // LLMService: SummarizationServiceProtocol
         )

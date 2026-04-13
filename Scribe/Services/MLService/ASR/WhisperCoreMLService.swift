@@ -44,6 +44,45 @@ public final class WhisperCoreMLService: TranscriptionServiceProtocol {
         
         return transcription
     }
+
+    public func detectLanguage(audioData: Data) async throws -> String {
+        logger.debug("Starting language detection with Whisper", category: .ml)
+        
+        guard !audioData.isEmpty else {
+            throw WhisperError.emptyAudioData
+        }
+        
+        guard audioData.count >= config.minASRSamples else {
+            throw WhisperError.insufficientSamples
+        }
+        
+        let floatSamples = try convertToFloat32Array(from: audioData)
+        
+        try await loadModel()
+        
+        guard let whisperKit = whisperKit else {
+            throw WhisperError.modelNotLoaded
+        }
+        
+        // Attempt transcription with no language to force auto-detection
+        let decodingOptions = DecodingOptions(
+            task: .transcribe,
+            language: nil,
+            temperature: 0.0,
+            wordTimestamps: false
+        )
+        
+        let result = try await whisperKit.transcribe(
+            audioArray: floatSamples,
+            decodeOptions: decodingOptions
+        )
+        
+        let detected = result.first?.language ?? "gsw"
+        
+        nullifyModel()
+        
+        return detected
+    }
     
     // MARK: - Private Methods
     
@@ -81,7 +120,7 @@ public final class WhisperCoreMLService: TranscriptionServiceProtocol {
         
         do {
             let whisperConfig = WhisperKitConfig(
-                model: "large-v3-turbo",
+                model: "*Flurin17*swiss*",
                 modelRepo: config.swissGermanWhisperURL,
                 download: true
             )
