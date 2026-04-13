@@ -255,18 +255,26 @@ let interactor = RecordingListInteractor(
 
 ### Bug 22: Generate Transcript Button Does Nothing
 **Issue:** Pressing "Generate Transcript" button in RecordingDetailView has no effect - no console output, no navigation.
-**Root Cause:**
+**Root Cause (partial - first attempt):**
 1. `RecordingDetailPresenter.didTapGenerateTranscript()` only set `state.isProcessing = true` but never called router to navigate.
 2. `RecordingDetailRouterInput` protocol had no `openAgentGenerating(with:)` method.
 3. `RecordingDetailView` had no `.sheet(isPresented:)` binding to present `AgentGeneratingView`.
-**Fix Applied (2026-04-13):**
+**Fix Applied (2026-04-13) - First Attempt:**
 - Added `isShowingAgentGenerating: Bool` to `RecordingDetailState`.
 - Added `openAgentGenerating(with: Recording)` to `RecordingDetailRouterInput` protocol.
 - Updated `RecordingDetailPresenter.didTapGenerateTranscript()` to call `router.openAgentGenerating(with: recording)`.
 - Implemented empty `openAgentGenerating(with:)` in `RecordingDetailRouter` (VIPER compliance).
 - Added `.sheet(isPresented: $presenter.state.isShowingAgentGenerating)` to `RecordingDetailView`.
-- Sheet presents `AgentGeneratingView` via `AppAssembly.shared.makeAgentGeneratingModule()`.
-**Note:** Sheet does not auto-dismiss when ML pipeline completes - separate issue to fix.
+
+### Bug 23: Generate Button Still Not Working + Tab Selection Broken
+**Issue:** After Bug 22 fix, button still doesn't work AND tab selection (Summary/Transcript/Mind Map) doesn't switch.
+**Root Cause (actual):**
+1. **Generate button:** `didTapGenerateTranscript()` set `isProcessing = true` but **never set `state.isShowingAgentGenerating = true`** - the sheet binding checks this flag which remained false.
+2. **Tab selection:** Picker was bound to local `@State private var selectedTabBinding` instead of `$presenter.state.selectedTab`. Content display read `presenter.state.selectedTab` correctly, but picker never updated it.
+**Fix Applied (2026-04-13):**
+- Added `state.isShowingAgentGenerating = true` in `didTapGenerateTranscript()`.
+- Removed local `@State selectedTabBinding` from `RecordingDetailView`.
+- Changed Picker binding from `$selectedTabBinding` to `$presenter.state.selectedTab`.
 
 ---
 
@@ -284,7 +292,7 @@ let interactor = RecordingListInteractor(
 
 ### RecordingDetailModule
 - `Scribe/Modules/RecordingDetailModule/Presenter/RecordingDetailState.swift` - added isShowingAgentGenerating
-- `Scribe/Modules/RecordingDetailModule/Presenter/RecordingDetailPresenter.swift` - wired didTapGenerateTranscript to router
+- `Scribe/Modules/RecordingDetailModule/Presenter/RecordingDetailPresenter.swift` - wired didTapGenerateTranscript to router, set isShowingAgentGenerating = true
 - `Scribe/Modules/RecordingDetailModule/Router/RecordingDetailRouterInput.swift` - added openAgentGenerating protocol method
 - `Scribe/Modules/RecordingDetailModule/Router/RecordingDetailRouter.swift` - implemented openAgentGenerating
-- `Scribe/Modules/RecordingDetailModule/View/RecordingDetailView.swift` - added sheet for AgentGenerating
+- `Scribe/Modules/RecordingDetailModule/View/RecordingDetailView.swift` - added sheet for AgentGenerating, fixed Picker binding to use presenter.state.selectedTab

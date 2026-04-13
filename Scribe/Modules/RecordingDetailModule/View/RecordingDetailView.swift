@@ -56,10 +56,8 @@ public struct RecordingDetailView: View {
         }
     }
     
-    @State private var selectedTabBinding: RecordingDetailTab = .summary
-    
     private var pickerView: some View {
-        Picker("Tab", selection: $selectedTabBinding) {
+        Picker("Tab", selection: $presenter.state.selectedTab) {
             Text("Summary").tag(RecordingDetailTab.summary)
             Text("Transcript").tag(RecordingDetailTab.transcript)
             Text("Mind Map").tag(RecordingDetailTab.mindMap)
