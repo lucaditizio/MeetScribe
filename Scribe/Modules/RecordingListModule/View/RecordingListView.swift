@@ -30,28 +30,25 @@ public struct RecordingListView: View {
                 // Background
                 Color.black
                     .ignoresSafeArea()
-
                 VStack(spacing: 0) {
+                    // Title - fixed at top
+                    Text("MeetScribe")
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                        .padding(.top, 12)
+                        .padding(.horizontal, Spacing.contentPadding)
                     // Content
                     contentView
-                        .padding(.top, 20)
-
+                        .padding(.top, 12)
                     Spacer()
-
                     // Bottom bar: mic indicator + record button
                     bottomBarView
                 }
                 .padding(.horizontal, Spacing.contentPadding)
             }
-            .navigationTitle("MeetScribe")
-            .navigationBarTitleDisplayMode(.large)
             .preferredColorScheme(.dark)
             .toolbar {
                 ToolbarItemGroup(placement: .primaryAction) {
-                    Text("MeetScribe")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                    
                     Button {
                         presenter.didTapSettings()
                     } label: {
