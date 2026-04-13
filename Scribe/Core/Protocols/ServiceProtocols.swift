@@ -100,6 +100,7 @@ public protocol WaveformAnalyzerProtocol: AnyObject {
 /// Protocol for Voice Activity Detection
 public protocol VADServiceProtocol: AnyObject {
     func process(buffer: Data) -> Bool
+    func hasSpeech(audioURL: URL) async throws -> Bool
 }
 
 /// Language detection result with confidence

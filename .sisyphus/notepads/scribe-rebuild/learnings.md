@@ -248,3 +248,8 @@ Must be applied inside `WindowGroup { }`, not chained on it.
 ### Build Pattern
 `xcodebuild ... clean build` is required to pick up file changes; incremental build sometimes
 replays cached errors from prior failed invocations.
+
+## Task Debug - UUID Mismatch & SwiftData Capture (2026-04-13)
+- **SwiftData Predicate Capture Bug**: Using `#Predicate` with an external function argument (e.g., `$0.id == id`) can cause implicit capture bugs where the argument is ignored during evaluation, returning the wrong objects (causing UUID mismatch).
+- **Fix Pattern**: Explicitly declare a local variable `let targetId = id` first, then use `recording.id == targetId` in the predicate closure.
+- **VAD Pipeline Integration**: Identified that async manager initialization shouldn't be awkwardly placed inside synchronous data processing functions (`process(buffer:)`). Instead, logic was refactored to use `vadService.hasSpeech(audioURL:)` dynamically inside the async `InferencePipeline` utilizing locally constructed File URLs.

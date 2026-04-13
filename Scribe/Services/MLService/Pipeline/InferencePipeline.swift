@@ -42,9 +42,10 @@ public final class InferencePipeline: InferencePipelineProtocol {
             throw PipelineError.cancelled
         }
         
-        let audioData = try loadAudioData(from: recording)
+        let fileURL = getFileURL(for: recording)
+        let audioData = try loadAudioData(from: recording, fileURL: fileURL)
         
-        _ = try await runStageVAD(audioData: audioData)
+        _ = try await runStageVAD(audioURL: fileURL)
         
         let languageConfidence = try await runStageLanguageDetection(audioData: audioData)
         
@@ -73,14 +74,15 @@ public final class InferencePipeline: InferencePipelineProtocol {
         isCancelled = true
     }
     
-    private func runStageVAD(audioData: Data) async throws -> [VADSegment] {
+    private func runStageVAD(audioURL: URL) async throws -> [VADSegment] {
         ScribeLogger.info("Stage 1/5: VAD started", category: .ml)
         progressTracker.updateProgress(stage: "VAD", progress: 0.0)
         progressSubject.send(InferenceProgress(stage: "VAD", progress: 0.0))
         
         try checkCancellation()
         
-        let hasSpeech = vadService.process(buffer: audioData)
+        // Let VADService handle manager initialization and processing internally
+        let hasSpeech = try await vadService.hasSpeech(audioURL: audioURL)
         
         progressTracker.updateProgress(stage: "VAD", progress: 1.0)
         progressSubject.send(InferenceProgress(stage: "VAD", progress: 1.0))
@@ -166,11 +168,15 @@ public final class InferencePipeline: InferencePipelineProtocol {
         return summary
     }
     
-    private func loadAudioData(from recording: Recording) throws -> Data {
-        let fileURL = URL(fileURLWithPath: recording.filePath)
+    private func getFileURL(for recording: Recording) -> URL {
+        let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        return documentsPath.appendingPathComponent(recording.fileName)
+    }
+
+    private func loadAudioData(from recording: Recording, fileURL: URL) throws -> Data {
         
-        guard FileManager.default.fileExists(atPath: recording.filePath) else {
-            ScribeLogger.error("Audio file not found: \(recording.filePath)", category: .ml)
+        guard FileManager.default.fileExists(atPath: fileURL.path) else {
+            ScribeLogger.error("Audio file not found: \(fileURL.path)", category: .ml)
             throw PipelineError.invalidAudioData
         }
         

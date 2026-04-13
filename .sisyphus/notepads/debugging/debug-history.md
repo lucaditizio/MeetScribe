@@ -337,6 +337,23 @@ View.onAppear
       → pipeline.process()  ✓ real ML runs
 ```
 
+**Bug 25 PART 4 (2026-04-13): SwiftData Predicate Capture Bug**
+**Issue:** Waveform shows correct UUID (414BEC76...) but pipeline receives wrong UUID (7C09565D...). Repository was returning wrong recording.
+**Root Cause:** SwiftData `#Predicate` with external function argument (e.g., `$0.id == id`) causes implicit capture bug where the argument is ignored, returning wrong objects.
+**Fix Applied:**
+- `RecordingRepository.fetch(by:)`: Changed predicate to capture `id` to local variable first:
+  ```swift
+  let targetId = id
+  let descriptor = FetchDescriptor<Recording>(predicate: #Predicate { recording in
+      recording.id == targetId
+  })
+  ```
+- `InferencePipeline.runStageVAD()`: Changed from `vadService.process(buffer:)` (which doesn't init manager) to `vadService.hasSpeech(audioURL:)` (which properly initializes VAD manager)
+
+**Additional Fix (VAD Manager):**
+- VADService.process(buffer:) called detectSpeech() which checks vadManager, but manager was only initialized in hasSpeech(audioURL:)
+- Changed InferencePipeline to use hasSpeech(audioURL:) which properly initializes the async VadManager
+
 ### Bug 22: Generate Transcript Button Does Nothing
 **Issue:** Pressing "Generate Transcript" button in RecordingDetailView has no effect - no console output, no navigation.
 **Root Cause (partial - first attempt):**
@@ -405,10 +422,13 @@ View.onAppear
 - `Scribe/Modules/RecordingDetailModule/Assembly/RecordingDetailAssembly.swift` - create and return RecordingDetailView with router, wire interactor.output = presenter
 
 ### ML Pipeline (Bug 25 Fix)
-- `Scribe/Services/MLService/Pipeline/InferencePipeline.swift` - added PassthroughSubject for progress, all 5 stages emit real progress
+- `Scribe/Services/MLService/Pipeline/InferencePipeline.swift` - added PassthroughSubject for progress, all 5 stages emit real progress, use hasSpeech(audioURL:) for VAD
+- `Scribe/Services/RecordingService/RecordingRepository.swift` - fixed SwiftData predicate capture bug with local variable pattern
 - `Scribe/Modules/AgentGeneratingModule/Interactor/AgentGeneratingInteractor.swift` - replaced fake Task.sleep stub with real inferencePipeline.process(), param String? = nil, Task uses self.recordingId
 - `Scribe/Modules/AgentGeneratingModule/Interactor/AgentGeneratingInteractorInput.swift` - protocol updated to func startProcessing(recordingId: String?)
 - `Scribe/Modules/AgentGeneratingModule/Assembly/AgentGeneratingAssembly.swift` - wired interactor.output = presenter, added recordingRepository param
 - `Scribe/App/AppAssembly.swift` - pass recordingRepository to AgentGeneratingAssembly.createModule()
 - `Scribe/Modules/AgentGeneratingModule/View/AgentGeneratingView.swift` - .onAppear now calls presenter.didTriggerViewReady()
 - `Scribe/Modules/AgentGeneratingModule/Presenter/AgentGeneratingPresenter.swift` - didTriggerViewReady() calls interactor.startProcessing(recordingId: nil)
+- `Scribe/Modules/RecordingDetailModule/View/RecordingDetailView.swift` - sheet uses presenter.state.recording?.id for AgentGenerating
+- `Scribe/Modules/RecordingDetailModule/Router/RecordingDetailRouter.swift` - removed pendingRecordingId (not needed with direct state access)

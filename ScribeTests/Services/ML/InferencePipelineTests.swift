@@ -105,6 +105,9 @@ final class MockVADService: VADServiceProtocol {
     func process(buffer: Data) -> Bool {
         return shouldReturnSpeech
     }
+    func hasSpeech(audioURL: URL) async throws -> Bool {
+        return shouldReturnSpeech
+    }
 }
 
 final class MockLanguageDetector: LanguageDetectionProtocol {

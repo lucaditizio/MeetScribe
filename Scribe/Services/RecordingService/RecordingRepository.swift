@@ -23,7 +23,10 @@ public final class RecordingRepository: RecordingRepositoryProtocol {
     
     public func fetch(by id: UUID) async throws -> Recording? {
         let context = ModelContext(modelContainer)
-        let descriptor = FetchDescriptor<Recording>(predicate: #Predicate { $0.id == id })
+        let targetId = id
+        let descriptor = FetchDescriptor<Recording>(predicate: #Predicate { recording in
+            recording.id == targetId
+        })
         return try context.fetch(descriptor).first
     }
     

@@ -42,10 +42,19 @@ public final class AgentGeneratingInteractor: AgentGeneratingInteractorInput {
                 self.moduleOutput?.didFailWithError(error)
                 return
             }
+            
             do {
-                let id = UUID(uuidString: rid)
-                guard let recording = try await self.recordingRepository.fetch(by: id ?? UUID()) else {
-                    let error = NSError(domain: "AgentGeneratingInteractor", code: 1, userInfo: [NSLocalizedDescriptionKey: "Recording not found"])
+                guard let uuid = UUID(uuidString: rid) else {
+                    let error = NSError(domain: "AgentGeneratingInteractor", code: 3, userInfo: [NSLocalizedDescriptionKey: "Invalid UUID format: \(rid)"])
+                    self.output?.didFailWithError(error)
+                    self.moduleOutput?.didFailWithError(error)
+                    return
+                }
+                
+                let recording = try await self.recordingRepository.fetch(by: uuid)
+                
+                guard let recording = recording else {
+                    let error = NSError(domain: "AgentGeneratingInteractor", code: 1, userInfo: [NSLocalizedDescriptionKey: "Recording not found for ID: \(rid)"])
                     self.output?.didFailWithError(error)
                     self.moduleOutput?.didFailWithError(error)
                     return
